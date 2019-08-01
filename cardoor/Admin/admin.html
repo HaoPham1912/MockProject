@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+
+    <!-- css -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/datatables/dataTables.bootstrap4.min.css">
+
+    
+    <link rel="stylesheet" href="css/AdminPage.css">
+</head>
+
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Admin </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+           
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+           
+            <li class="nav-item active">
+                <a class="nav-link" href="#" onclick="callContent('ManageUserContent'); return false;">
+                    <i class="fa fa-user"></i>
+                    <span>Manage user</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+                    
+
+            <!-- Divider -->
+           
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <div class="container-fluid generalClass" id="ActiveAdsContent">
+                    <!-- Page Heading -->
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Bảng thống kê</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" cellspacing="0" id="AdsStaticalTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Address</th>
+                                           <th>Edit</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Duy</td>
+                                            <td>092828283923</td>
+                                            <td>duy@gmail.com</td>
+                                            <td>HCM City</td>
+                                            
+                                            <td>
+                                                <!-- Sinh đường dẫn trong này-->
+                                                <button class="btn btn-primary" title="Xem video"
+                                                    onclick="ViewAdsVideo('https://d3nuqriibqh3vw.cloudfront.net/speakup_20_small.mp4')">
+                                                    <span class="fa fa-edit"></span>
+                                                </button>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Duy</td>
+                                            <td>092828283923</td>
+                                            <td>duy@gmail.com</td>
+                                            <td>HCM City</td>
+                                            
+                                            <td>
+                                                <!-- Sinh đường dẫn trong này-->
+                                                <button class="btn btn-primary" title="Xem video"
+                                                    onclick="ViewAdsVideo('https://d3nuqriibqh3vw.cloudfront.net/speakup_20_small.mp4')">
+                                                    <span class="fa fa-edit"></span>
+                                                </button>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Duy</td>
+                                            <td>092828283923</td>
+                                            <td>duy@gmail.com</td>
+                                            <td>HCM City</td>
+                                            
+                                            <td>
+                                                <!-- Sinh đường dẫn trong này-->
+                                                <button class="btn btn-primary" title="Xem video"
+                                                    onclick="ViewAdsVideo('https://d3nuqriibqh3vw.cloudfront.net/speakup_20_small.mp4')">
+                                                    <span class="fa fa-edit"></span>
+                                                </button>
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                               
+                                <button class="btn btn-danger" name="btnDelete" onclick="BlockAds()">
+                                   Create new user
+                                </button>
+                                
+                                
+                                 <button id="btnXemQuangCao" class="btn btn-success" type="button"
+                                 class="btn btn-info btn-lg" data-toggle="modal">
+                                Set Role
+                             </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /thống kê các quảng cáo đang chạy-->                
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Duy Hảo Trân Văn</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCan8_z6DSn3FYZHC6IS4Uu_TeV25MMWNs&callback=initMap">
+        </script>
+    <!-- js -->
+    <script src="js/Dashboard.js"></script>
+    <script src="js/AllPartner.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/ManageAdmin.js"></script>
+    <script src="js/ServiceBusiness.js"></script>
+    <script src="js/ConfirmPokestop.js"></script>
+    <!-- 2019/05/12 khoa start add-->
+    <script src="js/ManageAds.js"></script>
+    <!-- 2019/05/12 khoa end add-->
+    <!-- 2019/05/12 phong start add-->
+    <script src="js/ConfirmAds.js"></script>
+    <!-- 2019/05/12 phong end add-->
+    <script src="js/AllPlayer.js"></script>
+    <script src="js/ManageItem.js"></script>
+    <script src="js/ManageNews.js"></script>
+
+   
+
+</body>
+
+</html>

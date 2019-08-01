@@ -1,0 +1,17 @@
+tbody tr:hover{
+    background-color: orange;
+    color: white;
+}
+
+.selected{
+    background-color: rgb(223, 150, 14);
+    color: white;
+}
+
+#NewsTable td>a {
+    color: #7b1fc1;
+}
+#NewsTable td>a:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
