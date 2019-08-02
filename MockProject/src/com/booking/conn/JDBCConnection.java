@@ -1,17 +1,23 @@
 package com.booking.conn;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Database {
+public class JDBCConnection {
+	 public void JDBCConnection() throws ClassNotFoundException, SQLException
+	 {
+		 JDBCConnection db = new JDBCConnection();
+		 Connection connection = db.getMySQLConnection();
+		 System.out.println("Connected");
+	 }
+	
 	 public static Connection getMySQLConnection() throws ClassNotFoundException, SQLException{
 		 String hostName = "localhost";
 		
 		 String dbName = "bus";
 		 String userName = "root";
-		 String password = "passwosssrd";
+		 String password = "password";
 		
 		 return getMySQLConnection(hostName, dbName, userName, password);
 	 }
@@ -22,9 +28,11 @@ public class Database {
 	     
 	     Class.forName("com.mysql.jdbc.Driver");
 	 
-	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
+	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName 
+	    		 +"?characterEncoding=latin1&autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC";
 	 
-	     Connection conn = DriverManager.getConnection(connectionURL, userName,password);
+	     Connection conn = DriverManager.getConnection(connectionURL, userName,
+	             password);
 	     return conn;
 	 }
 }

@@ -4,34 +4,31 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import com.booking.conn.Database;
+import com.booking.conn.JDBCConnection;
 import com.booking.model.Account;
 
 import com.booking.model.Account;;
 
 public class CustomerDAOImp implements ICustomerDAO{
 
-	Database db = new Database();
+	JDBCConnection db = new JDBCConnection();
 	@Override
 	public Account FindAccountByUsernamePassword(String username, String password) {
 		// TODO Auto-generated method stub
 		
 		try
 		{
-			Connection connection = db.getMySQLConnection();			
-			
-			System.out.println(username +" ++++++"+password);
+			Connection connection = db.getMySQLConnection();
+
 			Statement statement = connection.createStatement();
-			
-			String sql = "select * from account where username ='duy' and password='duy'";
+
+			String sql = "select * from account where username=? and password=?";
 
 			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
 
 			pstm.setString(1, username);
 			pstm.setString(2, password);
-			
-			
-			ResultSet rs = statement.executeQuery(sql);
+			ResultSet rs = pstm.executeQuery();
 
 			while(rs.next())
 			{

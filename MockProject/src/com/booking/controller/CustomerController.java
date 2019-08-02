@@ -35,7 +35,7 @@ public class CustomerController extends HttpServlet{
 		// TODO Auto-generated method stub
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-//		System.out.println(username + " " + password);
+		System.out.println(username + " " + password);
 		
 		Account account = d.FindAccountByUsernamePassword(username, password);
 		
