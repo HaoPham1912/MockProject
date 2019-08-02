@@ -1,17 +1,54 @@
-tbody tr:hover{
-    background-color: orange;
+.toggle.btn {
+    min-width: 10rem;
+    min-height: 2.5rem;
+}
+
+#mytable tbody tr:hover{
+    background-color: rgba(97, 95, 95, 0.664);
     color: white;
 }
 
-.selected{
-    background-color: rgb(223, 150, 14);
+#mytable .selected{
+    background-color:  rgba(97, 95, 95, 0.877);
     color: white;
 }
-
-#NewsTable td>a {
-    color: #7b1fc1;
+.bg-gradient-primary{
+    background:   rgba(97, 95, 95, 0.877);
+   
 }
-#NewsTable td>a:hover{
-    font-weight: bold;
-    text-decoration: none;
+.sidebar-brand-text{
+    color: rgb(245, 164, 13);
+}
+.text-nav {
+    color: rgb(245, 164, 13);
+}
+.btn-primary:hover{
+    background-color: rgb(236, 155, 4);
+    border-color: rgb(223, 150, 14);
+    color:white;
+}
+.btn-primary{
+    background-color: rgb(245, 164, 13);
+    border-color: rgb(223, 150, 14);
+    color:  white;
+}
+.btn-edit{
+    background-color: #4e73df;
+border-color: #4e73df;
+}
+.page-item.active .page-link{
+    background-color: rgb(245, 164, 13);
+    border-color: rgb(223, 150, 14);
+}
+.page-item.active .page-link:hover{
+    background-color: rgb(236, 155, 4);
+    border-color: rgb(223, 150, 14);
+}
+.btn-warning{
+    background-color:  rgba(97, 95, 95, 0.877);
+    border-color: rgba(97, 95, 95, 0.877);
+}
+.btn-warning:hover{
+    background-color:  rgb(97, 95, 95);
+    border-color: rgba(97, 95, 95, 0.877);
 }
