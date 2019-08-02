@@ -9,35 +9,30 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <title>Cardoor - Car Rental HTML Template</title>
-    <link href="resource/assets/css/main.css" rel="stylesheet">
+
+    <link href="assets/css/main.css" rel="stylesheet">
     <!--=== Bootstrap CSS ===-->
-    <link href="resource/assets/css/bootstrap.min.css" rel="stylesheet">
-    <!--=== Animate CSS ===-->  
-    <link href="resource/assets/css/plugins/animate.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--=== Animate CSSs ===-->  
+    <link href="assets/css/plugins/animate.css" rel="stylesheet">
     <!--=== Vegas Min CSS ===-->
-    <link href="resource/assets/css/plugins/vegas.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/vegas.min.css" rel="stylesheet">
     <!--=== Slicknav CSS ===-->
-    <link href="resource/assets/css/plugins/slicknav.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/slicknav.min.css" rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->
-    <link href="resource/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
     <!--=== Owl Carousel CSS ===-->
-    <link href="resource/assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
     <!--=== Gijgo CSS ===-->
-    <link href="resource/assets/css/plugins/gijgo.css" rel="stylesheet">
+    <link href="assets/css/plugins/gijgo.css" rel="stylesheet">
     <!--=== FontAwesome CSS ===-->
-    <link href="resource/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
     <!--=== Theme Reset CSS ===-->
-    <link href="resource/assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/reset.css" rel="stylesheet">
     <!--=== Main Style CSS ===-->
     <link href="style.css" rel="stylesheet">
     <!--=== Responsive CSS ===-->
-    <link href="resource/assets/css/responsive.css" rel="stylesheet">
-
-
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 
 <body class="loader-active">
@@ -46,7 +41,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src=../../../assets/img/preloader.gif" alt="JSOFT">
+                <img src=assets/img/preloader.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -96,11 +91,11 @@
             <div class="container">
                 <div class="row">
                     <!--== Logo Start ==-->
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <a href="index3.html" class="logo">
-                            <img src="../assets/img/logo.png" alt="JSOFT">
+                            <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
-                    </div>
+                    </div> -->
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
@@ -259,7 +254,7 @@
                         <div class="single-footer-widget">
                             <h2>About Us</h2>
                             <div class="widget-body">
-                                <img src="../assets/img/logo.png" alt="JSOFT">
+                                <img src="assets/img/logo.png" alt="JSOFT">
                                 <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
 
                                 <div class="newsletter-area">
@@ -350,7 +345,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
-        <img src="../assets/img/scroll-top.png" alt="JSOFT">
+        <img src="assets/img/scroll-top.png" alt="JSOFT">
     </div>
     <!--== Scroll Top Area End ==-->
 
@@ -383,7 +378,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../assets/js/plugins/slicknav.min.js"></script>
     <!--=== Mian Js ===-->
     <script src="../assets/js/main.js"></script>
-
 </body>
 
 </html>
