@@ -10,13 +10,8 @@
 
     <title>Cardoor - Car Rental HTML Template</title>
 
-    <link href="assets/css/main.css" rel="stylesheet">
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!--=== Animate CSSs ===-->  
-    <link href="assets/css/plugins/animate.css" rel="stylesheet">
-    <!--=== Vegas Min CSS ===-->
-    <link href="assets/css/plugins/vegas.min.css" rel="stylesheet">
     <!--=== Slicknav CSS ===-->
     <link href="assets/css/plugins/slicknav.min.css" rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->
@@ -33,6 +28,12 @@
     <link href="style.css" rel="stylesheet">
     <!--=== Responsive CSS ===-->
     <link href="assets/css/responsive.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body class="loader-active">
@@ -41,7 +42,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src=assets/img/preloader.gif" alt="JSOFT">
+                <img src="assets/img/preloader.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -91,18 +92,18 @@
             <div class="container">
                 <div class="row">
                     <!--== Logo Start ==-->
-                    <!-- <div class="col-lg-4">
-                        <a href="index3.html" class="logo">
+                    <div class="col-lg-4">
+                        <a href="index.html" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
-                    </div> -->
+                    </div>
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="#">Home</a>
+                                <li><a href="#">Home</a>
                                     <ul>
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
@@ -119,7 +120,7 @@
                                         <li><a href="car-details.html">Car Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="index.html">Pages</a>
+                                <li class="active"><a href="index.html">Pages</a>
                                     <ul>
                                         <li><a href="package.html">Pricing</a></li>
                                         <li><a href="driver.html">Driver</a></li>
@@ -149,100 +150,65 @@
     </header>
     <!--== Header Area End ==-->
 
-    <!--== Slider Area Start ==-->
-    <section id="home-slider-area">
-        <div class="home-slider-item slider-bg-1 overlay">
-            <div class="container" style="max-height: 30px">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="slideshowcontent">
-                            <h1>BOOK A CAR TODAY!</h1>
-                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
-                        </div>
+    <!--== Page Title Area Start ==-->
+    <section id="page-title-area" class="section-padding overlay">
+        <div class="container">
+            <div class="row">
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Login</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="home-slider-item slider-bg-2 overlay">
-            <div class="container" style="max-height: 30px">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="slideshowcontent">
-                            <h1>SAVE YOUR MONEY</h1>
-                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="home-slider-item slider-bg-3 overlay">
-            <div class="container" style="max-height: 30px">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="slideshowcontent">
-                            <h1>ENJOY YOUR JOURNEY</h1>
-                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Page Title End -->
             </div>
         </div>
     </section>
-    <!--== Slider Area End ==-->
+    <!--== Page Title Area End ==-->
 
-    <!--== Book A Car Area Start ==-->
-    <div id="book-a-car">
+    <!--== Login Page Content Start ==-->
+    <section id="lgoin-page-wrap" class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="booka-car-content" style="padding-left: 200px">
-                        <form action="index3.html">
-                            <div class="header-text">
-                                <p >BusBooking.com- Hệ thống đặt vé xe khách</p><br/></div>
-                               
-                                <div class="pick-location bookinput-item">
-                                        <select class="custom-select">
-                                          <option selected>Leaving From</option>
-                                          <option value="1">Dhaka</option>
-                                          <option value="2">Comilla</option>
-                                          <option value="3">Barishal</option>
-                                          <option value="3">Rangpur</option>
-                                        </select>
-                                    </div>
-                                    <div class="pick-location bookinput-item">
-                                            <select class="custom-select">
-                                              <option selected>Returning On</option>
-                                              <option value="1">Dhaka</option>
-                                              <option value="2">Comilla</option>
-                                              <option value="3">Barishal</option>
-                                              <option value="3">Rangpur</option>
-                                            </select>
-                                        </div>
-                                <div class="pick-date bookinput-item">
-                                    <input id="startDate2" placeholder="Pick Date" />
-                                </div>                                                  
-                                <div class="bookcar-btn bookinput-item">
-                                    <button type="submit">Book Bus</button>
-                                </div>
-                        </form>
-                    </div>
+                <div class="col-lg-4 col-md-8 m-auto">
+                	<div class="login-page-content">
+                		<div class="login-form">
+                			<h3>Welcome Back!</h3>
+							<form action="index.html">
+								<div class="username">
+									<input type="text" placeholder="Email or Username">
+								</div>
+								<div class="password">
+									<input type="password" placeholder="Password">
+								</div>
+								<div class="log-btn">
+									<button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
+								</div>
+							</form>
+                		</div>
+                		
+                		<div class="login-other">
+                			<span class="or">or</span>
+                			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Login With Facebook</a>
+                			<a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Login With Google</a>
+                		</div>
+                		<div class="create-ac">
+                			<p>Don't have an account? <a href="register.html">Sign Up</a></p>
+                		</div>
+                		<div class="login-menu">
+                			<a href="about.html">About</a>
+                			<span>|</span>
+                			<a href="contact.html">Contact</a>
+                		</div>
+                	</div>
                 </div>
-            </div>
+        	</div>
         </div>
-    </div>
-    <!--== Book A Car Area End ==-->
+    </section>
+    <!--== Login Page Content End ==-->
 
-    
-    
- <!--== What We Do Area Start ==-->
- <section id="what-do-area" class="section-padding">
-    <div class="container">
-        
-
-    </div>
-</section>     
     <!--== Footer Area Start ==-->
     <section id="footer-area">
         <!-- Footer Widget Start -->
@@ -351,33 +317,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
-    <script src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
     <!--=== Jquery Migrate Min Js ===-->
-    <script src="../assets/js/jquery-migrate.min.js"></script>
+    <script src="assets/js/jquery-migrate.min.js"></script>
     <!--=== Popper Min Js ===-->
-    <script src="../assets/js/popper.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
     <!--=== Bootstrap Min Js ===-->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!--=== Gijgo Min Js ===-->
-    <script src="../assets/js/plugins/gijgo.js"></script>
+    <script src="assets/js/plugins/gijgo.js"></script>
     <!--=== Vegas Min Js ===-->
-    <script src="../assets/js/plugins/vegas.min.js"></script>
+    <script src="assets/js/plugins/vegas.min.js"></script>
     <!--=== Isotope Min Js ===-->
-    <script src="../assets/js/plugins/isotope.min.js"></script>
+    <script src="assets/js/plugins/isotope.min.js"></script>
     <!--=== Owl Caousel Min Js ===-->
-    <script src="../assets/js/plugins/owl.carousel.min.js"></script>
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
     <!--=== Waypoint Min Js ===-->
-    <script src="../assets/js/plugins/waypoints.min.js"></script>
+    <script src="assets/js/plugins/waypoints.min.js"></script>
     <!--=== CounTotop Min Js ===-->
-    <script src="../assets/js/plugins/counterup.min.js"></script>
+    <script src="assets/js/plugins/counterup.min.js"></script>
     <!--=== YtPlayer Min Js ===-->
-    <script src="../assets/js/plugins/mb.YTPlayer.js"></script>
+    <script src="assets/js/plugins/mb.YTPlayer.js"></script>
     <!--=== Magnific Popup Min Js ===-->
-    <script src="../assets/js/plugins/magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/magnific-popup.min.js"></script>
     <!--=== Slicknav Min Js ===-->
-    <script src="../assets/js/plugins/slicknav.min.js"></script>
+    <script src="assets/js/plugins/slicknav.min.js"></script>
+
     <!--=== Mian Js ===-->
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
