@@ -1,5 +1,7 @@
 package com.booking.service;
 
-public class ICustomerService {
+import com.booking.model.Account;
 
+public interface ICustomerService {
+	Account FindAccountByUsernamePassword(String username, String password);
 }

@@ -1,5 +1,7 @@
 package com.booking.dao;
 
-public interface ICustomerDAO {
+import com.booking.model.Account;
 
+public interface ICustomerDAO {
+	Account FindAccountByUsernamePassword(String username, String password);
 }

@@ -176,12 +176,12 @@
                 	<div class="login-page-content">
                 		<div class="login-form">
                 			<h3>Welcome Back!</h3>
-							<form action="index.html">
+							 <form method="POST" action="${pageContext.request.contextPath}/login">
 								<div class="username">
-									<input type="text" placeholder="Email or Username">
+									<input type="text" placeholder="Email or Username" name="username">
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Password">
+									<input type="password" placeholder="Password" name="password">
 								</div>
 								<div class="log-btn">
 									<button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
