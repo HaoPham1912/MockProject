@@ -100,6 +100,9 @@
                         <a href="index3.html" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
+                        <p class="sayhi">
+                        	say Hi to <b>${username}</b>
+                        </p>
                     </div>
                     <!--== Logo End ==-->
 
@@ -142,7 +145,7 @@
                                         <li><a href="article-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
                             </ul>
                         </nav>
                     </div>
