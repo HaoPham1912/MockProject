@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.booking.conn.JDBCConnection;
+import com.booking.model.Account;
 
 public class AccountDAOImp implements IAccountDAO{
 	JDBCConnection db = new JDBCConnection();
@@ -14,7 +16,6 @@ public class AccountDAOImp implements IAccountDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			System.out.println("Connected!!!");
-			Statement stm = conn.createStatement();
 			String sql="SELECT username FROM account WHERE username=?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, username);
@@ -52,5 +53,28 @@ public class AccountDAOImp implements IAccountDAO{
 			e.printStackTrace();
 		}
 		return -1;
+	}
+
+	@Override
+	public ArrayList<Account> findAllAccount() {
+		// TODO Auto-generated method stub
+		ArrayList<Account> array = new ArrayList<Account>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			System.out.println("Connected!!!");
+			Statement stm = conn.createStatement();
+			String sql="SELECT * FROM account";
+			ResultSet rs = stm.executeQuery(sql);
+			if(rs.next()) {
+				Account account = new Account();
+				account.setId(rs.getInt("id"));
+				account.setPassword(rs.getString("password"));
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return array;
 	}
 }
