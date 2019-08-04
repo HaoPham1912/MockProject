@@ -28,8 +28,8 @@ public class JDBCConnection {
 	     
 	     Class.forName("com.mysql.jdbc.Driver");
 	 
-	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
-//	    		 +"?characterEncoding=latin1&autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC";
+	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName
+	    		 +"?characterEncoding=latin1&autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC";
 	 
 	     Connection conn = DriverManager.getConnection(connectionURL, userName,
 	             password);

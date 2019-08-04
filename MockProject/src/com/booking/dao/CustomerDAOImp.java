@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.booking.conn.JDBCConnection;
 import com.booking.model.Account;
-
+import com.booking.model.Customer;
+import com.mysql.jdbc.PreparedStatement;
 import com.booking.model.Account;;
 
 public class CustomerDAOImp implements ICustomerDAO{
@@ -59,7 +61,7 @@ public class CustomerDAOImp implements ICustomerDAO{
 			PreparedStatement pstm = null;
 			String sql="INSERT INTO customer (id_acc_cus,name, phone, email,address)"+
 			" VALUES(?,?,?,?,?)";
-			pstm = conn.prepareStatement(sql);
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
 			pstm.setInt(1, id);
 			pstm.setString(2, name);
 			pstm.setString(3, phone);
@@ -70,5 +72,37 @@ public class CustomerDAOImp implements ICustomerDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	@Override
+	public ArrayList<Customer> findAllCustomer() {
+		// TODO Auto-generated method stub
+		ArrayList<Customer> arr = new ArrayList<Customer>();
+		try
+		{
+			Connection connection = db.getMySQLConnection();
+			
+			Statement statement = connection.createStatement();
+			
+		    String sql = "select * from account,customer where customer.id_acc_cus = account.id_acc";
+		 
+		    ResultSet rs = statement.executeQuery(sql);
+
+			while(rs.next())
+			{
+				Customer customer = new Customer();
+				customer.setUsername(rs.getString("username"));
+				customer.setPassword(rs.getString("password"));
+				customer.setName(rs.getString("name"));
+				customer.setEmail(rs.getString("email"));
+				customer.setAddress(rs.getString("address"));
+				customer.setPhone(rs.getString("phone"));	
+				arr.add(customer);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return arr;
 	}
 }

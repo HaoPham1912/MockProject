@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/Program/inject/mysql-connector-java-8.0.15.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/Program/inject/javax.inject-1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/Program/inject/jsp-api-2.1.jar.zip"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/Program/JSTL/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

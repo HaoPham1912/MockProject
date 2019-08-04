@@ -7,6 +7,20 @@ public class Employee {
 	private String emp_phone;
 	private String emp_address;
 	private String emp_email;
+	private String username;
+	private String password;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public int getId_emp() {
 		return id_emp;
 	}
