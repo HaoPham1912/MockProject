@@ -18,7 +18,6 @@ public class CustomerDAOImp implements ICustomerDAO{
 		
 		try
 		{
-			
 			Connection connection = db.getMySQLConnection();
 
 			System.out.println("Connected");
