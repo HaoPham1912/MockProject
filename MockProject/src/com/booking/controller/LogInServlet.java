@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.booking.dao.CustomerDAOImp;
 import com.booking.model.Account;
+import com.booking.ultils.MyUltil;
 
 /**
  * Servlet implementation class LogInServlet
@@ -45,7 +46,14 @@ public class LogInServlet extends HttpServlet {
 		}
 		else
 		{
-			response.sendRedirect(request.getContextPath()+"/dashboard");
+			if(account.getRole()==3)
+			{
+				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+			}
+			else
+			{
+				response.sendRedirect(request.getContextPath()+"/dashboard");
+			}
 		}
 	}
 
@@ -55,23 +63,31 @@ public class LogInServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
+		MyUltil myultil = new MyUltil();
+		HttpSession session = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(username + " " + password);
+		
+		String message = request.getParameter("message");
 		
 		Account account = d.FindAccountByUsernamePassword(username, password);
 		
 		if(account==null)
 		{
-			HttpSession session = request.getSession();
-			session.setAttribute("error", "Login failed");
 			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else
 		{	
-			HttpSession sessionLogin = request.getSession();
-			sessionLogin.setAttribute("user", account);
-			response.sendRedirect(request.getContextPath()+"/dashboard");
+			if(account.getRole()==3)
+			{
+				myultil.storeLoginedUser(session, account);
+				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+			}
+			else
+			{
+				myultil.storeLoginedUser(session, account);
+				response.sendRedirect(request.getContextPath()+"/dashboard");	
+			}
 		}
 	}
 

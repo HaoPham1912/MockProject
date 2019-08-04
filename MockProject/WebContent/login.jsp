@@ -188,20 +188,6 @@
 								</div>
 							</form>
                 		</div>
-                		
-                		<div class="login-other">
-                			<span class="or">or</span>
-                			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Login With Facebook</a>
-                			<a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Login With Google</a>
-                		</div>
-                		<div class="create-ac">
-                			<p>Don't have an account? <a href="register.html">Sign Up</a></p>
-                		</div>
-                		<div class="login-menu">
-                			<a href="about.html">About</a>
-                			<span>|</span>
-                			<a href="contact.html">Contact</a>
-                		</div>
                 	</div>
                 </div>
         	</div>

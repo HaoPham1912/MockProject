@@ -76,7 +76,30 @@
 ==========================================*/
 
 /*== Theme Defualt CSS ==*/
-
+#myTable
+{
+	border: 1px solid #E8E8E8;
+	margin-bottom: 10px;
+	background-color: #E8E8E8;
+}
+#myTable td
+{
+	width: 166px;
+	height: 50px;
+}
+#table td, #table th {
+	border: none;
+}
+.seat
+{
+	background-color: #FBFBFB;
+}
+#table
+{
+	width: 500px;
+	height: 400px;
+	border: 1px solid #E8E8E8;
+}
 .overlay {
 	position: relative;
 	z-index: 1;

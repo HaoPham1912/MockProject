@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.booking.ultils.MyUltil;
+
 /**
  * Servlet implementation class LogOutServlet
  */
@@ -31,8 +33,9 @@ public class LogOutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		MyUltil myultil = new MyUltil();
 		HttpSession session = request.getSession();
-		session.removeAttribute("user");
+		myultil.removeUser(session, "user");
 		RequestDispatcher rd =  request.getRequestDispatcher("/login.jsp");
 		rd.forward(request, response);
 	}

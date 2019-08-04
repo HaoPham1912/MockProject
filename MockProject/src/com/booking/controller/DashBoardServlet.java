@@ -35,7 +35,6 @@ public class DashBoardServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
 		Account account = (Account) session.getAttribute("user");
-		System.out.println(account);
 		if(account != null)
 		{
 			session.setAttribute("username", account.getUsername());

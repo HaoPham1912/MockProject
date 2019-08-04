@@ -14,12 +14,17 @@ public class MyUltil {
 	private static final String ATT_NAME_USER_NAME = "ATTRIBUTE_FOR_STORE_USER_NAME_IN_COOKIE";
 
 	public static void storeLoginedUser(HttpSession session, Account account) {
-		session.setAttribute("loginedUser", account);
+		session.setAttribute("user", account);
 	}
 
 	public static Account getLoginedUser(HttpSession session) {
-		Account loginedUser = (Account) session.getAttribute("loginedUser");
+		Account loginedUser = (Account) session.getAttribute("user");
 		return loginedUser;
+	}
+	
+	public static void removeUser(HttpSession session,String user)
+	{
+		session.removeAttribute(user);
 	}
 
 	public static void storeUserCookie(HttpServletResponse response, Account account) {
