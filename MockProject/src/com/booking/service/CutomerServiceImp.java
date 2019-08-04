@@ -14,5 +14,10 @@ public class CutomerServiceImp implements ICustomerService{
 		// TODO Auto-generated method stub	
 		return customerdao.FindAccountByUsernamePassword(username, password);
 	}
+	@Override
+	public void insertInfoCustomer(int id, String name, String phone, String email, String address) {
+		// TODO Auto-generated method stub
+		customerdao.insertInfoCustomer(id, name, phone, email, address);
+	}
 
 }
