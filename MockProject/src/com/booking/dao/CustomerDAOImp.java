@@ -52,13 +52,20 @@ public class CustomerDAOImp implements ICustomerDAO{
 	}
 	@Override
 	public void insertInfoCustomer(int id, String name, String phone, String email, String address) {
+		
 		// TODO Auto-generated method stub
 		try {
 			Connection conn = db.getMySQLConnection();
-			Statement stm = conn.createStatement();
+			PreparedStatement pstm = null;
 			String sql="INSERT INTO customer (id_acc_cus,name, phone, email,address)"+
-			" VALUES('"+id+"','"+name+"','"+phone+"','"+email+"','"+address+"')";
-			stm.executeUpdate(sql);
+			" VALUES(?,?,?,?,?)";
+			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id);
+			pstm.setString(2, name);
+			pstm.setString(3, phone);
+			pstm.setString(4, email);
+			pstm.setString(5, address);
+			pstm.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
