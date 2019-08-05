@@ -128,7 +128,7 @@
 								aria-labelledby="add" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
-										<form class="" action="${pageContext.request.contextPath}/admin-dashboard?action=login" method="POST">
+										<form class="" action="${pageContext.request.contextPath}/admin-dashboard?action=register" method="POST">
 											<!-- Modal Header -->
 											<div class="modal-header">
 												<h4 class="modal-title" style="margin-left: auto">
@@ -282,7 +282,7 @@
 											<td>${a.username}</td>
 											<td>${a.emp_name}</td>
 											<td>${a.emp_phone}</td>
-											<td>${a.id_emp}</td>
+											<td>${a.emp_email}</td>
 											<td>${a.emp_address}</td>
 											<td>
 												<p data-placement="top" data-toggle="tooltip" title="Edit">
@@ -410,11 +410,8 @@
 									</div>
 								</form>
 							</div>
-							<!-- /.modal-content -->
 						</div>
-						<!-- /.modal-dialog -->
 					</div>
-					<!-- Modal edit User-End -->
 				</div>
 			</div>
 			<!-- End of Main Content -->
