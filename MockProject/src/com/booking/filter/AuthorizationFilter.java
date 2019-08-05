@@ -39,17 +39,53 @@ public class AuthorizationFilter implements Filter{
 				}
 			}	
 		}
-		else if(url.startsWith("/MockProject/guest-dashboard"))
+		else if(url.startsWith("/MockProject/guest"))
+		{
+			if(url.startsWith("/MockProject/guest-dashboard"))
+			{
+				Account account = myultil.getLoginedUser(session);
+				if(account==null)
+				{
+					chain.doFilter(request, response);
+				}
+				else
+				{
+					if(account.getRole()==3)
+					{
+						chain.doFilter(request, response);
+					}
+					else if(account.getRole()==1)
+					{
+						resp.sendRedirect(req.getContextPath()+"/cus-dashboard");
+					}
+				}
+			}
+		}
+		else if(url.startsWith("/MockProject/cus"))
 		{
 			Account account = myultil.getLoginedUser(session);
 			if(account==null)
 			{
-				chain.doFilter(request, response);
+				if(url.startsWith("/MockProject/cus-dashboard"))
+				{
+					resp.sendRedirect(req.getContextPath()+"/guest-dashboard");
+				}
+				else
+				{
+					resp.sendRedirect(req.getContextPath()+"/login?message=not-login");
+				}
 			}
 			else
 			{
-				resp.sendRedirect(req.getContextPath()+"/dashboard");
-			}
+				if(account.getRole()==1)
+				{
+					chain.doFilter(request, response);
+				}
+				else
+				{
+					resp.sendRedirect(req.getContextPath()+"/login?message=not-permission");
+				}
+			}	
 		}
 		else
 		{

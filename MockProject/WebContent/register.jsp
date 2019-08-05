@@ -103,7 +103,7 @@
 					<div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="http://localhost:8080/MockProject/dashboard">
+                                <li class="active"><a href="http://localhost:8080/MockProject/guest-dashboard">
                                 Home</a>
                                     <!-- <ul>
                                         <li><a href="index.html">Home 1</a></li>

@@ -52,7 +52,7 @@ public class LogInServlet extends HttpServlet {
 			}
 			else
 			{
-				response.sendRedirect(request.getContextPath()+"/dashboard");
+				response.sendRedirect(request.getContextPath()+"/cus-dashboard");
 			}
 		}
 	}
@@ -86,7 +86,7 @@ public class LogInServlet extends HttpServlet {
 			else
 			{
 				myultil.storeLoginedUser(session, account);
-				response.sendRedirect(request.getContextPath()+"/dashboard");	
+				response.sendRedirect(request.getContextPath()+"/cus-dashboard");	
 			}
 		}
 	}

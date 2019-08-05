@@ -15,7 +15,7 @@ import com.booking.model.Account;
 /**
  * Servlet implementation class DashBoardServlet
  */
-@WebServlet({ "/DashBoardServlet", "/dashboard" })
+@WebServlet({ "/DashBoardServlet", "/cus-dashboard" })
 public class DashBoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
