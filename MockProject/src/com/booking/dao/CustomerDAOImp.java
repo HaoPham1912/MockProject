@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import com.booking.conn.JDBCConnection;
 import com.booking.model.Account;
 import com.booking.model.Customer;
-import com.mysql.jdbc.PreparedStatement;
 import com.booking.model.Account;;
 
 public class CustomerDAOImp implements ICustomerDAO{
@@ -58,10 +57,9 @@ public class CustomerDAOImp implements ICustomerDAO{
 		// TODO Auto-generated method stub
 		try {
 			Connection conn = db.getMySQLConnection();
-			PreparedStatement pstm = null;
 			String sql="INSERT INTO customer (id_acc_cus,name, phone, email,address)"+
 			" VALUES(?,?,?,?,?)";
-			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id);
 			pstm.setString(2, name);
 			pstm.setString(3, phone);

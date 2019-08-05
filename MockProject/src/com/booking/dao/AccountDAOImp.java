@@ -1,6 +1,7 @@
 package com.booking.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -40,8 +41,12 @@ public class AccountDAOImp implements IAccountDAO{
 			Statement stm = conn.createStatement();
 			String sql=
 					"INSERT INTO account (username, password, role_id)"+
-			"VALUES('"+username+"','"+password+"','"+role+"')";
-			stm.execute(sql);
+			"VALUES(?,?,?)";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, username);
+			pstm.setString(2, password);
+			pstm.setInt(3, role);
+			pstm.executeUpdate();
 			ResultSet rs;
 			rs=stm.executeQuery("Select id_acc FROM account WHERE username ='"+username+"'");
 			if(rs.next()) {
