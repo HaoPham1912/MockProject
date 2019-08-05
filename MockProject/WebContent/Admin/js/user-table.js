@@ -29,7 +29,7 @@ function callContent(element) {
 function editUser() {
   if (selectedUser.length > 0) {
      var nameUser = selectedUser[0];
-    alert(selectedUser.length);
+    alert(nameUser);
   
     $("#idUserEdit").attr('value',selectedUser[0]);
     $("#usernameUserEdit").attr('value',selectedUser[1]);

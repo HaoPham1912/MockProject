@@ -28,13 +28,13 @@ function callContent(element) {
 
 function editUser() {
   if (selectedUser.length > 0) {
-     var nameUser = selectedUser[0];
+     var nameUser = selectedUser[1];
     alert(nameUser);
-  
-    $("#nameUserEdit").attr('value',selectedUser[0]);
-    $("#phoneUserEdit").attr('value',selectedUser[1]);
-    $("#emailUserEdit").attr('value',selectedUser[2]);
-    $("#addressUserEdit").attr('value',selectedUser[3]);
+    $("#idUserEdit").attr('value',selectedUser[0]);
+    $("#nameUserEdit").attr('value',selectedUser[1]);
+    $("#phoneUserEdit").attr('value',selectedUser[2]);
+    $("#emailUserEdit").attr('value',selectedUser[3]);
+    $("#addressUserEdit").attr('value',selectedUser[4]);
     $("#editUser").modal("show");
     //gọi ajax đổ vào modal updateAdvertise
   } else {

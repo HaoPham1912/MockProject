@@ -242,7 +242,7 @@
 							</table>
 						</div>
 					</div>
-					<%-- <div class="col-md-12">
+					<div class="col-md-12">
 						<div class="table-responsiv">
 							<strong>Employee</strong>
 						</div>
@@ -290,7 +290,7 @@
 								</tbody>
 							</table>
 						</div>
-					</div> --%>
+					</div>
 					<!-- Pháº§n ná»i dung trong báº£ng user-End -->
 					<!-- Modal delete User-Start -->
 					<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
