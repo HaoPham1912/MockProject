@@ -144,5 +144,22 @@ public class CustomerDAOImp implements ICustomerDAO{
 		}
 		return false;
 	}
+	@Override
+	public int findId_acc(String username) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="SELECT id_acc FROM account WHERE username =?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, username);
+			ResultSet rs = pstm.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return -1;
+	}
 	
 }

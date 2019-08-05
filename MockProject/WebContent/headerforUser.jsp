@@ -144,6 +144,7 @@
                                     </ul>
                                 </li> -->
                                 <li><a href="#">Contact</a></li>
+                                <li><a href="${pageContext.request.contextPath}/updateInfoCus">Edit Profile</a></li>
                                 <li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
                             </ul>
                         </nav>
