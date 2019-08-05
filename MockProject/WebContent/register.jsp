@@ -175,23 +175,31 @@
 						<div class="login-form">
 							<h3>Sign Up</h3>
 							<form action="${pageContext.request.contextPath}/register" method="POST">
-								<div class="username">
-									<input type="text" placeholder="Name" name="name">
+								<div class="name">
+									<input type="text" placeholder="Name" name="name" required>
 								</div>
-								<div class="username">
+								<div class="email">
 									<input type="email" placeholder="Email" name="email">
 								</div>
-								<div class="username">
+								<div class="phone">
 									<input type="text" placeholder="Phone Number" name="phone">
 								</div>
-								<div class="username">
+								<div class="address">
 									<input type="text" placeholder="Address" name="address">
 								</div>
 								<div class="username">
-									<input type="text" placeholder="Username" name="username">
+										<input type="text" placeholder="Username" name="username"
+										pattern="[A-Za-z0-9]{1,}"
+										minlength="10" 
+										title="Username không được chứa Unicode!!!" 
+										required>		
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Password" name="password">
+									<input type="password" placeholder="Password" name="password "
+									maxlength="15" minlength="8" 
+									pattern="[A-Za-z0-9]{1,}"
+									required
+									>
 								</div>
 								<div class="log-btn">
 									<button type="submit">
