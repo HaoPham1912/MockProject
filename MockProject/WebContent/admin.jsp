@@ -23,7 +23,9 @@
 <link href="Admin/css/sb-admin-2.min.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="Admin/vendor/datatables/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="Admin/css/adminpage.css">
+<link rel="stylesheet" href="Admin/css/AdminPage.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -85,12 +87,12 @@
 							aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
 						</a>
 							<div class="topbar-divider d-none d-sm-block"></div> <!-- Nav Item - User Information -->
-							<!-- Tên thằng admin -->
+							<!-- TÃªn tháº±ng admin -->
 						<li class="nav-item dropdown no-arrow"><a
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+								class="mr-2 d-none d-lg-inline text-gray-600 small">${user.username}</span>
 								<img class="img-profile rounded-circle"
 								src="Admin/assets/img/avataradmin.jpg">
 						</a></li>
@@ -98,7 +100,7 @@
 				</nav>
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
-				<!-- Quản lý user -->
+				<!-- Quáº£n lÃ½ user -->
 				<div class="container-fluid generalClass" id="manageUser">
 					<!-- Page Heading -->
 					<div
@@ -121,7 +123,7 @@
 							</p>
 						</div>
 						<div>
-							<!-- Thêm user-Start -->
+							<!-- ThÃªm user-Start -->
 							<div class="modal fade" id="addUser" tabindex="-1" role="dialog"
 								aria-labelledby="add" aria-hidden="true">
 								<div class="modal-dialog">
@@ -134,15 +136,15 @@
 												</h4>
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
 											</div>
-											<!-- Modal để create new user-Start -->
+											<!-- Modal Äá» create new user-Start -->
 											<div class="modal-body">
-												<!-- Tên thằng user -->
+												<!-- TÃªn tháº±ng user -->
 												<div class="form-group">
 													<h4 class="text-black-50">Name:</h4>
 													<input class="form-control " id="nameUser" type="text"
 														placeholder="Le Van Duy" required>
 												</div>
-												<!-- Tên thằng user -->
+												<!-- TÃªn tháº±ng user -->
 												<!-- Phone user -->
 												<div class="form-group">
 													<h4 class="text-black-50">Phone:</h4>
@@ -177,18 +179,18 @@
 												<div class="modal-footer">
 													<button type="submit" id="submitAddPokestop"
 														class="btn btn-warning btn-lg" style="width: 100%;">
-														<span class="	fas fa-check-circle"></span>Thêm
+														<span class="	fas fa-check-circle"></span>ThÃªm
 													</button>
 												</div>
 											</div>
-											<!-- Modal để create new user-End -->
+											<!-- Modal Äá» create new user-End -->
 										</form>
 									</div>
 									<!-- /.modal-content -->
 								</div>
 								<!-- /.modal-dialog -->
 							</div>
-							<!-- Thêm user-End -->
+							<!-- ThÃªm user-End -->
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -200,6 +202,7 @@
 						<div class="table-responsive">
 							<table id="mytable" class="table table-bordred table-striped">
 								<thead>
+									<th>#</th>
 									<th>Username</th>
 									<th>Name</th>
 									<th>Phone</th>
@@ -211,6 +214,7 @@
 								<tbody>
 									 <c:forEach items="${customerList}" var="a">
 										<tr>
+											<td>${a.id_acc_cus}</td>
 											<td>${a.username}</td>
 											<td>${a.name}</td>
 											<td>${a.phone}</td>
@@ -238,7 +242,7 @@
 							</table>
 						</div>
 					</div>
-					<div class="col-md-12">
+					<%-- <div class="col-md-12">
 						<div class="table-responsiv">
 							<strong>Employee</strong>
 						</div>
@@ -247,6 +251,7 @@
 						<div class="table-responsive">
 							<table id="mytable" class="table table-bordred table-striped">
 								<thead>
+									<th>ID</th>
 									<th>Username</th>
 									<th>Name</th>
 									<th>Phone</th>
@@ -258,10 +263,11 @@
 								<tbody>
 									 <c:forEach items="${employeeList}" var="a">
 										<tr>
+											<td>${a.id_acc_emp}</td>
 											<td>${a.username}</td>
 											<td>${a.emp_name}</td>
 											<td>${a.emp_phone}</td>
-											<td>${a.emp_email}</td>
+											<td>${a.id_emp}</td>
 											<td>${a.emp_address}</td>
 											<td>
 												<p data-placement="top" data-toggle="tooltip" title="Edit">
@@ -284,8 +290,8 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-					<!-- Phần nội dung trong bảng user-End -->
+					</div> --%>
+					<!-- Pháº§n ná»i dung trong báº£ng user-End -->
 					<!-- Modal delete User-Start -->
 					<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
 						aria-labelledby="delete" aria-hidden="true">
@@ -307,11 +313,11 @@
 								<div class="modal-footer ">
 									<button id="yesdeleteUser" type="button"
 										class="btn btn-success">
-										<span class="	fas fa-check-circle"></span> Yes
+										<span class="	fas fa-check-circle"></span>Â Yes
 									</button>
 									<button type="button" class="btn btn-default"
 										data-dismiss="modal">
-										<span class="fas fa-remove"></span> No
+										<span class="fas fa-remove"></span>Â No
 									</button>
 								</div>
 							</div>
@@ -325,7 +331,7 @@
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
-								<form class="" action="" method="">
+								<form class="" action="" method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
 										<h4 class="modal-title" style="margin-left: auto">
@@ -334,6 +340,16 @@
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 									</div>
 									<div class="modal-body">
+										<div class="form-group">
+											<h4 class="text-black-50">ID User:</h4>
+											<input class="form-control " id="idUserEdit" type="text"
+												required>
+										</div>
+										<div class="form-group">
+											<h4 class="text-black-50">User Name:</h4>
+											<input class="form-control " id="usernameUserEdit" type="text"
+												 required>
+										</div> 
 										<div class="form-group">
 											<h4 class="text-black-50">Name:</h4>
 											<input class="form-control " id="nameUserEdit" type="text"
@@ -369,8 +385,6 @@
 												data-on="Customer" data-off="Ticket Seller" checked>
 										</div>
 										<!-- Set role-End -->
-
-
 										<div class="modal-footer">
 											<button type="submit" id="submitEditUser"
 												class="btn btn-warning btn-lg" style="width: 100%;">
@@ -393,11 +407,11 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Duy Trân Hảo Văn 2019</span>
+						<span>Copyright &copy; Duy TrÃ¢n Háº£o VÄn 2019</span>
 					</div>
 				</div>
 			</footer>
-			<!-- End of Footer -->
+			<!-- End of Footer -->		
 		</div>
 		<!-- End of Content Wrapper -->
 	</div>
@@ -420,6 +434,7 @@
 		src="Admin/https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
 	<!-- Page level custom scripts -->
 	<script src="Admin/js/user-table.js"></script>
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 </body>
 

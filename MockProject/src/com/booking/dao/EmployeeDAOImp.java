@@ -29,6 +29,7 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 			while(rs.next())
 			{
 				Employee emp = new Employee();
+				emp.setId_acc_emp(rs.getInt("id_acc_emp"));
 				emp.setUsername(rs.getString("username"));
 				emp.setPassword(rs.getString("password"));
 				emp.setEmp_name(rs.getString("emp_name"));

@@ -29,14 +29,15 @@ function callContent(element) {
 function editUser() {
   if (selectedUser.length > 0) {
      var nameUser = selectedUser[0];
-    alert(nameUser);
+    alert(selectedUser.length);
   
-    $("#nameUserEdit").attr('value',selectedUser[0]);
-    $("#phoneUserEdit").attr('value',selectedUser[1]);
-    $("#emailUserEdit").attr('value',selectedUser[2]);
-    $("#addressUserEdit").attr('value',selectedUser[3]);
+    $("#idUserEdit").attr('value',selectedUser[0]);
+    $("#usernameUserEdit").attr('value',selectedUser[1]);
+    $("#nameUserEdit").attr('value',selectedUser[2]);
+    $("#phoneUserEdit").attr('value',selectedUser[3]);
+    $("#emailUserEdit").attr('value',selectedUser[4]);
+    $("#addressUserEdit").attr('value',selectedUser[5]);
     $("#editUser").modal("show");
-    //gọi ajax đổ vào modal updateAdvertise
   } else {
     alert("Please choose user to edit!!!");
   }
