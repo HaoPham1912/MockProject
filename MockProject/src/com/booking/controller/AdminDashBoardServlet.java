@@ -35,6 +35,8 @@ public class AdminDashBoardServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 //		response.setIntHeader("Refresh", 5);
 		request.setAttribute("customerList", customerDAO.findAllCustomer());
@@ -48,6 +50,8 @@ public class AdminDashBoardServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
