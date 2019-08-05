@@ -100,6 +100,7 @@
                         <a href="index3.html" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
+                        <p>Say Hi to ${username}</p>
                     </div>
                     <!--== Logo End ==-->
 

@@ -107,15 +107,16 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="#">Home</a>
+                                <li class="active"><a href="http://localhost:8080/MockProject/dashboard">
+                                Home</a>
                                     <!-- <ul>
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
                                         <li><a href="index3.html">Home 3</a></li>
                                     </ul> -->
                                 </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">services</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">services</a></li>
                                 <li><a href="#">Coach</a>
                                     <!-- <ul>
                                         <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>

@@ -39,6 +39,18 @@ public class AuthorizationFilter implements Filter{
 				}
 			}	
 		}
+		else if(url.startsWith("/MockProject/guest-dashboard"))
+		{
+			Account account = myultil.getLoginedUser(session);
+			if(account==null)
+			{
+				chain.doFilter(request, response);
+			}
+			else
+			{
+				resp.sendRedirect(req.getContextPath()+"/dashboard");
+			}
+		}
 		else
 		{
 			chain.doFilter(request, response);
