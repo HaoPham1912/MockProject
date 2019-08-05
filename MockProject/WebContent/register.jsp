@@ -182,7 +182,9 @@
 									<input type="email" placeholder="Email" name="email">
 								</div>
 								<div class="phone">
-									<input type="text" placeholder="Phone Number" name="phone">
+								<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
+									<input type="text" pattern="[0-9]{9}" name="patternTest" title="Phone must be a number that contains 9 characters long" required />
+									
 								</div>
 								<div class="address">
 									<input type="text" placeholder="Address" name="address">
@@ -190,8 +192,8 @@
 								<div class="username">
 										<input type="text" placeholder="Username" name="username"
 										pattern="[A-Za-z0-9]{1,}"
-										minlength="10" 
-										title="Username không được chứa Unicode!!!" 
+										maxlength="10" 
+										title="Username must not contain Unicode!!!" 
 										required>		
 								</div>
 								<div class="password">
