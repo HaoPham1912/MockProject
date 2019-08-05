@@ -17,7 +17,6 @@ public class CustomerDAOImp implements ICustomerDAO{
 	@Override
 	public Account FindAccountByUsernamePassword(String username, String password) {
 		// TODO Auto-generated method stub
-		
 		try
 		{
 			Connection connection = db.getMySQLConnection();
@@ -105,4 +104,25 @@ public class CustomerDAOImp implements ICustomerDAO{
 		}
 		return arr;
 	}
+	@Override
+	public boolean updateCustomer(String name, String phone, String email, String address,int id_acc_cus) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="update customer set name=?,phone=?,email=?,address=? where id_acc_cus=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, name);
+			pstm.setString(2, phone);
+			pstm.setString(3, email);
+			pstm.setString(4, address);
+			pstm.setInt(5, id_acc_cus);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 }

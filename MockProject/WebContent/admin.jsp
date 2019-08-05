@@ -128,7 +128,7 @@
 								aria-labelledby="add" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
-										<form class="" action="" method="">
+										<form class="" action="${pageContext.request.contextPath}/admin-dashboard?action=login" method="POST">
 											<!-- Modal Header -->
 											<div class="modal-header">
 												<h4 class="modal-title" style="margin-left: auto">
@@ -137,19 +137,33 @@
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
 											</div>
 											<!-- Modal Äá» create new user-Start -->
-											<div class="modal-body">
+																							<div class="form-group">
+													<h4 class="text-black-50">User Name:</h4>
+													<input class="form-control " id="User" type="text"
+														placeholder="Username" name="username1" required>
+												</div>
+												<!-- Username End -->
+												<!-- Begin pass -->
+												<div class="form-group">
+													<h4 class="text-black-50">Password:</h4>
+													<input class="form-control " id="password" type="text"
+														placeholder="Password" name="password1" required>
+												</div>
+												<!-- End Pass -->
+											
+												<!-- Tên thằng user -->
 												<!-- TÃªn tháº±ng user -->
 												<div class="form-group">
 													<h4 class="text-black-50">Name:</h4>
 													<input class="form-control " id="nameUser" type="text"
-														placeholder="Le Van Duy" required>
+														placeholder="Le Van Duy" name="name1" required>
 												</div>
 												<!-- TÃªn tháº±ng user -->
 												<!-- Phone user -->
 												<div class="form-group">
 													<h4 class="text-black-50">Phone:</h4>
 													<input class="form-control " id="phoneUser" type="number"
-														placeholder="01293948384" pattern="[0-9]{1,}" title=""
+														placeholder="01293948384" name="phone1" pattern="[0-9]{1,}" title=""
 														required>
 												</div>
 												<!-- Phone user -->
@@ -157,23 +171,24 @@
 												<div class="form-group">
 													<h4 class="text-black-50">Email:</h4>
 													<input class="form-control " id="emailUser" type="email"
-														name="Email" accept="" placeholder="example@gmail.com"
-														title="Email is unvalid!" required>
+													 accept="" placeholder="example@gmail.com"
+														name="email1" title="Email is unvalid!" required>
 												</div>
 												<!-- Email User -->
 												<!-- Address User- Start -->
 												<div class="form-group">
 													<h4 class="text-black-50">Address:</h4>
 													<input class="form-control " id="addressUser" type="text"
-														placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
+														placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" name="address1"
 														title="" required>
 												</div>
 												<!-- Address User- End -->
 												<!-- Set role-Start -->
 												<div class="form-group">
-													<input id="toggle-event" type="checkbox"
-														data-toggle="toggle" data-on="Customer"
-														data-off="Ticket Seller" checked>
+													<h4 class="text-black-50">Role:</h4>
+													<input class="form-control " id="Role" type="text"
+														placeholder="Role 1,2,3" name="role1"
+														title="" required>
 												</div>
 												<!-- Set role-End -->
 												<div class="modal-footer">
@@ -331,7 +346,7 @@
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
-								<form class="" action="" method="POST">
+								<form class="" action="${pageContext.request.contextPath}/admin-dashboard?action=update" method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
 										<h4 class="modal-title" style="margin-left: auto">
@@ -342,23 +357,23 @@
 									<div class="modal-body">
 										<div class="form-group">
 											<h4 class="text-black-50">ID User:</h4>
-											<input class="form-control " id="idUserEdit" type="text"
+											<input class="form-control" id="idUserEdit" type="text" name="idUserEdit"
 												required>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">User Name:</h4>
-											<input class="form-control " id="usernameUserEdit" type="text"
+											<input class="form-control " id="usernameUserEdit" type="text" name="usernameUserEdit"
 												 required>
 										</div> 
 										<div class="form-group">
 											<h4 class="text-black-50">Name:</h4>
-											<input class="form-control " id="nameUserEdit" type="text"
+											<input class="form-control " id="nameUserEdit" type="text" name="nameUserEdit"
 												placeholder="Le Van Duy" required>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneUserEdit" type="number"
+											<input class="form-control " id="phoneUserEdit" type="number" name="phoneUserEdit"
 												placeholder="01293948384" pattern="[0-9]{1,}" title=""
 												required>
 										</div>
@@ -366,7 +381,7 @@
 										<!-- Email User -->
 										<div class="form-group">
 											<h4 class="text-black-50">Email:</h4>
-											<input class="form-control " id="emailUserEdit" type="email"
+											<input class="form-control " id="emailUserEdit" type="email" name="emailUserEdit"
 												name="Email" accept="" placeholder="example@gmail.com"
 												title="Email is unvalid!" required>
 										</div>
@@ -374,7 +389,7 @@
 										<!-- Address User- Start -->
 										<div class="form-group">
 											<h4 class="text-black-50">Address:</h4>
-											<input class="form-control " id="addressUserEdit" type="text"
+											<input class="form-control " id="addressUserEdit" type="text" name="addressUserEdit"
 												placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
 												title="" required>
 										</div>
@@ -388,7 +403,7 @@
 										<div class="modal-footer">
 											<button type="submit" id="submitEditUser"
 												class="btn btn-warning btn-lg" style="width: 100%;">
-												<span class="	fas fa-check-circle"></span>Update
+												<span class="fas fa-check-circle"></span>Update
 											</button>
 											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
 										</div>
@@ -404,13 +419,13 @@
 			</div>
 			<!-- End of Main Content -->
 			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
+			<!-- <footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
 						<span>Copyright &copy; Duy TrÃ¢n Háº£o VÄn 2019</span>
 					</div>
 				</div>
-			</footer>
+			</footer> -->
 			<!-- End of Footer -->		
 		</div>
 		<!-- End of Content Wrapper -->

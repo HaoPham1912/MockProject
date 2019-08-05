@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.booking.dao.AccountDAOImp;
 import com.booking.dao.CustomerDAOImp;
 import com.booking.dao.EmployeeDAOImp;
 
@@ -20,6 +21,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	CustomerDAOImp customerDAO = new CustomerDAOImp();
 	EmployeeDAOImp employeeDAO = new EmployeeDAOImp();
+	AccountDAOImp accountDAOImp = new AccountDAOImp();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -46,6 +48,60 @@ public class AdminDashBoardServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		String action=request.getParameter("action");
+		if(action.equals("update"))
+		{
+			String name = request.getParameter("nameUserEdit");
+			String phone = request.getParameter("phoneUserEdit");
+			String email = request.getParameter("emailUserEdit");
+			String address = request.getParameter("addressUserEdit");
+			String id_acc_cus = request.getParameter("idUserEdit");
+			if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
+			{
+				System.out.println("Success");
+				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+			}
+			else
+			{
+				System.out.println("Failed");
+			}
+		}
+		else if(action.equals("login"))
+		{
+			String name = request.getParameter("name1");
+			String phone = request.getParameter("phone1");
+			String email = request.getParameter("email1");
+			String address = request.getParameter("address1");
+			String user = request.getParameter("username1");
+			String pass = request.getParameter("password1");
+			String role = request.getParameter("role1");
+			boolean check = accountDAOImp.checkAvailableAccount(user);
+			if(!check) {
+				int idnew= Integer.parseInt(role);
+				System.out.println(idnew);
+				if(idnew==1)
+				{
+					int id= accountDAOImp.insertAccount(user, pass, idnew);
+					System.out.println("Them thanh cong account");
+					System.out.println("id accout is: "+id);
+					customerDAO.insertInfoCustomer(id, name, phone, email, address);
+					System.out.println("Dang ki thanh cong");
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+				}else if(idnew==2) {
+					int id= accountDAOImp.insertAccount(user, pass, idnew);
+					System.out.println("Them thanh cong account");
+					System.out.println("id accout is: "+id);
+					employeeDAO.insertInfoEmployee(id, name, phone, email, address);
+					System.out.println("Dang ki thanh cong");
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+				}
+			
+			}
+			else {
+				System.out.println("username avail!!! Retry!!");
+				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+			}
+		}
 	}
 
 }
