@@ -12,17 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.booking.dao.CustomerDAOImp;
 
 /**
- * Servlet implementation class CusDashBoardServlet
+ * Servlet implementation class UpdateInfoCusServlet
  */
-@WebServlet({"/updateInfoCus","/CusDashBoardServlet" })
-public class CusDashBoardServlet extends HttpServlet {
+@WebServlet({"/cus-updateInfo"})
+public class UpdateInfoCusServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	CustomerDAOImp cus = new CustomerDAOImp();
-
+	CustomerDAOImp cus = new CustomerDAOImp();   
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public CusDashBoardServlet() {
+	public UpdateInfoCusServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -43,33 +42,33 @@ public class CusDashBoardServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 		String action=request.getParameter("action");
 		//		System.out.println("action: " +action);
-		if(action.equals("update")) {
-			String username = request.getParameter("username");
-			String name = request.getParameter("name");
-			String email = request.getParameter("email");
-			String phone = request.getParameter("phone");
-			String address = request.getParameter("address");
-			int id_acc= cus.findId_acc(username);
-			if(id_acc>0) {
-				cus.updateCustomer(name, phone, email, address, id_acc);
-				if(cus.updateCustomer(name, phone, email, address, id_acc)) {
-					System.out.println("Update Success!!!");
-					//response.sendRedirect(request.getContextPath()+"/dashboard");
-					
-				}
-				else {
-					System.out.println("Can't Update!!!");
-				}
+		String username = request.getParameter("username");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		String address = request.getParameter("address");
+		int id_acc= cus.findId_acc(username);
+		if(id_acc>0) {
+			cus.updateCustomer(name, phone, email, address, id_acc);
+			if(cus.updateCustomer(name, phone, email, address, id_acc)) {
+				System.out.println("Update Success!!!");
+				//response.sendRedirect(request.getContextPath()+"/dashboard");
+
 			}
 			else {
-				System.out.println("Your username is Incorrect!!!!");
+				System.out.println("Can't Update!!!");
 			}
 		}
+		else {
+			System.out.println("Your username is Incorrect!!!!");
+		}
 	}
+
 }
