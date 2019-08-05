@@ -9,4 +9,6 @@ public interface IEmployeeDAO {
 	ArrayList<Employee> findAllEmployee();
 	Account FindAccountByUsernamePassword(String username, String password);
 	void insertInfoEmployee(int id, String name, String phone, String email, String address);
+	boolean findEmployeeById_acc(int id_acc);
+	boolean updateEmployee(String name, String phone, String email,String address,int id_acc_cus);
 }

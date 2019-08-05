@@ -137,7 +137,7 @@
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
 											</div>
 											<!-- Modal Äá» create new user-Start -->
-																							<div class="form-group">
+												<div class="form-group">
 													<h4 class="text-black-50">User Name:</h4>
 													<input class="form-control " id="User" type="text"
 														placeholder="Username" name="username1" required>
@@ -189,6 +189,9 @@
 													<input class="form-control " id="Role" type="text"
 														placeholder="Role 1,2,3" name="role1"
 														title="" required>
+													<input id="toggle-event" type="checkbox" data-size="large"
+														data-toggle="toggle" data-on="Customer"
+														data-off="Ticket Seller" checked>
 												</div>
 												<!-- Set role-End -->
 												<div class="modal-footer">
@@ -395,10 +398,17 @@
 										</div>
 										<!-- Address User- End -->
 										<!-- Set role-Start -->
-										<div class="form-group">
-											<input id="toggle-event" type="checkbox" data-toggle="toggle"
-												data-on="Customer" data-off="Ticket Seller" checked>
-										</div>
+										<div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-admin ">
+                                                  <input type="radio" name="options" id="optionAdminRole"  > Admin
+                                                </label>
+                                                <label class="btn btn-seller">
+                                                  <input type="radio" name="options" id="optionSellerRole" > Ticket Seller
+                                                </label>
+                                                <label class="btn btn-user">
+                                                  <input type="radio" name="options" id="optionUserRole" > User
+                                                </label>
+                                              </div>
 										<!-- Set role-End -->
 										<div class="modal-footer">
 											<button type="submit" id="submitEditUser"
