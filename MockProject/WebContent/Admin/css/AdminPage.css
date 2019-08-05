@@ -2,7 +2,15 @@
     min-width: 10rem;
     min-height: 2.5rem;
 }
+#mytableseller tbody tr:hover{
+    background-color: rgba(97, 95, 95, 0.664);
+    color: white;
+}
 
+#mytableseller .selected{
+    background-color:  rgba(97, 95, 95, 0.877);
+    color: white;
+}
 #mytable tbody tr:hover{
     background-color: rgba(97, 95, 95, 0.664);
     color: white;

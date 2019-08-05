@@ -1,4 +1,10 @@
-$("#mytable").DataTable();
+//$("#mytable").DataTable();
+$(document).ready(function() {
+  $('#mytable').DataTable( {
+      "lengthMenu": [[1, 2, 3, -1], [1, 2, 3, "All"]]
+  } );
+} );
+
 callContent("manageUser");
 var selectedUser = [];
 
