@@ -183,7 +183,7 @@
 								</div>
 								<div class="phone">
 								<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{9}" name="patternTest" title="Phone must be a number that contains 9 characters long" required />
+									<input type="text" pattern="[0-9]{10}"  placeholder="Phone Number" name="phone" title="Phone must be a number that contains 10 characters long" required />
 									
 								</div>
 								<div class="address">
@@ -197,7 +197,7 @@
 										required>		
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Password" name="password "
+									<input type="password" placeholder="Password" name="password"
 									maxlength="15" minlength="8" 
 									pattern="[A-Za-z0-9]{1,}"
 									required
