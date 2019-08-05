@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +24,9 @@
 <link rel="stylesheet"
 	href="Admin/vendor/datatables/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="Admin/css/AdminPage.css">
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link
+	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+	rel="stylesheet">
 
 
 </head>
@@ -87,7 +89,7 @@
 							aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
 						</a>
 							<div class="topbar-divider d-none d-sm-block"></div> <!-- Nav Item - User Information -->
-							<!-- TÃªn tháº±ng admin -->
+							<!-- TÃÂªn thÃ¡ÂºÂ±ng admin -->
 						<li class="nav-item dropdown no-arrow"><a
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -100,7 +102,7 @@
 				</nav>
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
-				<!-- Quáº£n lÃ½ user -->
+				<!-- QuÃ¡ÂºÂ£n lÃÂ½ user -->
 				<div class="container-fluid generalClass" id="manageUser">
 					<!-- Page Heading -->
 					<div
@@ -123,12 +125,14 @@
 							</p>
 						</div>
 						<div>
-							<!-- ThÃªm user-Start -->
+							<!-- ThÃÂªm user-Start -->
 							<div class="modal fade" id="addUser" tabindex="-1" role="dialog"
 								aria-labelledby="add" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
-										<form class="" action="${pageContext.request.contextPath}/admin-dashboard?action=register" method="POST">
+										<form class=""
+											action="${pageContext.request.contextPath}/admin-dashboard?action=register"
+											method="POST">
 											<!-- Modal Header -->
 											<div class="modal-header">
 												<h4 class="modal-title" style="margin-left: auto">
@@ -136,79 +140,78 @@
 												</h4>
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
 											</div>
-											<!-- Modal Äá» create new user-Start -->
-												<div class="form-group">
-													<h4 class="text-black-50">User Name:</h4>
-													<input class="form-control " id="User" type="text"
-														placeholder="Username" name="username1" required>
-												</div>
-												<!-- Username End -->
-												<!-- Begin pass -->
-												<div class="form-group">
-													<h4 class="text-black-50">Password:</h4>
-													<input class="form-control " id="password" type="text"
-														placeholder="Password" name="password1" required>
-												</div>
-												<!-- End Pass -->
-											
-												<!-- Tên thằng user -->
-												<!-- TÃªn tháº±ng user -->
+											<!-- Modal ÃÂÃ¡Â»Â create new user-Start -->
+											 <div class="modal-body">
+											<div class="form-group">
+												<h4 class="text-black-50">User Name:</h4>
+												<input class="form-control " id="User" type="text"
+													placeholder="Username" name="username1" required>
+											</div>
+											<!-- Username End -->
+											<!-- Begin pass -->
+											<div class="form-group">
+												<h4 class="text-black-50">Password:</h4>
+												<input class="form-control " id="password" type="text"
+													placeholder="Password" name="password1" required>
+											</div>
+											<!-- End Pass -->
+
+											<!-- TÃªn tháº±ng user -->
+											<!-- TÃÂªn thÃ¡ÂºÂ±ng user -->
+											<div class="modal-body">
 												<div class="form-group">
 													<h4 class="text-black-50">Name:</h4>
 													<input class="form-control " id="nameUser" type="text"
 														placeholder="Le Van Duy" name="name1" required>
 												</div>
-												<!-- TÃªn tháº±ng user -->
+												<!-- TÃÂªn thÃ¡ÂºÂ±ng user -->
 												<!-- Phone user -->
 												<div class="form-group">
 													<h4 class="text-black-50">Phone:</h4>
 													<input class="form-control " id="phoneUser" type="number"
-														placeholder="01293948384" name="phone1" pattern="[0-9]{1,}" title=""
-														required>
+														placeholder="01293948384" name="phone1"
+														pattern="[0-9]{1,}" title="" required>
 												</div>
 												<!-- Phone user -->
 												<!-- Email User -->
 												<div class="form-group">
 													<h4 class="text-black-50">Email:</h4>
 													<input class="form-control " id="emailUser" type="email"
-													 accept="" placeholder="example@gmail.com"
-														name="email1" title="Email is unvalid!" required>
+														accept="" placeholder="example@gmail.com" name="email1"
+														title="Email is unvalid!" required>
 												</div>
 												<!-- Email User -->
 												<!-- Address User- Start -->
 												<div class="form-group">
 													<h4 class="text-black-50">Address:</h4>
 													<input class="form-control " id="addressUser" type="text"
-														placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" name="address1"
-														title="" required>
+														placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
+														name="address1" title="" required>
 												</div>
 												<!-- Address User- End -->
 												<!-- Set role-Start -->
 												<div class="form-group">
 													<h4 class="text-black-50">Role:</h4>
 													<input class="form-control " id="Role" type="text"
-														placeholder="Role 1,2,3" name="role1"
-														title="" required>
-													<input id="toggle-event" type="checkbox" data-size="large"
-														data-toggle="toggle" data-on="Customer"
-														data-off="Ticket Seller" checked>
+														placeholder="Role 1,2,3" name="role1" title="" required>
 												</div>
 												<!-- Set role-End -->
 												<div class="modal-footer">
 													<button type="submit" id="submitAddPokestop"
 														class="btn btn-warning btn-lg" style="width: 100%;">
-														<span class="	fas fa-check-circle"></span>ThÃªm
+														<span class="	fas fa-check-circle"></span>ThÃÂªm
 													</button>
 												</div>
 											</div>
-											<!-- Modal Äá» create new user-End -->
+</div>
+											<!-- Modal ÃÂÃ¡Â»Â create new user-End -->
 										</form>
 									</div>
 									<!-- /.modal-content -->
 								</div>
 								<!-- /.modal-dialog -->
 							</div>
-							<!-- ThÃªm user-End -->
+							<!-- ThÃÂªm user-End -->
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -230,7 +233,7 @@
 									<th>Delete</th>
 								</thead>
 								<tbody>
-									 <c:forEach items="${customerList}" var="a">
+									<c:forEach items="${customerList}" var="a">
 										<tr>
 											<td>${a.id_acc_cus}</td>
 											<td>${a.username}</td>
@@ -279,7 +282,7 @@
 									<th>Delete</th>
 								</thead>
 								<tbody>
-									 <c:forEach items="${employeeList}" var="a">
+									<c:forEach items="${employeeList}" var="a">
 										<tr>
 											<td>${a.id_acc_emp}</td>
 											<td>${a.username}</td>
@@ -309,7 +312,7 @@
 							</table>
 						</div>
 					</div>
-					<!-- Pháº§n ná»i dung trong báº£ng user-End -->
+					<!-- PhÃ¡ÂºÂ§n nÃ¡Â»Âi dung trong bÃ¡ÂºÂ£ng user-End -->
 					<!-- Modal delete User-Start -->
 					<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
 						aria-labelledby="delete" aria-hidden="true">
@@ -331,11 +334,11 @@
 								<div class="modal-footer ">
 									<button id="yesdeleteUser" type="button"
 										class="btn btn-success">
-										<span class="	fas fa-check-circle"></span>Â Yes
+										<span class="	fas fa-check-circle"></span>ÃÂ Yes
 									</button>
 									<button type="button" class="btn btn-default"
 										data-dismiss="modal">
-										<span class="fas fa-remove"></span>Â No
+										<span class="fas fa-remove"></span>ÃÂ No
 									</button>
 								</div>
 							</div>
@@ -349,7 +352,9 @@
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
-								<form class="" action="${pageContext.request.contextPath}/admin-dashboard?action=update" method="POST">
+								<form class=""
+									action="${pageContext.request.contextPath}/admin-dashboard?action=update"
+									method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
 										<h4 class="modal-title" style="margin-left: auto">
@@ -360,55 +365,59 @@
 									<div class="modal-body">
 										<div class="form-group">
 											<h4 class="text-black-50">ID User:</h4>
-											<input class="form-control" id="idUserEdit" type="text" name="idUserEdit"
-												required>
+											<input class="form-control" id="idUserEdit" type="text"
+												name="idUserEdit" required>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">User Name:</h4>
-											<input class="form-control " id="usernameUserEdit" type="text" name="usernameUserEdit"
-												 required>
-										</div> 
+											<input class="form-control " id="usernameUserEdit"
+												type="text" name="usernameUserEdit" required>
+										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Name:</h4>
-											<input class="form-control " id="nameUserEdit" type="text" name="nameUserEdit"
-												placeholder="Le Van Duy" required>
+											<input class="form-control " id="nameUserEdit" type="text"
+												name="nameUserEdit" placeholder="Le Van Duy" required>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneUserEdit" type="number" name="phoneUserEdit"
-												placeholder="01293948384" pattern="[0-9]{1,}" title=""
-												required>
+											<input class="form-control " id="phoneUserEdit" type="number"
+												name="phoneUserEdit" placeholder="01293948384"
+												pattern="[0-9]{1,}" title="" required>
 										</div>
 										<!-- Phone user -->
 										<!-- Email User -->
 										<div class="form-group">
 											<h4 class="text-black-50">Email:</h4>
-											<input class="form-control " id="emailUserEdit" type="email" name="emailUserEdit"
-												name="Email" accept="" placeholder="example@gmail.com"
-												title="Email is unvalid!" required>
+											<input class="form-control " id="emailUserEdit" type="email"
+												name="emailUserEdit" name="Email" accept=""
+												placeholder="example@gmail.com" title="Email is unvalid!"
+												required>
 										</div>
 										<!-- Email User -->
 										<!-- Address User- Start -->
 										<div class="form-group">
 											<h4 class="text-black-50">Address:</h4>
-											<input class="form-control " id="addressUserEdit" type="text" name="addressUserEdit"
+											<input class="form-control " id="addressUserEdit" type="text"
+												name="addressUserEdit"
 												placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
 												title="" required>
 										</div>
 										<!-- Address User- End -->
 										<!-- Set role-Start -->
+
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-admin ">
-                                                  <input type="radio" name="options" id="optionAdminRole"  > Admin
-                                                </label>
-                                                <label class="btn btn-seller">
-                                                  <input type="radio" name="options" id="optionSellerRole" > Ticket Seller
-                                                </label>
-                                                <label class="btn btn-user">
-                                                  <input type="radio" name="options" id="optionUserRole" > User
-                                                </label>
-                                              </div>
+											<label class="btn btn-admin "> <input type="radio"
+												name="options" id="optionAdminRole" autocomplete="off">
+												Admin
+											</label> <label class="btn btn-seller"> <input type="radio"
+												name="options" id="optionSellerRole" autocomplete="off">
+												Ticket Seller
+											</label> <label class="btn btn-user"> <input type="radio"
+												name="options" id="optionUserRole" autocomplete="off">
+												User
+											</label>
+										</div>
 										<!-- Set role-End -->
 										<div class="modal-footer">
 											<button type="submit" id="submitEditUser"
@@ -429,11 +438,11 @@
 			<!-- <footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Duy TrÃ¢n Háº£o VÄn 2019</span>
+						<span>Copyright &copy; Duy TrÃÂ¢n HÃ¡ÂºÂ£o VÃÂn 2019</span>
 					</div>
 				</div>
 			</footer> -->
-			<!-- End of Footer -->		
+			<!-- End of Footer -->
 		</div>
 		<!-- End of Content Wrapper -->
 	</div>
@@ -456,7 +465,8 @@
 		src="Admin/https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
 	<!-- Page level custom scripts -->
 	<script src="Admin/js/user-table.js"></script>
-	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<script
+		src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 </body>
 
