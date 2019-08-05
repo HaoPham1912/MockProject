@@ -85,7 +85,6 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		}
 		return null;
 	}
-	
 	@Override
 	public void insertInfoEmployee(int id, String name, String phone, String email, String address) {
 		
@@ -106,6 +105,48 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public boolean findEmployeeById_acc(int id_acc) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			System.out.println("Connected!!!");
+			String sql="SELECT * FROM employee WHERE id_acc_emp=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_acc);
+			ResultSet rs = pstm.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateEmployee(String name, String phone, String email, String address, int id_acc_cus) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="update employee set emp_name=?,emp_phone=?,emp_email=?,emp_address=? where id_acc_emp=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, name);
+			pstm.setString(2, phone);
+			pstm.setString(3, email);
+			pstm.setString(4, address);
+			pstm.setInt(5, id_acc_cus);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

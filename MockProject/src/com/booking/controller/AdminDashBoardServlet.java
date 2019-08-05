@@ -35,6 +35,8 @@ public class AdminDashBoardServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 //		response.setIntHeader("Refresh", 5);
 		request.setAttribute("customerList", customerDAO.findAllCustomer());
@@ -48,6 +50,8 @@ public class AdminDashBoardServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
@@ -58,55 +62,62 @@ public class AdminDashBoardServlet extends HttpServlet {
 			String email = request.getParameter("emailUserEdit");
 			String address = request.getParameter("addressUserEdit");
 			String id_acc_cus = request.getParameter("idUserEdit");
-			System.out.println("aaa: "+id_acc_cus);
-			if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
+			if(customerDAO.finCustomerById_acc(Integer.valueOf(id_acc_cus)))
 			{
-				System.out.println("Success");
-				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-				return;
+				if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
+				{
+					System.out.println("Success");
+				}
+				else
+				{
+					System.out.println("Failed");
+				}
 			}
-			else
+			if(employeeDAO.findEmployeeById_acc(Integer.valueOf(id_acc_cus)))
 			{
-				System.out.println("Failed");
-				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-				return;
+				if(employeeDAO.updateEmployee(name, phone, email, address, Integer.valueOf(id_acc_cus)))
+				{
+					System.out.println("Success");
+				}
+				else
+				{
+					System.out.println("Failed");
+				}
 			}
 		}
-//		else if(action.equals("login"))
-//		{
-//			String name = request.getParameter("name1");
-//			String phone = request.getParameter("phone1");
-//			String email = request.getParameter("email1");
-//			String address = request.getParameter("address1");
-//			String user = request.getParameter("username1");
-//			String pass = request.getParameter("password1");
-//			String role = request.getParameter("role1");
-//			boolean check = accountDAOImp.checkAvailableAccount(user);
-//			if(!check) {
-//				int idnew= Integer.parseInt(role);
-//				System.out.println(idnew);
-//				if(idnew==1)
-//				{
-//					int id= accountDAOImp.insertAccount(user, pass, idnew);
-//					System.out.println("Them thanh cong account");
-//					System.out.println("id accout is: "+id);
-//					customerDAO.insertInfoCustomer(id, name, phone, email, address);
-//					System.out.println("Dang ki thanh cong");
-//					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-//				}else if(idnew==2) {
-//					int id= accountDAOImp.insertAccount(user, pass, idnew);
-//					System.out.println("Them thanh cong account");
-//					System.out.println("id accout is: "+id);
-//					employeeDAO.insertInfoEmployee(id, name, phone, email, address);
-//					System.out.println("Dang ki thanh cong");
-//					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-//				}
-//			
-//			}
-//			else {
-//				System.out.println("username avail!!! Retry!!");
-//				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-//			}
+		else if(action.equals("register"))
+		{
+			String name1 = request.getParameter("name1");
+			String phone1 = request.getParameter("phone1");
+			String email1 = request.getParameter("email1");
+			String address1 = request.getParameter("address1");
+			String user = request.getParameter("username1");
+			String pass = request.getParameter("password1");
+			String role = request.getParameter("role1");
+			boolean check = accountDAOImp.checkAvailableAccount(user);
+			if(!check) {
+				int idnew= Integer.parseInt(role);
+				System.out.println(idnew);
+				if(idnew==1)
+				{
+					int id= accountDAOImp.insertAccount(user, pass, idnew);
+					System.out.println("Them thanh cong account");
+					System.out.println("id accout is: "+id);
+					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
+					System.out.println("Dang ki thanh cong");
+				}else if(idnew==2) {
+					int id= accountDAOImp.insertAccount(user, pass, idnew);
+					System.out.println("Them thanh cong account");
+					System.out.println("id accout is: "+id);
+					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
+					System.out.println("Dang ki thanh cong");
+				}
+			}
+			else {
+				System.out.println("username avail!!! Retry!!");
+			}
 		}
 	}
+}
+	
 
