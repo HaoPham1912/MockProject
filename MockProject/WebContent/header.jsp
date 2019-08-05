@@ -143,8 +143,8 @@
                                     </ul>
                                 </li> -->
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">LOG IN</a></li>
-                                <li><a href="#">REGISTER</a></li>
+                                <li><a href="http://localhost:8080/MockProject/login">Log In</a></li>
+                                <li><a href="http://localhost:8080/MockProject/register">Register</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -157,6 +157,7 @@
     <!--== Header Area End ==-->
 
     <!--== Slider Area Start ==-->
+     <!--== Slider Area Start ==-->
     <section id="home-slider-area">
         <div class="home-slider-item slider-bg-1 overlay">
             <div class="container" style="max-height: 30px">
@@ -207,8 +208,7 @@
                     <div class="booka-car-content" style="padding-left: 200px">
                         <form action="index3.html">
                             <div class="header-text">
-                                <p >BusBooking.com- Hệ thống đặt vé xe khách</p><br/></div>
-                               
+                                <p>BusBooking.com- Hệ thống đặt vé xe khách</p><br/></div>
                                 <div class="pick-location bookinput-item">
                                         <select class="custom-select">
                                           <option selected>Leaving From</option>

@@ -41,14 +41,25 @@
 </head>
 
 <body class="loader-active">
-<jsp:include page="headerforUser.jsp" />     
+
+    <!--== Preloader Area Start ==-->
+    <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="assets/img/preloader.gif" alt="JSOFT">
+            </div>
+        </div>
+    </div>
+
+    <!--== Slider Area Start ==-->
+<jsp:include page="header.jsp" /> 
  <!--== What We Do Area Start ==-->
  <section id="what-do-area" class="section-padding">
     <div class="container">
         
     </div>
 </section>     
-<jsp:include page="footer.jsp" />  
+<jsp:include page="footer.jsp" /> 
     <!--== Scroll Top Area End ==-->
 
     <!--=======================Javascript============================-->
