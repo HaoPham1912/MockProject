@@ -100,7 +100,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index3.html" class="logo">
+                        <a href="http://localhost:8080/MockProject/cus-dashboard" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>

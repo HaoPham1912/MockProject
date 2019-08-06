@@ -182,18 +182,18 @@
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: today,
-            maxDate: function () {
-                return $('#endDate2').val();
-            }
+            // maxDate: function () {
+            //     return $('#endDate2').val();
+            // }
         });
 
-        $('#endDate2').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: function () {
-                return $('#startDate2').val();
-            }
-        });
+        // $('#endDate2').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        //     iconsLibrary: 'fontawesome',
+        //     minDate: function () {
+        //         return $('#startDate2').val();
+        //     }
+        // });
 
         // Home Page 3 Slider Start
         $("#home-slider-area").owlCarousel({
