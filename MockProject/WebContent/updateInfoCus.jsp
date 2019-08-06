@@ -103,13 +103,13 @@
 					<div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/cus-dashboard">HOME</a>
-									<!-- <ul>
+								<li><a href="${pageContext.request.contextPath}/dashboard">HOME</a>
+									<ul>
 										<li><a href="index.html">Home 1</a></li>
 										<li><a href="index2.html">Home 2</a></li>
 										<li><a href="index3.html">Home 3</a></li>
-									</ul> -->
-								</li>
+									</ul>
+									</li>
 								<li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
 								<!-- <li><a href="services.html">services</a></li>
 								<li><a href="#">Cars</a>
@@ -175,7 +175,7 @@
 					<div class="login-page-content">
 						<div class="login-form">
 							<h3>Update Profile</h3>
-							<form action="${pageContext.request.contextPath}/updateInfoCus?action=update" 
+							<form action="${pageContext.request.contextPath}/cus-updateInfo" 
 							method="POST">
 							<div class="username">
 										<input type="text" placeholder="ReType Your Username" name="username"
