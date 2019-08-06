@@ -565,9 +565,12 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 	<!-- Page level plugins -->
 	<script src="Admin/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<<<<<<< HEAD
 	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+=======
+>>>>>>> bbfcfe998e612366d7f0c71367b7da49f01c02f2
 	<!-- Page level custom scripts -->
 	<script src="Admin/js/user-table.js"></script>
 	<script src="Admin/js/seller-table.js"></script>
