@@ -105,11 +105,7 @@
 							<ul>
 								<li><a
 									href="${pageContext.request.contextPath}/cus-dashboard">HOME</a>
-									<ul>
-										<li><a href="index.html">Home 1</a></li>
-										<li><a href="index2.html">Home 2</a></li>
-										<li><a href="index3.html">Home 3</a></li>
-									</ul></li>
+								</li>
 								<li><a href="${pageContext.request.contextPath}/logout">LOG
 										OUT</a></li>
 								<!-- <li><a href="services.html">services</a></li>
@@ -180,7 +176,8 @@
 								method="POST">
 
 								<div class="name">
-									<input type="text" value="${customerInfo.id_acc_cus}"placeholder="ID" name="id_acc_cus" required>
+									<input type="text" value="${customerInfo.id_acc_cus}"placeholder="ID" name="id_acc_cus" 
+									readonly="readonly" required>
 								</div>
 								<div class="name">
 									<input type="text" value="${customerInfo.name}" placeholder="Name" name="name" required>
