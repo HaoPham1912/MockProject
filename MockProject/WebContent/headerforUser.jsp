@@ -158,12 +158,10 @@
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#" style="color:yellow">Hi! ${username}</a>
                                     <ul>
-                                        <li><a href="${pageContext.request.contextPath}/updateInfoCus">Edit Profile</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/cus-updateInfo">Edit Profile</a></li>
                                         <li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="${pageContext.request.contextPath}/cus-updateInfo">Edit Profile</a></li>
-                                <li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
                             </ul>
                         </nav>
                     </div>
