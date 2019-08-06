@@ -103,7 +103,7 @@
 					<div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/dashboard">HOME</a>
+								<li><a href="${pageContext.request.contextPath}/cus-dashboard">HOME</a>
 									<ul>
 										<li><a href="index.html">Home 1</a></li>
 										<li><a href="index2.html">Home 2</a></li>
