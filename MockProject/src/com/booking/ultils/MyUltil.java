@@ -1,17 +1,22 @@
 package com.booking.ultils;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.booking.model.Account;
+import com.booking.model.BookingInfo;
 
 public class MyUltil {
 	public static final String ATT_NAME_CONNECTION = "ATTRIBUTE_FOR_CONNECTION";
 
 	private static final String ATT_NAME_USER_NAME = "ATTRIBUTE_FOR_STORE_USER_NAME_IN_COOKIE";
+	
+	public static void storeBookingInfo(HttpSession session, BookingInfo bookingInfo)
+	{
+		session.setAttribute("bookingInfo", bookingInfo);
+	}
 
 	public static void storeLoginedUser(HttpSession session, Account account) {
 		session.setAttribute("user", account);
@@ -25,6 +30,11 @@ public class MyUltil {
 	public static void removeUser(HttpSession session,String user)
 	{
 		session.removeAttribute(user);
+	}
+	
+	public static void removeBookingInfo(HttpSession session,String bookingInfo)
+	{
+		session.removeAttribute(bookingInfo);
 	}
 
 	public static void storeUserCookie(HttpServletResponse response, Account account) {

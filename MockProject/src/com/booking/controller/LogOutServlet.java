@@ -36,6 +36,7 @@ public class LogOutServlet extends HttpServlet {
 		MyUltil myultil = new MyUltil();
 		HttpSession session = request.getSession();
 		myultil.removeUser(session, "user");
+		myultil.removeUser(session, "bookingInfo");
 		RequestDispatcher rd =  request.getRequestDispatcher("/login.jsp");
 		rd.forward(request, response);
 	}

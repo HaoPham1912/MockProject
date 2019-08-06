@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -32,11 +33,6 @@
     <link href="style.css" rel="stylesheet">
     <!--=== Responsive CSS ===-->
     <link href="assets/css/responsive.css" rel="stylesheet">
-
-  
-
-
-
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -217,13 +213,32 @@
                         <form action="${pageContext.request.contextPath}/cus-viewBusServlet">
                             <div class="header-text">
                                 <p>BusBooking.com- The Biggest Booking System</p><br/></div>
-                                <div class="pick-location bookinput-item">
+                                <c:if test="${bookingInfo!=null}">
+                                	<div class="pick-location bookinput-item">          
                                        <select class="custom-select" name="start_place">
-                                          <option selected>Ho Chi Minh</option>
+                                          <option selected>${bookingInfo.start_place}</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ha Noi">Ha Noi</option>
                                        </select>
+                                    </div>
+                                    <div class="pick-location bookinput-item">
+                                        <select class="custom-select" name="end_place">
+                                          <option selected>${bookingInfo.end_place}</option>
+                                          <option value="Da Nang">Da Nang</option>
+                                          <option value="Da Lat">Da Lat</option>
+                                          <option value="Ho Chi Minh">Ho Chi Minh</option>
+                                   		</select>
+                                     </div>              
+                                </c:if>
+                                <c:if test="${bookingInfo==null}">
+                                	<div class="pick-location bookinput-item">          
+                                      <select class="custom-select" name="start_place">
+                                          <option selected>Ho Chi Minh</option>
+                                          <option value="Da Nang">Da Nang</option>
+                                          <option value="Da Lat">Da Lat</option>
+                                          <option value="Ha Noi">Ha Noi</option>
+                                       </select>                               
                                     </div>
                                     <div class="pick-location bookinput-item">
                                         <select class="custom-select" name="end_place">
@@ -232,10 +247,12 @@
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ho Chi Minh">Ho Chi Minh</option>
                                    		</select>
-                                        </div>
+                                     </div>	                                                
+                                </c:if>    
                                 <div class="pick-date bookinput-item">
-                                    <input id="startDate2" placeholder="Pick Date" required/>
-                                </div>                                                  
+	                                    <input id="startDate2" placeholder="Pick Date" 
+	                                    name="startDate" value="${bookingInfo.start_date}" required/>
+	                                </div>                                                        
                                 <div class="bookcar-btn bookinput-item">
                                     <button type="submit">Search</button>
                                 </div>

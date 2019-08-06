@@ -9,11 +9,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.BusDAOImp;
 import com.booking.dao.BusesDAOImp;
+import com.booking.model.BookingInfo;
 import com.booking.model.Bus;
 import com.booking.model.Buses;
+import com.booking.ultils.MyUltil;
 
 /**
  * Servlet implementation class ViewBusServlet
@@ -40,12 +43,26 @@ public class ViewBusServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String start_place = request.getParameter("start_place");
 		String end_place = request.getParameter("end_place");
+		String start_Date = request.getParameter("startDate");
+		System.out.println(start_Date);
+		MyUltil myultil = new MyUltil();
+		HttpSession session = request.getSession();
+		BookingInfo bookingInfo = new BookingInfo();
+		
+		bookingInfo.setStart_place(start_place);
+		bookingInfo.setEnd_place(end_place);
+		bookingInfo.setStart_date(start_Date);
+		
+		myultil.storeBookingInfo(session, bookingInfo);
+		
 		Buses buses = new Buses();
 		buses = busesDAO.findBusesByPlace(start_place, end_place);
 		System.out.println("buses" + buses);
 		if(buses==null)
 		{
-			RequestDispatcher rd =  request.getRequestDispatcher("/index3.jsp");
+			String message = "There are no bus from "+start_place+" to "+end_place+" in "+start_Date;
+			request.setAttribute("message", message);
+			RequestDispatcher rd =  request.getRequestDispatcher("/viewAllBus.jsp");
 			rd.forward(request, response);
 		}
 		else

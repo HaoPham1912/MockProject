@@ -13,17 +13,11 @@
 <body class="loader-active">
 	<jsp:include page="headerforUser.jsp" />
 	<!--== What We Do Area Start ==-->
-	<c:if test="${empty busList}">
-		<section id="what-do-area" class="section-padding">
-			<div class="container">
-				<h1>Dit me ko co xe nhe!</h1>
-			</div>
-		</section>
-	</c:if>
-	<c:if test="${not empty busList}">
-		<section id="what-do-area" class="section-padding">
-			<div class="container">
-				<table id="mytable" class="table table-bordred table-striped">
+	<section id="what-do-area" class="">
+		<div class="container">
+			<h5 style="text-align: center">${message}</h5>
+			<c:if test="${not empty busList}">
+				<%-- <table id="mytable" class="table table-bordred table-striped">
 					<thead>
 						<th>Time go</th>
 						<th>Car Position</th>
@@ -31,6 +25,9 @@
 					</thead>
 					<tbody>
 						<c:forEach items="${busList}" var="a">
+							<div>
+								
+							</div>
 							<tr>
 								<td>${a.time_go}</td>
 								<td>${a.car_position}</td>
@@ -38,10 +35,32 @@
 							</tr>
 						</c:forEach>
 					</tbody>
-				</table>
-			</div>
-		</section>
-	</c:if>
+				</table> --%>
+				<c:forEach items="${busList}" var="a">
+					<div id="bus">
+						<div style="float:right">
+							<p>${a.time_go}</p>
+							<p>${a.car_position}</p>
+							<p>${a.time_estimate}</p>
+						</div>
+						<div>
+							<img class="bus-img"
+								src="https://image.flaticon.com/icons/svg/174/174237.svg" alt="">
+							<img class="arrow"
+								src=" https://image.flaticon.com/icons/svg/1971/1971260.svg"
+								alt="">
+						</div>
+						<div id="wifi-water">
+							<img class="wifi-img"
+								src="https://image.flaticon.com/icons/svg/179/179428.svg" alt="">
+							<img class="wifi-img"
+								src="https://image.flaticon.com/icons/svg/824/824239.svg" alt="">
+						</div>
+					</div>
+				</c:forEach>
+			</c:if>
+		</div>
+	</section>
 	<jsp:include page="footer.jsp" />
 </body>
 

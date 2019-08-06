@@ -43,12 +43,12 @@ public class LogInServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Account account = (Account) session.getAttribute("user");
 		
-//		ArrayList<String> start_placeList = new ArrayList<String>();
-//		start_placeList = busesDAO.findAllStart_Place();
-//		ArrayList<String> start_endList = new ArrayList<String>();
-//		start_endList = busesDAO.findAllEnd_Place();
-//		request.setAttribute("start_placeList", start_placeList);
-//		request.setAttribute("start_endList", start_endList);
+		ArrayList<String> start_placeList = new ArrayList<String>();
+		start_placeList = busesDAO.findAllStart_Place();
+		ArrayList<String> start_endList = new ArrayList<String>();
+		start_endList = busesDAO.findAllEnd_Place();
+		request.setAttribute("start_placeList", start_placeList);
+		request.setAttribute("start_endList", start_endList);
 		
 		if(account == null)
 		{
