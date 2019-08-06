@@ -21,7 +21,7 @@ public class BusesDAOImp implements IBusesDAO{
 			
 			Statement statement = connection.createStatement();
 
-			String sql = "select * from account where start_place=? and end_place=?";
+			String sql = "select * from buses where start_place=? and end_place=?";
 
 			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
 

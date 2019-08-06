@@ -214,32 +214,30 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="booka-car-content" style="padding-left: 200px">
-                        <form action="index3.html">
+                        <form action="${pageContext.request.contextPath}/cus-viewBusServlet">
                             <div class="header-text">
-                                <p>BusBooking.com- Hệ thống đặt vé xe khách</p><br/></div>
+                                <p>BusBooking.com- The Biggest Booking System</p><br/></div>
                                 <div class="pick-location bookinput-item">
-                                        <select class="custom-select">
-                                          <option selected>Leaving From</option>
-                                          <option value="1">Dhaka</option>
-                                          <option value="2">Comilla</option>
-                                          <option value="3">Barishal</option>
-                                          <option value="3">Rangpur</option>
-                                        </select>
+                                       <select class="custom-select" name="start_place">
+                                          <option selected>Ho Chi Minh</option>
+                                          <option value="Da Nang">Da Nang</option>
+                                          <option value="Da Lat">Da Lat</option>
+                                          <option value="Ha Noi">Ha Noi</option>
+                                       </select>
                                     </div>
                                     <div class="pick-location bookinput-item">
-                                            <select class="custom-select">
-                                              <option selected>Returning On</option>
-                                              <option value="1">Dhaka</option>
-                                              <option value="2">Comilla</option>
-                                              <option value="3">Barishal</option>
-                                              <option value="3">Rangpur</option>
-                                            </select>
+                                        <select class="custom-select" name="end_place">
+                                          <option selected>Ha Noi</option>
+                                          <option value="Da Nang">Da Nang</option>
+                                          <option value="Da Lat">Da Lat</option>
+                                          <option value="Ho Chi Minh">Ho Chi Minh</option>
+                                   		</select>
                                         </div>
                                 <div class="pick-date bookinput-item">
-                                    <input id="startDate2" placeholder="Pick Date" />
+                                    <input id="startDate2" placeholder="Pick Date" required/>
                                 </div>                                                  
                                 <div class="bookcar-btn bookinput-item">
-                                    <button type="submit">Book Bus</button>
+                                    <button type="submit">Search</button>
                                 </div>
                         </form>
                     </div>

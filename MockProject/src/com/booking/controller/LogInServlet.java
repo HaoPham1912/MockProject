@@ -42,6 +42,14 @@ public class LogInServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
 		Account account = (Account) session.getAttribute("user");
+		
+//		ArrayList<String> start_placeList = new ArrayList<String>();
+//		start_placeList = busesDAO.findAllStart_Place();
+//		ArrayList<String> start_endList = new ArrayList<String>();
+//		start_endList = busesDAO.findAllEnd_Place();
+//		request.setAttribute("start_placeList", start_placeList);
+//		request.setAttribute("start_endList", start_endList);
+		
 		if(account == null)
 		{
 			RequestDispatcher rd =  request.getRequestDispatcher("/login.jsp");
@@ -57,13 +65,6 @@ public class LogInServlet extends HttpServlet {
 			{
 				if(account.getRole()==1)
 				{
-					
-					ArrayList<String> start_placeList = new ArrayList<String>();
-					start_placeList = busesDAO.findAllStart_Place();
-					ArrayList<String> start_endList = new ArrayList<String>();
-					start_endList = busesDAO.findAllEnd_Place();
-					request.setAttribute("start_placeList", start_placeList);
-					request.setAttribute("start_endList", start_endList);
 					response.sendRedirect(request.getContextPath()+"/cus-dashboard");
 				}
 				else
@@ -73,7 +74,6 @@ public class LogInServlet extends HttpServlet {
 			}
 		}
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
