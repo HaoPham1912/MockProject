@@ -171,34 +171,34 @@
 				<div class="col-lg-5 col-md-8 m-auto">
 					<div class="login-page-content">
 						<div class="login-form">
-							<h3>Update Profile</h3>
-							<form action="${pageContext.request.contextPath}/cus-updateInfo"
-								method="POST">
+							<h3>Your Profile</h3>
+							<form action="${pageContext.request.contextPath}/cus-updateInfo">
 
 								<div class="name">
 									<input type="text" value="${customerInfo.id_acc_cus}"placeholder="ID" name="id_acc_cus" 
 									readonly="readonly" required>
 								</div>
 								<div class="name">
-									<input type="text" value="${customerInfo.name}" placeholder="Name" name="name" required>
+									<input type="text" value="${customerInfo.name}" placeholder="Name" name="name" 
+									readonly="readonly" required>
 								</div>
 								<div class="phone">
 									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
 									<input type="text" pattern="[0-9]{10}" value="${customerInfo.phone}"
 										placeholder="Phone Number" name="phone"
 										title="Phone must be a number that contains 10 characters long"
-										required />
+										readonly="readonly" required />
 
 								</div>
 								<div class="email">
-									<input type="email" value="${customerInfo.email}" placeholder="Email" name="email">
+									<input type="email" value="${customerInfo.email}" placeholder="Email" name="email" readonly="readonly">
 								</div>
 								<div class="address">
-									<input type="text" value="${customerInfo.address}" placeholder="Address" name="address">
+									<input type="text" value="${customerInfo.address}" placeholder="Address" name="address" readonly="readonly">
 								</div>
 								<div class="log-btn">
 									<button type="submit">
-										<i class="fa fa-check-square"></i> Save Change
+										<i class="fa fa-check-square"></i> Update
 									</button>
 								</div>
 							</form>
