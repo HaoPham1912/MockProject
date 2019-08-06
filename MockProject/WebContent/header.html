@@ -97,7 +97,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index3.html" class="logo">
+                        <a href="http://localhost:8080/MockProject/guest-dashboard" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -232,7 +232,7 @@
                                     <input id="startDate2" placeholder="Pick Date" />
                                 </div>                                                  
                                 <div class="bookcar-btn bookinput-item">
-                                    <button type="submit">Book Bus</button>
+                                    <button type="submit" onclick="ex()">Book Bus</button>
                                 </div>
                         </form>
                     </div>
@@ -249,8 +249,13 @@
         <img src="assets/img/scroll-top.png" alt="JSOFT">
     </div>
     <!--== Scroll Top Area End ==-->
-
+    <script>
+    $( function() {
+        $( "#startDate2" ).datepicker();
+    } );
+    </script>
     <!--=======================Javascript============================-->
+    <script src="assets/js/seat.js"></script>
     <!--=== Jquery Min Js ===-->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <!--=== Jquery Migrate Min Js ===-->
