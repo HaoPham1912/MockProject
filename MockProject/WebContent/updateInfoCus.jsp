@@ -103,14 +103,15 @@
 					<div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/cus-dashboard">HOME</a>
+								<li><a
+									href="${pageContext.request.contextPath}/cus-dashboard">HOME</a>
 									<ul>
 										<li><a href="index.html">Home 1</a></li>
 										<li><a href="index2.html">Home 2</a></li>
 										<li><a href="index3.html">Home 3</a></li>
-									</ul>
-									</li>
-								<li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
+									</ul></li>
+								<li><a href="${pageContext.request.contextPath}/logout">LOG
+										OUT</a></li>
 								<!-- <li><a href="services.html">services</a></li>
 								<li><a href="#">Cars</a>
 									<ul>
@@ -175,43 +176,29 @@
 					<div class="login-page-content">
 						<div class="login-form">
 							<h3>Update Profile</h3>
-							<form action="${pageContext.request.contextPath}/cus-updateInfo" 
-							method="POST">
-							<div class="username">
-										<input type="text" placeholder="ReType Your Username" name="username"
-										pattern="[A-Za-z0-9]{1,}"
-										maxlength="10" 
-										title="Username must not contain Unicode!!!" 
-										required>		
+							<form action="${pageContext.request.contextPath}/cus-updateInfo"
+								method="POST">
+
+								<div class="name">
+									<input type="text" value="${customerInfo.id_acc_cus}"placeholder="ID" name="id_acc_cus" required>
 								</div>
 								<div class="name">
-									<input type="text" placeholder="Name" name="name" required>
-								</div>
-								<div class="email">
-									<input type="email" placeholder="Email" name="email">
+									<input type="text" value="${customerInfo.name}" placeholder="Name" name="name" required>
 								</div>
 								<div class="phone">
-								<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{10}"  placeholder="Phone Number" name="phone" title="Phone must be a number that contains 10 characters long" required />
-									
+									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
+									<input type="text" pattern="[0-9]{10}" value="${customerInfo.phone}"
+										placeholder="Phone Number" name="phone"
+										title="Phone must be a number that contains 10 characters long"
+										required />
+
+								</div>
+								<div class="email">
+									<input type="email" value="${customerInfo.email}" placeholder="Email" name="email">
 								</div>
 								<div class="address">
-									<input type="text" placeholder="Address" name="address">
+									<input type="text" value="${customerInfo.address}" placeholder="Address" name="address">
 								</div>
-								<!-- <!-- <div class="username">
-										<input type="text" placeholder="Username" name="username"
-										pattern="[A-Za-z0-9]{1,}"
-										maxlength="10" 
-										title="Username must not contain Unicode!!!" 
-										required>		
-								</div>
-								<div class="password">
-									<input type="password" placeholder="Password" name="password"
-									maxlength="15" minlength="8" 
-									pattern="[A-Za-z0-9]{1,}"
-									required
-									>
-								</div> -->
 								<div class="log-btn">
 									<button type="submit">
 										<i class="fa fa-check-square"></i> Save Change
@@ -328,7 +315,9 @@
 						<p>
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script>
+							<script>
+								document.write(new Date().getFullYear());
+							</script>
 							All rights reserved | This template is made with <i
 								class="fa fa-heart-o" aria-hidden="true"></i> by <a
 								href="https://colorlib.com" target="_blank">Colorlib</a>

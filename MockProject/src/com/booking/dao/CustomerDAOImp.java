@@ -92,9 +92,9 @@ public class CustomerDAOImp implements ICustomerDAO{
 				customer.setUsername(rs.getString("username"));
 				customer.setPassword(rs.getString("password"));
 				customer.setName(rs.getString("name"));
+				customer.setPhone(rs.getString("phone"));
 				customer.setEmail(rs.getString("email"));
-				customer.setAddress(rs.getString("address"));
-				customer.setPhone(rs.getString("phone"));	
+				customer.setAddress(rs.getString("address"));			
 				arr.add(customer);
 			}
 		}
@@ -161,5 +161,27 @@ public class CustomerDAOImp implements ICustomerDAO{
 		}
 		return -1;
 	}
-	
+	@Override
+	public Customer customer(int id_acc) {
+		try {
+			Connection connection = db.getMySQLConnection();
+			String sql="SELECT * FROM customer WHERE customer.id_acc_cus ="+id_acc;
+			Statement stm = connection.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				Customer customer = new Customer();
+				customer.setId_acc_cus(rs.getInt("id_acc_cus"));
+				customer.setName(rs.getString("name"));
+				customer.setPhone(rs.getString("phone"));
+				customer.setEmail(rs.getString("email"));
+				customer.setAddress(rs.getString("address"));					
+				return customer;
+			}
+			return null;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

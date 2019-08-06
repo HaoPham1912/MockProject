@@ -12,4 +12,5 @@ public interface ICustomerDAO {
 	boolean updateCustomer(String name, String phone, String email,String address,int id_acc_cus);
 	boolean finCustomerById_acc(int id_acc);
 	int findId_acc(String username);
+	Customer customer(int id_acc);
 }
