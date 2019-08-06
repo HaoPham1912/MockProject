@@ -1,6 +1,7 @@
 package com.booking.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.booking.dao.BusesDAOImp;
 import com.booking.dao.CustomerDAOImp;
 import com.booking.model.Account;
 import com.booking.ultils.MyUltil;
@@ -22,6 +24,7 @@ public class LogInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	CustomerDAOImp d = new CustomerDAOImp();
+	BusesDAOImp busesDAO = new BusesDAOImp();
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -52,7 +55,21 @@ public class LogInServlet extends HttpServlet {
 			}
 			else
 			{
-				response.sendRedirect(request.getContextPath()+"/cus-dashboard");
+				if(account.getRole()==1)
+				{
+					
+					ArrayList<String> start_placeList = new ArrayList<String>();
+					start_placeList = busesDAO.findAllStart_Place();
+					ArrayList<String> start_endList = new ArrayList<String>();
+					start_endList = busesDAO.findAllEnd_Place();
+					request.setAttribute("start_placeList", start_placeList);
+					request.setAttribute("start_endList", start_endList);
+					response.sendRedirect(request.getContextPath()+"/cus-dashboard");
+				}
+				else
+				{
+					response.sendRedirect(request.getContextPath()+"/guest-dashboard");
+				}
 			}
 		}
 	}
