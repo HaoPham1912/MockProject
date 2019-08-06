@@ -70,7 +70,7 @@ public class UpdateInfoCusServlet extends HttpServlet {
 		String address = request.getParameter("address");
 			if(cus.updateCustomer(name, phone, email, address, Integer.parseInt(id_acc))) {
 				System.out.println("Update Success!!!");
-				//response.sendRedirect(request.getContextPath()+"/cus-dashboard");
+//				response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
 			}
 			else {
 				System.out.println("Can't Update!!!");
