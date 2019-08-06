@@ -172,8 +172,7 @@
 					<div class="login-page-content">
 						<div class="login-form">
 							<h3>Your Profile</h3>
-							<form action="${pageContext.request.contextPath}/cus-updateInfo"
-								method="POST">
+							<form action="${pageContext.request.contextPath}/cus-updateInfo">
 
 								<div class="name">
 									<input type="text" value="${customerInfo.id_acc_cus}"placeholder="ID" name="id_acc_cus" 
