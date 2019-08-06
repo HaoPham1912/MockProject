@@ -176,25 +176,30 @@
 								method="POST">
 
 								<div class="name">
-									<input type="text" value="${customerInfo.id_acc_cus}"placeholder="ID" name="id_acc_cus" 
-									readonly="readonly" required>
+									<input type="text" value="${customerInfo.id_acc_cus}"
+										placeholder="ID" name="id_acc_cus" readonly="readonly"
+										required>
 								</div>
 								<div class="name">
-									<input type="text" value="${customerInfo.name}" placeholder="Name" name="name" required>
+									<input type="text" value="${customerInfo.name}"
+										placeholder="Name" name="name" required>
 								</div>
 								<div class="phone">
 									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{10}" value="${customerInfo.phone}"
-										placeholder="Phone Number" name="phone"
+									<input type="text" pattern="[0-9]{10}"
+										value="${customerInfo.phone}" placeholder="Phone Number"
+										name="phone"
 										title="Phone must be a number that contains 10 characters long"
 										required />
 
 								</div>
 								<div class="email">
-									<input type="email" value="${customerInfo.email}" placeholder="Email" name="email">
+									<input type="email" value="${customerInfo.email}"
+										placeholder="Email" name="email">
 								</div>
 								<div class="address">
-									<input type="text" value="${customerInfo.address}" placeholder="Address" name="address">
+									<input type="text" value="${customerInfo.address}"
+										placeholder="Address" name="address">
 								</div>
 								<div class="log-btn">
 									<button type="submit">
