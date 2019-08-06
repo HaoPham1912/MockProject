@@ -561,12 +561,12 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 	<!-- Core plugin JavaScript-->
 	<script src="Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 	<!-- Custom scripts for all pages-->
-	<script src="js/sb-admin-2.min.js"></script>
+	<script src="Admin/js/sb-admin-2.min.js"></script>
 	<!-- Page level plugins -->
 	<script src="Admin/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 	<script
-		src="Admin/https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+		src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
 	<!-- Page level custom scripts -->
 	<script src="Admin/js/user-table.js"></script>
 	<script src="Admin/js/seller-table.js"></script>
