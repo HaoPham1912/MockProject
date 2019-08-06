@@ -33,6 +33,19 @@
     <!--=== Responsive CSS ===-->
     <link href="assets/css/responsive.css" rel="stylesheet">
 
+    <link href="Admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link
+		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css"
+		rel="stylesheet">
+	<!-- css -->
+	<link href="Admin/css/sb-admin-2.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="Admin/vendor/datatables/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="Admin/css/AdminPage.css">
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+
 
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -100,7 +113,6 @@
                         <a href="index3.html" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
-                        <p>Say Hi to ${username}</p>
                     </div>
                     <!--== Logo End ==-->
 
@@ -142,10 +154,14 @@
                                         <li><a href="article.html">Blog Page</a></li>
                                         <li><a href="article-details.html">Blog Details</a></li>
                                     </ul>
-                                </li> -->
+                                </li> -->                   
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="${pageContext.request.contextPath}/updateInfoCus">Edit Profile</a></li>
-                                <li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
+                                <li><a href="#" style="color:yellow">Hi! ${username}</a>
+                                    <ul>
+                                        <li><a href="${pageContext.request.contextPath}/updateInfoCus">Edit Profile</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>

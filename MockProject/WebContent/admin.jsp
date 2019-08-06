@@ -82,8 +82,8 @@
 							<!-- TÃªn tháº±ng admin -->
 						<li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" href="#"
 								id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <span
-									class="mr-2 d-none d-lg-inline text-gray-600 small">${user.username}</span>
+								aria-expanded="false"> 				
+								<span class="mr-2 d-none d-lg-inline text-gray-600 small">${user.username}</span>
 								<img class="img-profile rounded-circle" src="Admin/assets/img/avataradmin.jpg">
 							</a></li>
 					</ul>
@@ -188,7 +188,7 @@
 											<div class="modal-footer">
 												<button type="submit" id="submitAddPokestop"
 													class="btn btn-warning btn-lg" style="width: 100%;">
-													<span class="	fas fa-check-circle"></span>Thêm
+													<span class="	fas fa-check-circle"></span>Create
 												</button>
 											</div>
 									</div>
@@ -561,12 +561,11 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 	<!-- Core plugin JavaScript-->
 	<script src="Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 	<!-- Custom scripts for all pages-->
-	<script src="js/sb-admin-2.min.js"></script>
+	<script src="Admin/js/sb-admin-2.min.js"></script>
 	<!-- Page level plugins -->
 	<script src="Admin/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-	<script
-		src="Admin/https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
 	<!-- Page level custom scripts -->
 	<script src="Admin/js/user-table.js"></script>
 	<script src="Admin/js/seller-table.js"></script>

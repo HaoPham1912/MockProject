@@ -30,7 +30,7 @@ $("#mytableseller tbody").on("click", "tr", function() {
 function editSeller() {
   if (selectedSeller.length > 0) {
      var nameSeller = selectedSeller[0];
-    alert(nameSeller);
+//    alert(nameSeller);
   
     $("#idSellerEdit").attr('value',selectedSeller[0]);
     $("#usernameSellerEdit").attr('value',selectedSeller[1]);
