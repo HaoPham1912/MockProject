@@ -178,11 +178,12 @@
 
         // Home Page Two Date Picker JS
 
-//        $('#startDate2').datepicker({
-//            uiLibrary: 'bootstrap4',
-//            iconsLibrary: 'fontawesome',
-//            minDate: today
-//        });
+        $('#startDate2').datepicker({
+        	format: 'dd-mm-yyyy',
+        	uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today
+        });
 
         // $('#endDate2').datepicker({
         //     uiLibrary: 'bootstrap4',

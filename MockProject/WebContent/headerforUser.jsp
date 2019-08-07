@@ -271,15 +271,6 @@
         <img src="assets/img/scroll-top.png" alt="JSOFT">
     </div>
     <!--== Scroll Top Area End ==-->
-	<script>
-		$(function() {
-			$('#startDate2').datepicker({
-				uiLibrary : 'bootstrap4',
-				iconsLibrary : 'fontawesome',
-				minDate : today
-			});
-		});
-	</script>
 	<!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
     <script src="assets/js/jquery-3.2.1.min.js"></script>

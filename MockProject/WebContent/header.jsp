@@ -247,11 +247,7 @@
         <img src="assets/img/scroll-top.png" alt="JSOFT">
     </div>
     <!--== Scroll Top Area End ==-->
-    <script>
-    $( function() {
-        $( "#startDate2" ).datepicker();
-    });
-    </script>
+
     <!--=======================Javascript============================-->
     <script src="assets/js/seat.js"></script>
     <!--=== Jquery Min Js ===-->

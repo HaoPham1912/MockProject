@@ -1,3 +1,37 @@
+
+//col 1
+document.getElementById("seat1col1").onclick = function() {changeSeatColor(seat1col1),getCost(seat1col1)};
+document.getElementById("seat2col1").onclick = function() {changeSeatColor(seat2col1),getCost(seat2col1)};
+document.getElementById("seat3col1").onclick = function() {changeSeatColor(seat3col1),getCost(seat3col1)};
+document.getElementById("seat4col1").onclick = function() {changeSeatColor(seat4col1),getCost(seat4col1)};
+document.getElementById("seat5col1").onclick = function() {changeSeatColor(seat5col1),getCost(seat5col1)};
+document.getElementById("seat6col1").onclick = function() {changeSeatColor(seat6col1),getCost(seat6col1)};
+document.getElementById("seat7col1").onclick = function() {changeSeatColor(seat7col1),getCost(seat7col1)};
+//col2
+document.getElementById("seat1col2").onclick = function() {changeSeatColor(seat1col2),getCost(seat1col2)};
+document.getElementById("seat2col2").onclick = function() {changeSeatColor(seat2col2),getCost(seat2col2)};
+document.getElementById("seat3col2").onclick = function() {changeSeatColor(seat3col2),getCost(seat3col2)};
+document.getElementById("seat4col2").onclick = function() {changeSeatColor(seat4col2),getCost(seat4col2)};
+document.getElementById("seat5col2").onclick = function() {changeSeatColor(seat5col2),getCost(seat5col2)};
+document.getElementById("seat6col2").onclick = function() {changeSeatColor(seat6col2),getCost(seat6col2)};
+document.getElementById("seat7col2").onclick = function() {changeSeatColor(seat7col2),getCost(seat7col2)};
+//col3
+document.getElementById("seat1col3").onclick = function() {changeSeatColor(seat1col3),getCost(seat1col3)};
+document.getElementById("seat2col3").onclick = function() {changeSeatColor(seat2col3),getCost(seat2col3)};
+document.getElementById("seat3col3").onclick = function() {changeSeatColor(seat3col3),getCost(seat3col3)};
+document.getElementById("seat4col3").onclick = function() {changeSeatColor(seat4col3),getCost(seat4col3)};
+document.getElementById("seat5col3").onclick = function() {changeSeatColor(seat5col3),getCost(seat5col3)};
+document.getElementById("seat6col3").onclick = function() {changeSeatColor(seat6col3),getCost(seat6col3)};
+document.getElementById("seat7col3").onclick = function() {changeSeatColor(seat7col3),getCost(seat7col3)};
+//col4
+document.getElementById("seat1col4").onclick = function() {changeSeatColor(seat1col4),getCost(seat1col4)};
+document.getElementById("seat2col4").onclick = function() {changeSeatColor(seat2col4),getCost(seat2col4)};
+document.getElementById("seat3col4").onclick = function() {changeSeatColor(seat3col4),getCost(seat3col4)};
+document.getElementById("seat4col4").onclick = function() {changeSeatColor(seat4col4),getCost(seat4col4)};
+document.getElementById("seat5col4").onclick = function() {changeSeatColor(seat5col4),getCost(seat5col4)};
+document.getElementById("seat6col4").onclick = function() {changeSeatColor(seat6col4),getCost(seat6col4)};
+document.getElementById("seat7col4").onclick = function() {changeSeatColor(seat7col4),getCost(seat7col4)};
+
 function changeSeatColor(seat)
 { 
     // var element = seat.style.getPropertyValue('background-color');
@@ -34,7 +68,7 @@ function count()
     var blue = "rgb(183, 219, 65)";
     var gray = "rgb(251, 251, 251)";
     var count = 1;
-    for(var i = 0;i<=24;i++)
+    for(var i = 0;i<=27;i++)
     {
         var s = getComputedStyle(x[i]);
         if(String(s['background-color'])===blue)
@@ -46,8 +80,26 @@ function count()
     else return true;
 }
 
-function ex()
+function getCost()
 {
-    var x = document.getElementById('startDate2');
-    alert(x.value);
+    var x = document.getElementById('table').getElementsByClassName('seat');
+    var blue = "rgb(183, 219, 65)";
+    var gray = "rgb(251, 251, 251)";
+    var count = 1;
+    for(var i = 0;i<=27;i++)
+    {
+        var s = getComputedStyle(x[i]);
+        if(String(s['background-color'])===blue)
+        {
+            count++;
+        }
+    }
+    document.getElementById("numSeat").innerHTML = String(count-1);
+    document.getElementById("cost").innerHTML = String((count-1)*5000);
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+
+ 

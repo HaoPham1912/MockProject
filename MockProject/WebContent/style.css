@@ -76,6 +76,27 @@
 ==========================================*/
 
 /*== Theme Defualt CSS ==*/
+#styleseat {
+	border: 1px solid #E8E8E8;
+	border-radius: 12px;
+}
+#title-seat h3{
+	color:#F9AF00;
+}
+#styleseat h3{
+	color:#F9AF00;
+}
+#styleseat h4{
+	color:#F9AF00;
+}
+.seat
+{
+	background-color: #FBFBFB;
+}
+#cost
+{
+	color: red;
+}
 #bus
 {
 	width: 1112px;
