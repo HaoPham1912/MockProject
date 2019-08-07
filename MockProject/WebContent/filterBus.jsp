@@ -57,11 +57,11 @@
 			<!-- Nav Item-Manage Seller -->
 			<li class="nav-item active"><a class="nav-link" href="#"
 				onclick="callContent('manageBus'); return false;"> <i
-					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
+					class="fas fa-bus-alt" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Bus</span></a></li>
 
 			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/emp-dashboard"> <i
-					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
+					class="far fa-arrow-alt-circle-left" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Back</span></a></li>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
@@ -143,7 +143,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 													<p data-placement="top" data-toggle="tooltip" title="View">
 														<button class="btn btn-primary" data-title="Edit"
 															data-toggle="modal" onclick="getIdBus()">
-															<span class="fas fa-shuttle-van"></span>
+															<span class="far fa-id-card"></span>
 														</button>
 													</p>
 												</td>												

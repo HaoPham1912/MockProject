@@ -27,26 +27,27 @@ $("#mytableticket tbody").on("click", "tr", function() {
 });
 //ManageUser Table-End
 
-function editSeller() {
+function editTicket() {
   if (selectedTicket.length > 0) {
-     var nameSeller = selectedTicket[0];
+     var nameTicket = selectedTicket[0];
 //    alert(nameSeller);
   
-    $("#idSellerEdit").attr('value',selectedTicket[0]);
-    $("#usernameSellerEdit").attr('value',selectedTicket[1]);
-    $("#nameSellerEdit").attr('value',selectedTicket[2]);
-    $("#phoneSellerEdit").attr('value',selectedTicket[3]);
-    $("#emailSellerEdit").attr('value',selectedTicket[4]);
-    $("#addressSellerEdit").attr('value',selectedTicket[5]);
-    $("#editSeller").modal("show");
-  } else {
-    alert("Please choose seller to edit!!!");
+    $("#idTicketEdit").attr('value',selectedTicket[0]);
+    $("#dateGoEdit").attr('value',selectedTicket[1]);
+    $("#dateBookEdit").attr('value',selectedTicket[2]);
+    $("#seatNumberEdit").attr('value',selectedTicket[3]);
+    $("#statusEdit").attr('value',selectedTicket[4]);
+    $("#priceEdit").attr('value',selectedTicket[5]);
+    $("#phoneEdit").attr('value',selectedTicket[6]);
+    $("#nameEdit").attr('value',selectedTicket[7]);
+    $("#idCustomerEdit").attr('value',selectedTicket[8]);
+    $("#editTicket").modal("show");
   }
 }
-function deleteSeller() {
+function deleteTicket() {
   if (selectedTicket.length > 0) {
-    var nameSeller = selectedTicket[0];
-    alert(nameSeller);
+    var nameTicket = selectedTicket[0];
+    alert(nameTicket);
 
     $("#deleteSeller").modal("show");
     $("#yesdeleteSeller").click(function() {

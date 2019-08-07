@@ -57,7 +57,7 @@
 			<!-- Nav Item-Manage Seller -->
 			<li class="nav-item active"><a class="nav-link" href="#"
 				onclick="callContent('manageBuses'); return false;"> <i
-					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
+					class="fas fa-route" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Buses</span></a></li>
 
 			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/logout"> <i
@@ -145,7 +145,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 													<p data-placement="top" data-toggle="tooltip" title="View">
 														<button class="btn btn-primary" data-title="Edit"
 															data-toggle="modal" onclick="getIdBuses()">
-															<span class="fas fa-shuttle-van"></span>
+															<span class="fas fa-bus-alt"></span>
 														</button>
 													</p>
 												</td>												
