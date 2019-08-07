@@ -55,8 +55,7 @@
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td COLSPAN=4><label id="wheel"></td>
-                                       
+                                        <td COLSPAN=4><label id="wheel"></td>                                       
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
@@ -69,36 +68,36 @@
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat1col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        <td><button type="button" class="seat" id="seat1col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
                                         <td style="text-align: left"><button type="button" class="seat" id="seat1col2" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
+                                        </button></td>
                                         <td style="text-align: right"><button type="button" class="seat" id="seat1col3" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat1col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        </button></td>
+                                        <td><button type="button" class="seat" id="seat1col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
 
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat2col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        <td><button type="button" class="seat" id="seat2col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
                                         <td style="text-align: left"><button type="button" class="seat" id="seat2col2" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
+                                        </button></td>
                                         <td style="text-align: right"><button type="button" class="seat" id="seat2col3" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat2col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        </button></td>
+                                        <td><button type="button" class="seat" id="seat2col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
 
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat3col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        <td><button type="button" class="seat" id="seat3col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
                                         <td style="text-align: left"><button type="button" class="seat" id="seat3col2" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
+                                        </button></td>
                                         <td style="text-align: right"><button type="button" class="seat" id="seat3col3" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat3col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        </button></td>
+                                        <td><button type="button" class="seat" id="seat3col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
 
                                     </tr>
                                 </div>
@@ -128,29 +127,26 @@
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat6col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        <td><button type="button" class="seat" id="seat6col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
                                         <td style="text-align: left"><button type="button" class="seat" id="seat6col2" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
+                                        </button></td>
                                         <td style="text-align: right"><button type="button" class="seat" id="seat6col3" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat6col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        </button></td>
+                                        <td><button type="button" class="seat" id="seat6col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
 
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat7col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
+                                        <td><button type="button" class="seat" id="seat7col1" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
                                         <td style="text-align: left"><button type="button" class="seat" id="seat7col2" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
+                                        </button></td>
                                         <td style="text-align: right"><button type="button" class="seat" id="seat7col3" data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat7col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></td>
-
+                                        </button></td>
+                                        <td><button type="button" class="seat" id="seat7col4" data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
                                     </tr>
                                 </div>
-
-
                             </tbody>
                         </table>
 
@@ -167,17 +163,17 @@
                                 <td><p> Cost: </p></td>
                                 <td style="float:right"><p id="cost" ></p></td>
                             </tr>
-                        <table>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+        
     </section>
     <!--== Scroll Top Area Start ==-->
     <!-- <div class="scroll-top">
         <img src="assets/img/scroll-top.png" alt="JSOFT">
     </div> -->
 </body>
-    <jsp:include page="footer.jsp" />  
 
 </html>

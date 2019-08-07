@@ -8,7 +8,7 @@
     border-radius: 12px;
 }
 .seat:hover{
-    background-image: url("chair.png") ;
+    background-image: url("assets/img/chair.png") ;
 }
 #wheel{
     transform: rotate(450deg);
