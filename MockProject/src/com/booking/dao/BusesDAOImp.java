@@ -2,6 +2,7 @@ package com.booking.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -102,5 +103,28 @@ public class BusesDAOImp implements IBusesDAO{
 			System.out.println(e.getMessage());
 		}
 		return null;
+	}
+	@Override
+	public ArrayList<Buses> findAllBuses() {
+		ArrayList<Buses> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			String sql = "SELECT * FROM buses";
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				Buses buses = new Buses();
+				buses.setId_buses(rs.getInt("id_buses"));
+				buses.setStart_place(rs.getString("start_place"));
+				buses.setEnd_place(rs.getString("end_place"));
+				buses.setDistance(rs.getInt("distance"));
+				buses.setPrice(rs.getDouble("price"));
+				arr.add(buses);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		return arr;
 	}
 }

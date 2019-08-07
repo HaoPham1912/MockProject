@@ -217,6 +217,7 @@
                                 	<div class="pick-location bookinput-item">          
                                        <select class="custom-select" name="start_place">
                                           <option selected>${bookingInfo.start_place}</option>
+                                           <option value="Ho Chi Minh">Ho Chi Minh</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ha Noi">Ha Noi</option>
@@ -225,6 +226,7 @@
                                     <div class="pick-location bookinput-item">
                                         <select class="custom-select" name="end_place">
                                           <option selected>${bookingInfo.end_place}</option>
+                                          <option value="Ha Noi">Ha Noi</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ho Chi Minh">Ho Chi Minh</option>

@@ -5,6 +5,14 @@ public class Buses {
 	private String start_place;
 	private String end_place;
 	private int distance;
+	private double price;
+	
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	public int getId_buses() {
 		return id_buses;
 	}
