@@ -181,7 +181,7 @@
         $('#startDate2').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
-            minDate: today,
+            minDate: today
             // maxDate: function () {
             //     return $('#endDate2').val();
             // }
