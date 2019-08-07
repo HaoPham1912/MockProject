@@ -142,85 +142,68 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												<td>${a.distance}</td>
 												<td>${a.price}</td>
 												<td>
-													<p data-placement="top" data-toggle="tooltip" title="Edit">
+													<p data-placement="top" data-toggle="tooltip" title="View">
 														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal" onclick="editUser()">
-															<span class="	fab fa-adn"></span>
+															data-toggle="modal" onclick="getIdBuses()">
+															<span class="fas fa-shuttle-van"></span>
 														</button>
 													</p>
-												</td>
-												<!-- <td>
-												<p data-placement="top" data-toggle="tooltip" title="Delete">
-													<button class="btn btn-danger" data-title="Delete"
-														data-toggle="modal" onclick="deleteUser()">
-														<span class="fa fa-trash"></span>
-													</button>
-												</p>
-											</td> -->
+												</td>												
 											</tr>
 										</c:forEach>
 									</tbody>
 								</table>
 							</div>
 						</div>
-
 					</div>
-					<div class="modal fade" id="editSeller" tabindex="-1" role="dialog"
+					<div class="modal fade" id="getIdBuses" tabindex="-1" role="dialog"
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<form class=""
-									action="${pageContext.request.contextPath}/admin-dashboard?action=update"
+									action="${pageContext.request.contextPath}/emp-dashboard"
 									method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
 										<h4 class="modal-title" style="margin-left: auto">
-											<strong>Update Seller Information</strong>
+											<strong>Your Selected</strong>
 										</h4>
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 									</div>
 									<div class="modal-body">
 										<div class="form-group">
-											<h4 class="text-black-50">ID Seller:</h4>
-											<input class="form-control" id="idSellerEdit" type="text"
-												name="idSellerEdit" required>
+											<h4 class="text-black-50">ID Buses:</h4>
+											<input class="form-control" id="idBusesSelected" type="text"
+												name="idBusesSelected" required>
 										</div>
 										<div class="form-group">
-											<h4 class="text-black-50">Seller Account Name:</h4>
-											<input class="form-control " id="usernameSellerEdit"
-												type="text" name="usernameSellerEdit" required>
+											<h4 class="text-black-50">Start Place:</h4>
+											<input class="form-control " id="startPlaceSelected"
+												type="text" name="startPlaceSelected" required>
 										</div>
 										<div class="form-group">
-											<h4 class="text-black-50">Name:</h4>
-											<input class="form-control " id="nameSellerEdit" type="text"
-												name="nameSellerEdit" placeholder="Le Van Duy" required>
+											<h4 class="text-black-50">End Place:</h4>
+											<input class="form-control " id="endPlaceSelected" type="text"
+												name="endPlaceSelected" placeholder="Le Van Duy" required>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
-											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneSellerEdit"
-												type="number" name="phoneSellerEdit"
-												placeholder="01293948384" pattern="[0-9]{1,}" title=""
+											<h4 class="text-black-50">Distance:</h4>
+											<input class="form-control " id="distanceSelected"
+												type="number" name="distanceSelected"
+												pattern="[0-9]{1,}" title=""
 												required>
 										</div>
 										<!-- Phone user -->
 										<!-- Email User -->
 										<div class="form-group">
-											<h4 class="text-black-50">Email:</h4>
-											<input class="form-control " id="emailSellerEdit"
-												type="email" name="emailSellerEdit" name="Email" accept=""
-												placeholder="example@gmail.com" title="Email is unvalid!"
+											<h4 class="text-black-50">Price:</h4>
+											<input class="form-control " id="priceSelected"
+												type="email" name="priceSelected" name="Email" accept=""
+												title="Email is unvalid!"
 												required>
 										</div>
 										<!-- Email User -->
-										<!-- Address User- Start -->
-										<div class="form-group">
-											<h4 class="text-black-50">Address:</h4>
-											<input class="form-control " id="addressSellerEdit"
-												type="text" name="addressSellerEdit"
-												placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
-												title="" required>
-										</div>
 										<!-- Address User- End -->
 										<!-- Set role-Start -->
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -236,7 +219,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										<div class="modal-footer">
 											<button type="submit" id="submitEditSeller"
 												class="btn btn-warning btn-lg" style="width: 100%;">
-												<span class="fas fa-check-circle"></span>Update
+												<span class="fas fa-check-circle"></span>View Bus
 											</button>
 											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
 										</div>

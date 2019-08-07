@@ -43,7 +43,6 @@ function editSeller() {
     alert("Please choose seller to edit!!!");
   }
 }
-
 function deleteSeller() {
   if (selectedSeller.length > 0) {
     var nameSeller = selectedSeller[0];

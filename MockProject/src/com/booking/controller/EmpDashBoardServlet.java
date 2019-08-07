@@ -48,6 +48,8 @@ public class EmpDashBoardServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
+		String id_buses = request.getParameter("idBusesSelected");
+		System.out.println(id_buses);
 	}
 
 }
