@@ -6,6 +6,13 @@ public class Bus {
 	private String time_go;
 	private String car_position;
 	private String time_estimate;
+	private double price;
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	public int getId_bus() {
 		return id_bus;
 	}
