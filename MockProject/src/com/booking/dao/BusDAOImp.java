@@ -22,7 +22,7 @@ public class BusDAOImp implements IBusDAO{
 			
 			Statement statement = connection.createStatement();
 
-			String sql = "select * from bus where id_buses=?";
+			String sql = "select bus.id_bus, bus.id_buses, time_go, car_position, time_estimate, Price from bus,buses where bus.id_buses=? and bus.id_buses = buses.id_buses";
 
 			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
 
@@ -39,6 +39,7 @@ public class BusDAOImp implements IBusDAO{
 				bus.setTime_go(rs.getString("time_go"));
 				bus.setCar_position(rs.getString("car_position"));
 				bus.setTime_estimate(rs.getString("time_estimate"));
+				bus.setPrice(rs.getDouble("Price"));
 				arr.add(bus);
 			}
 			return arr;

@@ -36,12 +36,14 @@
 						</c:forEach>
 					</tbody>
 				</table> --%>
-				<c:forEach items="${busList}" var="a">
+				<form action="">
+					<c:forEach items="${busList}" var="a">
 					<div id="bus">
 						<div style="float:right">
 							<p>${a.time_go}</p>
 							<p>${a.car_position}</p>
 							<p>${a.time_estimate}</p>
+							<p>${a.price}</p>
 						</div>
 						<div>
 							<img class="bus-img"
@@ -56,8 +58,10 @@
 							<img class="wifi-img"
 								src="https://image.flaticon.com/icons/svg/824/824239.svg" alt="">
 						</div>
+						<!-- <button type="button" class="btn btn-primary">Primary</button> -->
 					</div>
 				</c:forEach>
+				</form>
 			</c:if>
 		</div>
 	</section>
