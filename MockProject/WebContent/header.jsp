@@ -250,7 +250,7 @@
     <script>
     $( function() {
         $( "#startDate2" ).datepicker();
-    } );
+    });
     </script>
     <!--=======================Javascript============================-->
     <script src="assets/js/seat.js"></script>
