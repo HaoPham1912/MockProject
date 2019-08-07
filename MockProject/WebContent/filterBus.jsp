@@ -60,9 +60,9 @@
 					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Bus</span></a></li>
 
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/logout"> <i
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/emp-dashboard"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Log Out</span></a></li>
+					class="text-nav">Back</span></a></li>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Sidebar Toggler (Sidebar) -->
