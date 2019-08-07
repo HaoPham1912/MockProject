@@ -1,0 +1,23 @@
+.seat{
+  
+    width:50px;
+    height:50px;
+  
+    background-image: url(https://cdn1.iconfinder.com/data/icons/unigrid-mechanics/60/025_chair_seat_car-512.png);
+    background-size: 46px 46px;
+}
+.seat:hover{
+    background-image: url("chair.png") ;
+   
+    
+}
+#wheel{
+    transform: rotate(450deg);
+   
+    margin-left: -70%;
+    background-image: url(https://storage.googleapis.com/fe-production/images/Route/steering-wheel.svg);
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    border: none;
+}
