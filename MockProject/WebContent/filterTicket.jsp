@@ -41,7 +41,7 @@
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="#" onclick="callContent('manageBus'); return false;">
+				href="#" onclick="callContent('manageUser'); return false;">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink" style="color: rgb(245, 164, 13);"></i>
 				</div>
@@ -56,13 +56,13 @@
 					class="text-nav">Manage Buses</span></a></li> -->
 			<!-- Nav Item-Manage Seller -->
 			<li class="nav-item active"><a class="nav-link" href="#"
-				onclick="callContent('manageBus'); return false;"> <i
+				onclick="callContent('manageBuses'); return false;"> <i
 					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Manage Bus</span></a></li>
+					class="text-nav">Manage Buses</span></a></li>
 
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/emp-dashboard"> <i
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/logout"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Back</span></a></li>
+					class="text-nav">Log Out</span></a></li>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Sidebar Toggler (Sidebar) -->
@@ -108,12 +108,12 @@
 				<!-- Begin Page Content -->
 				<!-- ManageSeller-Start -->
 				<!-- ManageSeller-Start -->
-				<div class="container-fluid generalClass" id="manageBus">
+				<div class="container-fluid generalClass" id="manageBuses">
 					<!-- Page Heading -->
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">
-							<strong>Manage Bus</strong>
+							<strong>Manage Buses</strong>
 						</h1>
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
@@ -124,25 +124,27 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 						<!-- EmployeeStart -->
 						<div class="col-md-12">
 							<div class="table-responsive">
-								<table id="mytablebus" class="table table-bordred table-striped">
+								<table id="mytablebuses" class="table table-bordred table-striped">
 									<thead>
 										<th>ID</th>
-										<th>Time Go</th>
-										<th>Car Position</th>
-										<th>Time Estimate</th>				
-										<th>View Ticket</th>
+										<th>Start Place</th>
+										<th>End Place</th>
+										<th>Distance</th>
+										<th>Price</th>
+										<th>View Bus</th>
 									</thead>
 									<tbody>
-										<c:forEach items="${listFilterBus}" var="a">
+										<c:forEach items="${listBuses}" var="a">
 											<tr>
-												<td>${a.id_bus}</td>
-												<td>${a.time_go}</td>
-												<td>${a.car_position}</td>
-												<td>${a.time_estimate}</td>
+												<td>${a.id_buses}</td>
+												<td>${a.start_place}</td>
+												<td>${a.end_place}</td>
+												<td>${a.distance}</td>
+												<td>${a.price}</td>
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="View">
 														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal" onclick="getIdBus()">
+															data-toggle="modal" onclick="getIdBuses()">
 															<span class="fas fa-shuttle-van"></span>
 														</button>
 													</p>
@@ -154,12 +156,12 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 							</div>
 						</div>
 					</div>
-					<div class="modal fade" id="getIdBus" tabindex="-1" role="dialog"
+					<div class="modal fade" id="getIdBuses" tabindex="-1" role="dialog"
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<form class=""
-									action="${pageContext.request.contextPath}/emp-filterTicket"
+									action="${pageContext.request.contextPath}/emp-filterbus"
 									method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
@@ -170,33 +172,54 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 									</div>
 									<div class="modal-body">
 										<div class="form-group">
-											<h4 class="text-black-50">ID Bus:</h4>
-											<input class="form-control" id="idBusSelected" type="text"
-												name="idBusSelected" required readonly>
+											<h4 class="text-black-50">ID Buses:</h4>
+											<input class="form-control" id="idBusesSelected" type="text"
+												name="idBusesSelected" required readonly>
 										</div>
 										<div class="form-group">
-											<h4 class="text-black-50">Time Go:</h4>
-											<input class="form-control " id="timeGo"
-												type="text" name="timeGo" required readonly>
+											<h4 class="text-black-50">Start Place:</h4>
+											<input class="form-control " id="startPlaceSelected"
+												type="text" name="startPlaceSelected" required readonly>
 										</div>
 										<div class="form-group">
-											<h4 class="text-black-50">Car Position:</h4>
-											<input class="form-control " id="carPosition" type="text"
-												name="carPosition" required readonly>
+											<h4 class="text-black-50">End Place:</h4>
+											<input class="form-control " id="endPlaceSelected" type="text"
+												name="endPlaceSelected" required readonly>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
-											<h4 class="text-black-50">Time Estimate:</h4>
-											<input class="form-control " id="timeEstimate"
-												type="text" name="timeEstimate"
+											<h4 class="text-black-50">Distance:</h4>
+											<input class="form-control " id="distanceSelected"
+												type="number" name="distanceSelected"
 												title="Distance of start place to end place"
 												required readonly>
 										</div>
+										<!-- Phone user -->
+										<!-- Email User -->
+										<div class="form-group">
+											<h4 class="text-black-50">Price:</h4>
+											<input class="form-control " id="priceSelected"
+												type="text" name="priceSelected" name="Email" accept=""
+												title="Price of Buses"
+												required readonly>
+										</div>
+										<!-- Email User -->
+										<!-- Address User- End -->
+										<!-- Set role-Start -->
+										<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+											<label class="btn btn-admin "> <input type="radio"
+												name="options" id="optionAdminRole"> Admin
+											</label> <label class="btn btn-seller"> <input type="radio"
+												name="options" id="optionSellerRole"> Ticket Seller
+											</label> <label class="btn btn-user"> <input type="radio"
+												name="options" id="optionUserRole"> User
+											</label>
+										</div> -->
 										<!-- Set role-End -->
 										<div class="modal-footer">
 											<button type="submit"
 												class="btn btn-warning btn-lg" style="width: 100%;">
-												<span class="fas fa-check-circle"></span>View Tickket
+												<span class="fas fa-check-circle"></span>View Bus
 											</button>
 											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
 										</div>
@@ -276,7 +299,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 		<!-- Page level custom scripts -->
 		<script src="Admin/js/user-table.js"></script>
 		<script src="Admin/js/seller-table.js"></script>
-		<script src="Admin/js/bus.js"></script>
+		<script src="Admin/js/buses.js"></script>
 		<script
 			src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>

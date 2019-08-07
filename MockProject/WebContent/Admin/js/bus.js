@@ -5,7 +5,7 @@ $(document).ready(function() {
   } );
 } );
 
-callContent("manageBuses");
+callContent("manageBus");
 var selectedBus = [];
 //ManageSeller Table-Start
 //chọn seller
@@ -33,7 +33,7 @@ function getIdBus(){
 		$("#timeGo").attr('value',selectedBus[1]);
 		$("#carPosition").attr('value',selectedBus[2]);
 		$("#timeEstimate").attr('value',selectedBus[3]);
-		$("#getIdBuses").modal("show");
+		$("#getIdBus").modal("show");
 	}
 }
 //

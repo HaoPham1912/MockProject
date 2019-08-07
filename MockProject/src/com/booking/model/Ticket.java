@@ -5,7 +5,7 @@ public class Ticket {
 	private String date_go;
 	private String date_book;
 	private int seat_number;
-	private boolean status;
+	private int status;
 	private double price;
 	private String phone;
 	private String name;
@@ -35,10 +35,10 @@ public class Ticket {
 	public void setSeat_number(int seat_number) {
 		this.seat_number = seat_number;
 	}
-	public boolean isStatus() {
+	public int getStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 	public double getPrice() {

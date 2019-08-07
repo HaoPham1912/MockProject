@@ -5,5 +5,5 @@ import java.util.ArrayList;
 import com.booking.model.Ticket;
 
 public interface ITicketDAO {
-	ArrayList<Ticket> findAllTicket();
+	ArrayList<Ticket> filterAllTicket(int id_bus);
 }
