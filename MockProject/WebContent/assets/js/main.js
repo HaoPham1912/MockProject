@@ -179,19 +179,10 @@
         // Home Page Two Date Picker JS
 
         $('#startDate2').datepicker({
-<<<<<<< HEAD
         	format: 'dd-mm-yyyy',
         	uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: today
-=======
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: today
-            // maxDate: function () {
-            //     return $('#endDate2').val();
-            // }
->>>>>>> 8f2432a8709e10d0a17be6810c556613aef24a75
         });
 
         // $('#endDate2').datepicker({

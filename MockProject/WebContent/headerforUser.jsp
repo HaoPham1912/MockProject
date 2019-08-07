@@ -271,8 +271,8 @@
         <img src="assets/img/scroll-top.png" alt="JSOFT">
     </div>
     <!--== Scroll Top Area End ==-->
-<<<<<<< HEAD
-	<!--=======================Javascript============================-->
+<!-- <<<<<<< HEAD
+	=======================Javascript============================
 =======
     <script>
     $( function() {
@@ -280,8 +280,8 @@
     });
     </script>
 
-    <!--=======================Javascript============================-->
->>>>>>> 8f2432a8709e10d0a17be6810c556613aef24a75
+    =======================Javascript============================
+>>>>>>> 8f2432a8709e10d0a17be6810c556613aef24a75 -->
     <!--=== Jquery Min Js ===-->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <!--=== Jquery Migrate Min Js ===-->
