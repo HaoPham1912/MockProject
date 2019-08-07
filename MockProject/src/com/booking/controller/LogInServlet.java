@@ -67,9 +67,15 @@ public class LogInServlet extends HttpServlet {
 				{
 					response.sendRedirect(request.getContextPath()+"/cus-dashboard");
 				}
-				else
+				else 
 				{
-					response.sendRedirect(request.getContextPath()+"/guest-dashboard");
+					if(account.getRole()==2) {
+						response.sendRedirect(request.getContextPath()+"/emp-dashboard");
+					}
+					else
+					{
+						response.sendRedirect(request.getContextPath()+"/guest-dashboard");
+					}
 				}
 			}
 		}
