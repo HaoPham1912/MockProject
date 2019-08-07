@@ -1,7 +1,7 @@
 //$("#mytableseller").DataTable();
 $(document).ready(function() {
   $('#mytablebuses').DataTable( {
-      "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
+      "lengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]]
   } );
 } );
 
@@ -9,12 +9,12 @@ callContent("manageBuses");
 var selectedBuses = [];
 //ManageSeller Table-Start
 //chọn seller
-$("#mytableseller tbody").on("click", "tr", function() {
+$("#mytablebuses tbody").on("click", "tr", function() {
   if ($(this).hasClass("selected")) {
     $(this).removeClass("selected");
     selectedBuses = [];
   } else {
-    $("#mytableseller tr.selected").removeClass("selected");
+    $("#mytablebuses tr.selected").removeClass("selected");
     $(this).addClass("selected");
     selectedBuses = [];
     $(this)

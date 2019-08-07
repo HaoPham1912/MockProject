@@ -58,7 +58,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#"
 				onclick="callContent('manageBuses'); return false;"> <i
 					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Manage Buses</span></a></li>
+					class="text-nav">Manage Bus</span></a></li>
 
 			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/logout"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
@@ -93,7 +93,7 @@
 							aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
 						</a>
 							<div class="topbar-divider d-none d-sm-block"></div> <!-- Nav Item - User Information -->
-							<!-- TÃªn tháº±ng admin -->
+							<!-- Tên thằng admin -->
 						<li class="nav-item dropdown no-arrow"><a
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -113,7 +113,7 @@
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">
-							<strong>Manage Buses</strong>
+							<strong>Manage Bus</strong>
 						</h1>
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
@@ -127,20 +127,18 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 								<table id="mytablebuses" class="table table-bordred table-striped">
 									<thead>
 										<th>ID</th>
-										<th>Start Place</th>
-										<th>End Place</th>
-										<th>Distance</th>
-										<th>Price</th>
-										<th>View Bus</th>
+										<th>Time Go</th>
+										<th>Car Position</th>
+										<th>Time Estimate</th>				
+										<th>View Ticket</th>
 									</thead>
 									<tbody>
-										<c:forEach items="${listBuses}" var="a">
+										<c:forEach items="${listFilterBus}" var="a">
 											<tr>
-												<td>${a.id_buses}</td>
-												<td>${a.start_place}</td>
-												<td>${a.end_place}</td>
-												<td>${a.distance}</td>
-												<td>${a.price}</td>
+												<td>${a.id_bus}</td>
+												<td>${a.time_go}</td>
+												<td>${a.car_position}</td>
+												<td>${a.time_estimate}</td>
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="View">
 														<button class="btn btn-primary" data-title="Edit"
@@ -273,7 +271,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 				<!-- <footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Duy TrÃ¢n Háº£o VÄn 2019</span>
+						<span>Copyright &copy; Duy Trân Hảo Văn 2019</span>
 					</div>
 				</div>
 			</footer> -->
