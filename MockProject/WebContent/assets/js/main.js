@@ -31,9 +31,9 @@
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: today,
-            maxDate: function () {
-                return $('#endDate').val();
-            }
+//            maxDate: function () {
+//                return $('#endDate').val();
+//            }
         });
 
         $('#endDate').datepicker({
