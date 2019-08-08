@@ -8,4 +8,5 @@ public interface IBusesDAO {
 	Buses findBusesByPlace(String start_place,String end_place);
 	ArrayList<String> findAllStart_Place();
 	ArrayList<String> findAllEnd_Place();
+	ArrayList<Buses> findAllBuses();
 }

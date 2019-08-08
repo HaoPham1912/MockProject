@@ -9,22 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.booking.dao.BusDAOImp;
-import com.booking.dao.BusesDAOImp;
-
+import com.booking.dao.TicketDAOImp;
+import com.booking.model.Ticket;
 
 /**
- * Servlet implementation class EmpDashBoardServlet
+ * Servlet implementation class FilterTicketServlet
  */
-@WebServlet("/emp-dashboard")
-public class EmpDashBoardServlet extends HttpServlet {
+@WebServlet("/emp-filterTicket")
+public class FilterTicketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    BusesDAOImp busesDAO = new BusesDAOImp(); 
-    BusDAOImp busDAO = new BusDAOImp();
+    TicketDAOImp ticketDAO = new TicketDAOImp();   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmpDashBoardServlet() {
+    public FilterTicketServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,19 +35,17 @@ public class EmpDashBoardServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.setAttribute("listBuses", busesDAO.findAllBuses());
-		RequestDispatcher rd = request.getRequestDispatcher("/employee.jsp");
-		rd.forward(request, response);		
+		String id_bus = request.getParameter("idBusSelected");
+		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
+		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
+		rd.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html;charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);	
+		doGet(request, response);
 	}
 
 }

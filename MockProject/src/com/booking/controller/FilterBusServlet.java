@@ -12,19 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.booking.dao.BusDAOImp;
 import com.booking.dao.BusesDAOImp;
 
-
 /**
- * Servlet implementation class EmpDashBoardServlet
+ * Servlet implementation class FilterBusServlet
  */
-@WebServlet("/emp-dashboard")
-public class EmpDashBoardServlet extends HttpServlet {
+@WebServlet("/emp-filterbus")
+public class FilterBusServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    BusesDAOImp busesDAO = new BusesDAOImp(); 
+	BusesDAOImp busesDAO = new BusesDAOImp(); 
     BusDAOImp busDAO = new BusDAOImp();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmpDashBoardServlet() {
+    public FilterBusServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,9 +36,11 @@ public class EmpDashBoardServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.setAttribute("listBuses", busesDAO.findAllBuses());
-		RequestDispatcher rd = request.getRequestDispatcher("/employee.jsp");
-		rd.forward(request, response);		
+		String id_buses = request.getParameter("idBusesSelected");
+		System.out.println(id_buses);
+		request.setAttribute("listFilterBus", busDAO.findAllBus(Integer.valueOf(id_buses)));
+		RequestDispatcher rd = request.getRequestDispatcher("/filterBus.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -49,7 +50,7 @@ public class EmpDashBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);	
+		doGet(request, response);
 	}
 
 }
