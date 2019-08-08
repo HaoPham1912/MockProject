@@ -41,25 +41,14 @@ public class AuthorizationFilter implements Filter{
 		}
 		else if(url.startsWith("/MockProject/guest"))
 		{
-			if(url.startsWith("/MockProject/guest-dashboard"))
-			{
-				Account account = myultil.getLoginedUser(session);
-				if(account==null)
-				{
-					chain.doFilter(request, response);
-				}
-				else
-				{
-					if(account.getRole()==3)
-					{
-						chain.doFilter(request, response);
-					}
-					else if(account.getRole()==1)
-					{
-						resp.sendRedirect(req.getContextPath()+"/cus-dashboard");
-					}
-				}
-			}
+			/*
+			 * if(url.startsWith("/MockProject/guest-dashboard")) { Account account =
+			 * myultil.getLoginedUser(session); if(account==null) { chain.doFilter(request,
+			 * response); } else { if(account.getRole()==3) { chain.doFilter(request,
+			 * response); } else if(account.getRole()==1) {
+			 * resp.sendRedirect(req.getContextPath()+"/cus-dashboard"); } } }
+			 */
+			chain.doFilter(request,response);
 		}
 		else if(url.startsWith("/MockProject/cus"))
 		{

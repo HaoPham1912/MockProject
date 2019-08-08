@@ -80,16 +80,16 @@ public class ViewBusServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-		String price = request.getParameter("price");
-		String id_bus= request.getParameter("id_bus");
-		System.out.println(price+" "+id_bus);
-		Bus bus = new Bus();
-		bus.setId_bus(Integer.valueOf(id_bus));
-		bus.setPrice(Double.valueOf(price));
-		System.out.println("id: "+bus.getId_bus() + "price: "+bus.getPrice());
-		request.setAttribute("bus", bus);
-		
-		response.sendRedirect(request.getContextPath()+"/cus-viewSeatServlet");
+//		doGet(request, response);
+//		String price = request.getParameter("price");
+//		String id_bus= request.getParameter("id_bus");
+//		System.out.println(price+" "+id_bus);
+//		Bus bus = new Bus();
+//		bus.setId_bus(Integer.valueOf(id_bus));
+//		bus.setPrice(Double.valueOf(price));
+//		System.out.println("id: "+bus.getId_bus() + "price: "+bus.getPrice());
+//		request.setAttribute("bus", bus);
+//		
+//		response.sendRedirect(request.getContextPath()+"/cus-viewSeatServlet");
 	}
 }
