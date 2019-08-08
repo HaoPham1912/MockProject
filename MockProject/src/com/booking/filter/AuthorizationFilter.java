@@ -87,6 +87,24 @@ public class AuthorizationFilter implements Filter{
 				}
 			}	
 		}
+		else if(url.startsWith("/MockProject/emp")){
+			Account account =myultil.getLoginedUser(session);
+			if(account==null) 
+			{
+				resp.sendRedirect(req.getContextPath()+"/login?message=not-login");
+			}
+			else 
+			{
+				if(account.getRole()==2) 
+				{
+					chain.doFilter(request, response);
+				}
+				else 
+				{
+					resp.sendRedirect(req.getContextPath()+"/login?message=not-permission");
+				}
+			}
+		}
 		else
 		{
 			chain.doFilter(request, response);
