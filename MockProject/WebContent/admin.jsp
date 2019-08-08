@@ -52,6 +52,9 @@
 			<li class="nav-item active"><a class="nav-link" href="#" onclick="callContent('manageUser'); return false;">
 					<i class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span class="text-nav">Manage
 						System</span></a></li>
+						<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/logout"> <i
+					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
+					class="text-nav">Log Out</span></a></li>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Sidebar Toggler (Sidebar) -->
