@@ -84,6 +84,7 @@ public class LogInServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		System.out.println(username);
 		
 		String message = request.getParameter("message");
 		

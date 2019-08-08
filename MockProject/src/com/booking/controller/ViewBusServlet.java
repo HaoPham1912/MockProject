@@ -49,6 +49,7 @@ public class ViewBusServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		BookingInfo bookingInfo = new BookingInfo();
 		
+//		bookingInfo.setId_bus(id_bus);
 		bookingInfo.setStart_place(start_place);
 		bookingInfo.setEnd_place(end_place);
 		bookingInfo.setStart_date(start_Date);
@@ -57,7 +58,6 @@ public class ViewBusServlet extends HttpServlet {
 		
 		Buses buses = new Buses();
 		buses = busesDAO.findBusesByPlace(start_place, end_place);
-		System.out.println("buses" + buses);
 		if(buses==null)
 		{
 			String message = "There are no bus from "+start_place+" to "+end_place+" in "+start_Date;
@@ -81,5 +81,15 @@ public class ViewBusServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		String price = request.getParameter("price");
+		String id_bus= request.getParameter("id_bus");
+		System.out.println(price+" "+id_bus);
+		Bus bus = new Bus();
+		bus.setId_bus(Integer.valueOf(id_bus));
+		bus.setPrice(Double.valueOf(price));
+		System.out.println("id: "+bus.getId_bus() + "price: "+bus.getPrice());
+		request.setAttribute("bus", bus);
+		
+		response.sendRedirect(request.getContextPath()+"/cus-viewSeatServlet");
 	}
 }

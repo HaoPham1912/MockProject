@@ -12,7 +12,6 @@
 }
 #wheel{
     transform: rotate(450deg);
-   
     margin-left: -70%;
     background-image: url(https://storage.googleapis.com/fe-production/images/Route/steering-wheel.svg);
     width: 50px;

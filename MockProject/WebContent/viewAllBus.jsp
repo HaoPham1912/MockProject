@@ -3,10 +3,11 @@
 <html class="no-js" lang="zxx">
 
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--=== Favicon ===-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--=== Favicon ===-->
+	
 
 </head>
 
@@ -36,32 +37,52 @@
 						</c:forEach>
 					</tbody>
 				</table> --%>
-				<form action="">
 					<c:forEach items="${busList}" var="a">
-					<div id="bus">
-						<div style="float:right">
-							<p>${a.time_go}</p>
-							<p>${a.car_position}</p>
-							<p>${a.time_estimate}</p>
-							<p>${a.price}</p>
-						</div>
-						<div>
-							<img class="bus-img"
-								src="https://image.flaticon.com/icons/svg/174/174237.svg" alt="">
-							<img class="arrow"
-								src=" https://image.flaticon.com/icons/svg/1971/1971260.svg"
-								alt="">
-						</div>
-						<div id="wifi-water">
-							<img class="wifi-img"
-								src="https://image.flaticon.com/icons/svg/179/179428.svg" alt="">
-							<img class="wifi-img"
-								src="https://image.flaticon.com/icons/svg/824/824239.svg" alt="">
-						</div>
-						<!-- <button type="button" class="btn btn-primary">Primary</button> -->
-					</div>
-				</c:forEach>
-				</form>
+						<!-- Start-Sửa -->
+						<form method="POST" action="${pageContext.request.contextPath}/cus-viewBusServlet">
+							<div id="bus">
+								<div class="row" style="padding-left: 15px;padding-right: 15px">
+									<div class="col-md-3" style="text-align: center;padding-top: 10px">														
+										<div class="row1" style="text-align: center">									
+											<img class="bus-img" src="https://image.flaticon.com/icons/svg/174/174237.svg" alt="">
+											<p>Service</p>
+										</div>
+										<hr>
+										<div class="row1" style="text-align: center">
+											<b><p name="id_bus" style="width:120px">${a.id_bus}</p>	</b>
+											<img class="wifi-img"src="https://image.flaticon.com/icons/svg/179/179428.svg" alt="">								
+											<img class="wifi-img" src="https://image.flaticon.com/icons/svg/824/824239.svg" alt="">
+										</div>
+									</div>
+									<div class=" col-md-3" style="text-align: center;padding-top: 20px">
+									<div class="row" style="padding-top:40px">	
+										<div class=" col-md-4" style="width:30px">
+											<b><p name="time_go" style="width:120px">${a.time_go}</p>	</b>
+											<p name="start_place" style="width:120px">${bookingInfo.start_place}</p>	
+										</div>	
+										<div class=" col-md-4" >
+											<img class="arrow" src="https://image.flaticon.com/icons/svg/25/25426.svg"
+											 style="margin-top:10px;margin-bottom:10px;transform: translate(60%,-10%)" alt="">	
+										</div>	
+										<div class=" col-md-4" >
+											<b><p name="time_estimate" style="width:120px">${a.time_estimate}</p></b>
+											<p name="end_place" style="width:120px">${bookingInfo.end_place}</p>	
+										</div>	
+										</div>																																																
+									</div>
+									<div class=" col-md-3" style="text-align: center;padding-top: 40px">
+										<img class="wifi-img"src="https://icon-library.net/images/position-icon/position-icon-8.jpg" alt="">	
+										<b><p name="car_position">Port: ${a.car_position}</p>	</b>							
+									</div>	
+									<div class=" col-md-3" style="text-align: center;padding-top: 40px">
+										<b><p name="price" style="padding-bottom:10px;">${a.price}</p></b>
+										<button type="submit" class="btn btn-warning">
+										<i class="fa fa-sign-in"></i><b>Book Ticket</b></button>
+									</div>								
+								</div>
+							</div>
+						</form>		
+					</c:forEach>
 			</c:if>
 		</div>
 	</section>

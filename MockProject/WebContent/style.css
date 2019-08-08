@@ -76,27 +76,7 @@
 ==========================================*/
 
 /*== Theme Defualt CSS ==*/
-#styleseat {
-	border: 1px solid #E8E8E8;
-	border-radius: 12px;
-}
-#title-seat h3{
-	color:#F9AF00;
-}
-#styleseat h3{
-	color:#F9AF00;
-}
-#styleseat h4{
-	color:#F9AF00;
-}
-.seat
-{
-	background-color: #FBFBFB;
-}
-#cost
-{
-	color: red;
-}
+
 #bus
 {
 	width: 1112px;
@@ -119,24 +99,25 @@
 {
 	height: 60px;
 	width: 60px;
-	margin-top: 20px;
-	margin-left: 32px;
-	transform: translate(300%,-10%);
+	transform: translate(60%,-10%);
+}
+.datve{
+	background-color: #344e86;
 }
 .bus-img
 {
-	height: 60px;
-	width: 60px;
-	margin-top: 20px;
-	margin-left: 32px;
+/* 	margin-top: 10px; */
+	height: 30px;
+	width: 30px;
+	
 }
 .wifi-img
 {
 	height: 30px;
 	width: 30px;
 	float: bottom;
-	margin-top: 30px;
-	margin-right: 15px;
+	margin-top: 12px;
+	margin-right: 10px;
 	margin-left: 15px;
 }
 .overlay {

@@ -1,6 +1,7 @@
 package com.booking.model;
 
 public class BookingInfo {
+	private int id_bus;	
 	private String start_place;
 	private String end_place;
 	private String start_date;
@@ -21,5 +22,11 @@ public class BookingInfo {
 	}
 	public void setStart_date(String start_date) {
 		this.start_date = start_date;
+	}
+	public int getId_bus() {
+		return id_bus;
+	}
+	public void setId_bus(int id_bus) {
+		this.id_bus = id_bus;
 	}
 }

@@ -1,7 +1,7 @@
 
 //col 1
-document.getElementById("seat1col1").onclick = function() {changeSeatColor(seat1col1),getCost(seat1col1)};
-document.getElementById("seat2col1").onclick = function() {changeSeatColor(seat2col1),getCost(seat2col1)};
+document.getElementById("seat1col1").onclick = function() {alert(seat1col1)};
+/*document.getElementById("seat2col1").onclick = function() {changeSeatColor(seat2col1),getCost(seat2col1)};
 document.getElementById("seat3col1").onclick = function() {changeSeatColor(seat3col1),getCost(seat3col1)};
 document.getElementById("seat4col1").onclick = function() {changeSeatColor(seat4col1),getCost(seat4col1)};
 document.getElementById("seat5col1").onclick = function() {changeSeatColor(seat5col1),getCost(seat5col1)};
@@ -31,7 +31,11 @@ document.getElementById("seat4col4").onclick = function() {changeSeatColor(seat4
 document.getElementById("seat5col4").onclick = function() {changeSeatColor(seat5col4),getCost(seat5col4)};
 document.getElementById("seat6col4").onclick = function() {changeSeatColor(seat6col4),getCost(seat6col4)};
 document.getElementById("seat7col4").onclick = function() {changeSeatColor(seat7col4),getCost(seat7col4)};
-
+*/
+function abc()
+{
+	alert("aaa");
+}
 function changeSeatColor(seat)
 { 
     // var element = seat.style.getPropertyValue('background-color');
@@ -80,7 +84,7 @@ function count()
     else return true;
 }
 
-function getCost()
+function getCost(price)
 {
     var x = document.getElementById('table').getElementsByClassName('seat');
     var blue = "rgb(183, 219, 65)";
@@ -95,7 +99,7 @@ function getCost()
         }
     }
     document.getElementById("numSeat").innerHTML = String(count-1);
-    document.getElementById("cost").innerHTML = String((count-1)*5000);
+    document.getElementById("cost").innerHTML = String((count-1)*price);
 }
 
 $(document).ready(function(){

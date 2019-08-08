@@ -7,11 +7,17 @@ import javax.servlet.http.HttpSession;
 
 import com.booking.model.Account;
 import com.booking.model.BookingInfo;
+import com.booking.model.Bus;
 
 public class MyUltil {
 	public static final String ATT_NAME_CONNECTION = "ATTRIBUTE_FOR_CONNECTION";
 
 	private static final String ATT_NAME_USER_NAME = "ATTRIBUTE_FOR_STORE_USER_NAME_IN_COOKIE";
+	
+	public static void storeBusPrice(HttpSession session, Bus bus)
+	{
+		session.setAttribute("bus", bus);
+	}
 	
 	public static void storeBookingInfo(HttpSession session, BookingInfo bookingInfo)
 	{
