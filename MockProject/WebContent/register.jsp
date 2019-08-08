@@ -113,32 +113,7 @@
                                 </li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">services</a></li>
-                                <li><a href="#">Coach</a>
-                                    <!-- <ul>
-                                        <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                        <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                        <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                        <li><a href="car-details.html">Car Details</a></li>
-                                    </ul> -->
-                                </li>
-                                <!-- <li><a href="index.html">Pages</a>
-                                    <ul>
-                                        <li><a href="package.html">Pricing</a></li>
-                                        <li><a href="driver.html">Driver</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="help-desk.html">Help Desk</a></li>
-                                        <li><a href="login.html">Log In</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
-                                </li> -->
-                                <!-- <li><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="article.html">Blog Page</a></li>
-                                        <li><a href="article-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li> -->
+                                <li><a href="#">Coach</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="http://localhost:8080/MockProject/login">Log In</a></li>
                                 <li><a href="http://localhost:8080/MockProject/register">Register</a></li>
@@ -181,18 +156,21 @@
 							<h3>Sign Up</h3>
 							<form action="${pageContext.request.contextPath}/register" method="POST">
 								<div class="name">
-									<input type="text" placeholder="Name" name="name" required>
+									<input type="text" placeholder="Name" name="name" 
+									value= "${customerHo.name}" required>
 								</div>
 								<div class="email">
-									<input type="email" placeholder="Email" name="email">
+									<input type="email" placeholder="Email" name="email" value= "${customerHo.email}">
 								</div>
 								<div class="phone">
 								<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{10}"  placeholder="Phone Number" name="phone" title="Phone must be a number that contains 10 characters long" required />
-									
+									<input type="text" pattern="[0-9]{10}" value= "${customerHo.phone}" 
+									placeholder="Phone Number" name="phone" title="Phone must be a number that contains 10 characters long" 
+									required />	
 								</div>
 								<div class="address">
-									<input type="text" placeholder="Address" name="address">
+									<input type="text" placeholder="Address" value= "${customerHo.address}" 
+									name="address">
 								</div>
 								<div class="username">
 										<input type="text" placeholder="Username" name="username"
@@ -205,9 +183,9 @@
 									<input type="password" placeholder="Password" name="password"
 									maxlength="15" minlength="8" 
 									pattern="[A-Za-z0-9]{1,}"
-									required
-									>
+									required>
 								</div>
+								<p style="color:red">${message}</p>
 								<div class="log-btn">
 									<button type="submit">
 										<i class="fa fa-check-square"></i> Sign Up
