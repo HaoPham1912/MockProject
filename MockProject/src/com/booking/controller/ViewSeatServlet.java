@@ -10,12 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.booking.dao.CustomerDAOImp;
+import com.booking.dao.StationDAOImp;
+import com.booking.model.Account;
+import com.booking.model.BookingInfo;
+import com.booking.model.Customer;
+import com.booking.ultils.MyUltil;
+
 /**
  * Servlet implementation class ViewSeatServlet
  */
 @WebServlet("/cus-viewSeatServlet")
 public class ViewSeatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	CustomerDAOImp customerDAO = new CustomerDAOImp();
+	StationDAOImp stationDAO = new StationDAOImp();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -29,10 +38,26 @@ public class ViewSeatServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		String price = request.getParameter("price");
 		String id_bus= request.getParameter("id_bus");
 		request.setAttribute("price", price);
+		
+		MyUltil myultil = new MyUltil();
+		HttpSession session = request.getSession();
+		Account account = myultil.getLoginedUser(session);
+		Customer customer = customerDAO.customer(account.getId());
+		request.setAttribute("customer", customer);
+		
+		BookingInfo bookinginfo = myultil.getBookingInfo(session);
+		String address1 = stationDAO.FindAddressByStopName(bookinginfo.getStart_place());
+		String address2 = stationDAO.FindAddressByStopName(bookinginfo.getEnd_place());
+		request.setAttribute("address1", address1);
+		request.setAttribute("address2", address2);
+		
 		RequestDispatcher rd =  request.getRequestDispatcher("/viewBusSeat.jsp");
 		rd.forward(request, response);
 	}
@@ -42,6 +67,8 @@ public class ViewSeatServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
 

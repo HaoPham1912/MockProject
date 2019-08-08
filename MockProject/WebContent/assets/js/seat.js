@@ -86,7 +86,6 @@ function count()
 
 function getCost(price)
 {
-    alert(price);
     var x = document.getElementById('table').getElementsByClassName('seat');
     var blue = "rgb(183, 219, 65)";
     var gray = "rgb(251, 251, 251)";
@@ -100,7 +99,7 @@ function getCost(price)
         }
     }
     document.getElementById("numSeat").innerHTML = String(count-1);
-    document.getElementById("cost").innerHTML = String((count-1)*1000);
+    document.getElementById("cost").innerHTML = String((count-1)*parseInt(price));
 }
 
 $(document).ready(function(){

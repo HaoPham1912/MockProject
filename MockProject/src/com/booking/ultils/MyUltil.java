@@ -23,6 +23,11 @@ public class MyUltil {
 	{
 		session.setAttribute("bookingInfo", bookingInfo);
 	}
+	
+	public static BookingInfo getBookingInfo(HttpSession session)
+	{
+		return (BookingInfo) session.getAttribute("bookingInfo");
+	}
 
 	public static void storeLoginedUser(HttpSession session, Account account) {
 		session.setAttribute("user", account);

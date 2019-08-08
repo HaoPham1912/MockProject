@@ -58,15 +58,16 @@
 									<div class=" col-md-3" style="text-align: center;padding-top: 20px">
 									<div class="row" style="padding-top:40px">	
 										<div class=" col-md-4" style="width:30px">
-											<b><p name="time_go" style="width:120px">${a.time_go}</p>	</b>
+											<b><p name="time_go" style="width:120px">${a.time_go}</p></b>
 											<p name="start_place" style="width:120px">${bookingInfo.start_place}</p>	
 										</div>	
 										<div class=" col-md-4" >
+											<p name="time_go" style="width:120px;text-size:3px;"><i>${a.time_estimate}</i></p>
 											<img class="arrow" src="https://image.flaticon.com/icons/svg/25/25426.svg"
-											 style="margin-top:10px;margin-bottom:10px;transform: translate(60%,-10%)" alt="">	
+											 style="margin-top:10px;margin-bottom:10px;transform: translate(300%,-10%);width:10px;height:10px" alt="">	
 										</div>	
-										<div class=" col-md-4" >
-											<b><p name="time_estimate" style="width:120px">${a.time_estimate}</p></b>
+										<div class=" col-md-4" >							
+											<b><p name="time_estimate" style="width:120px">${a.time_end}</p></b>
 											<p name="end_place" style="width:120px">${bookingInfo.end_place}</p>	
 										</div>	
 										</div>																																																

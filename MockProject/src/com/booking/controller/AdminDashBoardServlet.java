@@ -62,6 +62,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 			String email = request.getParameter("emailUserEdit");
 			String address = request.getParameter("addressUserEdit");
 			String id_acc_cus = request.getParameter("idUserEdit");
+			System.out.println(id_acc_cus);
 			if(customerDAO.finCustomerById_acc(Integer.valueOf(id_acc_cus)))
 			{
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))

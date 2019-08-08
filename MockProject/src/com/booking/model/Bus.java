@@ -7,6 +7,13 @@ public class Bus {
 	private String car_position;
 	private String time_estimate;
 	private double price;
+	private String time_end;
+	public String getTime_end() {
+		return time_end;
+	}
+	public void setTime_end(String time_end) {
+		this.time_end = time_end;
+	}
 	public double getPrice() {
 		return price;
 	}
