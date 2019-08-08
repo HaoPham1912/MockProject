@@ -30,8 +30,8 @@ public class ViewSeatServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		HttpSession session = request.getSession();
-		String price = (String) session.getAttribute("busPrice");
+		String price = request.getParameter("price");
+		String id_bus= request.getParameter("id_bus");
 		request.setAttribute("price", price);
 		RequestDispatcher rd =  request.getRequestDispatcher("/viewBusSeat.jsp");
 		rd.forward(request, response);

@@ -39,7 +39,7 @@
 				</table> --%>
 					<c:forEach items="${busList}" var="a">
 						<!-- Start-Sửa -->
-						<form method="POST" action="${pageContext.request.contextPath}/cus-viewBusServlet">
+						<form action="${pageContext.request.contextPath}/cus-viewSeatServlet?id_bus=${a.id_bus}&price=${a.price}">
 							<div id="bus">
 								<div class="row" style="padding-left: 15px;padding-right: 15px">
 									<div class="col-md-3" style="text-align: center;padding-top: 10px">														
@@ -49,7 +49,8 @@
 										</div>
 										<hr>
 										<div class="row1" style="text-align: center">
-											<b><p name="id_bus" style="width:120px">${a.id_bus}</p>	</b>
+											<%-- <b><p name="id_bus" style="width:120px">${a.id_bus}</p>	</b> --%>
+											<input type="hidden" name="id_bus"  value="${a.id_bus}">
 											<img class="wifi-img"src="https://image.flaticon.com/icons/svg/179/179428.svg" alt="">								
 											<img class="wifi-img" src="https://image.flaticon.com/icons/svg/824/824239.svg" alt="">
 										</div>
@@ -75,7 +76,8 @@
 										<b><p name="car_position">Port: ${a.car_position}</p>	</b>							
 									</div>	
 									<div class=" col-md-3" style="text-align: center;padding-top: 40px">
-										<b><p name="price" style="padding-bottom:10px;">${a.price}</p></b>
+									 	<input type="hidden" name="price"  value="${a.price}">
+										<b><p style="padding-bottom:10px;">${a.price}</p></b>
 										<button type="submit" class="btn btn-warning">
 										<i class="fa fa-sign-in"></i><b>Book Ticket</b></button>
 									</div>								
