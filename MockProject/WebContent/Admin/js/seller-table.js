@@ -4,7 +4,9 @@ $(document).ready(function() {
       "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
   } );
 } );
-
+function myFunction() {
+    document.getElementById("addAdmin").style.color = "red";
+}
 callContent("manageSeller");
 var selectedSeller = [];
 //ManageSeller Table-Start

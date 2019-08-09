@@ -8,9 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.AccountDAOImp;
 import com.booking.dao.CustomerDAOImp;
+import com.booking.model.Customer;
 
 /**
  * Servlet implementation class RegisterServlet
@@ -18,7 +20,7 @@ import com.booking.dao.CustomerDAOImp;
 @WebServlet({"/register"})
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	CustomerDAOImp customer = new CustomerDAOImp();
+	CustomerDAOImp customerDAOImp = new CustomerDAOImp();
     AccountDAOImp account = new AccountDAOImp();
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,6 +38,9 @@ public class RegisterServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String message = request.getParameter("message");
+		System.out.println(message);
+		request.setAttribute("message", message);
 		RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
 		rd.forward(request, response);
 	}
@@ -53,19 +58,33 @@ public class RegisterServlet extends HttpServlet {
 		String user = request.getParameter("username");
 		String pass = request.getParameter("password");
 		
+		Customer customer = new Customer();
+		customer.setName(name);
+		customer.setPhone(phone);
+		customer.setEmail(email);
+		customer.setAddress(address);
+		customer.setAddress(address);
+		customer.setUsername(user);
+		customer.setPassword(pass);
+		
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("customerHo", customer);
+		
 		boolean check = account.checkAvailableAccount(user);
-//		System.out.println(check);
 		if(!check) {
 			int id= account.insertAccount(user, pass, 1);
 			System.out.println("Them thanh cong account");
 			System.out.println("id accout is: "+id);
-			customer.insertInfoCustomer(id, name, phone, email, address);
+			customerDAOImp.insertInfoCustomer(id, name, phone, email, address);
 			System.out.println("Dang ki thanh cong");
+			session.removeAttribute("customerHo");
 			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
 			System.out.println("username avail!!! Retry!!");
-			response.sendRedirect(request.getContextPath()+"/register");
+			String message = "Username is not available";
+			response.sendRedirect(request.getContextPath()+"/register?message="+message);
 		}
 	}
 
