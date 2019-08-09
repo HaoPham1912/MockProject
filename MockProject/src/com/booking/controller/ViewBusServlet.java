@@ -49,7 +49,7 @@ public class ViewBusServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		BookingInfo bookingInfo = new BookingInfo();
 		
-//		bookingInfo.setId_bus(id_bus);
+//		bookingInfo.setId_bus(Integer.valueOf(id_bus));
 		bookingInfo.setStart_place(start_place);
 		bookingInfo.setEnd_place(end_place);
 		bookingInfo.setStart_date(start_Date);

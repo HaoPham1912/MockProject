@@ -104,7 +104,7 @@ function getCost(price)
 
 function getSeat()
 {
-    var seat =[""];
+    var seat =[];
     var x = document.getElementById('table').getElementsByClassName('seat');
     var blue = "rgb(183, 219, 65)";
     var count = 1;
@@ -120,6 +120,32 @@ function getSeat()
     }
     document.getElementById("seatDetail").innerHTML = seat;
 }
+
+function setAvailableSeat(a)
+{
+    var gray = "rgb(206,206,206)"
+    var x = document.getElementById('table').getElementsByClassName('seat');
+    for(var i = 0;i<=27;i++)
+    {
+        if(check(a,x[i].title))	
+        {
+            x[i].style.backgroundColor = gray;
+            x[i].disabled  = true;
+        }
+    }
+}
+function check(arr,a)
+{
+    for(var i=0;i<=arr.length;i++)
+    {
+        if(arr[i]==a)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+ 
 
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   

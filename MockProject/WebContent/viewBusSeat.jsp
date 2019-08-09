@@ -11,7 +11,7 @@
 <script src="assets/js/seat.js"></script>
 </head>
 
-<body class="loader-active">
+<body class="loader-active" onload="setAvailableSeat(${arrSeat})">
 	<jsp:include page="headerforUser.jsp" />
 	<!--== What We Do Area Start ==-->
 	<section id="what-do-area" class=""
@@ -70,152 +70,106 @@
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat1col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="aaaa"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="1"></button></td>
 										<td style="text-align: left"><button type="button"
 												class="seat" id="seat1col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="2"></button></td>
 										<td style="text-align: right"><button type="button"
 												class="seat" id="seat1col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="3"></button></td>
 										<td><button type="button" class="seat" id="seat1col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="4"></button></td>
 									</tr>
 								</div>
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat2col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="5"></button></td>
 										<td style="text-align: left"><button type="button"
-												class="seat" id="seat2col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col2"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="6"></button></td>
 										<td style="text-align: right"><button type="button"
-												class="seat" id="seat2col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
-										<td><button type="button" class="seat" id="seat2col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
-
+												class="seat" id="seat1col3"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="7"></button></td>
+										<td><button type="button" class="seat" id="seat1col4"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="8"></button></td>
 									</tr>
 								</div>
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat3col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="9"></button></td>
 										<td style="text-align: left"><button type="button"
-												class="seat" id="seat3col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col2"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="10"></button></td>
 										<td style="text-align: right"><button type="button"
-												class="seat" id="seat3col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
-										<td><button type="button" class="seat" id="seat3col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
-
+												class="seat" id="seat1col3"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="11"></button></td>
+										<td><button type="button" class="seat" id="seat1col4"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="12"></button></td>
 									</tr>
 								</div>
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat4col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="13"></button></td>
 										<td style="text-align: left"><button type="button"
-												class="seat" id="seat4col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col2"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="14"></button></td>
 										<td style="text-align: right"><button type="button"
-												class="seat" id="seat4col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
-										<td><button type="button" class="seat" id="seat4col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col3"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="15"></button></td>
+										<td><button type="button" class="seat" id="seat1col4"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="16"></button></td>
 									</tr>
 								</div>
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat5col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="17"></button></td>
 										<td style="text-align: left"><button type="button"
-												class="seat" id="seat5col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col2"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="18"></button></td>
 										<td style="text-align: right"><button type="button"
-												class="seat" id="seat5col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
-										<td><button type="button" class="seat" id="seat5col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
-
+												class="seat" id="seat1col3"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="19"></button></td>
+										<td><button type="button" class="seat" id="seat1col4"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="20"></button></td>
 									</tr>
 								</div>
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat6col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="21"></button></td>
 										<td style="text-align: left"><button type="button"
-												class="seat" id="seat6col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col2"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="22"></button></td>
 										<td style="text-align: right"><button type="button"
-												class="seat" id="seat6col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
-										<td><button type="button" class="seat" id="seat6col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
-
+												class="seat" id="seat1col3"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="23"></button></td>
+										<td><button type="button" class="seat" id="seat1col4"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="24"></button></td>
 									</tr>
 								</div>
 								<div class=" col-md-4">
 									<tr style="text-align: center">
 										<th scope="row"></th>
-										<td><button type="button" class="seat" id="seat7col1"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+										<td><button type="button" class="seat" id="seat1col1" 
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="25"></button></td>
 										<td style="text-align: left"><button type="button"
-												class="seat" id="seat7col2"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col2"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="26"></button></td>
 										<td style="text-align: right"><button type="button"
-												class="seat" id="seat7col3"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-toggle="tooltip" data-placement="bottom" title="Sốghế"></button></td>
-										<td><button type="button" class="seat" id="seat7col4"
-												data-toggle="tooltip"
-												onclick="changeSeatColor(this);getCost(${price})"
-												data-placement="bottom" title="Sốghế"></button></td>
+												class="seat" id="seat1col3"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="27"></button></td>
+										<td><button type="button" class="seat" id="seat1col4"
+												onclick="changeSeatColor(this);getCost(${price});getSeat()" title="28"></button></td>
 									</tr>
 								</div>
 							</tbody>
@@ -239,6 +193,15 @@
 								</td>
 								<td style="float: right">
 									<b><p id="cost"></p></b>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"></th>
+								<td>
+									<b><p>Selected Seat:</p></b>
+								</td>
+								<td style="float: right">
+									<b><p id="seatDetail"></p></b>
 								</td>
 							</tr>
 						</table>
