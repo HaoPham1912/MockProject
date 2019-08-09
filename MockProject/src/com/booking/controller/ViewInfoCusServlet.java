@@ -48,7 +48,7 @@ public class ViewInfoCusServlet extends HttpServlet {
 		//System.out.println(id_acc);
 		Customer customer = new Customer();
 		request.setAttribute("customerInfo", customerDAO.customer(id_acc));
-		RequestDispatcher rd = request.getRequestDispatcher("/profileCustomer.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/customerInfo.jsp");
 		rd.forward(request, response);	
 	}
 

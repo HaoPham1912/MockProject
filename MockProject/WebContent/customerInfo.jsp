@@ -30,6 +30,14 @@
 <link href="assets/css/responsive.css" rel="stylesheet">
 
 
+<link href="Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<!-- CSS Just for demo purpose, don't include it in your project -->
+
+<link href="Customer/update.css" rel="stylesheet" />
+</head>
+
 <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -103,38 +111,20 @@
 					<div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
-								<li><a
-									href="${pageContext.request.contextPath}/cus-dashboard">HOME</a>
-								</li>
-								<li><a href="${pageContext.request.contextPath}/logout">LOG
-										OUT</a></li>
-								<!-- <li><a href="services.html">services</a></li>
-								<li><a href="#">Cars</a>
-									<ul>
-										<li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-										<li><a href="car-right-sidebar.html">Car Right
-												Sidebar</a></li>
-										<li><a href="car-without-sidebar.html">Car Without
-												Sidebar</a></li>
-										<li><a href="car-details.html">Car Details</a></li>
-									</ul></li>
-								<li class="active"><a href="index.html">Pages</a>
-									<ul>
-										<li><a href="package.html">Pricing</a></li>
-										<li><a href="driver.html">Driver</a></li>
-										<li><a href="faq.html">FAQ</a></li>
-										<li><a href="gallery.html">Gallery</a></li>
-										<li><a href="help-desk.html">Help Desk</a></li>
-										<li><a href="login.html">Log In</a></li>
-										<li><a href="register.html">Register</a></li>
-										<li><a href="404.html">404</a></li>
-									</ul></li>
-								<li><a href="#">Blog</a>
-									<ul>
-										<li><a href="article.html">Blog Page</a></li>
-										<li><a href="article-details.html">Blog Details</a></li>
-									</ul></li>
-								<li><a href="contact.html">Contact</a></li> -->
+								<li class="active"><a
+									href="http://localhost:8080/MockProject/guest-dashboard">
+										Home</a> <!-- <ul>
+                                        <li><a href="index.html">Home 1</a></li>
+                                        <li><a href="index2.html">Home 2</a></li>
+                                        <li><a href="index3.html">Home 3</a></li>
+                                    </ul> --></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">services</a></li>
+								<li><a href="#">Coach</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="http://localhost:8080/MockProject/login">Log
+										In</a></li>
+								<li><a href="http://localhost:8080/MockProject/register">Register</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -153,9 +143,9 @@
 				<!-- Page Title Start -->
 				<div class="col-lg-12">
 					<div class="section-title  text-center">
-						<h2>Change Your Information</h2>
+						<h2>WELCOME TO MY BOOKING BUS SYSTEM</h2>
 						<span class="title-line"><i class="fa fa-car"></i></span>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<p>Wish you have a good trip.</p>
 					</div>
 				</div>
 				<!-- Page Title End -->
@@ -167,65 +157,151 @@
 	<!--== Login Page Content Start ==-->
 	<section id="lgoin-page-wrap" class="section-padding">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 col-md-8 m-auto">
-					<div class="login-page-content">
-						<div class="login-form">
-							<h3>Update Profile</h3>
-							<form action="${pageContext.request.contextPath}/cus-updateInfo"
-								method="POST">
+			<div class="wizard-container">
 
-								<div class="name">
-									<input type="text" value="${customerInfo.id_acc_cus}"
-										placeholder="ID" name="id_acc_cus" readonly="readonly"
-										required>
-								</div>
-								<div class="name">
-									<input type="text" value="${customerInfo.name}"
-										placeholder="Name" name="name" required>
-								</div>
-								<div class="phone">
-									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{10}"
-										value="${customerInfo.phone}" placeholder="Phone Number"
-										name="phone"
-										title="Phone must be a number that contains 10 characters long"
-										required />
+				<div class="card wizard-card" data-color="orange" id="wizardProfile">
+					<form action="" method="">
 
-								</div>
-								<div class="email">
-									<input type="email" value="${customerInfo.email}"
-										placeholder="Email" name="email">
-								</div>
-								<div class="address">
-									<input type="text" value="${customerInfo.address}"
-										placeholder="Address" name="address">
-								</div>
-								<div class="log-btn">
-									<button type="submit">
-										<i class="fa fa-check-square"></i> Save Change
-									</button>
-								</div>
-							</form>
+						<div class="wizard-header">
+							<h3>
+								<b>BUILD YOUR PROFILE <br>
+							</h3>
 						</div>
 
-						<!-- <div class="login-other">
-                			<span class="or">or</span>
-                			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Signup With Facebook</a>
-                			<a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Signup With Google</a>
-                		</div> -->
-						<div class="create-ac">
-							<p>
-								Have an account? <a href="login.html">Sign In</a>
-							</p>
+						<div class="wizard-navigation">
+							<ul>
+								<li><a href="#viewinfo" data-toggle="tab">View
+										Infomation</a></li>
+								<li><a href="#updateinfo" data-toggle="tab">Update
+										Infomation</a></li>
+								<li><a href="#viewticket" data-toggle="tab">View Ticket</a></li>
+							</ul>
+
 						</div>
-						<div class="login-menu">
-							<a href="about.html">About</a> <span>|</span> <a
-								href="contact.html">Contact</a>
+
+						<div class="tab-content">
+							<div class="tab-pane" id="viewinfo">
+								<div class="row">
+									</BR> </BR>
+									<div class="col-sm-4 col-sm-offset-1">
+										<div class="picture-container">
+											<div class="picture">
+												<img src="assets/img/vancho.jpg" class="picture-src" id=""
+													title="" />
+
+											</div>
+
+
+										</div>
+										<input type='button' type='submit'
+											class='btn  btn-fill btn-warning btn-wd btn-sm' name='logout'
+											id='logout' value='Logout' />
+									</div>
+									<div class="col-sm-6">
+
+										<div class="form-group">
+											<label>Name</label> <input name="nameupdate" type="text"
+												class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+											<label>Phone </label> <input name="phoneupdate" type="number"
+												class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+											<label>Email </label> <input name="emailupdate" type="number"
+												class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+											<label>Address </label> <input name="addupdate" type="number"
+												class="form-control" placeholder="">
+										</div>
+
+										</br> <input type='button' style="float: right"
+											class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
+											name='updateInfo' value='Edit' />
+									</div>
+
+								</div>
+							</div>
+							<div class="tab-pane" id="updateinfo">
+								<div class="row">
+									</BR> </BR>
+									<div class="col-sm-4 col-sm-offset-1">
+										<div class="picture-container">
+											<div class="picture">
+												<img src="assets/img/default-avatar.png" class="picture-src"
+													id="wizardPicturePreview" title="" /> <input type="file"
+													id="wizard-picture">
+											</div>
+											<h6>Chọn ảnh</h6>
+
+										</div>
+
+									</div>
+									<div class="col-sm-6">
+
+										<div class="form-group">
+											<label>Name</label> <input name="nameupdate" type="text"
+												class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+											<label>Phone </label> <input name="phoneupdate" type="number"
+												class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+											<label>Email </label> <input name="emailupdate" type="number"
+												class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+											<label>Address </label> <input name="addupdate" type="number"
+												class="form-control" placeholder="">
+										</div>
+
+										<input type='button' style="float: right" type='submit'
+											class='btn btn-fill btn-default btn-wd btn-sm'
+											name='cancelbtn' id='finish' value='Cancel' /> <input
+											type='button' style="float: right; margin-right: 10px"
+											type='submit' class='btn btn-fill btn-warning btn-wd btn-sm'
+											name='updatebtn' id='finish' value='Save' /> </br>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tab-pane" id="viewticket"></div>
 						</div>
-					</div>
+						<div class="wizard-footer height-wizard">
+							<div class="pull-right">
+								<input type='button'
+									class='btn btn-next btn-fill btn-default btn-wd btn-sm'
+									name='next' value='Next' />
+							</div>
+
+							<div class="pull-left">
+								<input type='button'
+									class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
+									name='previous' value='Previous' />
+
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+					</form>
 				</div>
 			</div>
+			<!--   Creative Tim Branding   -->
+			<!--   Big container   -->
+			<div class="col-sm-8 col-sm-offset-2" style="padding-top: 120px">
+				<!--      Wizard container        -->
+
+				<!-- wizard container -->
+			</div>
+			<!-- end row -->
+			<!--  big container -->
+			</br>
+			<hr>
+			</br> </br> </br> </br> </br>
+			<!-- Footer -->
 		</div>
 	</section>
 	<!--== Login Page Content End ==-->
@@ -369,7 +445,15 @@
 
 	<!--=== Mian Js ===-->
 	<script src="assets/js/main.js"></script>
-
+	<script src="Admin/assets/js/jquery-2.2.4.min.js"
+		type="text/javascript"></script>
+	<script src="Admin/assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="Admin/assets/js/jquery.bootstrap.wizard.js"
+		type="text/javascript"></script>
+	<!--  Plugin for the Wizard -->
+	<script src="Admin/assets/js/gsdk-bootstrap-wizard.js"></script>
+	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="Admin/assets/js/jquery.validate.min.js"></script>
 </body>
 
 </html>
