@@ -113,8 +113,7 @@
 								<li><a href="#">services</a></li>
 								<li><a href="#">Coach</a></li>
 								<li><a href="#">Contact</a></li>
-								<li><a href="http://localhost:8080/MockProject/login">Log
-										In</a></li>
+								<li><a href="http://localhost:8080/MockProject/login">Log In</a></li>
 								<li><a href="http://localhost:8080/MockProject/register">Register</a></li>
 							</ul>
 						</nav>
@@ -136,7 +135,7 @@
 					<div class="section-title  text-center">
 						<h2>WELCOME TO MY BOOKING BUS SYSTEM</h2>
 						<span class="title-line"><i class="fa fa-car"></i></span>
-						<p>We will help you have a good trip.</p>
+						<p>Wish you have a good trip.</p>
 					</div>
 				</div>
 				<!-- Page Title End -->

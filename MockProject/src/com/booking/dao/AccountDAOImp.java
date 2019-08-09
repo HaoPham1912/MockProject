@@ -24,9 +24,9 @@ public class AccountDAOImp implements IAccountDAO{
 			if(rs.next()) {
 				return true;
 			}
-			
+
 		} catch (ClassNotFoundException | SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 		return false;
@@ -41,7 +41,7 @@ public class AccountDAOImp implements IAccountDAO{
 			Statement stm = conn.createStatement();
 			String sql=
 					"INSERT INTO account (username, password, role_id)"+
-			"VALUES(?,?,?)";
+							"VALUES(?,?,?)";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, username);
 			pstm.setString(2, password);
@@ -75,9 +75,9 @@ public class AccountDAOImp implements IAccountDAO{
 				account.setId(rs.getInt("id"));
 				account.setPassword(rs.getString("password"));
 			}
-			
+
 		} catch (ClassNotFoundException | SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 		return array;
