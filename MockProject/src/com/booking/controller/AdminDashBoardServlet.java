@@ -22,13 +22,13 @@ public class AdminDashBoardServlet extends HttpServlet {
 	CustomerDAOImp customerDAO = new CustomerDAOImp();
 	EmployeeDAOImp employeeDAO = new EmployeeDAOImp();
 	AccountDAOImp accountDAOImp = new AccountDAOImp();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminDashBoardServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public AdminDashBoardServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +38,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-//		response.setIntHeader("Refresh", 5);
+		//		response.setIntHeader("Refresh", 5);
 		request.setAttribute("customerList", customerDAO.findAllCustomer());
 		request.setAttribute("employeeList", employeeDAO.findAllEmployee());
 		RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
@@ -55,14 +55,14 @@ public class AdminDashBoardServlet extends HttpServlet {
 		doGet(request, response);
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
-		if(action.equals("update"))
+		if(action.equals("updateCustomer"))
 		{
 			String name = request.getParameter("nameUserEdit");
 			String phone = request.getParameter("phoneUserEdit");
 			String email = request.getParameter("emailUserEdit");
 			String address = request.getParameter("addressUserEdit");
 			String id_acc_cus = request.getParameter("idUserEdit");
-			System.out.println(id_acc_cus);
+
 			if(customerDAO.finCustomerById_acc(Integer.valueOf(id_acc_cus)))
 			{
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
@@ -74,9 +74,17 @@ public class AdminDashBoardServlet extends HttpServlet {
 					System.out.println("Failed");
 				}
 			}
-			if(employeeDAO.findEmployeeById_acc(Integer.valueOf(id_acc_cus)))
+		}
+		else if(action.equals("updateSeller")){
+			String name_emp = request.getParameter("nameSellerEdit");
+			String phone_emp = request.getParameter("phoneSellerEdit");
+			String email_emp = request.getParameter("emailSellerEdit");
+			String address_emp = request.getParameter("addressSellerEdit");
+			String id_acc_emp = request.getParameter("idSellerEdit");
+			System.out.println(id_acc_emp);
+			if(employeeDAO.findEmployeeById_acc(Integer.valueOf(id_acc_emp)))
 			{
-				if(employeeDAO.updateEmployee(name, phone, email, address, Integer.valueOf(id_acc_cus)))
+				if(employeeDAO.updateEmployee(name_emp, phone_emp, email_emp, address_emp, Integer.valueOf(id_acc_emp)))
 				{
 					System.out.println("Success");
 				}
@@ -86,7 +94,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 				}
 			}
 		}
-		else if(action.equals("register"))
+		else if (action.equals("register"))
 		{
 			String name1 = request.getParameter("name1");
 			String phone1 = request.getParameter("phone1");
@@ -120,5 +128,5 @@ public class AdminDashBoardServlet extends HttpServlet {
 		}
 	}
 }
-	
+
 

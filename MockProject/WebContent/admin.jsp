@@ -303,7 +303,7 @@
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<form class=""
-									action="${pageContext.request.contextPath}/admin-dashboard?action=update"
+									action="${pageContext.request.contextPath}/admin-dashboard?action=updateCustomer"
 									method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
@@ -355,7 +355,7 @@
 										</div>
 										<!-- Address User- End -->
 										<!-- Set role-Start -->
-										<div class="btn-group btn-group-toggle" data-toggle="buttons">
+										<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
 											<label class="btn btn-admin "> <input type="radio"
 												name="options" id="optionAdminRole"> Admin
 											</label> <label class="btn btn-seller"> <input type="radio"
@@ -363,7 +363,7 @@
 											</label> <label class="btn btn-user"> <input type="radio"
 												name="options" id="optionUserRole"> User
 											</label>
-										</div>
+										</div> -->
 										<!-- Set role-End -->
 										<div class="modal-footer">
 											<button type="submit" id="submitEditUser"
@@ -547,7 +547,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<form class=""
-								action="${pageContext.request.contextPath}/admin-dashboard?action=update"
+								action="${pageContext.request.contextPath}/admin-dashboard?action=updateSeller"
 								method="POST">
 								<!-- Modal Header -->
 								<div class="modal-header">
@@ -560,12 +560,12 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 									<div class="form-group">
 										<h4 class="text-black-50">ID Seller:</h4>
 										<input class="form-control" id="idSellerEdit" type="text"
-											name="idSellerEdit" required>
+											name="idSellerEdit" required readonly>
 									</div>
 									<div class="form-group">
 										<h4 class="text-black-50">Seller Account Name:</h4>
 										<input class="form-control " id="usernameSellerEdit"
-											type="text" name="usernameSellerEdit" required>
+											type="text" name="usernameSellerEdit" required readonly>
 									</div>
 									<div class="form-group">
 										<h4 class="text-black-50">Name:</h4>
@@ -600,7 +600,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 									</div>
 									<!-- Address User- End -->
 									<!-- Set role-Start -->
-									<div class="btn-group btn-group-toggle" data-toggle="buttons">
+									<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
 										<label class="btn btn-admin "> <input type="radio"
 											name="options" id="optionAdminRole"> Admin
 										</label> <label class="btn btn-seller"> <input type="radio"
@@ -608,7 +608,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										</label> <label class="btn btn-user"> <input type="radio"
 											name="options" id="optionUserRole"> User
 										</label>
-									</div>
+									</div> -->
 									<!-- Set role-End -->
 									<div class="modal-footer">
 										<button type="submit" id="submitEditSeller"
