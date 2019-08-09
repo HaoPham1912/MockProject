@@ -81,7 +81,7 @@ function getSeat(s)
         {
             // alert(x[i].title);
             // document.getElementById("aaaa").innerHTML = x[i].title;
-            seat.push(s);
+            seat.push(x[i].title);
         }
     }
     document.getElementById("aaaa").innerHTML = seat;
@@ -91,4 +91,31 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
   });
 
+
+
+function setAvailableSeat()
+{
+    var a = ["1","2","4"];
+    var red = "rgb(220,20,60)"
+    var x = document.getElementById('table').getElementsByClassName('seat');
+    for(var i = 0;i<=27;i++)
+    {
+        if(check(a,x[i].title))
+        {
+            // x[i].style.backgroundColor = "red";
+            x[i].style.backgroundImage = "url('https://image.flaticon.com/icons/svg/271/271965.svg')";
+        }
+    }
+}
+function check(arr,a)
+{
+    for(var i=0;i<=arr.length;i++)  
+    {
+        if(arr[i]==a)
+        {
+            return true;
+        }
+    }
+    return false;
+}
  

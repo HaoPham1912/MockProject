@@ -41,5 +41,28 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return arr;
 	}
+	@Override
+	public ArrayList<String> FindAvailableSeat(int id_bus, String date_go) {
+		// TODO Auto-generated method stub
+		ArrayList<String> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			
+			String sql="select seat_number from ticket where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y')";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, id_bus);
+			pstm.setString(2, date_go);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				arr.add(rs.getString("seat_number"));
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
+	}
 
 }

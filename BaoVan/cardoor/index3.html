@@ -36,7 +36,7 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 
-<body class="loader-active" <!--==Preloader Area Start==-->
+<body class="loader-active" onload="setAvailableSeat();" <!--==Preloader Area Start==-->
     <!--== What We Do Area Start ==-->
     <section id="what-do-area" class="section-padding">
         <div class="container">
@@ -78,7 +78,7 @@
                             </tbody>
                         </table>
 
-                        <table id="table">
+                        <table id="table" >
                             <tbody>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
@@ -97,10 +97,14 @@
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" title="Sốghế" class="seat" id="seat1col1"  onclick="changeSeatColor(this);getCost(this);getSeat();"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2" title="Sốghế" onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3" title="Sốghế" onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
-                                        <td><button type="button" class="seat" id="seat1col4" title="Sốghế" onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td><button type="button" title="1" class="seat" id="seat1col1"  
+                                            onclick="changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2" title="2" 
+                                            onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3" title="3" 
+                                            onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td><button type="button" class="seat" id="seat1col4" title="4" 
+                                            onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
