@@ -64,5 +64,30 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return arr;
 	}
+	@Override
+	public boolean CreateTicket(String date_go, int seat_number,int status,double price,String phone, String name,int id_bus,int id_cus) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			String sql="INSERT INTO ticket (date_go, date_book,seat_number,status,price,phone,name,id_bus,id_cus)"+
+							"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?)";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, date_go);
+			pstm.setInt(2, seat_number);
+			pstm.setInt(3, status);
+			pstm.setDouble(4, price);
+			pstm.setString(5, phone);
+			pstm.setString(6, name);
+			pstm.setInt(7, id_bus);
+			pstm.setInt(8, id_cus);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 }

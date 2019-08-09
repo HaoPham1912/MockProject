@@ -170,6 +170,7 @@ public class CustomerDAOImp implements ICustomerDAO{
 			ResultSet rs = stm.executeQuery(sql);
 			while(rs.next()) {
 				Customer customer = new Customer();
+				customer.setId_cus(rs.getInt("id_cus"));
 				customer.setId_acc_cus(rs.getInt("id_acc_cus"));
 				customer.setName(rs.getString("name"));
 				customer.setPhone(rs.getString("phone"));

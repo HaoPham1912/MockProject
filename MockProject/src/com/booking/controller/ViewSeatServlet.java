@@ -20,6 +20,7 @@ import com.booking.dao.TicketDAOImp;
 import com.booking.model.Account;
 import com.booking.model.BookingInfo;
 import com.booking.model.Customer;
+import com.booking.model.Ticket;
 import com.booking.ultils.MyUltil;
 
 /**
@@ -51,6 +52,7 @@ public class ViewSeatServlet extends HttpServlet {
 		String price = request.getParameter("price");
 		String id_bus= request.getParameter("id_bus");
 		request.setAttribute("price", price);
+		request.setAttribute("id_bus", id_bus);
 
 		MyUltil myultil = new MyUltil();
 		HttpSession session = request.getSession();
@@ -66,9 +68,11 @@ public class ViewSeatServlet extends HttpServlet {
 		
 		System.out.println("idbus: "+id_bus);
 		System.out.println("idbus: "+bookinginfo.getStart_date());
-		ArrayList<String> arr = ticketDAO.FindAvailableSeat(Integer.valueOf(id_bus), bookinginfo.getStart_date());
-		
-		request.setAttribute("arrSeat", arr);
+		if(id_bus!=null)
+		{
+			ArrayList<String> arr = ticketDAO.FindAvailableSeat(Integer.valueOf(id_bus), bookinginfo.getStart_date());
+			request.setAttribute("arrSeat", arr);
+		}
 		
 		RequestDispatcher rd =  request.getRequestDispatcher("/viewBusSeat.jsp");
 		rd.forward(request, response);
@@ -82,6 +86,43 @@ public class ViewSeatServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
+		
+		String price = request.getParameter("price");
+		String id_bus = request.getParameter("id_bus");
+		String phone = request.getParameter("phone");
+		String name = request.getParameter("name");
+		
+		MyUltil myultil = new MyUltil();
+		HttpSession session = request.getSession();
+		
+		Customer customer = new Customer();
+		Account account = new Account();
+		account = myultil.getLoginedUser(session);
+		
+		customer = customerDAO.customer(account.getId());
+		
+		System.out.println("           "+customer.getId_cus());
+		
+		BookingInfo bookingInfo = new BookingInfo();
+		bookingInfo = myultil.getBookingInfo(session);
+		
+		String s = request.getParameter("inputSeatDetail");
+		int length = s.split(",").length;
+		
+//		System.out.println("startdate: " + bookingInfo.getStart_date());
+//		System.out.println("price: " + Double.valueOf(price));
+//		System.out.println("phone: " + phone);
+//		System.out.println("name: " + name);
+//		System.out.println("id_bus: : " + Integer.valueOf(id_bus));
+//		System.out.println("id_cus: " + customer.getId_cus());
+		
+		for(int i=0;i<length;i++)
+		{
+			ticketDAO.CreateTicket(bookingInfo.getStart_date(),
+									Integer.valueOf(s.split(",")[i]),0,
+									Double.valueOf(price),phone,name,
+									Integer.valueOf(id_bus),customer.getId_cus());
+		}	
 	}
 
 }

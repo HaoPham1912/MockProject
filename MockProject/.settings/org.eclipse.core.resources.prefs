@@ -91,6 +91,7 @@ data-target="\#addUser">
 data-toggle="modal" onclick\="deleteSeller()">
 eclipse.preferences.version=1
 encoding//WebContent/customerInfo.jsp=UTF-8
+encoding//WebContent/viewBusSeat.jsp=UTF-8
 href="https\://fonts.googleapis.com/css?family\=Nunito\:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 id="optionUserRole"> User
 method="POST">
