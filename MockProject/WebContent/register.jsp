@@ -29,7 +29,6 @@
 <!--=== Responsive CSS ===-->
 <link href="assets/css/responsive.css" rel="stylesheet">
 
-
 <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -101,26 +100,26 @@
 
 					<!--== Main Menu Start ==-->
 					<div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li class="active"><a href="http://localhost:8080/MockProject/guest-dashboard">
-                                Home</a>
-                                    <!-- <ul>
+						<nav class="mainmenu alignright">
+							<ul>
+								<li class="active"><a
+									href="http://localhost:8080/MockProject/guest-dashboard">
+										Home</a> <!-- <ul>
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
                                         <li><a href="index3.html">Home 3</a></li>
-                                    </ul> -->
-                                </li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">Coach</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="http://localhost:8080/MockProject/login">Log In</a></li>
-                                <li><a href="http://localhost:8080/MockProject/register">Register</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!--== Main Menu End ==-->
+                                    </ul> --></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">services</a></li>
+								<li><a href="#">Coach</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="http://localhost:8080/MockProject/login">Log
+										In</a></li>
+								<li><a href="http://localhost:8080/MockProject/register">Register</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!--== Main Menu End ==-->
 				</div>
 			</div>
 		</div>
@@ -135,9 +134,9 @@
 				<!-- Page Title Start -->
 				<div class="col-lg-12">
 					<div class="section-title  text-center">
-						<h2>Login</h2>
+						<h2>WELCOME TO MY BOOKING BUS SYSTEM</h2>
 						<span class="title-line"><i class="fa fa-car"></i></span>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<p>We will help you have a good trip.</p>
 					</div>
 				</div>
 				<!-- Page Title End -->
@@ -154,38 +153,63 @@
 					<div class="login-page-content">
 						<div class="login-form">
 							<h3>Sign Up</h3>
-							<form action="${pageContext.request.contextPath}/register" method="POST">
+							<form action="${pageContext.request.contextPath}/register"
+								method="POST">
 								<div class="name">
-									<input type="text" placeholder="Name" name="name" 
-									value= "${customerHo.name}" required>
+									<input type="text" placeholder="Name" name="name"
+										value="${customerHo.name}" required>
 								</div>
 								<div class="email">
-									<input type="email" placeholder="Email" name="email" value= "${customerHo.email}">
+									<input type="email" placeholder="Email" name="email"
+										value="${customerHo.email}">
 								</div>
 								<div class="phone">
-								<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{10}" value= "${customerHo.phone}" 
-									placeholder="Phone Number" name="phone" title="Phone must be a number that contains 10 characters long" 
-									required />	
+									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
+									<input type="text" pattern="[0-9]{10}"
+										value="${customerHo.phone}" placeholder="Phone Number"
+										name="phone"
+										title="Phone must be a number that contains 10 characters long"
+										required />
 								</div>
 								<div class="address">
-									<input type="text" placeholder="Address" value= "${customerHo.address}" 
-									name="address">
+									<input type="text" placeholder="Address"
+										value="${customerHo.address}" name="address">
 								</div>
 								<div class="username">
-										<input type="text" placeholder="Username" name="username"
-										pattern="[A-Za-z0-9]{1,}"
-										maxlength="10" 
-										title="Username must not contain Unicode!!!" 
-										required>		
+									<input type="text" placeholder="Username" name="username"
+										pattern="[A-Za-z0-9]{1,}" minlength="5" maxlength="15"
+										title="Username less than 15 character and more than 5 character!!!"
+										required>
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Password" name="password"
-									maxlength="15" minlength="8" 
-									pattern="[A-Za-z0-9]{1,}"
-									required>
+									<input type="password" placeholder="Password" id="password"
+										name="password" maxlength="15" minlength="8"
+										pattern="[A-Za-z0-9]{1,}" required>
 								</div>
-								<p style="color:red">${message}</p>
+								<div class="password">
+									<input type="password" id="confirm_password"
+										placeholder="Retype Password" name="password" maxlength="15"
+										minlength="8" pattern="[A-Za-z0-9]{1,}" required>
+								</div>
+								<script>
+									var password = document
+											.getElementById("password"), confirm_password = document
+											.getElementById("confirm_password");
+
+									function validatePassword() {
+										if (password.value != confirm_password.value) {
+											confirm_password
+													.setCustomValidity("Passwords Don't Match");
+										} else {
+											confirm_password
+													.setCustomValidity('');
+										}
+									}
+
+									password.onchange = validatePassword;
+									confirm_password.onkeyup = validatePassword;
+								</script>
+								<p style="color: red">${message}</p>
 								<div class="log-btn">
 									<button type="submit">
 										<i class="fa fa-check-square"></i> Sign Up
@@ -201,12 +225,9 @@
                 		</div> -->
 						<div class="create-ac">
 							<p>
-								Have an account? <a href="http://localhost:8080/MockProject/login">Sign In</a>
+								Have an account? <a
+									href="http://localhost:8080/MockProject/login">Sign In</a>
 							</p>
-						</div>
-						<div class="login-menu">
-							<a href="about.html">About</a> <span>|</span> <a
-								href="contact.html">Contact</a>
 						</div>
 					</div>
 				</div>
@@ -302,7 +323,9 @@
 						<p>
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script>
+							<script>
+								document.write(new Date().getFullYear());
+							</script>
 							All rights reserved | This template is made with <i
 								class="fa fa-heart-o" aria-hidden="true"></i> by <a
 								href="https://colorlib.com" target="_blank">Colorlib</a>
