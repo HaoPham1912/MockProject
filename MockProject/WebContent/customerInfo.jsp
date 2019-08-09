@@ -108,16 +108,16 @@
 					<!--== Logo End ==-->
 
 					<!--== Main Menu Start ==-->
-					<div class="col-lg-8 d-none d-xl-block">
+					<!-- <div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
 								<li class="active"><a
 									href="http://localhost:8080/MockProject/guest-dashboard">
-										Home</a> <!-- <ul>
+										Home</a> <ul>
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
                                         <li><a href="index3.html">Home 3</a></li>
-                                    </ul> --></li>
+                                    </ul></li>
 								<li><a href="#">About</a></li>
 								<li><a href="#">services</a></li>
 								<li><a href="#">Coach</a></li>
@@ -127,7 +127,7 @@
 								<li><a href="http://localhost:8080/MockProject/register">Register</a></li>
 							</ul>
 						</nav>
-					</div>
+					</div> -->
 					<!--== Main Menu End ==-->
 				</div>
 			</div>
@@ -160,133 +160,155 @@
 			<div class="wizard-container">
 
 				<div class="card wizard-card" data-color="orange" id="wizardProfile">
-					<form action="" method="">
 
-						<div class="wizard-header">
-							<h3>
-								<b>BUILD YOUR PROFILE <br>
-							</h3>
-						</div>
+					<div class="wizard-header">
+						<h3>
+							<b>BUILD YOUR PROFILE <br>
+						</h3>
+					</div>
 
-						<div class="wizard-navigation">
-							<ul>
-								<li><a href="#viewinfo" data-toggle="tab">View
-										Infomation</a></li>
-								<li><a href="#updateinfo" data-toggle="tab">Update
-										Infomation</a></li>
-								<li><a href="#viewticket" data-toggle="tab">View Ticket</a></li>
-							</ul>
+					<div class="wizard-navigation">
+						<ul>
+							<li><a href="#viewinfo" data-toggle="tab">View
+									Infomation</a></li>
+							<li><a href="#updateinfo" data-toggle="tab">Update
+									Infomation</a></li>
+							<li><a href="#viewticket" data-toggle="tab">View Ticket</a></li>
+						</ul>
 
-						</div>
+					</div>
 
-						<div class="tab-content">
-							<div class="tab-pane" id="viewinfo">
-								<div class="row">
-									</BR> </BR>
-									<div class="col-sm-4 col-sm-offset-1">
-										<div class="picture-container">
-											<div class="picture">
-												<img src="assets/img/vancho.jpg" class="picture-src" id=""
-													title="" />
-
-											</div>
-
+					<div class="tab-content">
+						<div class="tab-pane" id="viewinfo">
+							<div class="row">
+								</BR> </BR>
+								<div class="col-sm-4 col-sm-offset-1">
+									<div class="picture-container">
+										<div class="picture">
+											<img src="assets/img/vancho.jpg" class="picture-src" id=""
+												title="" />
 
 										</div>
-										<input type='button' type='submit'
-											class='btn  btn-fill btn-warning btn-wd btn-sm' name='logout'
-											id='logout' value='Logout' />
 									</div>
-									<div class="col-sm-6">
+									<input type="button" type='submit'
+										class='btn  btn-fill btn-warning btn-wd btn-sm' id='logout'
+										value="Log out"
+										onclick="window.location.href='${pageContext.request.contextPath}/logout'" />
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Your ID</label> <input type="text"
+											value="${customerInfo.id_acc_cus}" placeholder="ID"
+											name="id_acc_cus" readonly="readonly" required
+											class="form-control">
+									</div>
 
-										<div class="form-group">
-											<label>Name</label> <input name="nameupdate" type="text"
-												class="form-control" placeholder="">
-										</div>
-										<div class="form-group">
-											<label>Phone </label> <input name="phoneupdate" type="number"
-												class="form-control" placeholder="">
-										</div>
-										<div class="form-group">
-											<label>Email </label> <input name="emailupdate" type="number"
-												class="form-control" placeholder="">
-										</div>
-										<div class="form-group">
-											<label>Address </label> <input name="addupdate" type="number"
-												class="form-control" placeholder="">
-										</div>
+									<div class="form-group">
+										<label>Your Name</label> <input value="${customerInfo.name}"
+											placeholder="Name" name="name" readonly="readonly" required
+											class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Your Phone </label> <input name="phoneupdate"
+											type="text" pattern="[0-9]{10}" value="${customerInfo.phone}"
+											placeholder="Phone Number" name="phone"
+											title="Phone must be a number that contains 10 characters long"
+											readonly required class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Your Email </label> <input name="emailupdate"
+											type="email" value="${customerInfo.email}"
+											placeholder="Email" name="email" readonly
+											class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Your Address </label> <input name="addupdate"
+											type="text" value="${customerInfo.address}"
+											placeholder="Address" name="address" readonly
+											class="form-control">
+									</div>
 
-										</br> <input type='button' style="float: right"
-											class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
-											name='updateInfo' value='Edit' />
+									</br> <input type='button' style="float: right"
+										class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
+										name='updateInfo' value='Edit' />
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-pane" id="updateinfo">
+							<div class="row">
+								</BR> </BR>
+								<div class="col-sm-4 col-sm-offset-1">
+									<div class="picture-container">
+										<div class="picture">
+											<img src="assets/img/default-avatar.png" class="picture-src"
+												id="wizardPicturePreview" title="" /> <input type="file"
+												id="wizard-picture">
+										</div>
+										<h6>Chọn ảnh</h6>
+
 									</div>
 
 								</div>
-							</div>
-							<div class="tab-pane" id="updateinfo">
-								<div class="row">
-									</BR> </BR>
-									<div class="col-sm-4 col-sm-offset-1">
-										<div class="picture-container">
-											<div class="picture">
-												<img src="assets/img/default-avatar.png" class="picture-src"
-													id="wizardPicturePreview" title="" /> <input type="file"
-													id="wizard-picture">
-											</div>
-											<h6>Chọn ảnh</h6>
-
-										</div>
-
-									</div>
-									<div class="col-sm-6">
-
+								<div class="col-sm-6">
+									<form
+										action="${pageContext.request.contextPath}/cus-viewInfo?action=update"
+										method="POST">
 										<div class="form-group">
-											<label>Name</label> <input name="nameupdate" type="text"
-												class="form-control" placeholder="">
+											<label>Your ID</label> <input type="text"
+												value="${customerInfo.id_acc_cus}" placeholder="ID"
+												name="id_acc_cus" readonly="readonly" required
+												class="form-control">
 										</div>
 										<div class="form-group">
-											<label>Phone </label> <input name="phoneupdate" type="number"
-												class="form-control" placeholder="">
+											<label>Name</label> <input value="${customerInfo.name}"
+												placeholder="Name" name="name" required class="form-control">
 										</div>
 										<div class="form-group">
-											<label>Email </label> <input name="emailupdate" type="number"
-												class="form-control" placeholder="">
+											<label>Phone </label> <input name="phone" type="text"
+												pattern="[0-9]{10}" value="${customerInfo.phone}"
+												placeholder="Phone Number" name="phone"
+												title="Phone must be a number that contains 10 characters long"
+												required class="form-control">
 										</div>
 										<div class="form-group">
-											<label>Address </label> <input name="addupdate" type="number"
-												class="form-control" placeholder="">
+											<label>Email </label> <input name="email" type="email"
+												value="${customerInfo.email}" placeholder="Email"
+												name="email" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Address </label> <input name="address" ttype="text"
+												value="${customerInfo.address}" placeholder="Address"
+												name="address" class="form-control">
 										</div>
 
-										<input type='button' style="float: right" type='submit'
-											class='btn btn-fill btn-default btn-wd btn-sm'
-											name='cancelbtn' id='finish' value='Cancel' /> <input
-											type='button' style="float: right; margin-right: 10px"
-											type='submit' class='btn btn-fill btn-warning btn-wd btn-sm'
+										<input style="float: right; margin-right: 10px" type='submit'
+											class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' /> </br>
-									</div>
-
+									</form>
 								</div>
-							</div>
-
-							<div class="tab-pane" id="viewticket"></div>
-						</div>
-						<div class="wizard-footer height-wizard">
-							<div class="pull-right">
-								<input type='button'
-									class='btn btn-next btn-fill btn-default btn-wd btn-sm'
-									name='next' value='Next' />
-							</div>
-
-							<div class="pull-left">
-								<input type='button'
-									class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
-									name='previous' value='Previous' />
 
 							</div>
-							<div class="clearfix"></div>
 						</div>
 
-					</form>
+						<div class="tab-pane" id="viewticket"></div>
+					</div>
+					<!-- <div class="wizard-footer height-wizard">
+						<div class="pull-right">
+							<input type='button'
+								class='btn btn-next btn-fill btn-default btn-wd btn-sm'
+								name='next' value='Next' />
+						</div>
+
+						<div class="pull-left">
+							<input type='button'
+								class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
+								name='previous' value='Previous' />
+
+						</div>
+						<div class="clearfix"></div>
+					</div> -->
+
 				</div>
 			</div>
 			<!--   Creative Tim Branding   -->

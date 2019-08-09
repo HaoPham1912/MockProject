@@ -60,6 +60,22 @@ public class ViewInfoCusServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
+		String action = request.getParameter("action");
+		if(action.equals("update")) {
+			String id_acc = request.getParameter("id_acc_cus");
+			String name = request.getParameter("name");
+			String phone = request.getParameter("phone");
+			String email = request.getParameter("email");	
+			String address = request.getParameter("address");
+			System.out.println(name);
+				if(customerDAO.updateCustomer(name, phone, email, address, Integer.parseInt(id_acc))) {
+					System.out.println("Update Success!!!");
+//					response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
+				}
+				else {
+					System.out.println("Can't Update!!!");
+				}
+		}
 	}
 
 }
