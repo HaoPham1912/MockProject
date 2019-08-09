@@ -97,17 +97,10 @@
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat1col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat1col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-
+                                        <td><button type="button" title="Sốghế" class="seat" id="seat1col1"  onclick="changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2" title="Sốghế" onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3" title="Sốghế" onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td><button type="button" class="seat" id="seat1col4" title="Sốghế" onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
@@ -229,6 +222,15 @@
                                 </td>
                                 <td style="float:right">
                                     <p id="cost"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>
+                                    <p> Selected Seat: </p>
+                                </td>
+                                <td style="float:right">
+                                    <p id="aaaa"></p>
                                 </td>
                             </tr>
                             <table>

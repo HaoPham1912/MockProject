@@ -102,6 +102,25 @@ function getCost(price)
     document.getElementById("cost").innerHTML = String((count-1)*parseInt(price));
 }
 
+function getSeat()
+{
+    var seat =[""];
+    var x = document.getElementById('table').getElementsByClassName('seat');
+    var blue = "rgb(183, 219, 65)";
+    var count = 1;
+    for(var i = 0;i<=27;i++)
+    {
+        var s = getComputedStyle(x[i]);
+        if(String(s['background-color'])===blue)
+        {
+            // alert(x[i].title);
+            // document.getElementById("aaaa").innerHTML = x[i].title;
+            seat.push(x[i].title);
+        }
+    }
+    document.getElementById("seatDetail").innerHTML = seat;
+}
+
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
   });
