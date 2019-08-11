@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.booking.dao.CustomerDAOImp;
+import com.booking.dao.TicketDAOImp;
 import com.booking.model.Account;
 import com.booking.model.Customer;
 import com.booking.ultils.MyUltil;
@@ -21,7 +22,8 @@ import com.booking.ultils.MyUltil;
 @WebServlet({"/cus-viewInfo"})
 public class ViewInfoCusServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    CustomerDAOImp customerDAO = new CustomerDAOImp();   
+    CustomerDAOImp customerDAO = new CustomerDAOImp();  
+    TicketDAOImp ticketDAO = new TicketDAOImp();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -45,9 +47,12 @@ public class ViewInfoCusServlet extends HttpServlet {
 		//System.out.println(account.getUsername());
 		String username= account.getUsername();
 		int id_acc = customerDAO.findId_acc(username);
+		int id_cus= customerDAO.findId_cus(id_acc);
+		System.out.println("ID CUS IS"+id_cus);
 		//System.out.println(id_acc);
 		Customer customer = new Customer();
 		request.setAttribute("customerInfo", customerDAO.customer(id_acc));
+		request.setAttribute("listTicketBooked",ticketDAO.listTicketBooked(id_cus));
 		RequestDispatcher rd = request.getRequestDispatcher("/customerInfo.jsp");
 		rd.forward(request, response);	
 	}

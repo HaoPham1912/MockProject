@@ -1,6 +1,7 @@
 package com.booking.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -88,6 +89,31 @@ public class TicketDAOImp implements ITicketDAO{
 			e.printStackTrace();
 		}
 		return false;
+	}
+	@Override
+	public ArrayList<Ticket> listTicketBooked(int id_cus) {
+		ArrayList<Ticket> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql = "Select id_ticket, date_go, date_book, seat_number,status, price from bus.ticket where id_cus=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_cus);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				Ticket ticket = new Ticket();
+				ticket.setId_ticket(rs.getInt("id_ticket"));
+				ticket.setDate_go(rs.getString("date_go"));
+				ticket.setDate_book(rs.getString("date_book"));
+				ticket.setSeat_number(rs.getInt("seat_number"));
+				ticket.setStatus(rs.getInt("status"));
+				ticket.setPrice(rs.getDouble("price"));
+				arr.add(ticket);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
 	}
 
 }
