@@ -11,6 +11,50 @@ public class Ticket {
 	private String name;
 	private int id_bus;
 	private int id_cus;
+	private String start_place;
+	private String end_place;
+	private String time_go;
+	private String time_estimate;
+	private String car_position;
+	private String time_end;
+	
+	public String getTime_go() {
+		return time_go;
+	}
+	public void setTime_go(String time_go) {
+		this.time_go = time_go;
+	}
+	public String getTime_estimate() {
+		return time_estimate;
+	}
+	public void setTime_estimate(String time_estimate) {
+		this.time_estimate = time_estimate;
+	}
+	public String getCar_position() {
+		return car_position;
+	}
+	public void setCar_position(String car_position) {
+		this.car_position = car_position;
+	}
+	public String getTime_end() {
+		return time_end;
+	}
+	public void setTime_end(String time_end) {
+		this.time_end = time_end;
+	}
+	public String getStart_place() {
+		return start_place;
+	}
+	public void setStart_place(String start_place) {
+		this.start_place = start_place;
+	}
+	public String getEnd_place() {
+		return end_place;
+	}
+	public void setEnd_place(String end_place) {
+		this.end_place = end_place;
+	}
+	
 	public int getId_ticket() {
 		return id_ticket;
 	}
