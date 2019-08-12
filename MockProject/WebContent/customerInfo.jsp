@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,20 +29,28 @@
 <link href="style.css" rel="stylesheet">
 <!--=== Responsive CSS ===-->
 <link href="assets/css/responsive.css" rel="stylesheet">
-
-
+<!--  -->
 <link href="Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
 
-
+<link href="Admin/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css"
+	rel="stylesheet">
+<!-- css -->
+<link href="Admin/css/sb-admin-2.min.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="Admin/vendor/datatables/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="Admin/css/AdminPage.css">
+<link
+	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+	rel="stylesheet">
 <!-- CSS Just for demo purpose, don't include it in your project -->
 
 <link href="Customer/update.css" rel="stylesheet" />
-</head>
-
-<!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body class="loader-active">
@@ -108,26 +117,15 @@
 					<!--== Logo End ==-->
 
 					<!--== Main Menu Start ==-->
-					<!-- <div class="col-lg-8 d-none d-xl-block">
+					<div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
-								<li class="active"><a
-									href="http://localhost:8080/MockProject/guest-dashboard">
-										Home</a> <ul>
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index2.html">Home 2</a></li>
-                                        <li><a href="index3.html">Home 3</a></li>
-                                    </ul></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">services</a></li>
-								<li><a href="#">Coach</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="http://localhost:8080/MockProject/login">Log
-										In</a></li>
-								<li><a href="http://localhost:8080/MockProject/register">Register</a></li>
+								<li class="active">
+								<a style="font-size: 20px" href="http://localhost:8080/MockProject/cus-dashboard">Home</a>
+								</li>
 							</ul>
 						</nav>
-					</div> -->
+					</div>
 					<!--== Main Menu End ==-->
 				</div>
 			</div>
@@ -291,24 +289,87 @@
 							</div>
 						</div>
 
-						<div class="tab-pane" id="viewticket"></div>
+						<div class="tab-pane" id="viewticket">
+							<h4>Paid / Canceled</h4>
+							<div class="col-md-12">
+								<div class="table-responsive">
+									<table id="mytableticket"
+										class="table table-bordred table-striped">
+										<thead>
+											<th>ID</th>
+											<th>Date Go</th>
+											<th>Date Book</th>
+											<th>Seat Number</th>
+											<th>Price</th>
+											<th>Delete</th>
+										</thead>
+										<tbody>
+											<c:forEach items="${listTicketBooked}" var="a">
+												<c:set var="status" value="${a.status}"></c:set>
+												<c:if test="${status==1}">
+													<tr>
+														<td>${a.id_ticket}</td>
+														<td>${a.date_go}</td>
+														<td>${a.date_book}</td>
+														<td>${a.seat_number}</td>
+														<td>${a.price}</td>
+														<td>
+															<p data-placement="top" data-toggle="tooltip"
+																title="Delete">
+																<button class="btn btn-danger" data-title="Delete"
+																	data-toggle="modal" onclick="deleteTicket()">
+																	<span class="fa fa-trash"></span>
+																</button>
+															</p>
+														</td>
+													</tr>
+												</c:if>
+											</c:forEach>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<h4>UnPaid</h4>
+							<div class="col-md-12">
+								<div class="table-responsive">
+									<table id="mytableticket"
+										class="table table-bordred table-striped">
+										<thead>
+											<th>ID</th>
+											<th>Date Go</th>
+											<th>Date Book</th>
+											<th>Seat Number</th>
+											<th>Price</th>
+											<th>Cancel</th>
+										</thead>
+										<tbody>
+											<c:forEach items="${listTicketBooked}" var="a">
+												<c:set var="status" value="${a.status}"></c:set>
+												<c:if test="${status==0}">
+													<tr>
+														<td>${a.id_ticket}</td>
+														<td>${a.date_go}</td>
+														<td>${a.date_book}</td>
+														<td>${a.seat_number}</td>
+														<td>${a.price}</td>
+														<td>
+															<p data-placement="top" data-toggle="tooltip"
+																title="Delete">
+																<button class="btn btn-danger" data-title="Delete"
+																	data-toggle="modal" onclick="deleteTicket()">
+																	<span class="fa fa-trash"></span>
+																</button>
+															</p>
+														</td>
+													</tr>
+												</c:if>
+											</c:forEach>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!-- <div class="wizard-footer height-wizard">
-						<div class="pull-right">
-							<input type='button'
-								class='btn btn-next btn-fill btn-default btn-wd btn-sm'
-								name='next' value='Next' />
-						</div>
-
-						<div class="pull-left">
-							<input type='button'
-								class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
-								name='previous' value='Previous' />
-
-						</div>
-						<div class="clearfix"></div>
-					</div> -->
-
 				</div>
 			</div>
 			<!--   Creative Tim Branding   -->

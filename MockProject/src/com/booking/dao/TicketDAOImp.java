@@ -1,6 +1,7 @@
 package com.booking.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -89,5 +90,60 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return false;
 	}
-
+	@Override
+	public ArrayList<Ticket> listTicketBooked(int id_cus) {
+		ArrayList<Ticket> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql = "Select id_ticket, date_go, date_book, seat_number,status, price from bus.ticket where id_cus=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_cus);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				Ticket ticket = new Ticket();
+				ticket.setId_ticket(rs.getInt("id_ticket"));
+				ticket.setDate_go(rs.getString("date_go"));
+				ticket.setDate_book(rs.getString("date_book"));
+				ticket.setSeat_number(rs.getInt("seat_number"));
+				ticket.setStatus(rs.getInt("status"));
+				ticket.setPrice(rs.getDouble("price"));
+				arr.add(ticket);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
+	}
+	@Override
+	public boolean updateStatusTicket(int id_ticket, int status) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="Update bus.ticket set status =? where id_ticket= ?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, status);
+			pstm.setInt(2, id_ticket);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	@Override
+	public boolean deleteTicket(int id_ticket) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="DELETE FROM Ticket WHERE id_ticket=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_ticket);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

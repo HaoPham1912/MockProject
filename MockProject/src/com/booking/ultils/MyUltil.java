@@ -18,7 +18,6 @@ public class MyUltil {
 	{
 		session.setAttribute("bus", bus);
 	}
-	
 	public static void storeBookingInfo(HttpSession session, BookingInfo bookingInfo)
 	{
 		session.setAttribute("bookingInfo", bookingInfo);

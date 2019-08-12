@@ -52,7 +52,11 @@ public class AdminDashBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+<<<<<<< HEAD
 //		doGet(request, response);
+=======
+		//doGet(request, response);
+>>>>>>> 0444ff823d903dfbed78bc58e3a91635ac566c2e
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
 		if(action.equals("updateCustomer"))
@@ -88,6 +92,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 				if(employeeDAO.updateEmployee(name_emp, phone_emp, email_emp, address_emp, Integer.valueOf(id_acc_emp)))
 				{
 					System.out.println("Success");
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 				}
 				else
 				{
@@ -115,12 +120,14 @@ public class AdminDashBoardServlet extends HttpServlet {
 					System.out.println("id accout is: "+id);
 					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
 					System.out.println("Dang ki thanh cong");
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 				}else if(idnew==2) {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
 					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
 					System.out.println("Dang ki thanh cong");
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 				}
 			}
 			else {

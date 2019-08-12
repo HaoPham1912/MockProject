@@ -185,4 +185,23 @@ public class CustomerDAOImp implements ICustomerDAO{
 		}
 		return null;
 	}
+	@Override
+	public int findId_cus(int id_acc) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="SELECT id_cus FROM customer WHERE id_acc_cus =?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_acc);
+			ResultSet rs = pstm.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// TODO Auto-generated method stub
+		return -1;
+	}
 }

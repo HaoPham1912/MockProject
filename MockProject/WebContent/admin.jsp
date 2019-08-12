@@ -41,7 +41,7 @@
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="#" onclick="callContent('manageUser'); return false;">
+				href="#" onclick="callContent(''); return false;">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink" style="color: rgb(245, 164, 13);"></i>
 				</div>
@@ -50,7 +50,7 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider my-0">
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active"><a class="nav-link" href="#"
+			<li class="nav-item active" id="test"><a class="nav-link" href="#"
 				onclick="callContent('manageUser'); return false;"> <i
 					class="fa fa-id-card" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Customer</span></a></li>
@@ -112,7 +112,7 @@
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
 				<!-- ManageUser-Start -->
-				<div class="container-fluid generalClass" id="manageUser">
+				<div class="container-fluid generalClass" id="manageUser" >
 					<!-- Page Heading -->
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -383,7 +383,7 @@
 
 				<!-- ManageSeller-Start -->
 				<!-- ManageSeller-Start -->
-				<div class="container-fluid generalClass" id="manageSeller">
+				<div class="container-fluid generalClass " id="manageSeller" style="display: none" >
 					<!-- Page Heading -->
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">

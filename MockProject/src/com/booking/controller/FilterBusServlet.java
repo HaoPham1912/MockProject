@@ -37,7 +37,7 @@ public class FilterBusServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String id_buses = request.getParameter("idBusesSelected");
-		System.out.println(id_buses);
+		//System.out.println(id_buses);
 		request.setAttribute("listFilterBus", busDAO.findAllBus(Integer.valueOf(id_buses)));
 		RequestDispatcher rd = request.getRequestDispatcher("/filterBus.jsp");
 		rd.forward(request, response);

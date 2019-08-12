@@ -10,6 +10,7 @@
 <jsp:include page="header.jsp" /> 
  <section id="what-do-area" class="section-padding">
     <div class="container">
+        <jsp:include page="content.jsp" /> 
         
     </div>
 </section>  

@@ -8,24 +8,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.booking.dao.TicketDAOImp;
-import com.booking.model.Bus;
-import com.booking.model.Ticket;
-import com.booking.ultils.MyUltil;
 
 /**
- * Servlet implementation class FilterTicketServlet
+ * Servlet implementation class CustomTicketServlet
  */
-@WebServlet("/emp-filterTicket")
-public class FilterTicketServlet extends HttpServlet {
+@WebServlet("/emp-customTicket")
+public class CustomTicketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     TicketDAOImp ticketDAO = new TicketDAOImp();   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FilterTicketServlet() {
+    public CustomTicketServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,23 +30,31 @@ public class FilterTicketServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		response.getWriter().append("Served at: ").append(request.getContextPath());	
-		String id_bus = request.getParameter("idBusSelected");
-		System.out.println(id_bus);
-		System.out.println("asdasaaaaaaaaaaaaaaaaaa");
-		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
-		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
-		rd.forward(request, response);
-	
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("Tao nhay qua day roiiii");
+		String action = request.getParameter("action");
+		System.out.println("action is   "+action);
+		if(action.equals("update")) {
+			String id_ticket = request.getParameter("idTicketEdit");
+			String status = request.getParameter("statusEdit");
+			System.out.println(id_ticket +"      "+ status);
+			ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status));
+			if(ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status))) {
+				System.out.println("Success!!!");
+				//response.sendRedirect(request.getContextPath()+"/emp-filterTicket");
+				response.sendRedirect(request.getContextPath()+"/emp-dashboard");
+			}		
+		}
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub	
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

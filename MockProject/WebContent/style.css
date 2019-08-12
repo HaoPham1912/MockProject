@@ -1,4 +1,4 @@
-/*
+  /*
 *
 * ------------------------------------------------------------------
 *[Master Stylesheet]
@@ -549,7 +549,7 @@ a.slicknav_btn {
 	padding-bottom: 56.25%;
 }
 
-.about-video iframe {
+.about-video img {
 	border: medium none;
 	border-radius: 3px;
 	height: 100%;
@@ -1931,15 +1931,15 @@ body,
 /*== Slider Area CSS ==*/
 
 .slider-bg-1 {
-	background-image: url("assets/img/slider-img/slider-img-4.jpg");
+	background-image: url("https://m.tuniucdn.com/fb2/t1/G1/M00/37/C4/Cii-U1kvxB-IebOZAFdoI5S_EJsAALPJgMBNicAV2g7632.jpg");
 }
 
 .slider-bg-2 {
-	background-image: url("assets/img/slider-img/slider-img-2.jpg");
+	background-image: url("https://znews-photo.zadn.vn/w820/Uploaded/pgi_cuhpguvau/2019_01_23/CauVang2.jpg");
 }
 
 .slider-bg-3 {
-	background-image: url("assets/img/slider-img/slider-img-3.jpg");
+	background-image: url("http://trienlamvhnt.vn/UserFiles/File/281117143415.jpg");
 }
 
 .home-slider-item {

@@ -160,39 +160,36 @@
     <!--== Slider Area Start ==-->
      <!--== Slider Area Start ==-->
     <section id="home-slider-area">
-        <div class="home-slider-item slider-bg-1 overlay">
+        <div class="home-slider-item slider-bg-1">
             <div class="container" style="max-height: 30px">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="slideshowcontent">
-                            <h1>BOOK A CAR TODAY!</h1>
-                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+                            <h1>BOOK A TRIP TODAY!</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="home-slider-item slider-bg-2 overlay">
+        <div class="home-slider-item slider-bg-2">
             <div class="container" style="max-height: 30px">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="slideshowcontent">
                             <h1>SAVE YOUR MONEY</h1>
-                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="home-slider-item slider-bg-3 overlay">
+        <div class="home-slider-item slider-bg-3">
             <div class="container" style="max-height: 30px">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="slideshowcontent">
                             <h1>ENJOY YOUR JOURNEY</h1>
-                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
                         </div>
                     </div>
                 </div>
@@ -202,42 +199,7 @@
     <!--== Slider Area End ==-->
 
     <!--== Book A Car Area Start ==-->
-    <div id="book-a-car">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="booka-car-content" style="padding-left: 200px">
-                         <form action="index3.html">
-                            <div class="header-text">
-                                <p>BusBooking.com- Hệ thống đặt vé xe khách</p><br/></div>
-                                <div class="pick-location bookinput-item">
-                                       <select class="custom-select">
-                                          <option selected>Ho Chi Minh</option>
-                                          <option value="1">Da Nang</option>
-                                          <option value="2">Da Lat</option>
-                                          <option value="3">Ha Noi</option>
-                                       </select>
-                                    </div>
-                                    <div class="pick-location bookinput-item">
-                                        <select class="custom-select">
-                                          <option selected>Ha Noi</option>
-                                          <option value="1">Da Nang</option>
-                                          <option value="2">Da Lat</option>
-                                          <option value="3">Ho Chi Minh</option>
-                                   		</select>
-                                        </div>
-                                <div class="pick-date bookinput-item">
-                                    <input id="startDate2" placeholder="Pick Date" />
-                                </div>                                                  
-                                <div class="bookcar-btn bookinput-item">
-                                    <button type="submit">Search</button>
-                                </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!--== Book A Car Area End ==-->
     
     
