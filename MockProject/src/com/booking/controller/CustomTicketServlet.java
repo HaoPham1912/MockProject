@@ -34,17 +34,15 @@ public class CustomTicketServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("Tao nhay qua day roiiii");
 		String action = request.getParameter("action");
 		System.out.println("action is   "+action);
 		if(action.equals("update")) {
 			String id_ticket = request.getParameter("idTicketEdit");
 			String status = request.getParameter("statusEdit");
-			System.out.println(id_ticket +"      "+ status);
+//			System.out.println(id_ticket +"      "+ status);
 			ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status));
 			if(ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status))) {
 				System.out.println("Success!!!");
-				//response.sendRedirect(request.getContextPath()+"/emp-filterTicket");
 				response.sendRedirect(request.getContextPath()+"/emp-dashboard");
 			}		
 		}
@@ -61,6 +59,8 @@ public class CustomTicketServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
 

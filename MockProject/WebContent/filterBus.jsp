@@ -60,9 +60,10 @@
 					class="fas fa-bus-alt" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Bus</span></a></li>
 
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/emp-dashboard"> <i
-					class="far fa-arrow-alt-circle-left" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Back</span></a></li>
+			<li class="nav-item active"><a class="nav-link"
+				href="${pageContext.request.contextPath}/emp-dashboard"> <i
+					class="far fa-arrow-alt-circle-left"
+					style="color: rgb(245, 164, 13)"></i> <span class="text-nav">Back</span></a></li>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Sidebar Toggler (Sidebar) -->
@@ -129,7 +130,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										<th>ID</th>
 										<th>Time Go</th>
 										<th>Car Position</th>
-										<th>Time Estimate</th>				
+										<th>Time Estimate</th>
 										<th>View Ticket</th>
 									</thead>
 									<tbody>
@@ -141,12 +142,15 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												<td>${a.time_estimate}</td>
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="View">
+													<form method="POST" action="${pageContext.request.contextPath}/emp-filterTicket?id_bus=${a.id_bus}">
 														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal" onclick="getIdBus()">
+															data-toggle="modal">
 															<span class="far fa-id-card"></span>
 														</button>
+													</form>
+
 													</p>
-												</td>												
+												</td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -172,12 +176,13 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										<div class="form-group">
 											<h4 class="text-black-50">ID Bus:</h4>
 											<input class="form-control" id="idBusSelected" type="text"
-												name="idBusSelected" value="${busInfo.id_bus}" required readonly>
+												name="idBusSelected" value="${busInfo.id_bus}" required
+												readonly>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Time Go:</h4>
-											<input class="form-control " id="timeGo"
-												type="text" name="timeGo" required readonly>
+											<input class="form-control " id="timeGo" type="text"
+												name="timeGo" required readonly>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Car Position:</h4>
@@ -187,15 +192,15 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Time Estimate:</h4>
-											<input class="form-control " id="timeEstimate"
-												type="text" name="timeEstimate"
-												title="Distance of start place to end place"
-												required readonly>
+											<input class="form-control " id="timeEstimate" type="text"
+												name="timeEstimate"
+												title="Distance of start place to end place" required
+												readonly>
 										</div>
 										<!-- Set role-End -->
 										<div class="modal-footer">
-											<button type="submit"
-												class="btn btn-warning btn-lg" style="width: 100%;">
+											<button type="submit" class="btn btn-warning btn-lg"
+												style="width: 100%;">
 												<span class="fas fa-check-circle"></span>View Tickket
 											</button>
 											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
