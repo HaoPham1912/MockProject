@@ -13,7 +13,7 @@
  <!--== What We Do Area Start ==-->
  <section id="what-do-area" class="section-padding">
     <div class="container">
- <%--      <jsp:include page="content.jsp" />   --%>
+      <jsp:include page="content.jsp" />  
     </div>
 </section>     
 <jsp:include page="footer.jsp" />  
