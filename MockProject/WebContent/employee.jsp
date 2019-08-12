@@ -41,7 +41,7 @@
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="#" onclick="callContent('manageUser'); return false;">
+				href="http://localhost:8080/MockProject/emp-dashboard">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink" style="color: rgb(245, 164, 13);"></i>
 				</div>

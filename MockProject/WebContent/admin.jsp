@@ -50,8 +50,8 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider my-0">
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active" id="test"><a class="nav-link" href="#"
-				onclick="callContent('manageUser'); return false;"> <i
+			<li class="nav-item active" id="test"><a class="nav-link"
+				href="#" onclick="callContent('manageUser'); return false;"> <i
 					class="fa fa-id-card" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Customer</span></a></li>
 			<!-- Nav Item-Manage Seller -->
@@ -112,7 +112,7 @@
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
 				<!-- ManageUser-Start -->
-				<div class="container-fluid generalClass" id="manageUser" >
+				<div class="container-fluid generalClass" id="manageUser">
 					<!-- Page Heading -->
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -383,7 +383,8 @@
 
 				<!-- ManageSeller-Start -->
 				<!-- ManageSeller-Start -->
-				<div class="container-fluid generalClass " id="manageSeller" style="display: none" >
+				<div class="container-fluid generalClass " id="manageSeller"
+					style="display: none">
 					<!-- Page Heading -->
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -528,12 +529,13 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												</p>
 											</td>
 											<td>
-												<p data-placement="top" data-toggle="tooltip" title="Delete">
-													<button class="btn btn-danger" data-title="Delete"
-														data-toggle="modal" onclick="deleteSeller()">
-														<span class="fa fa-trash"></span>
-													</button>
-												</p>
+													<p data-placement="top" data-toggle="tooltip"
+														title="Delete">
+														<button class="btn btn-danger" data-title="Delete"
+															data-toggle="modal" onclick="deleteSeller()">
+															<span class="fa fa-trash"></span>
+														</button>
+													</p>
 											</td>
 										</tr>
 									</c:forEach>

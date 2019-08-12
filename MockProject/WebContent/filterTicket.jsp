@@ -160,13 +160,19 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 														</button>
 													</p>
 												</td>
+
 												<td>
-													<p data-placement="top" data-toggle="tooltip"
-														title="Delete">
-														<button class="btn btn-danger" data-title="Delete"
-															data-toggle="modal" onclick="deleteTicket()">
-															<span class="fa fa-trash"></span>
-														</button>
+													<form method="POST"
+														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+														<p data-placement="top" data-toggle="tooltip"
+															title="Delete">
+
+															<button class="btn btn-danger" data-title="Delete"
+																data-toggle="modal">
+																<span class="fa fa-trash"></span>
+															</button>
+													</form>
+
 													</p>
 												</td>
 											</tr>
