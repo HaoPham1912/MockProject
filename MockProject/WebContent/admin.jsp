@@ -154,15 +154,42 @@
 												<div class="form-group">
 													<h4 class="text-black-50">User Name:</h4>
 													<input class="form-control " id="User" type="text"
-														placeholder="Username" name="username1" required>
+														placeholder="Username" name="username1"
+														pattern="[A-Za-z0-9]{1,}" minlength="5" maxlength="15"
+														title="Username less than 15 character and more than 5 character!!!"
+														required>
 												</div>
 												<!-- Username End -->
 												<!-- Begin pass -->
 												<div class="form-group">
 													<h4 class="text-black-50">Password:</h4>
 													<input class="form-control " id="password" type="text"
-														placeholder="Password" name="password1" required>
+														placeholder="Password" name="password1" maxlength="15"
+														minlength="8" pattern="[A-Za-z0-9]{1,}" required>
 												</div>
+												<div class="form-group">
+													<h4 class="text-black-50">ReType Password:</h4>
+													<input class="form-control " id="confirm_password" type="text"
+														placeholder="Password" name="password1" maxlength="15"
+														minlength="8" pattern="[A-Za-z0-9]{1,}" required>
+												</div>
+												<script>
+													var password = document
+															.getElementById("password"), confirm_password = document
+															.getElementById("confirm_password");
+
+													function validatePassword() {
+														if (password.value != confirm_password.value) {
+															confirm_password
+																	.setCustomValidity("Passwords Don't Match");
+														} else {
+															confirm_password
+																	.setCustomValidity('');
+														}
+													}
+													password.onchange = validatePassword;
+													confirm_password.onkeyup = validatePassword;
+												</script>
 												<!-- End Pass -->
 
 												<!-- Tên thằng user -->
@@ -200,9 +227,14 @@
 												<!-- Set role-Start -->
 												<div class="form-group">
 													<h4 class="text-black-50">Role:</h4>
-													<input class="form-control " id="Role" type="text"
+													<!-- <input class="form-control " id="Role" type="text"
 														placeholder="Role Customer" name="role1" value="1"
-														title="Role of Seller" required readonly>
+														title="Role of Seller" required readonly>  -->
+													<select class="form-control" name="role1">
+														<option value="1">1:Customer</option>
+														<option value="2">2:Seller</option>
+														<option value="3">3:Admin</option>
+													</select>
 													<!-- <input id="toggle-event" type="checkbox" data-size="large"
 													data-toggle="toggle" data-on="Customer" data-off="Ticket Seller"
 													checked> -->
@@ -394,8 +426,8 @@
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
-					<div>
-						<div class="text-right">
+					<!-- <div> -->
+					<!-- <div class="text-right">
 							<p data-placement="top" data-toggle="tooltip"
 								title="Create new user">
 								<button class="btn btn-primary" data-title="Create new user"
@@ -403,8 +435,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 									<span class="fas fa-plus-circle">&nbsp; Create new user</span>
 								</button>
 							</p>
-						</div>
-						<div>
+						</div> -->
+					<%-- <div>
 							<!-- ThÃªm user-Start -->
 							<div class="modal fade" id="addSeller" tabindex="-1"
 								role="dialog" aria-labelledby="add" aria-hidden="true">
@@ -494,9 +526,9 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 								<!-- /.modal-dialog -->
 							</div>
 							<!-- ThÃªm user-End -->
-						</div>
-						<!-- EmployeeStart -->
-					</div>
+						</div> --%>
+					<!-- EmployeeStart -->
+					<!-- </div> -->
 					<div class="col-md-12">
 						<div class="table-responsive">
 							<table id="mytableseller"
@@ -529,13 +561,12 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												</p>
 											</td>
 											<td>
-													<p data-placement="top" data-toggle="tooltip"
-														title="Delete">
-														<button class="btn btn-danger" data-title="Delete"
-															data-toggle="modal" onclick="deleteSeller()">
-															<span class="fa fa-trash"></span>
-														</button>
-													</p>
+												<p data-placement="top" data-toggle="tooltip" title="Delete">
+													<button class="btn btn-danger" data-title="Delete"
+														data-toggle="modal" onclick="deleteSeller()">
+														<span class="fa fa-trash"></span>
+													</button>
+												</p>
 											</td>
 										</tr>
 									</c:forEach>

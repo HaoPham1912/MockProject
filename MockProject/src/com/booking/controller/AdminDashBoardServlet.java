@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.booking.dao.AccountDAOImp;
+import com.booking.dao.AdminDAOImp;
 import com.booking.dao.CustomerDAOImp;
 import com.booking.dao.EmployeeDAOImp;
 
@@ -22,6 +23,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 	CustomerDAOImp customerDAO = new CustomerDAOImp();
 	EmployeeDAOImp employeeDAO = new EmployeeDAOImp();
 	AccountDAOImp accountDAOImp = new AccountDAOImp();
+	AdminDAOImp adminDAO = new AdminDAOImp();
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -113,16 +115,30 @@ public class AdminDashBoardServlet extends HttpServlet {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
-					System.out.println("Dang ki thanh cong");
-					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+//					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
+					if(customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1)) 
+					{
+						System.out.println("Dang ki thanh cong");
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+					}	
 				}else if(idnew==2) {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
-					System.out.println("Dang ki thanh cong");
-					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+//					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
+					if(employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1)) {
+						System.out.println("Dang ki thanh cong");
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+					}
+				}else if(idnew==3) {
+					int id= accountDAOImp.insertAccount(user, pass, idnew);
+					System.out.println("Them thanh cong account");
+					System.out.println("id accout is: "+id);
+//					adminDAO.insertAdmin(id, name1, phone1, email1, address1);
+					if(adminDAO.insertAdmin(id, name1, phone1, email1, address1)) {
+						System.out.println("Dang ki thanh cong");
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+					}
 				}
 			}
 			else {

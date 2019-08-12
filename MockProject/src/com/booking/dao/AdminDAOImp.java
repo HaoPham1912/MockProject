@@ -1,6 +1,7 @@
 package com.booking.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -35,5 +36,25 @@ public class AdminDAOImp implements IAdminDAO{
 			e.printStackTrace();
 		}
 		return arr;
+	}
+	@Override
+	public boolean insertAdmin(int id, String name, String phone, String email, String address) {
+		try {
+			Connection connection = conn.getMySQLConnection();
+			String sql="INSERT INTO admin (id_acc_ad, admin_name, admin_phone, admin_email, admin_address)"+
+					" VALUES(?,?,?,?,?)";
+			java.sql.PreparedStatement pstm = connection.prepareStatement(sql); 
+			pstm.setInt(1, id);
+			pstm.setString(2, name);
+			pstm.setString(3, phone);
+			pstm.setString(4, email);
+			pstm.setString(5, address);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

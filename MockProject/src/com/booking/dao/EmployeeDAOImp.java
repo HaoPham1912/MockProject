@@ -86,7 +86,7 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		return null;
 	}
 	@Override
-	public void insertInfoEmployee(int id, String name, String phone, String email, String address) {
+	public boolean insertInfoEmployee(int id, String name, String phone, String email, String address) {
 
 		// TODO Auto-generated method stub
 		try {
@@ -101,10 +101,12 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 			pstm.setString(4, email);
 			pstm.setString(5, address);
 			pstm.executeUpdate();
+			return true;
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
 
 	@Override

@@ -240,7 +240,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										<div class="form-group">
 											<h4 class="text-black-50">Status:</h4>
 											<input class="form-control" id="statusEdit" type="text"
-												name="statusEdit" pattern="[0,1]" maxlength="1" required>
+												name="statusEdit" pattern="[0,1]" maxlength="1" required
+												title="Value is only 0 and 1 (0 is unpaid and 1 is paid)">
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-warning btn-lg"
