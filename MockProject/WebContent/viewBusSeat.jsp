@@ -152,7 +152,7 @@
 												class="seat" id="seat1col2"
 												onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 												title="18"></button></td>
-										<td style="text-align: right"><button type="button"
+										<td style="text-align: right;"><button type="button"
 												class="seat" id="seat1col3"
 												onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 												title="19"></button></td>
@@ -266,6 +266,7 @@
 							<button type="submit" class="btn btn-warning" id="book">
 								<i class="fa fa-sign-in"></i><b>Book Ticket</b>
 							</button>
+
 						</form>
 					</div>
 				</div>
