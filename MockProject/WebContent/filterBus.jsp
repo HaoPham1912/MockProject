@@ -172,7 +172,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										<div class="form-group">
 											<h4 class="text-black-50">ID Bus:</h4>
 											<input class="form-control" id="idBusSelected" type="text"
-												name="idBusSelected" required readonly>
+												name="idBusSelected" value="${busInfo.id_bus}" required readonly>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Time Go:</h4>

@@ -274,9 +274,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 									</button>
 								</div>
 							</div>
-							<!-- /.modal-content -->
 						</div>
-						<!-- /.modal-dialog -->
 					</div>
 					<!-- Modal delete Seller-End -->
 					<!-- ManageSeller-End -->

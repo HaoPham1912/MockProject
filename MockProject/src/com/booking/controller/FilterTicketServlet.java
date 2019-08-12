@@ -39,6 +39,7 @@ public class FilterTicketServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());	
 		String id_bus = request.getParameter("idBusSelected");
+		System.out.println(id_bus);
 		System.out.println("asdasaaaaaaaaaaaaaaaaaa");
 		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
 		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");

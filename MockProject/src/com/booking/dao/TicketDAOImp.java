@@ -131,4 +131,19 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return false;
 	}
+	@Override
+	public boolean deleteTicket(int id_ticket) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="DELETE FROM Ticket WHERE id_ticket=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_ticket);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

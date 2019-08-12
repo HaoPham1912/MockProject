@@ -64,7 +64,6 @@ public class ViewInfoCusServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);
 		String action = request.getParameter("action");
 		if(action.equals("update")) {
 			String id_acc = request.getParameter("id_acc_cus");
@@ -75,7 +74,7 @@ public class ViewInfoCusServlet extends HttpServlet {
 			System.out.println(name);
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.parseInt(id_acc))) {
 					System.out.println("Update Success!!!");
-//					response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
+					response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
 				}
 				else {
 					System.out.println("Can't Update!!!");
