@@ -4,7 +4,7 @@
 //$("#mytable").DataTable();
 $(document).ready(function() {
 	$('#mytable').DataTable( {
-		"lengthMenu": [[1, 2, 3, -1], [1, 2, 3, "All"]]
+		"lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
 	} );
 } );
 

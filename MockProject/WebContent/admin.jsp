@@ -61,7 +61,7 @@
 					class="text-nav">Manage Seller</span></a></li>
 			<!-- Nav Item-Manage System -->
 			<li class="nav-item active"><a class="nav-link" href="#"
-				onclick="callContent('manageUser'); return false;"> <i
+				onclick="callContent('manageAdmin'); return false;"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage System</span></a></li>
 			<li class="nav-item active"><a class="nav-link"
@@ -169,9 +169,10 @@
 												</div>
 												<div class="form-group">
 													<h4 class="text-black-50">ReType Password:</h4>
-													<input class="form-control " id="confirm_password" type="text"
-														placeholder="Password" name="password1" maxlength="15"
-														minlength="8" pattern="[A-Za-z0-9]{1,}" required>
+													<input class="form-control " id="confirm_password"
+														type="text" placeholder="Password" name="password1"
+														maxlength="15" minlength="8" pattern="[A-Za-z0-9]{1,}"
+														required>
 												</div>
 												<script>
 													var password = document
@@ -385,18 +386,6 @@
 												placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
 												title="" required>
 										</div>
-										<!-- Address User- End -->
-										<!-- Set role-Start -->
-										<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-admin "> <input type="radio"
-												name="options" id="optionAdminRole"> Admin
-											</label> <label class="btn btn-seller"> <input type="radio"
-												name="options" id="optionSellerRole"> Ticket Seller
-											</label> <label class="btn btn-user"> <input type="radio"
-												name="options" id="optionUserRole"> User
-											</label>
-										</div> -->
-										<!-- Set role-End -->
 										<div class="modal-footer">
 											<button type="submit" id="submitEditUser"
 												class="btn btn-warning btn-lg" style="width: 100%;">
@@ -412,6 +401,65 @@
 					<!-- Modal edit user-end -->
 				</div>
 				<!-- Modal ManageUser End -->
+				<div class="container-fluid generalClass " id="manageAdmin"
+					style="display: none">
+					<!-- Page Heading -->
+					<div
+						class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h1 class="h3 mb-0 text-gray-800">
+							<strong>Manage Admin Info</strong>
+						</h1>
+					</div>
+					<!-- EmployeeStart -->
+					<!-- </div> -->
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table id="mytableseller"
+								class="table table-bordred table-striped">
+								<thead>
+									<th>ID</th>
+									<th>Username</th>									
+									<th>Name</th>
+									<th>Phone</th>
+									<th>Email</th>
+									<th>Address</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</thead>
+								<tbody>
+									<c:forEach items="${adminList}" var="a">
+										<tr>
+											<td>${a.id_acc_ad}</td>
+											<td>${a.username}</td>
+											<td>${a.admin_name}</td>
+											<td>${a.admin_phone}</td>
+											<td>${a.admin_email}</td>
+											<td>${a.admin_address}</td>
+											<td>
+												<p data-placement="top" data-toggle="tooltip" title="Edit">
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal" onclick="editAdmin()">
+														<span class="	fa fa-edit"></span>
+													</button>
+												</p>
+											</td>
+											<td>
+												<p data-placement="top" data-toggle="tooltip" title="Delete">
+													<button class="btn btn-danger" data-title="Delete"
+														data-toggle="modal" onclick="deleteAdmin()">
+														<span class="fa fa-trash"></span>
+													</button>
+												</p>
+											</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
 
 				<!-- ManageSeller-Start -->
 				<!-- ManageSeller-Start -->
@@ -423,110 +471,7 @@
 						<h1 class="h3 mb-0 text-gray-800">
 							<strong>Manage TicketSeller</strong>
 						</h1>
-						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
-					<!-- <div> -->
-					<!-- <div class="text-right">
-							<p data-placement="top" data-toggle="tooltip"
-								title="Create new user">
-								<button class="btn btn-primary" data-title="Create new user"
-									data-toggle="modal" data-target="#addSeller">
-									<span class="fas fa-plus-circle">&nbsp; Create new user</span>
-								</button>
-							</p>
-						</div> -->
-					<%-- <div>
-							<!-- ThÃªm user-Start -->
-							<div class="modal fade" id="addSeller" tabindex="-1"
-								role="dialog" aria-labelledby="add" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<form class=""
-											action="${pageContext.request.contextPath}/admin-dashboard?action=register"
-											method="POST">
-											<!-- Modal Header -->
-											<div class="modal-header">
-												<h4 class="modal-title" style="margin-left: auto">
-													<strong>Create new user</strong>
-												</h4>
-												<button type="button" class="close" data-dismiss="modal">&times;</button>
-											</div>
-											<!-- Modal Äá» create new user-Start -->
-											<div class="modal-body">
-												<div class="form-group">
-													<h4 class="text-black-50">User Name:</h4>
-													<input class="form-control " id="User" type="text"
-														placeholder="Username" name="username1" required>
-												</div>
-												<!-- Username End -->
-												<!-- Begin pass -->
-												<div class="form-group">
-													<h4 class="text-black-50">Password:</h4>
-													<input class="form-control " id="password" type="text"
-														placeholder="Password" name="password1" required>
-												</div>
-												<!-- End Pass -->
-
-												<!-- Tên thằng user -->
-												<!-- TÃªn tháº±ng user -->
-												<div class="form-group">
-													<h4 class="text-black-50">Name:</h4>
-													<input class="form-control " id="nameUser" type="text"
-														placeholder="Le Van Duy" name="name1" required>
-												</div>
-												<!-- TÃªn tháº±ng user -->
-												<!-- Phone user -->
-												<div class="form-group">
-													<h4 class="text-black-50">Phone:</h4>
-													<input class="form-control " id="phoneUser" type="number"
-														placeholder="01293948384" name="phone1"
-														pattern="[0-9]{1,}" title="" required>
-												</div>
-												<!-- Phone user -->
-												<!-- Email User -->
-												<div class="form-group">
-													<h4 class="text-black-50">Email:</h4>
-													<input class="form-control " id="emailUser" type="email"
-														accept="" placeholder="example@gmail.com" name="email1"
-														title="Email is unvalid!" required>
-												</div>
-												<!-- Email User -->
-												<!-- Address User- Start -->
-												<div class="form-group">
-													<h4 class="text-black-50">Address:</h4>
-													<input class="form-control " id="addressUser" type="text"
-														placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
-														name="address1" title="" required>
-												</div>
-												<!-- Address User- End -->
-												<!-- Set role-Start -->
-												<div class="form-group">
-													<h4 class="text-black-50">Role:</h4>
-													<input class="form-control " id="Role" type="text"
-														placeholder="Role Customer" name="role1" value="2"
-														title="Role of Seller" required readonly>
-													<!-- <input id="toggle-event" type="checkbox" data-size="large"
-													data-toggle="toggle" data-on="Customer" data-off="Ticket Seller"
-													checked> -->
-												</div>
-												<!-- Set role-End -->
-												<div class="modal-footer">
-													<button type="submit" id="submitAddPokestop"
-														class="btn btn-warning btn-lg" style="width: 100%;">
-														<span class="	fas fa-check-circle"></span>Create
-													</button>
-												</div>
-											</div>
-											<!-- Modal Äá» create new user-End -->
-										</form>
-									</div>
-									<!-- /.modal-content -->
-								</div>
-								<!-- /.modal-dialog -->
-							</div>
-							<!-- ThÃªm user-End -->
-						</div> --%>
 					<!-- EmployeeStart -->
 					<!-- </div> -->
 					<div class="col-md-12">
@@ -631,17 +576,6 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title=""
 											required>
 									</div>
-									<!-- Address User- End -->
-									<!-- Set role-Start -->
-									<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-										<label class="btn btn-admin "> <input type="radio"
-											name="options" id="optionAdminRole"> Admin
-										</label> <label class="btn btn-seller"> <input type="radio"
-											name="options" id="optionSellerRole"> Ticket Seller
-										</label> <label class="btn btn-user"> <input type="radio"
-											name="options" id="optionUserRole"> User
-										</label>
-									</div> -->
 									<!-- Set role-End -->
 									<div class="modal-footer">
 										<button type="submit" id="submitEditSeller"

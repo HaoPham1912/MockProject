@@ -18,12 +18,14 @@ public class AdminDAOImp implements IAdminDAO{
 		try {
 			Connection  conection = conn.getMySQLConnection();
 			Statement stm = conection.createStatement();
-			String sql ="SELECT * FROM admin";
+			String sql ="select * from account,admin where admin.id_acc_ad = account.id_acc";
 			ResultSet rs = stm.executeQuery(sql);
 			while(rs.next()) {
 				Admin ad = new Admin();
 				ad.setId_acc_ad(rs.getInt("id_ad"));
 				ad.setId_acc_ad(rs.getInt("id_acc_ad"));
+				ad.setUsername(rs.getString("username"));
+				ad.setPassword(rs.getString("password"));
 				ad.setAdmin_name(rs.getString("admin_name"));
 				ad.setAdmin_phone(rs.getString("admin_phone"));
 				ad.setAdmin_address(rs.getString("admin_address"));
