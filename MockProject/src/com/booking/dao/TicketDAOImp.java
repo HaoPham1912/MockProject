@@ -157,4 +157,28 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return false;
 	}
+	@Override
+	public int getNumberOfSeatInEachBus(int id_cus, String date_go, int id_bus) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			
+			String sql="select count(*) from ticket where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y') and id_cus=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, id_bus);
+			pstm.setString(2, date_go);
+			pstm.setInt(3, id_cus);
+			ResultSet rs = pstm.executeQuery();
+			if(rs.next())
+			{
+				return rs.getInt(1);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
 }

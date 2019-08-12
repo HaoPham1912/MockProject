@@ -86,6 +86,10 @@ public class ViewSeatServlet extends HttpServlet {
 		if(id_bus!=null)
 		{
 			ArrayList<String> arr = ticketDAO.FindAvailableSeat(Integer.valueOf(id_bus), bookinginfo.getStart_date());
+			request.setAttribute("numOfSeat",
+					ticketDAO.getNumberOfSeatInEachBus(customer.getId_cus(),
+					bookinginfo.getStart_date(),
+					Integer.valueOf(id_bus)));
 			request.setAttribute("arrSeat", arr);
 		}
 		
@@ -137,7 +141,8 @@ public class ViewSeatServlet extends HttpServlet {
 									Integer.valueOf(s.split(",")[i]),0,
 									Double.valueOf(price),phone,name,
 									Integer.valueOf(id_bus),customer.getId_cus());
-		}	
+		}
+		request.setAttribute("message", "Booking Successful!");
 		RequestDispatcher rd =  request.getRequestDispatcher("/index3.jsp");
 		rd.forward(request, response);
 		return;

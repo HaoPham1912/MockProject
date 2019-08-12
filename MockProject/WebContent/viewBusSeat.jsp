@@ -70,18 +70,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="1"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="2"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="3"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="4"></button></td>
 										</tr>
 									</div>
@@ -89,18 +89,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="5"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="6"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="7"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="8"></button></td>
 										</tr>
 									</div>
@@ -108,18 +108,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="9"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="10"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="11"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="12"></button></td>
 										</tr>
 									</div>
@@ -127,18 +127,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="13"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="14"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="15"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="16"></button></td>
 										</tr>
 									</div>
@@ -146,18 +146,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="17"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="18"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="19"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="20"></button></td>
 										</tr>
 									</div>
@@ -165,18 +165,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="21"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="22"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="23"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="24"></button></td>
 										</tr>
 									</div>
@@ -184,18 +184,18 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="25"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="26"></button></td>
 											<td style="text-align: right"><button type="button"
 													class="seat" id="seat1col3"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="27"></button></td>
 											<td><button type="button" class="seat" id="seat1col4"
-													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
 													title="28"></button></td>
 										</tr>
 									</div>

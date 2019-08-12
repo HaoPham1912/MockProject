@@ -32,11 +32,11 @@ document.getElementById("seat5col4").onclick = function() {changeSeatColor(seat5
 document.getElementById("seat6col4").onclick = function() {changeSeatColor(seat6col4),getCost(seat6col4)};
 document.getElementById("seat7col4").onclick = function() {changeSeatColor(seat7col4),getCost(seat7col4)};
  */
-function abc()
+function Notify(mess)
 {
-	alert("aaa");
+	alert(mess);
 }
-function changeSeatColor(seat)
+function changeSeatColor(seat,numOfSeat)
 { 
 	// var element = seat.style.getPropertyValue('background-color');
 	var check = count();
@@ -44,8 +44,9 @@ function changeSeatColor(seat)
 	var c = String(s['background-color']);
 	var blue = "rgb(183,219,65)";
 	var gray = "rgb(251, 251, 251)";
+	var condition = Math.abs(5 - numOfSeat);
 	var bookbtn = document.getElementById("book").disabled = false;
-	if(check <= 5)
+	if(check <= condition)
 	{
 		if(c === gray)
 		{
