@@ -43,6 +43,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 		//		response.setIntHeader("Refresh", 5);
 		request.setAttribute("customerList", customerDAO.findAllCustomer());
 		request.setAttribute("employeeList", employeeDAO.findAllEmployee());
+		request.setAttribute("adminList", adminDAO.findAllAdmin());
 		RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
 		rd.forward(request, response);
 	}
