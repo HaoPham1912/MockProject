@@ -40,6 +40,7 @@ public class LogInServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		MyUltil myultil = new MyUltil();
 		HttpSession session = request.getSession();
 		Account account = (Account) session.getAttribute("user");
 		
@@ -52,6 +53,10 @@ public class LogInServlet extends HttpServlet {
 		
 		if(account == null)
 		{
+			String message = request.getParameter("message");
+			System.out.println(message);
+			request.setAttribute("message", message);
+			
 			RequestDispatcher rd =  request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);
 		}
@@ -94,7 +99,10 @@ public class LogInServlet extends HttpServlet {
 		
 		if(account==null)
 		{
-			response.sendRedirect(request.getContextPath()+"/login");
+			message = "Username or Password is incorrect";
+			//response.sendRedirect(request.getContextPath()+"/register?message="+message);
+			response.sendRedirect(request.getContextPath()+"/login?message="+message);
+			
 		}
 		else
 		{	

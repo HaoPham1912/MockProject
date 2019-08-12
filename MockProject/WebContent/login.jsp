@@ -186,6 +186,7 @@
 								<div class="password">
 									<input type="password" placeholder="Password" name="password">
 								</div>
+								<p style="color: red">${message}</p>
 								<div class="log-btn">
 									<button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
 								</div>
