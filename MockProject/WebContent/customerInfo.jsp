@@ -301,6 +301,12 @@
 											<th>Date Book</th>
 											<th>Seat Number</th>
 											<th>Price</th>
+											<th>Start Place</th>
+											<th>End Place</th>
+											<th>Time Go</th>
+											<th>Time Estimate</th>
+											<th>Time End</th>
+											<th>Car Position</th>
 											<th>Delete</th>
 										</thead>
 										<tbody>
@@ -313,6 +319,12 @@
 														<td>${a.date_book}</td>
 														<td>${a.seat_number}</td>
 														<td>${a.price}</td>
+														<td>${a.start_place}</td>
+														<td>${a.end_place}</td>
+														<td>${a.time_go}</td>
+														<td>${a.time_estimate}</td>
+														<td>${a.time_end}</td>
+														<td>${a.car_position}</td>
 														<td>
 															<p data-placement="top" data-toggle="tooltip"
 																title="Delete">
@@ -340,6 +352,12 @@
 											<th>Date Book</th>
 											<th>Seat Number</th>
 											<th>Price</th>
+											<th>Start Place</th>
+											<th>End Place</th>
+											<th>Time Go</th>
+											<th>Time Estimate</th>
+											<th>Time End</th>
+											<th>Car Position</th>
 											<th>Cancel</th>
 										</thead>
 										<tbody>
@@ -352,6 +370,12 @@
 														<td>${a.date_book}</td>
 														<td>${a.seat_number}</td>
 														<td>${a.price}</td>
+														<td>${a.start_place}</td>
+														<td>${a.end_place}</td>
+														<td>${a.time_go}</td>
+														<td>${a.time_estimate}</td>
+														<td>${a.time_end}</td>
+														<td>${a.car_position}</td>
 														<td>
 															<p data-placement="top" data-toggle="tooltip"
 																title="Delete">

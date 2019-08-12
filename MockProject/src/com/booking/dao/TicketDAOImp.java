@@ -95,7 +95,12 @@ public class TicketDAOImp implements ITicketDAO{
 		ArrayList<Ticket> arr = new ArrayList<>();
 		try {
 			Connection conn = db.getMySQLConnection();
-			String sql = "Select id_ticket, date_go, date_book, seat_number,status, price from bus.ticket where id_cus=?";
+			String sql = "select id_ticket, date_go, date_book, seat_number, status, time_go, time_estimate,"
+					+ "car_position, time_end, ticket.price, start_place, end_place\r\n" + 
+					"from ticket\r\n" + 
+					"inner join bus on ticket.id_bus = bus.id_bus\r\n" + 
+					"inner join buses on bus.id_buses = buses.id_buses\r\n" + 
+					"where id_cus=?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id_cus);
 			ResultSet rs = pstm.executeQuery();
@@ -107,6 +112,12 @@ public class TicketDAOImp implements ITicketDAO{
 				ticket.setSeat_number(rs.getInt("seat_number"));
 				ticket.setStatus(rs.getInt("status"));
 				ticket.setPrice(rs.getDouble("price"));
+				ticket.setStart_place(rs.getString("start_place"));
+				ticket.setEnd_place(rs.getString("end_place"));
+				ticket.setTime_go(rs.getString("time_go"));
+				ticket.setTime_estimate(rs.getString("time_estimate"));
+				ticket.setCar_position(rs.getString("car_position"));
+				ticket.setTime_end(rs.getString("time_end"));
 				arr.add(ticket);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
