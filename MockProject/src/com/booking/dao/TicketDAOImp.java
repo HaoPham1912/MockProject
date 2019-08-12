@@ -115,5 +115,20 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return arr;
 	}
-
+	@Override
+	public boolean updateStatusTicket(int id_ticket, int status) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="Update bus.ticket set status =? where id_ticket= ?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, status);
+			pstm.setInt(2, id_ticket);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

@@ -370,22 +370,6 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="wizard-footer height-wizard">
-						<div class="pull-right">
-							<input type='button'
-								class='btn btn-next btn-fill btn-default btn-wd btn-sm'
-								name='next' value='Next' />
-						</div>
-
-						<div class="pull-left">
-							<input type='button'
-								class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
-								name='previous' value='Previous' />
-
-						</div>
-						<div class="clearfix"></div>
-					</div> -->
-
 				</div>
 			</div>
 			<!--   Creative Tim Branding   -->

@@ -8,9 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.TicketDAOImp;
+import com.booking.model.Bus;
 import com.booking.model.Ticket;
+import com.booking.ultils.MyUltil;
 
 /**
  * Servlet implementation class FilterTicketServlet
@@ -34,17 +37,19 @@ public class FilterTicketServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());	
 		String id_bus = request.getParameter("idBusSelected");
+		System.out.println("asdasaaaaaaaaaaaaaaaaaa");
 		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
 		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 		rd.forward(request, response);
+	
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub	
 		doGet(request, response);
 	}
 

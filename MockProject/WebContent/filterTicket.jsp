@@ -60,9 +60,10 @@
 					class="far fa-calendar-alt" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Ticket</span></a></li>
 
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/emp-dashboard"> <i
-					class="far fa-arrow-alt-circle-left" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Back</span></a></li>
+			<li class="nav-item active"><a class="nav-link"
+				href="${pageContext.request.contextPath}/emp-dashboard"> <i
+					class="far fa-arrow-alt-circle-left"
+					style="color: rgb(245, 164, 13)"></i> <span class="text-nav">Back</span></a></li>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 			<!-- Sidebar Toggler (Sidebar) -->
@@ -124,7 +125,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 						<!-- EmployeeStart -->
 						<div class="col-md-12">
 							<div class="table-responsive">
-								<table id="mytableticket" class="table table-bordred table-striped">
+								<table id="mytableticket"
+									class="table table-bordred table-striped">
 									<thead>
 										<th>ID</th>
 										<th>Date Go</th>
@@ -159,13 +161,14 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 													</p>
 												</td>
 												<td>
-												<p data-placement="top" data-toggle="tooltip" title="Delete">
-													<button class="btn btn-danger" data-title="Delete"
-														data-toggle="modal" onclick="deleteTicket()">
-														<span class="fa fa-trash"></span>
-													</button>
-												</p>
-											</td>												
+													<p data-placement="top" data-toggle="tooltip"
+														title="Delete">
+														<button class="btn btn-danger" data-title="Delete"
+															data-toggle="modal" onclick="deleteTicket()">
+															<span class="fa fa-trash"></span>
+														</button>
+													</p>
+												</td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -177,8 +180,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
-								<form class=""
-									action="${pageContext.request.contextPath}/emp-filterbus"
+								<form id="submit-form"
+									action="${pageContext.request.contextPath}/emp-customTicket?action=update"
 									method="POST">
 									<!-- Modal Header -->
 									<div class="modal-header">
@@ -195,8 +198,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Date Go:</h4>
-											<input class="form-control " id="dateGoEdit"
-												type="text" name="dateGoEdit" required readonly>
+											<input class="form-control " id="dateGoEdit" type="text"
+												name="dateGoEdit" required readonly>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Date Book:</h4>
@@ -208,49 +211,33 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 											<h4 class="text-black-50">Seat Number:</h4>
 											<input class="form-control " id="seatNumberEdit"
 												type="number" name="seatNumberEdit"
-												title="Distance of start place to end place"
-												required readonly>
+												title="Distance of start place to end place" required
+												readonly>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneEdit"
-												type="text" name="phoneEdit"
-												title="Distance of start place to end place"
-												required readonly>
+											<input class="form-control " id="phoneEdit" type="text"
+												name="phoneEdit"
+												title="Distance of start place to end place" required
+												readonly>
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">Name:</h4>
-											<input class="form-control " id="nameEdit"
-												type="text" name="nameEdit"
-												required readonly>
+											<input class="form-control " id="nameEdit" type="text"
+												name="nameEdit" required readonly>
 										</div>
 										<!-- Phone user -->
 										<!-- Email User -->
 										<div class="form-group">
 											<h4 class="text-black-50">Status:</h4>
-											<input class="form-control " id="statusEdit"
-												type="text" name="statusEdit" name="Email" accept=""
-												required>
+											<input class="form-control" id="statusEdit" type="text"
+												name="statusEdit" pattern="[0,1]" maxlength="1" required>
 										</div>
-										<!-- Email User -->
-										<!-- Address User- End -->
-										<!-- Set role-Start -->
-										<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-admin "> <input type="radio"
-												name="options" id="optionAdminRole"> Admin
-											</label> <label class="btn btn-seller"> <input type="radio"
-												name="options" id="optionSellerRole"> Ticket Seller
-											</label> <label class="btn btn-user"> <input type="radio"
-												name="options" id="optionUserRole"> User
-											</label>
-										</div> -->
-										<!-- Set role-End -->
 										<div class="modal-footer">
-											<button type="submit"
-												class="btn btn-warning btn-lg" style="width: 100%;">
+											<button type="submit" class="btn btn-warning btn-lg"
+												style="width: 100%;">
 												<span class="fas fa-check-circle"></span>Update Status
 											</button>
-											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
 										</div>
 									</div>
 								</form>
