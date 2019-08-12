@@ -66,13 +66,13 @@ public class TicketDAOImp implements ITicketDAO{
 		return arr;
 	}
 	@Override
-	public boolean CreateTicket(String date_go, int seat_number,int status,double price,String phone, String name,int id_bus,int id_cus) {
+	public boolean CreateTicket(String date_go, int seat_number,int status,double price,String phone, String name,int id_bus,int id_cus,String note) {
 		// TODO Auto-generated method stub
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			String sql="INSERT INTO ticket (date_go, date_book,seat_number,status,price,phone,name,id_bus,id_cus,time_book)"+
-							"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?,CURRENT_TIME())";
+			String sql="INSERT INTO ticket (date_go, date_book,seat_number,status,price,phone,name,id_bus,id_cus,time_book,note)"+
+							"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?,CURRENT_TIME(),?)";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, date_go);
 			pstm.setInt(2, seat_number);
@@ -82,6 +82,7 @@ public class TicketDAOImp implements ITicketDAO{
 			pstm.setString(6, name);
 			pstm.setInt(7, id_bus);
 			pstm.setInt(8, id_cus);
+			pstm.setString(9, note);
 			pstm.executeUpdate();
 			return true;
 		} catch (ClassNotFoundException | SQLException e) {
