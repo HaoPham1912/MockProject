@@ -110,6 +110,8 @@ public class ViewSeatServlet extends HttpServlet {
 		String id_bus = request.getParameter("id_bus");
 		String phone = request.getParameter("phone");
 		String name = request.getParameter("name");
+		String note = request.getParameter("note");
+
 		
 		MyUltil myultil = new MyUltil();
 		HttpSession session = request.getSession();
@@ -140,9 +142,10 @@ public class ViewSeatServlet extends HttpServlet {
 			ticketDAO.CreateTicket(bookingInfo.getStart_date(),
 									Integer.valueOf(s.split(",")[i]),0,
 									Double.valueOf(price),phone,name,
-									Integer.valueOf(id_bus),customer.getId_cus());
+									Integer.valueOf(id_bus),customer.getId_cus(),note);
+			System.out.println("adsasdasd "+note);
 		}
-		request.setAttribute("message", "Booking Successful!");
+		request.setAttribute("BookingMessage", "Booking Successful!");
 		RequestDispatcher rd =  request.getRequestDispatcher("/index3.jsp");
 		rd.forward(request, response);
 		return;
