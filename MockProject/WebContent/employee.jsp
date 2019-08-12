@@ -149,87 +149,18 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												<td>${a.price}</td>
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="View">
+													<form method="POST" action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}">
 														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal" onclick="getIdBuses()">
+															data-toggle="modal">
 															<span class="fas fa-bus-alt"></span>
 														</button>
+													</form>
 													</p>
 												</td>
 											</tr>
 										</c:forEach>
 									</tbody>
 								</table>
-							</div>
-						</div>
-					</div>
-					<div class="modal fade" id="getIdBuses" tabindex="-1" role="dialog"
-						aria-labelledby="edit" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<form class=""
-									action="${pageContext.request.contextPath}/emp-filterbus"
-									method="POST">
-									<!-- Modal Header -->
-									<div class="modal-header">
-										<h4 class="modal-title" style="margin-left: auto">
-											<strong>Your Selected</strong>
-										</h4>
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-									</div>
-									<div class="modal-body">
-										<div class="form-group">
-											<h4 class="text-black-50">ID Buses:</h4>
-											<input class="form-control" id="idBusesSelected" type="text"
-												name="idBusesSelected" required readonly>
-										</div>
-										<div class="form-group">
-											<h4 class="text-black-50">Start Place:</h4>
-											<input class="form-control " id="startPlaceSelected"
-												type="text" name="startPlaceSelected" required readonly>
-										</div>
-										<div class="form-group">
-											<h4 class="text-black-50">End Place:</h4>
-											<input class="form-control " id="endPlaceSelected"
-												type="text" name="endPlaceSelected" required readonly>
-										</div>
-										<!-- Phone user -->
-										<div class="form-group">
-											<h4 class="text-black-50">Distance:</h4>
-											<input class="form-control " id="distanceSelected"
-												type="number" name="distanceSelected"
-												title="Distance of start place to end place" required
-												readonly>
-										</div>
-										<!-- Phone user -->
-										<!-- Email User -->
-										<div class="form-group">
-											<h4 class="text-black-50">Price:</h4>
-											<input class="form-control " id="priceSelected" type="text"
-												name="priceSelected" name="Email" accept=""
-												title="Price of Buses" required readonly>
-										</div>
-										<!-- Email User -->
-										<!-- Address User- End -->
-										<!-- Set role-Start -->
-										<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-admin "> <input type="radio"
-												name="options" id="optionAdminRole"> Admin
-											</label> <label class="btn btn-seller"> <input type="radio"
-												name="options" id="optionSellerRole"> Ticket Seller
-											</label> <label class="btn btn-user"> <input type="radio"
-												name="options" id="optionUserRole"> User
-											</label>
-										</div> -->
-										<!-- Set role-End -->
-										<div class="modal-footer">
-											<button type="submit" class="btn btn-warning btn-lg"
-												style="width: 100%;">
-												<span class="fas fa-check-circle"></span>View Bus
-											</button>
-											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
-										</div>
-									</div>
-								</form>
 							</div>
 						</div>
 					</div>

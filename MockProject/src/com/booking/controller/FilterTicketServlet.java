@@ -38,9 +38,8 @@ public class FilterTicketServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());	
-		String id_bus = request.getParameter("idBusSelected");
-		System.out.println(id_bus);
-		System.out.println("asdasaaaaaaaaaaaaaaaaaa");
+		String id_bus = request.getParameter("id_bus");
+		request.setAttribute("id_bus", id_bus);
 		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
 		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 		rd.forward(request, response);
@@ -51,6 +50,8 @@ public class FilterTicketServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
 
