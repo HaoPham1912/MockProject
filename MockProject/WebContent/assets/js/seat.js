@@ -45,7 +45,7 @@ function changeSeatColor(seat)
 	var blue = "rgb(183,219,65)";
 	var gray = "rgb(251, 251, 251)";
 	var bookbtn = document.getElementById("book").disabled = false;
-	if(check <= 6)
+	if(check <= 5)
 	{
 		if(c === gray)
 		{
@@ -68,7 +68,7 @@ function changeSeatColor(seat)
 	{
 		if(c === gray)
 		{
-			alert("You just can book only 6 seats");
+			alert("You just can book only 5 seats");
 		}
 		else{
 			seat.style.backgroundColor = gray;
