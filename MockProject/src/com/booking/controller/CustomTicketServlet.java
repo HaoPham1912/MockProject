@@ -48,6 +48,12 @@ public class CustomTicketServlet extends HttpServlet {
 				response.sendRedirect(request.getContextPath()+"/emp-dashboard");
 			}		
 		}
+		else if(action.equals("delete"))
+		{
+			String id = request.getParameter("id");
+			ticketDAO.deleteTicket(Integer.valueOf(id));
+			response.sendRedirect(request.getContextPath()+"/emp-dashboard");
+		}
 	}
 
 	/**

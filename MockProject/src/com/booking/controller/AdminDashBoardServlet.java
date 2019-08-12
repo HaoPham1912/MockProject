@@ -52,11 +52,6 @@ public class AdminDashBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-<<<<<<< HEAD
-//		doGet(request, response);
-=======
-		//doGet(request, response);
->>>>>>> 0444ff823d903dfbed78bc58e3a91635ac566c2e
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
 		if(action.equals("updateCustomer"))
