@@ -230,11 +230,32 @@
 					</div>
 					<div class="card card-product mb-0"
 						style="height: 605px; border: none;">
-						<h3>${time_go}</h3>
-						<h3>${time_end}</h3>
-						<h3>${time_estimate}</h3>
-						<h3>${address1}</h3>
-						<h3>${address2}</h3>
+						<div class="row" >
+							<div class=" col-md-6" style="text-align:center">
+								<h5>${address1}</h5>
+							</div> 
+							<div class=" col-md-6" >
+								<h5>${time_go}</h5>
+							</div> 
+						</div>
+						<div class="row" style="margin-top:50px;margin-bottom:50px;">
+							<div class=" col-md-6" style="text-align:center">
+								<img src="https://image.flaticon.com/icons/png/128/25/25238.png" style="width:50px;height:50px;">
+							</div> 
+							<div class=" col-md-6" >
+								<p>${time_estimate}</p>
+							</div> 
+						</div>
+						<div class="row" >
+							<div class=" col-md-6" style="text-align:center">
+								<h5>${address2}</h5>
+							</div>
+							<div class=" col-md-4">
+								<h5>${time_end}</h5>
+							</div>
+						</div>												
+<%-- 						<h3>${address1}</h3>
+						<h3>${address2}</h3> --%>
 					</div>
 				</div>
 				<div class="col-xs-4 col-md-4">
