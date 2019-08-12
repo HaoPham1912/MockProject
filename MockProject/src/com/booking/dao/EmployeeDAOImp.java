@@ -21,12 +21,12 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		try
 		{
 			Connection connection = db.getMySQLConnection();
-			
+
 			Statement statement = connection.createStatement();
-			
-		    String sql = "select * from account,employee where employee.id_acc_emp = account.id_acc";
-		 
-		    ResultSet rs = statement.executeQuery(sql);
+
+			String sql = "select * from account,employee where employee.id_acc_emp = account.id_acc";
+
+			ResultSet rs = statement.executeQuery(sql);
 
 			while(rs.next())
 			{
@@ -47,17 +47,17 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		}
 		return arr;
 	}
-	
+
 	@Override
 	public Account FindAccountByUsernamePassword(String username, String password) {
 		// TODO Auto-generated method stub
-		
+
 		try
 		{
 			Connection connection = db.getMySQLConnection();
 
 			System.out.println("Connected");
-			
+
 			Statement statement = connection.createStatement();
 
 			String sql = "select * from account where username=? and password=?";
@@ -87,13 +87,13 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 	}
 	@Override
 	public void insertInfoEmployee(int id, String name, String phone, String email, String address) {
-		
+
 		// TODO Auto-generated method stub
 		try {
 			Connection conn = db.getMySQLConnection();
 			java.sql.PreparedStatement pstm = null;
 			String sql="INSERT INTO employee (id_acc_emp,emp_name,emp_phone,emp_email,emp_address)"+
-			" VALUES(?,?,?,?,?)";
+					" VALUES(?,?,?,?,?)";
 			pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id);
 			pstm.setString(2, name);
@@ -120,9 +120,9 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 			if(rs.next()) {
 				return true;
 			}
-			
+
 		} catch (ClassNotFoundException | SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 		return false;
@@ -149,4 +149,69 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		return false;
 	}
 
+	@Override
+	public boolean deleteTicket(int id) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			System.out.println("Connected!!!");
+			String sql="Delete from ticket where id_ticket=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id);
+			pstm.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public void updateTicket() {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="SELECT * FROM ticket";
+			Statement statement = conn.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				if(rs.getInt("status")==0)
+				{
+//					System.out.println(rs.getString("date_book")+" "+rs.getString("time_book"));
+					if(!checkAvailableTicket(rs.getString("date_book")+" "+rs.getString("time_book")))
+					{
+						System.out.println("nay ne "+ rs.getInt("id_ticket"));
+						deleteTicket(rs.getInt("id_ticket"));
+					}
+				}
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public boolean checkAvailableTicket(String date_book) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			System.out.println(date_book);
+			String sql="select TIMESTAMPDIFF(SECOND, ?,NOW()) < 86400";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, date_book);
+			ResultSet rs = pstm.executeQuery();
+			if(rs.next()) {
+				if(rs.getInt(1)==1)
+				{
+					return true;
+				}
+			}
+			return false;
+		} catch (ClassNotFoundException | SQLException e) {
+
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

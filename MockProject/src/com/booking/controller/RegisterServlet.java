@@ -66,8 +66,7 @@ public class RegisterServlet extends HttpServlet {
 		customer.setAddress(address);
 		customer.setUsername(user);
 		customer.setPassword(pass);
-		
-		
+				
 		HttpSession session = request.getSession();
 		session.setAttribute("customerHo", customer);
 		

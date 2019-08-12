@@ -9,4 +9,5 @@ public interface IBusesDAO {
 	ArrayList<String> findAllStart_Place();
 	ArrayList<String> findAllEnd_Place();
 	ArrayList<Buses> findAllBuses();
+	double findPriceByID(int id_buses);
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.booking.dao.BusDAOImp;
 import com.booking.dao.BusesDAOImp;
+import com.booking.dao.EmployeeDAOImp;
 
 
 /**
@@ -19,15 +20,16 @@ import com.booking.dao.BusesDAOImp;
 @WebServlet("/emp-dashboard")
 public class EmpDashBoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    BusesDAOImp busesDAO = new BusesDAOImp(); 
-    BusDAOImp busDAO = new BusDAOImp();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EmpDashBoardServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	BusesDAOImp busesDAO = new BusesDAOImp(); 
+	BusDAOImp busDAO = new BusDAOImp();
+	EmployeeDAOImp EmployeeDAO = new EmployeeDAOImp();
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public EmpDashBoardServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,6 +39,15 @@ public class EmpDashBoardServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		String updateTicket = request.getParameter("action");
+		if(updateTicket!=null)
+		{
+			if(updateTicket.equals("updateTicket"))
+			{
+				EmployeeDAO.updateTicket();
+			}
+		}
 		request.setAttribute("listBuses", busesDAO.findAllBuses());
 		RequestDispatcher rd = request.getRequestDispatcher("/employee.jsp");
 		rd.forward(request, response);		

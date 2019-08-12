@@ -11,4 +11,7 @@ public interface IEmployeeDAO {
 	void insertInfoEmployee(int id, String name, String phone, String email, String address);
 	boolean findEmployeeById_acc(int id_acc);
 	boolean updateEmployee(String name, String phone, String email,String address,int id_acc_cus);
+	boolean deleteTicket(int id);
+	void updateTicket();
+	boolean checkAvailableTicket(String date_book);
 }

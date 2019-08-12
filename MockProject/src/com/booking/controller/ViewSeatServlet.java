@@ -1,6 +1,7 @@
 package com.booking.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,11 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.booking.dao.BusDAOImp;
+import com.booking.dao.BusesDAOImp;
 import com.booking.dao.CustomerDAOImp;
 import com.booking.dao.StationDAOImp;
 import com.booking.dao.TicketDAOImp;
 import com.booking.model.Account;
 import com.booking.model.BookingInfo;
+import com.booking.model.Bus;
 import com.booking.model.Customer;
 import com.booking.model.Ticket;
 import com.booking.ultils.MyUltil;
@@ -32,6 +36,8 @@ public class ViewSeatServlet extends HttpServlet {
 	CustomerDAOImp customerDAO = new CustomerDAOImp();
 	StationDAOImp stationDAO = new StationDAOImp();
 	TicketDAOImp ticketDAO = new TicketDAOImp();
+	BusDAOImp  busDAO = new BusDAOImp();
+	BusesDAOImp busesDAO = new BusesDAOImp();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -49,10 +55,19 @@ public class ViewSeatServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		String price = request.getParameter("price");
 		String id_bus= request.getParameter("id_bus");
-		request.setAttribute("price", price);
 		request.setAttribute("id_bus", id_bus);
+		
+		Bus bus = new Bus();
+		bus = busDAO.findBusByID(Integer.valueOf(id_bus));
+		System.out.println(bus.getTime_go()+"lslslslsls");
+		request.setAttribute("time_go", bus.getTime_go());
+		request.setAttribute("time_estimate", bus.getTime_estimate());
+		request.setAttribute("time_end", bus.getTime_end());
+		
+		int id_buses = busDAO.findBusesByID(Integer.valueOf(id_bus));
+		double price = busesDAO.findPriceByID(id_buses);
+		request.setAttribute("price", price);
 
 		MyUltil myultil = new MyUltil();
 		HttpSession session = request.getSession();
@@ -66,8 +81,8 @@ public class ViewSeatServlet extends HttpServlet {
 		request.setAttribute("address1", address1);
 		request.setAttribute("address2", address2);
 		
-		System.out.println("idbus: "+id_bus);
-		System.out.println("idbus: "+bookinginfo.getStart_date());
+//		System.out.println("idbus: "+id_bus);
+//		System.out.println("idbus: "+bookinginfo.getStart_date());
 		if(id_bus!=null)
 		{
 			ArrayList<String> arr = ticketDAO.FindAvailableSeat(Integer.valueOf(id_bus), bookinginfo.getStart_date());
@@ -85,7 +100,7 @@ public class ViewSeatServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);
+//		doGet(request, response);
 		
 		String price = request.getParameter("price");
 		String id_bus = request.getParameter("id_bus");
@@ -101,7 +116,7 @@ public class ViewSeatServlet extends HttpServlet {
 		
 		customer = customerDAO.customer(account.getId());
 		
-		System.out.println("           "+customer.getId_cus());
+//		System.out.println("           "+customer.getId_cus());
 		
 		BookingInfo bookingInfo = new BookingInfo();
 		bookingInfo = myultil.getBookingInfo(session);
@@ -123,6 +138,9 @@ public class ViewSeatServlet extends HttpServlet {
 									Double.valueOf(price),phone,name,
 									Integer.valueOf(id_bus),customer.getId_cus());
 		}	
+		RequestDispatcher rd =  request.getRequestDispatcher("/index3.jsp");
+		rd.forward(request, response);
+		return;
 	}
 
 }

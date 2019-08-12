@@ -59,8 +59,13 @@
 				onclick="callContent('manageBuses'); return false;"> <i
 					class="fas fa-route" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Buses</span></a></li>
-
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/logout"> <i
+			<li class="nav-item active"><a class="nav-link"
+				href="http://localhost:8080/MockProject/emp-dashboard?action=updateTicket">
+					<i class="fas fa-route" style="color: rgb(245, 164, 13)"></i> <span
+					class="text-nav">Update ticket</span>
+			</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				href="${pageContext.request.contextPath}/logout"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Log Out</span></a></li>
 			<!-- Divider -->
@@ -124,7 +129,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 						<!-- EmployeeStart -->
 						<div class="col-md-12">
 							<div class="table-responsive">
-								<table id="mytablebuses" class="table table-bordred table-striped">
+								<table id="mytablebuses"
+									class="table table-bordred table-striped">
 									<thead>
 										<th>ID</th>
 										<th>Start Place</th>
@@ -148,7 +154,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 															<span class="fas fa-bus-alt"></span>
 														</button>
 													</p>
-												</td>												
+												</td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -183,25 +189,24 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										</div>
 										<div class="form-group">
 											<h4 class="text-black-50">End Place:</h4>
-											<input class="form-control " id="endPlaceSelected" type="text"
-												name="endPlaceSelected" required readonly>
+											<input class="form-control " id="endPlaceSelected"
+												type="text" name="endPlaceSelected" required readonly>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Distance:</h4>
 											<input class="form-control " id="distanceSelected"
 												type="number" name="distanceSelected"
-												title="Distance of start place to end place"
-												required readonly>
+												title="Distance of start place to end place" required
+												readonly>
 										</div>
 										<!-- Phone user -->
 										<!-- Email User -->
 										<div class="form-group">
 											<h4 class="text-black-50">Price:</h4>
-											<input class="form-control " id="priceSelected"
-												type="text" name="priceSelected" name="Email" accept=""
-												title="Price of Buses"
-												required readonly>
+											<input class="form-control " id="priceSelected" type="text"
+												name="priceSelected" name="Email" accept=""
+												title="Price of Buses" required readonly>
 										</div>
 										<!-- Email User -->
 										<!-- Address User- End -->
@@ -217,8 +222,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 										</div> -->
 										<!-- Set role-End -->
 										<div class="modal-footer">
-											<button type="submit"
-												class="btn btn-warning btn-lg" style="width: 100%;">
+											<button type="submit" class="btn btn-warning btn-lg"
+												style="width: 100%;">
 												<span class="fas fa-check-circle"></span>View Bus
 											</button>
 											<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->

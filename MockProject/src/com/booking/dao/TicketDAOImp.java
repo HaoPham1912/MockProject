@@ -70,8 +70,8 @@ public class TicketDAOImp implements ITicketDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			String sql="INSERT INTO ticket (date_go, date_book,seat_number,status,price,phone,name,id_bus,id_cus)"+
-							"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?)";
+			String sql="INSERT INTO ticket (date_go, date_book,seat_number,status,price,phone,name,id_bus,id_cus,time_book)"+
+							"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?,CURRENT_TIME())";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, date_go);
 			pstm.setInt(2, seat_number);

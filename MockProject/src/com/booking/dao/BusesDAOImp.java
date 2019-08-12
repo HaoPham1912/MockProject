@@ -127,4 +127,30 @@ public class BusesDAOImp implements IBusesDAO{
 		}
 		return arr;
 	}
+	@Override
+	public double findPriceByID(int id_buses) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Connection connection = db.getMySQLConnection();
+
+			String sql = "select price from buses where id_buses=?";
+
+			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
+
+			pstm.setInt(1, id_buses);
+			ResultSet rs = pstm.executeQuery();
+		
+			
+			if(rs.next())
+			{
+				return rs.getDouble("price");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return 0;
+	}
 }

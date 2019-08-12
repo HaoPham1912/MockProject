@@ -52,7 +52,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);
+//		doGet(request, response);
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
 		if(action.equals("updateCustomer"))
@@ -68,6 +68,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
 				{
 					System.out.println("Success");
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 				}
 				else
 				{

@@ -39,7 +39,7 @@
 				</table> --%>
 					<c:forEach items="${busList}" var="a">
 						<!-- Start-Sửa -->
-						<form action="${pageContext.request.contextPath}/cus-viewSeatServlet?id_bus=${a.id_bus}&price=${a.price}">
+						<form action="${pageContext.request.contextPath}/cus-viewSeatServlet?id_bus=${a.id_bus}">
 							<div id="bus">
 								<div class="row" style="padding-left: 15px;padding-right: 15px">
 									<div class="col-md-3" style="text-align: center;padding-top: 10px">														
@@ -77,7 +77,7 @@
 										<b><p name="car_position">Port: ${a.car_position}</p>	</b>							
 									</div>	
 									<div class=" col-md-3" style="text-align: center;padding-top: 40px">
-									 	<input type="hidden" name="price"  value="${a.price}">
+									 	<%-- <input type="hidden" name="price"  value="${a.price}"> --%>
 										<b><p style="padding-bottom:10px;">${a.price}</p></b>
 										<button type="submit" class="btn btn-warning">
 										<i class="fa fa-sign-in"></i><b>Book Ticket</b></button>

@@ -70,7 +70,8 @@
 										<tr style="text-align: center">
 											<th scope="row"></th>
 											<td><button type="button" class="seat" id="seat1col1"
-													onclick="changeSeatColor(this);" title="1"></button></td>
+													onclick="changeSeatColor(this);getCost(${price});getSeat()"
+													title="1"></button></td>
 											<td style="text-align: left"><button type="button"
 													class="seat" id="seat1col2"
 													onclick="changeSeatColor(this);getCost(${price});getSeat()"
@@ -230,6 +231,9 @@
 					</div>
 					<div class="card card-product mb-0"
 						style="height: 605px; border: none;">
+						<h3>${time_go}</h3>
+						<h3>${time_end}</h3>
+						<h3>${time_estimate}</h3>
 						<h3>${address1}</h3>
 						<h3>${address2}</h3>
 					</div>
@@ -256,8 +260,8 @@
 								<label for=""><b>Note</b></label>
 								<textarea class="form-control" placeholder="Note..." rows="3"></textarea>
 							</div>		
-							<input type="text" name="price" value="${price}">
-							<input type="text" name="id_bus" value="${id_bus}">				
+							<input type="hidden" name="price" value="${price}">
+							<input type="hidden" name="id_bus" value="${id_bus}">				
 							<input type="hidden" name="inputSeatDetail" id="inputSeatDetail">
 							<button type="submit" class="btn btn-warning" id="book">
 								<i class="fa fa-sign-in"></i><b>Book Ticket</b>

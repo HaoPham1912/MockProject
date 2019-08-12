@@ -5,6 +5,34 @@ public class BookingInfo {
 	private String start_place;
 	private String end_place;
 	private String start_date;
+	private double price;
+	private String time_go;
+	private String time_end;
+	private String time_estimate;
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getTime_go() {
+		return time_go;
+	}
+	public void setTime_go(String time_go) {
+		this.time_go = time_go;
+	}
+	public String getTime_end() {
+		return time_end;
+	}
+	public void setTime_end(String time_end) {
+		this.time_end = time_end;
+	}
+	public String getTime_estimate() {
+		return time_estimate;
+	}
+	public void setTime_estimate(String time_estimate) {
+		this.time_estimate = time_estimate;
+	}
 	public String getStart_place() {
 		return start_place;
 	}
