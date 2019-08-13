@@ -122,44 +122,7 @@
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
-
-					<div>
-						<div class="row">
-							<div class="col-md-2" style="align: center">
-								<div class="form-group">
-									<label>Select list:</label>
-									<form>
-										<input type="text" name="search" placeholder="Searching...."
-											style="height: 40px; width: 100%;"> </input>
-									</form>
-								</div>
-							</div>
-							<div class="col-md-2" style="align: center">
-								<div class="form-group">
-									<button type="button" class="btn btn-warning"
-										style="margin-top: 35px;">
-										<span class="glyphicon glyphicon-search">&nbsp; Search</span>
-									</button>
-								</div>
-							</div>
-							<div class="col-md-2" style="align: center"></div>
-							<div class="col-md-2" style="align: center"></div>
-							<div class="col-md-2" style="align: center"></div>
-							<div class="col-md-2">
-								<div class="text-right">
-									<p data-placement="top" data-toggle="tooltip"
-										title="Create new user">
-										<button class="btn btn-primary" data-title="Create new user"
-											data-toggle="modal" data-target="#addUser">
-											<span class="fas fa-plus-circle">&nbsp; Create new
-												user</span>
-										</button>
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<%-- <div class="row">
+					<%-- <div class="row">
 							<form
 								action="${${pageContext.request.contextPath}/?action=filter">
 								<div class=" col-md-2" style="align: center">
@@ -194,436 +157,273 @@
 								</div>
 							</form>
 						</div> --%>
-					</div>
-					<div>
-						<!-- ThÃªm user-Start -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog"
-							aria-labelledby="add" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<form class=""
-										action="${pageContext.request.contextPath}/admin-dashboard?action=register"
-										method="POST">
-										<!-- Modal Header -->
-										<div class="modal-header">
-											<h4 class="modal-title" style="margin-left: auto">
-												<strong>Create new user</strong>
-											</h4>
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div>
+					<!-- ThÃªm user-Start -->
+					<div class="modal fade" id="addUser" tabindex="-1" role="dialog"
+						aria-labelledby="add" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<form class=""
+									action="${pageContext.request.contextPath}/admin-dashboard?action=register"
+									method="POST">
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title" style="margin-left: auto">
+											<strong>Create new user</strong>
+										</h4>
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+									</div>
+									<!-- Modal Äá» create new user-Start -->
+									<div class="modal-body">
+										<div class="form-group">
+											<h4 class="text-black-50">User Name:</h4>
+											<input class="form-control " id="User" type="text"
+												placeholder="Username" name="username1"
+												pattern="[A-Za-z0-9]{1,}" minlength="5" maxlength="15"
+												title="Username less than 15 character and more than 5 character!!!"
+												required>
 										</div>
-										<!-- Modal Äá» create new user-Start -->
-										<div class="modal-body">
-											<div class="form-group">
-												<h4 class="text-black-50">User Name:</h4>
-												<input class="form-control " id="User" type="text"
-													placeholder="Username" name="username1"
-													pattern="[A-Za-z0-9]{1,}" minlength="5" maxlength="15"
-													title="Username less than 15 character and more than 5 character!!!"
-													required>
-											</div>
-											<!-- Username End -->
-											<!-- Begin pass -->
-											<div class="form-group">
-												<h4 class="text-black-50">Password:</h4>
-												<input class="form-control " id="password" type="text"
-													placeholder="Password" name="password1" maxlength="15"
-													minlength="8" pattern="[A-Za-z0-9]{1,}" required>
-											</div>
-											<div class="form-group">
-												<h4 class="text-black-50">ReType Password:</h4>
-												<input class="form-control " id="confirm_password"
-													type="text" placeholder="Password" name="password1"
-													maxlength="15" minlength="8" pattern="[A-Za-z0-9]{1,}"
-													required>
-											</div>
-											<script>
-												var password = document
-														.getElementById("password"), confirm_password = document
-														.getElementById("confirm_password");
+										<!-- Username End -->
+										<!-- Begin pass -->
+										<div class="form-group">
+											<h4 class="text-black-50">Password:</h4>
+											<input class="form-control " id="password" type="text"
+												placeholder="Password" name="password1" maxlength="15"
+												minlength="8" pattern="[A-Za-z0-9]{1,}" required>
+										</div>
+										<div class="form-group">
+											<h4 class="text-black-50">ReType Password:</h4>
+											<input class="form-control " id="confirm_password"
+												type="text" placeholder="Password" name="password1"
+												maxlength="15" minlength="8" pattern="[A-Za-z0-9]{1,}"
+												required>
+										</div>
+										<script>
+											var password = document
+													.getElementById("password"), confirm_password = document
+													.getElementById("confirm_password");
 
-												function validatePassword() {
-													if (password.value != confirm_password.value) {
-														confirm_password
-																.setCustomValidity("Passwords Don't Match");
-													} else {
-														confirm_password
-																.setCustomValidity('');
-													}
+											function validatePassword() {
+												if (password.value != confirm_password.value) {
+													confirm_password
+															.setCustomValidity("Passwords Don't Match");
+												} else {
+													confirm_password
+															.setCustomValidity('');
 												}
-												password.onchange = validatePassword;
-												confirm_password.onkeyup = validatePassword;
-											</script>
-											<!-- End Pass -->
+											}
+											password.onchange = validatePassword;
+											confirm_password.onkeyup = validatePassword;
+										</script>
+										<!-- End Pass -->
 
-											<!-- Tên thằng user -->
-											<!-- TÃªn tháº±ng user -->
-											<div class="form-group">
-												<h4 class="text-black-50">Name:</h4>
-												<input class="form-control " id="nameUser" type="text"
-													placeholder="Le Van Duy" name="name1" required>
-											</div>
-											<!-- TÃªn tháº±ng user -->
-											<!-- Phone user -->
-											<div class="form-group">
-												<h4 class="text-black-50">Phone:</h4>
-												<input class="form-control " id="phoneUser" type="number"
-													placeholder="01293948384" name="phone1" pattern="[0-9]{1,}"
-													title="" required>
-											</div>
-											<!-- Phone user -->
-											<!-- Email User -->
-											<div class="form-group">
-												<h4 class="text-black-50">Email:</h4>
-												<input class="form-control " id="emailUser" type="email"
-													accept="" placeholder="example@gmail.com" name="email1"
-													title="Email is unvalid!" required>
-											</div>
-											<!-- Email User -->
-											<!-- Address User- Start -->
-											<div class="form-group">
-												<h4 class="text-black-50">Address:</h4>
-												<input class="form-control " id="addressUser" type="text"
-													placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
-													name="address1" title="" required>
-											</div>
-											<!-- Address User- End -->
-											<!-- Set role-Start -->
-											<div class="form-group">
-												<h4 class="text-black-50">Role:</h4>
-												<!-- <input class="form-control " id="Role" type="text"
+										<!-- Tên thằng user -->
+										<!-- TÃªn tháº±ng user -->
+										<div class="form-group">
+											<h4 class="text-black-50">Name:</h4>
+											<input class="form-control " id="nameUser" type="text"
+												placeholder="Le Van Duy" name="name1" required>
+										</div>
+										<!-- TÃªn tháº±ng user -->
+										<!-- Phone user -->
+										<div class="form-group">
+											<h4 class="text-black-50">Phone:</h4>
+											<input class="form-control " id="phoneUser" type="number"
+												placeholder="01293948384" name="phone1" pattern="[0-9]{1,}"
+												title="" required>
+										</div>
+										<!-- Phone user -->
+										<!-- Email User -->
+										<div class="form-group">
+											<h4 class="text-black-50">Email:</h4>
+											<input class="form-control " id="emailUser" type="email"
+												accept="" placeholder="example@gmail.com" name="email1"
+												title="Email is unvalid!" required>
+										</div>
+										<!-- Email User -->
+										<!-- Address User- Start -->
+										<div class="form-group">
+											<h4 class="text-black-50">Address:</h4>
+											<input class="form-control " id="addressUser" type="text"
+												placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
+												name="address1" title="" required>
+										</div>
+										<!-- Address User- End -->
+										<!-- Set role-Start -->
+										<div class="form-group">
+											<h4 class="text-black-50">Role:</h4>
+											<!-- <input class="form-control " id="Role" type="text"
 														placeholder="Role Customer" name="role1" value="1"
 														title="Role of Seller" required readonly>  -->
-												<select class="form-control" name="role1">
-													<option value="1">1:Customer</option>
-													<option value="2">2:Seller</option>
-													<option value="3">3:Admin</option>
-												</select>
-												<!-- <input id="toggle-event" type="checkbox" data-size="large"
+											<select class="form-control" name="role1">
+												<option value="1">1:Customer</option>
+												<option value="2">2:Seller</option>
+												<option value="3">3:Admin</option>
+											</select>
+											<!-- <input id="toggle-event" type="checkbox" data-size="large"
 													data-toggle="toggle" data-on="Customer" data-off="Ticket Seller"
 													checked> -->
-											</div>
-											<!-- Set role-End -->
-											<div class="modal-footer">
-												<button type="submit" id="submitAddPokestop"
-													class="btn btn-warning btn-lg" style="width: 100%;">
-													<span class="fas fa-check-circle"></span>Create
-												</button>
-											</div>
 										</div>
-								</div>
-								<!-- Modal Äá» create new user-End -->
-								</form>
+										<!-- Set role-End -->
+										<div class="modal-footer">
+											<button type="submit" id="submitAddPokestop"
+												class="btn btn-warning btn-lg" style="width: 100%;">
+												<span class="fas fa-check-circle"></span>Create
+											</button>
+										</div>
+									</div>
 							</div>
-							<!-- /.modal-content -->
-						</div>
-						<!-- /.modal-dialog -->
-					</div>
-					<!-- ThÃªm user-End -->
-				</div>
-
-				<div class="col-md-12">
-					<div class="table-responsive">
-						<table id="mytable" class="table table-bordred table-striped">
-							<thead>
-								<th>#</th>
-								<th>Username</th>
-								<th>Name</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Address</th>
-								<th>Edit</th>
-							</thead>
-							<tbody>
-								<c:forEach items="${customerList}" var="a">
-									<tr>
-										<td>${a.id_acc_cus}</td>
-										<td>${a.username}</td>
-										<td>${a.name}</td>
-										<td>${a.phone}</td>
-										<td>${a.email}</td>
-										<td>${a.address}</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button class="btn btn-primary" data-title="Edit"
-													data-toggle="modal" onclick="editUser()">
-													<span class="	fa fa-edit"></span>
-												</button>
-											</p>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<!-- Pháº§n ná»i dung trong báº£ng user-End -->
-				<!-- Modal delete User-Start -->
-				<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
-					aria-labelledby="delete" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h4 class="modal-title custom_align" id="Heading"
-									style="margin-left: auto;">
-									<strong>Delete User </strong>
-								</h4>
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-							</div>
-							<div class="modal-body">
-								<div class="alert alert-danger">
-									<span class="glyphicon glyphicon-warning-sign"></span> Do you
-									want to delete this user?
-								</div>
-							</div>
-							<div class="modal-footer ">
-								<button id="yesdeleteUser" type="button" class="btn btn-success">
-									<span class="fas fa-check-circle"></span>Â Yes
-								</button>
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">
-									<span class="fas fa-remove"></span>Â No
-								</button>
-							</div>
+							<!-- Modal Äá» create new user-End -->
+							</form>
 						</div>
 						<!-- /.modal-content -->
 					</div>
 					<!-- /.modal-dialog -->
 				</div>
-				<!-- Modal delete User-End -->
-				<!-- Modal edit User-Start -->
-				<div class="modal fade" id="editUser" tabindex="-1" role="dialog"
-					aria-labelledby="edit" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<form class=""
-								action="${pageContext.request.contextPath}/admin-dashboard?action=updateCustomer"
-								method="POST">
-								<!-- Modal Header -->
-								<div class="modal-header">
-									<h4 class="modal-title" style="margin-left: auto">
-										<strong>Update User Information</strong>
-									</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<!-- ThÃªm user-End -->
+			</div>
+
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<p data-placement="top" data-toggle="tooltip"
+						title="Create new user">
+						<button class="btn btn-primary" data-title="Create new user"
+							data-toggle="modal" data-target="#addUser">
+							<span class="fas fa-plus-circle">&nbsp; Create new user</span>
+						</button>
+					</p>
+					<form method="POST"
+						action="http://localhost:8080/MockProject/admin-dashboard?action=filter">
+						<div class="row">							
+							<div class="col-md-2" style="align: center">
+								<div class="form-group">
+									<label>Select list:</label> <input type="text" name="search"
+										placeholder="Searching...." style="height: 40px; width: 100%;">
+									</input>
 								</div>
-								<div class="modal-body">
-									<div class="form-group">
-										<h4 class="text-black-50">ID User:</h4>
-										<input class="form-control" id="idUserEdit" type="text"
-											name="idUserEdit" required readonly>
-									</div>
-									<div class="form-group">
-										<h4 class="text-black-50">User Name:</h4>
-										<input class="form-control " id="usernameUserEdit" type="text"
-											name="usernameUserEdit" required readonly>
-									</div>
-									<div class="form-group">
-										<h4 class="text-black-50">Name:</h4>
-										<input class="form-control " id="nameUserEdit" type="text"
-											name="nameUserEdit" placeholder="Le Van Duy" required>
-									</div>
-									<!-- Phone user -->
-									<div class="form-group">
-										<h4 class="text-black-50">Phone:</h4>
-										<input class="form-control " id="phoneUserEdit" type="number"
-											name="phoneUserEdit" placeholder="01293948384"
-											pattern="[0-9]{1,}" title="" required>
-									</div>
-									<!-- Phone user -->
-									<!-- Email User -->
-									<div class="form-group">
-										<h4 class="text-black-50">Email:</h4>
-										<input class="form-control " id="emailUserEdit" type="email"
-											name="emailUserEdit" name="Email" accept=""
-											placeholder="example@gmail.com" title="Email is unvalid!"
-											required>
-									</div>
-									<!-- Email User -->
-									<!-- Address User- Start -->
-									<div class="form-group">
-										<h4 class="text-black-50">Address:</h4>
-										<input class="form-control " id="addressUserEdit" type="text"
-											name="addressUserEdit"
-											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title=""
-											required>
-									</div>
-									<div class="modal-footer">
-										<button type="submit" id="submitEditUser"
-											class="btn btn-warning btn-lg" style="width: 100%;">
-											<span class="fas fa-check-circle"></span>Update
-										</button>
-										<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
-									</div>
+							</div>
+							<div class="col-md-2" style="align: center">
+								<div class="form-group">
+									<button class="btn btn-warning" style="margin-top: 35px;">
+										<span class="glyphicon glyphicon-search">&nbsp; Search</span>
+									</button>
 								</div>
-							</form>
+							</div>
+						</div>
+					</form>
+					<table id="mytable" class="table table-bordred table-striped">
+						<thead>
+							<th>#</th>
+							<th>Username</th>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>Address</th>
+							<th>Edit</th>
+						</thead>
+						<tbody>
+							<c:forEach items="${customerList}" var="a">
+								<tr>
+									<td>${a.id_acc_cus}</td>
+									<td>${a.username}</td>
+									<td>${a.name}</td>
+									<td>${a.phone}</td>
+									<td>${a.email}</td>
+									<td>${a.address}</td>
+									<td>
+										<p data-placement="top" data-toggle="tooltip" title="Edit">
+											<button class="btn btn-primary" data-title="Edit"
+												data-toggle="modal" onclick="editUser()">
+												<span class="	fa fa-edit"></span>
+											</button>
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- Pháº§n ná»i dung trong báº£ng user-End -->
+			<!-- Modal delete User-Start -->
+			<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
+				aria-labelledby="delete" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title custom_align" id="Heading"
+								style="margin-left: auto;">
+								<strong>Delete User </strong>
+							</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="alert alert-danger">
+								<span class="glyphicon glyphicon-warning-sign"></span> Do you
+								want to delete this user?
+							</div>
+						</div>
+						<div class="modal-footer ">
+							<button id="yesdeleteUser" type="button" class="btn btn-success">
+								<span class="fas fa-check-circle"></span>Â Yes
+							</button>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">
+								<span class="fas fa-remove"></span>Â No
+							</button>
 						</div>
 					</div>
+					<!-- /.modal-content -->
 				</div>
-				<!-- Modal edit user-end -->
+				<!-- /.modal-dialog -->
 			</div>
-			<!-- Modal ManageUser End -->
-			<div class="container-fluid generalClass " id="manageAdmin"
-				style="display: none">
-				<!-- Page Heading -->
-				<div
-					class="d-sm-flex align-items-center justify-content-between mb-4">
-					<h1 class="h3 mb-0 text-gray-800">
-						<strong>Manage Admin Info</strong>
-					</h1>
-				</div>
-				<!-- EmployeeStart -->
-				<!-- </div> -->
-				<div class="col-md-12">
-					<div class="table-responsive">
-						<table id="mytableseller"
-							class="table table-bordred table-striped">
-							<thead>
-								<th>ID</th>
-								<th>Username</th>
-								<th>Name</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Address</th>
-								<th>Edit</th>
-								<th>Delete</th>
-							</thead>
-							<tbody>
-								<c:forEach items="${adminList}" var="a">
-									<tr>
-										<td>${a.id_acc_ad}</td>
-										<td>${a.username}</td>
-										<td>${a.admin_name}</td>
-										<td>${a.admin_phone}</td>
-										<td>${a.admin_email}</td>
-										<td>${a.admin_address}</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button class="btn btn-primary" data-title="Edit"
-													data-toggle="modal" onclick="editAdmin()">
-													<span class="	fa fa-edit"></span>
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button class="btn btn-danger" data-title="Delete"
-													data-toggle="modal" onclick="deleteAdmin()">
-													<span class="fa fa-trash"></span>
-												</button>
-											</p>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-
-
-
-			<!-- ManageSeller-Start -->
-			<!-- ManageSeller-Start -->
-			<div class="container-fluid generalClass " id="manageSeller"
-				style="display: none">
-				<!-- Page Heading -->
-				<div
-					class="d-sm-flex align-items-center justify-content-between mb-4">
-					<h1 class="h3 mb-0 text-gray-800">
-						<strong>Manage TicketSeller</strong>
-					</h1>
-				</div>
-				<!-- EmployeeStart -->
-				<!-- </div> -->
-				<div class="col-md-12">
-					<div class="table-responsive">
-						<table id="mytableseller"
-							class="table table-bordred table-striped">
-							<thead>
-								<th>ID</th>
-								<th>Username</th>
-								<th>Name</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Address</th>
-								<th>Edit</th>
-								<th>Delete</th>
-							</thead>
-							<tbody>
-								<c:forEach items="${employeeList}" var="a">
-									<tr>
-										<td>${a.id_acc_emp}</td>
-										<td>${a.username}</td>
-										<td>${a.emp_name}</td>
-										<td>${a.emp_phone}</td>
-										<td>${a.emp_email}</td>
-										<td>${a.emp_address}</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button class="btn btn-primary" data-title="Edit"
-													data-toggle="modal" onclick="editSeller()">
-													<span class="	fa fa-edit"></span>
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button class="btn btn-danger" data-title="Delete"
-													data-toggle="modal" onclick="deleteSeller()">
-													<span class="fa fa-trash"></span>
-												</button>
-											</p>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="modal fade" id="editSeller" tabindex="-1" role="dialog"
+			<!-- Modal delete User-End -->
+			<!-- Modal edit User-Start -->
+			<div class="modal fade" id="editUser" tabindex="-1" role="dialog"
 				aria-labelledby="edit" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<form class=""
-							action="${pageContext.request.contextPath}/admin-dashboard?action=updateSeller"
+							action="${pageContext.request.contextPath}/admin-dashboard?action=updateCustomer"
 							method="POST">
 							<!-- Modal Header -->
 							<div class="modal-header">
 								<h4 class="modal-title" style="margin-left: auto">
-									<strong>Update Seller Information</strong>
+									<strong>Update User Information</strong>
 								</h4>
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 							</div>
 							<div class="modal-body">
 								<div class="form-group">
-									<h4 class="text-black-50">ID Seller:</h4>
-									<input class="form-control" id="idSellerEdit" type="text"
-										name="idSellerEdit" required readonly>
+									<h4 class="text-black-50">ID User:</h4>
+									<input class="form-control" id="idUserEdit" type="text"
+										name="idUserEdit" required readonly>
 								</div>
 								<div class="form-group">
-									<h4 class="text-black-50">Seller Account Name:</h4>
-									<input class="form-control " id="usernameSellerEdit"
-										type="text" name="usernameSellerEdit" required readonly>
+									<h4 class="text-black-50">User Name:</h4>
+									<input class="form-control " id="usernameUserEdit" type="text"
+										name="usernameUserEdit" required readonly>
 								</div>
 								<div class="form-group">
 									<h4 class="text-black-50">Name:</h4>
-									<input class="form-control " id="nameSellerEdit" type="text"
-										name="nameSellerEdit" placeholder="Le Van Duy" required>
+									<input class="form-control " id="nameUserEdit" type="text"
+										name="nameUserEdit" placeholder="Le Van Duy" required>
 								</div>
 								<!-- Phone user -->
 								<div class="form-group">
 									<h4 class="text-black-50">Phone:</h4>
-									<input class="form-control " id="phoneSellerEdit" type="number"
-										name="phoneSellerEdit" placeholder="01293948384"
+									<input class="form-control " id="phoneUserEdit" type="number"
+										name="phoneUserEdit" placeholder="01293948384"
 										pattern="[0-9]{1,}" title="" required>
 								</div>
 								<!-- Phone user -->
 								<!-- Email User -->
 								<div class="form-group">
 									<h4 class="text-black-50">Email:</h4>
-									<input class="form-control " id="emailSellerEdit" type="email"
-										name="emailSellerEdit" name="Email" accept=""
+									<input class="form-control " id="emailUserEdit" type="email"
+										name="emailUserEdit" name="Email" accept=""
 										placeholder="example@gmail.com" title="Email is unvalid!"
 										required>
 								</div>
@@ -631,14 +431,13 @@
 								<!-- Address User- Start -->
 								<div class="form-group">
 									<h4 class="text-black-50">Address:</h4>
-									<input class="form-control " id="addressSellerEdit" type="text"
-										name="addressSellerEdit"
+									<input class="form-control " id="addressUserEdit" type="text"
+										name="addressUserEdit"
 										placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title=""
 										required>
 								</div>
-								<!-- Set role-End -->
 								<div class="modal-footer">
-									<button type="submit" id="submitEditSeller"
+									<button type="submit" id="submitEditUser"
 										class="btn btn-warning btn-lg" style="width: 100%;">
 										<span class="fas fa-check-circle"></span>Update
 									</button>
@@ -650,43 +449,229 @@
 				</div>
 			</div>
 			<!-- Modal edit user-end -->
-			<!-- Modal delete Seller-Start -->
-			<div class="modal fade" id="deleteSeller" tabindex="-1" role="dialog"
-				aria-labelledby="delete" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
+		</div>
+		<!-- Modal ManageUser End -->
+		<div class="container-fluid generalClass " id="manageAdmin"
+			style="display: none">
+			<!-- Page Heading -->
+			<div
+				class="d-sm-flex align-items-center justify-content-between mb-4">
+				<h1 class="h3 mb-0 text-gray-800">
+					<strong>Manage Admin Info</strong>
+				</h1>
+			</div>
+			<!-- EmployeeStart -->
+			<!-- </div> -->
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table id="mytableseller" class="table table-bordred table-striped">
+						<thead>
+							<th>ID</th>
+							<th>Username</th>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>Address</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</thead>
+						<tbody>
+							<c:forEach items="${adminList}" var="a">
+								<tr>
+									<td>${a.id_acc_ad}</td>
+									<td>${a.username}</td>
+									<td>${a.admin_name}</td>
+									<td>${a.admin_phone}</td>
+									<td>${a.admin_email}</td>
+									<td>${a.admin_address}</td>
+									<td>
+										<p data-placement="top" data-toggle="tooltip" title="Edit">
+											<button class="btn btn-primary" data-title="Edit"
+												data-toggle="modal" onclick="editAdmin()">
+												<span class="	fa fa-edit"></span>
+											</button>
+										</p>
+									</td>
+									<td>
+										<p data-placement="top" data-toggle="tooltip" title="Delete">
+											<button class="btn btn-danger" data-title="Delete"
+												data-toggle="modal" onclick="deleteAdmin()">
+												<span class="fa fa-trash"></span>
+											</button>
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- ManageSeller-Start -->
+		<!-- ManageSeller-Start -->
+		<div class="container-fluid generalClass " id="manageSeller"
+			style="display: none">
+			<!-- Page Heading -->
+			<div
+				class="d-sm-flex align-items-center justify-content-between mb-4">
+				<h1 class="h3 mb-0 text-gray-800">
+					<strong>Manage TicketSeller</strong>
+				</h1>
+			</div>
+			<!-- EmployeeStart -->
+			<!-- </div> -->
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table id="mytableseller" class="table table-bordred table-striped">
+						<thead>
+							<th>ID</th>
+							<th>Username</th>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>Address</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</thead>
+						<tbody>
+							<c:forEach items="${employeeList}" var="a">
+								<tr>
+									<td>${a.id_acc_emp}</td>
+									<td>${a.username}</td>
+									<td>${a.emp_name}</td>
+									<td>${a.emp_phone}</td>
+									<td>${a.emp_email}</td>
+									<td>${a.emp_address}</td>
+									<td>
+										<p data-placement="top" data-toggle="tooltip" title="Edit">
+											<button class="btn btn-primary" data-title="Edit"
+												data-toggle="modal" onclick="editSeller()">
+												<span class="	fa fa-edit"></span>
+											</button>
+										</p>
+									</td>
+									<td>
+										<p data-placement="top" data-toggle="tooltip" title="Delete">
+											<button class="btn btn-danger" data-title="Delete"
+												data-toggle="modal" onclick="deleteSeller()">
+												<span class="fa fa-trash"></span>
+											</button>
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="editSeller" tabindex="-1" role="dialog"
+			aria-labelledby="edit" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form class=""
+						action="${pageContext.request.contextPath}/admin-dashboard?action=updateSeller"
+						method="POST">
+						<!-- Modal Header -->
 						<div class="modal-header">
-							<h4 class="modal-title custom_align" id="Heading"
-								style="margin-left: auto;">
-								<strong>Delete Seller </strong>
+							<h4 class="modal-title" style="margin-left: auto">
+								<strong>Update Seller Information</strong>
 							</h4>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
 						<div class="modal-body">
-							<div class="alert alert-danger">
-								<span class="glyphicon glyphicon-warning-sign"></span> Do you
-								want to delete this seller?
+							<div class="form-group">
+								<h4 class="text-black-50">ID Seller:</h4>
+								<input class="form-control" id="idSellerEdit" type="text"
+									name="idSellerEdit" required readonly>
+							</div>
+							<div class="form-group">
+								<h4 class="text-black-50">Seller Account Name:</h4>
+								<input class="form-control " id="usernameSellerEdit" type="text"
+									name="usernameSellerEdit" required readonly>
+							</div>
+							<div class="form-group">
+								<h4 class="text-black-50">Name:</h4>
+								<input class="form-control " id="nameSellerEdit" type="text"
+									name="nameSellerEdit" placeholder="Le Van Duy" required>
+							</div>
+							<!-- Phone user -->
+							<div class="form-group">
+								<h4 class="text-black-50">Phone:</h4>
+								<input class="form-control " id="phoneSellerEdit" type="number"
+									name="phoneSellerEdit" placeholder="01293948384"
+									pattern="[0-9]{1,}" title="" required>
+							</div>
+							<!-- Phone user -->
+							<!-- Email User -->
+							<div class="form-group">
+								<h4 class="text-black-50">Email:</h4>
+								<input class="form-control " id="emailSellerEdit" type="email"
+									name="emailSellerEdit" name="Email" accept=""
+									placeholder="example@gmail.com" title="Email is unvalid!"
+									required>
+							</div>
+							<!-- Email User -->
+							<!-- Address User- Start -->
+							<div class="form-group">
+								<h4 class="text-black-50">Address:</h4>
+								<input class="form-control " id="addressSellerEdit" type="text"
+									name="addressSellerEdit"
+									placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title=""
+									required>
+							</div>
+							<!-- Set role-End -->
+							<div class="modal-footer">
+								<button type="submit" id="submitEditSeller"
+									class="btn btn-warning btn-lg" style="width: 100%;">
+									<span class="fas fa-check-circle"></span>Update
+								</button>
+								<!-- <button type="submit" class="btn btn-primary btn-block">Log In</button> -->
 							</div>
 						</div>
-						<div class="modal-footer ">
-							<button id="yesdeleteSeller" type="button"
-								class="btn btn-success">
-								<span class="	fas fa-check-circle"></span>Yes
-							</button>
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<span class="fas fa-remove"></span>No
-							</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- Modal edit user-end -->
+		<!-- Modal delete Seller-Start -->
+		<div class="modal fade" id="deleteSeller" tabindex="-1" role="dialog"
+			aria-labelledby="delete" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom_align" id="Heading"
+							style="margin-left: auto;">
+							<strong>Delete Seller </strong>
+						</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="alert alert-danger">
+							<span class="glyphicon glyphicon-warning-sign"></span> Do you
+							want to delete this seller?
 						</div>
 					</div>
-					<!-- /.modal-content -->
+					<div class="modal-footer ">
+						<button id="yesdeleteSeller" type="button" class="btn btn-success">
+							<span class="	fas fa-check-circle"></span>Yes
+						</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<span class="fas fa-remove"></span>No
+						</button>
+					</div>
 				</div>
-				<!-- /.modal-dialog -->
+				<!-- /.modal-content -->
 			</div>
-			<!-- Modal delete Seller-End -->
-			<!-- ManageSeller-End -->
+			<!-- /.modal-dialog -->
 		</div>
-		<!-- End of Main Content -->
+		<!-- Modal delete Seller-End -->
+		<!-- ManageSeller-End -->
+	</div>
+	<!-- End of Main Content -->
 	</div>
 	<!-- End of Content Wrapper -->
 	</div>

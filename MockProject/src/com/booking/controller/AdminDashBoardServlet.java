@@ -13,6 +13,8 @@ import com.booking.dao.AccountDAOImp;
 import com.booking.dao.AdminDAOImp;
 import com.booking.dao.CustomerDAOImp;
 import com.booking.dao.EmployeeDAOImp;
+import com.booking.model.Customer;
+import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
 
 /**
  * Servlet implementation class AdminDashBoardServlet
@@ -145,6 +147,16 @@ public class AdminDashBoardServlet extends HttpServlet {
 			else {
 				System.out.println("username avail!!! Retry!!");
 			}
+		}else if(action.equals("filter")) 
+		{
+			String name = request.getParameter("search");
+			System.out.println(name);
+			/*Customer customer = new Customer();
+			customer= customerDAO.findCustomer(name);*/
+			request.setAttribute("customerList",  customerDAO.findCustomer(name));
+			RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
+			rd.forward(request, response);	
+			return;
 		}
 	}
 }
