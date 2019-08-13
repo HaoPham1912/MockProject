@@ -158,7 +158,7 @@
 										<div class="form-group">
 											<button type="submit" class="btn btn-warning"
 												style="margin-top: 35px;">Search</button>
-											<a style="margin-top: 35px;" href="http://localhost:8080/MockProject/emp-dashboard" class="btn btn-warning">Show All</a>
+												<a style="margin-top: 35px;" href="http://localhost:8080/MockProject/emp-dashboard" class="btn btn-warning">Show All</a>
 										</div>
 									</div>
 								</div>
