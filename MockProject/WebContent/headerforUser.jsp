@@ -9,7 +9,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Cardoor - Car Rental HTML Template</title>
+    <title>Booking Bus</title>
     <link href="assets/css/main.css" rel="stylesheet">
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
                                         <li><a href="index3.html">Home 3</a></li>
                                     </ul> -->
                                 </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">services</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">services</a></li>
                                 <li><a href="#">Coach</a>
                                     <!-- <ul>
                                         <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>

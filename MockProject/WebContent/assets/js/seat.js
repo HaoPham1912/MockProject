@@ -46,34 +46,43 @@ function changeSeatColor(seat,numOfSeat)
 	var gray = "rgb(251, 251, 251)";
 	var condition = Math.abs(5 - numOfSeat);
 	var bookbtn = document.getElementById("book").disabled = false;
-	if(check <= condition)
+	if(condition!=0)
 	{
-		if(c === gray)
+		if(check <= condition)
 		{
-			seat.style.backgroundColor = blue;
-		}
-		else{
-			seat.style.backgroundColor = gray;
-		}
-		var checkAgain = count();
-		if(checkAgain==1)
-		{
-			var bookbtn = document.getElementById("book").disabled = true;
+			if(c === gray)
+			{
+				seat.style.backgroundColor = blue;
+			}
+			else{
+				seat.style.backgroundColor = gray;
+			}
+			var checkAgain = count();
+			if(checkAgain==1)
+			{
+				var bookbtn = document.getElementById("book").disabled = true;
+			}
+			else
+			{
+				var bookbtn = document.getElementById("book").disabled = false;
+			}
 		}
 		else
 		{
-			var bookbtn = document.getElementById("book").disabled = false;
+			if(c === gray)
+			{
+//				var bookbtn = document.getElementById("book").disabled = true;
+				alert("You just can book only 5 seats");
+			}
+			else{
+				seat.style.backgroundColor = gray;
+			}  
 		}
 	}
 	else
 	{
-		if(c === gray)
-		{
-			alert("You just can book only 5 seats");
-		}
-		else{
-			seat.style.backgroundColor = gray;
-		}  
+		alert("You just can book only 5 seats");
+		var bookbtn = document.getElementById("book").disabled = true;
 	}
 }
 function count()

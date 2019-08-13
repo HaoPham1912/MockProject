@@ -143,7 +143,6 @@ public class ViewSeatServlet extends HttpServlet {
 									Integer.valueOf(s.split(",")[i]),0,
 									Double.valueOf(price),phone,name,
 									Integer.valueOf(id_bus),customer.getId_cus(),note);
-			System.out.println("adsasdasd "+note);
 		}
 		request.setAttribute("BookingMessage", "Booking Successful!");
 		RequestDispatcher rd =  request.getRequestDispatcher("/index3.jsp");
