@@ -187,7 +187,7 @@
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="View">
 													<form method="POST"
-														action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}">
+														action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}&action=show">
 														<button class="btn btn-primary" data-title="Edit"
 															data-toggle="modal">
 															<span class="fas fa-bus-alt"></span>
@@ -208,7 +208,7 @@
 											<td>
 												<p data-placement="top" data-toggle="tooltip" title="View">
 												<form method="POST"
-													action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${Buses.id_buses}">
+													action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${Buses.id_buses}&action=show">
 													<button class="btn btn-primary" data-title="Edit"
 														data-toggle="modal">
 														<span class="fas fa-bus-alt"></span>

@@ -84,7 +84,6 @@ public class BusDAOImp implements IBusDAO{
 		{
 			Connection connection = db.getMySQLConnection();
 
-
 			String sql = "select * from bus where id_bus=?";
 
 			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
@@ -116,7 +115,7 @@ public class BusDAOImp implements IBusDAO{
 			Connection connection = db.getMySQLConnection();
 
 
-			String sql = "select * from bus where id_bus=?";
+			String sql = "select * from bus where id_buses=?";
 
 			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
 
@@ -130,6 +129,37 @@ public class BusDAOImp implements IBusDAO{
 				arr.add(rs.getString("time_go"));
 			}
 			return arr;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	@Override
+	public Bus findBusByTime_GoAndID(int id_bus, String time_go) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Connection connection = db.getMySQLConnection();
+
+			String sql = "select * from bus where id_buses=? and time_go=?";
+
+			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
+
+			pstm.setInt(1, id_bus);
+			pstm.setString(2,time_go);
+			ResultSet rs = pstm.executeQuery();
+			
+			while(rs.next())
+			{
+				Bus bus = new Bus();
+				bus.setId_bus(rs.getInt("id_bus"));
+				bus.setTime_go(rs.getString("time_go"));
+				bus.setTime_end(rs.getString("time_end"));
+				bus.setTime_estimate(rs.getString("time_estimate"));
+				return bus;
+			}
 		}
 		catch(Exception e)
 		{
