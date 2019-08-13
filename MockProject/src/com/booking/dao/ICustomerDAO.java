@@ -14,4 +14,5 @@ public interface ICustomerDAO {
 	int findId_acc(String username);
 	Customer customer(int id_acc);
 	int findId_cus(int id_acc);
+	ArrayList<Customer> findCustomer(String name);
 }

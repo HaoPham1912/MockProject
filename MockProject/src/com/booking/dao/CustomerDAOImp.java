@@ -206,5 +206,29 @@ public class CustomerDAOImp implements ICustomerDAO{
 		// TODO Auto-generated method stub
 		return -1;
 	}
+	@Override
+	public ArrayList<Customer> findCustomer(String name) {
+		ArrayList<Customer> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			String sql="Select * from bus.customer where name like '%"+name+"%'";
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				Customer customer = new Customer();
+				customer.setId_cus(rs.getInt("id_cus"));
+				customer.setId_acc_cus(rs.getInt("id_acc_cus"));
+				customer.setName(rs.getString("name"));
+				customer.setPhone(rs.getString("phone"));
+				customer.setEmail(rs.getString("email"));
+				customer.setAddress(rs.getString("address"));
+				arr.add(customer);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
+	}
 
 }
