@@ -80,7 +80,8 @@ public class AdminDashBoardServlet extends HttpServlet {
 				}
 			}
 		}
-		else if(action.equals("updateSeller")){
+		else if(action.equals("updateSeller"))
+		{
 			String name_emp = request.getParameter("nameSellerEdit");
 			String phone_emp = request.getParameter("phoneSellerEdit");
 			String email_emp = request.getParameter("emailSellerEdit");
@@ -147,15 +148,22 @@ public class AdminDashBoardServlet extends HttpServlet {
 			else {
 				System.out.println("username avail!!! Retry!!");
 			}
-		}else if(action.equals("filter")) 
+		}
+		else if(action.equals("filterCus")) 
 		{
 			String name = request.getParameter("search");
-			System.out.println(name);
-			/*Customer customer = new Customer();
-			customer= customerDAO.findCustomer(name);*/
 			request.setAttribute("customerList",  customerDAO.findCustomer(name));
 			RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
 			rd.forward(request, response);	
+			return;
+		}
+		else if(action.equals("filterEmp")) 
+		{
+			System.out.println("Co vo day k");
+			String name = request.getParameter("search");
+			request.setAttribute("employeeList",  employeeDAO.findEmployee(name));
+			RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
+			rd.forward(request, response);
 			return;
 		}
 	}

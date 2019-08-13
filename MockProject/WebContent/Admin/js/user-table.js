@@ -129,4 +129,9 @@ $(document).ready(function() {
 	  alert("Please choose seller to delete!!!");
 	}
   }
-  
+  //admin
+  $(document).ready(function() {
+		$('#mytableAdmin').DataTable( {
+			"lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
+		} );
+	  } );
