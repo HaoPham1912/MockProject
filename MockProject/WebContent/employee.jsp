@@ -121,13 +121,48 @@
 							<strong>Manage Buses</strong>
 						</h1>
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+						class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
 
 					<div>
-
 						<!-- EmployeeStart -->
 						<div class="col-md-12">
+							<div class="row">
+								<form action="${${pageContext.request.contextPath}/?action=filter">
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<label>Select list:</label> 
+											<select class="custom-select"
+												name="start_place">
+												<option selected>Ho Chi Minh</option>
+												<option value="Ho Chi Minh">Ho Chi Minh</option>
+												<option value="Da Nang">Da Nang</option>
+												<option value="Da Lat">Da Lat</option>
+												<option value="Ha Noi">Ha Noi</option>
+											</select>
+										</div>
+									</div>
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<label>Select list:</label> 
+											<select class="custom-select"
+												name="end_place">
+												<option selected>Ha Noi</option>
+												<option value="Ho Chi Minh">Ho Chi Minh</option>
+												<option value="Da Nang">Da Nang</option>
+												<option value="Da Lat">Da Lat</option>
+												<option value="Ha Noi">Ha Noi</option>
+											</select>
+										</div>
+									</div>
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<button type="button" class="btn btn-warning"
+												style="margin-top: 35px;">Search</button>
+										</div>
+									</div>
+								</form>
+							</div>
 							<div class="table-responsive">
 								<table id="mytablebuses"
 									class="table table-bordred table-striped">
@@ -149,7 +184,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												<td>${a.price}</td>
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="View">
-													<form method="POST" action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}">
+													<form method="POST"
+														action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}">
 														<button class="btn btn-primary" data-title="Edit"
 															data-toggle="modal">
 															<span class="fas fa-bus-alt"></span>
