@@ -216,4 +216,31 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		}
 		return false;
 	}
+
+	@Override
+	public ArrayList<Employee> findEmployee(String name) {
+		
+		ArrayList<Employee> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			String sql="select * from account,employee where employee.id_acc_emp = account.id_acc and emp_name like '%"+name+"%'";
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				Employee employee = new Employee();
+				employee.setId_emp(rs.getInt("id_emp"));
+				employee.setId_acc_emp(rs.getInt("id_acc_emp"));
+				employee.setUsername(rs.getString("username"));
+				employee.setEmp_name(rs.getString("emp_name"));
+				employee.setEmp_phone(rs.getString("emp_phone"));
+				employee.setEmp_email(rs.getString("emp_email"));
+				employee.setEmp_address(rs.getString("emp_address"));
+				arr.add(employee);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
+	}
 }

@@ -212,12 +212,13 @@ public class CustomerDAOImp implements ICustomerDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			String sql="Select * from bus.customer where name like '%"+name+"%'";
+			String sql="select * from account,customer where customer.id_acc_cus = account.id_acc and name like '%"+name+"%'";
 			ResultSet rs = stm.executeQuery(sql);
 			while(rs.next()) {
 				Customer customer = new Customer();
 				customer.setId_cus(rs.getInt("id_cus"));
 				customer.setId_acc_cus(rs.getInt("id_acc_cus"));
+				customer.setUsername(rs.getString("username"));
 				customer.setName(rs.getString("name"));
 				customer.setPhone(rs.getString("phone"));
 				customer.setEmail(rs.getString("email"));
