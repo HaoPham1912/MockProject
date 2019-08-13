@@ -119,45 +119,63 @@
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
-
-					<div>
-
-						<!-- EmployeeStart -->
-						<div class="col-md-12">
-							<div class="table-responsive">
-								<table id="mytablebus" class="table table-bordred table-striped">
-									<thead>
-										<th>ID</th>
-										<th>Time Go</th>
-										<th>Car Position</th>
-										<th>Time Estimate</th>
-										<th>View Ticket</th>
-									</thead>
-									<tbody>
-										<c:forEach items="${listFilterBus}" var="a">
-											<tr>
-												<td>${a.id_bus}</td>
-												<td>${a.time_go}</td>
-												<td>${a.car_position}</td>
-												<td>${a.time_estimate}</td>
-												<td>
-													<p data-placement="top" data-toggle="tooltip" title="View">
-													<form method="POST" action="${pageContext.request.contextPath}/emp-filterTicket?id_bus=${a.id_bus}">
-														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal">
-															<span class="far fa-id-card"></span>
-														</button>
-													</form>
-
-													</p>
-												</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
-						</div>
+					<!-- EmployeeStart -->
+					<div class="col-md-12">
+						<form method="post">
+								<div class="row">
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<label>Select list:</label> 
+											<select class="custom-select" name="time_go">
+												<c:forEach items="${time_go}" var="a">
+													<option value="${a}"></option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<button type="submit" class="btn btn-warning"
+												style="margin-top: 35px;">Search</button>
+											<a style="margin-top: 35px;" href="">Show All</a>
+										</div>
+									</div>
+								</div>
+							</form>
 					</div>
+					<div class="table-responsive">
+							<table id="mytablebus" class="table table-bordred table-striped">
+								<thead>
+									<th>ID</th>
+									<th>Time Go</th>
+									<th>Car Position</th>
+									<th>Time Estimate</th>
+									<th>View Ticket</th>
+								</thead>
+								<tbody>
+									<c:forEach items="${listFilterBus}" var="a">
+										<tr>
+											<td>${a.id_bus}</td>
+											<td>${a.time_go}</td>
+											<td>${a.car_position}</td>
+											<td>${a.time_estimate}</td>
+											<td>
+												<p data-placement="top" data-toggle="tooltip" title="View">
+												<form method="POST"
+													action="${pageContext.request.contextPath}/emp-filterTicket?id_bus=${a.id_bus}">
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal">
+														<span class="far fa-id-card"></span>
+													</button>
+												</form>
+
+												</p>
+											</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
 					<div class="modal fade" id="getIdBus" tabindex="-1" role="dialog"
 						aria-labelledby="edit" aria-hidden="true">
 						<div class="modal-dialog">

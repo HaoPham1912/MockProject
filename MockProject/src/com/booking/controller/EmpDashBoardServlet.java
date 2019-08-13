@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.booking.dao.BusDAOImp;
 import com.booking.dao.BusesDAOImp;
 import com.booking.dao.EmployeeDAOImp;
+import com.booking.model.Buses;
 
 
 /**
@@ -41,12 +42,13 @@ public class EmpDashBoardServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		String updateTicket = request.getParameter("action");
+		System.out.println("action: "+updateTicket);
 		if(updateTicket!=null)
 		{
 			if(updateTicket.equals("updateTicket"))
 			{
 				EmployeeDAO.updateTicket();
-			}
+			}		
 		}
 		request.setAttribute("listBuses", busesDAO.findAllBuses());
 		RequestDispatcher rd = request.getRequestDispatcher("/employee.jsp");
@@ -60,7 +62,19 @@ public class EmpDashBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);	
+//		doGet(request, response);	
+		String updateTicket = request.getParameter("action");
+		if(updateTicket.equals("filter"))
+		{
+			String start_place = request.getParameter("start_place");
+			String end_place = request.getParameter("end_place");
+			Buses buses = new Buses();
+			buses = busesDAO.findBusesByPlace(start_place, end_place);
+			request.setAttribute("Buses", buses);
+			RequestDispatcher rd = request.getRequestDispatcher("/employee.jsp");
+			rd.forward(request, response);	
+			return;
+		}
 	}
 
 }

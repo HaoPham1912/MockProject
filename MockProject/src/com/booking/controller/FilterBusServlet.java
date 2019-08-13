@@ -37,11 +37,11 @@ public class FilterBusServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String id_buses = request.getParameter("id_buses");
-//		System.out.println("id bussssss "+id_buses);
+		request.setAttribute("time_go", busDAO.findTime_GoByID(Integer.valueOf(id_buses)));
 		request.setAttribute("listFilterBus", busDAO.findAllBus(Integer.valueOf(id_buses)));
 		RequestDispatcher rd = request.getRequestDispatcher("/filterBus.jsp");
 		rd.forward(request, response);
-		
+		return;
 	}
 
 	/**
@@ -53,5 +53,4 @@ public class FilterBusServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
-
 }

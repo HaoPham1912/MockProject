@@ -108,4 +108,33 @@ public class BusDAOImp implements IBusDAO{
 		}
 		return null;
 	}
+	@Override
+	public ArrayList<String> findTime_GoByID(int id_bus) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Connection connection = db.getMySQLConnection();
+
+
+			String sql = "select * from bus where id_bus=?";
+
+			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
+
+			pstm.setInt(1, id_bus);
+			ResultSet rs = pstm.executeQuery();
+			
+			ArrayList<String> arr = new ArrayList<String>();
+			
+			while(rs.next())
+			{
+				arr.add(rs.getString("time_go"));
+			}
+			return arr;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
 }

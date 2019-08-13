@@ -127,12 +127,12 @@
 					<div>
 						<!-- EmployeeStart -->
 						<div class="col-md-12">
-							<div class="row">
-								<form action="${${pageContext.request.contextPath}/?action=filter">
+							<form method="post"
+								action="http://localhost:8080/MockProject/emp-dashboard?action=filter">
+								<div class="row">
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> 
-											<select class="custom-select"
+											<label>Select list:</label> <select class="custom-select"
 												name="start_place">
 												<option selected>Ho Chi Minh</option>
 												<option value="Ho Chi Minh">Ho Chi Minh</option>
@@ -144,8 +144,7 @@
 									</div>
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> 
-											<select class="custom-select"
+											<label>Select list:</label> <select class="custom-select"
 												name="end_place">
 												<option selected>Ha Noi</option>
 												<option value="Ho Chi Minh">Ho Chi Minh</option>
@@ -157,24 +156,27 @@
 									</div>
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<button type="button" class="btn btn-warning"
+											<button type="submit" class="btn btn-warning"
 												style="margin-top: 35px;">Search</button>
+											<a style="margin-top: 35px;" href="http://localhost:8080/MockProject/emp-dashboard" class="btn btn-warning">Show All</a>
 										</div>
 									</div>
-								</form>
-							</div>
-							<div class="table-responsive">
-								<table id="mytablebuses"
-									class="table table-bordred table-striped">
-									<thead>
-										<th>ID</th>
-										<th>Start Place</th>
-										<th>End Place</th>
-										<th>Distance</th>
-										<th>Price</th>
-										<th>View Bus</th>
-									</thead>
-									<tbody>
+								</div>
+							</form>
+						</div>
+						<div class="table-responsive">
+							<table id="mytablebuses"
+								class="table table-bordred table-striped">
+								<thead>
+									<th>ID</th>
+									<th>Start Place</th>
+									<th>End Place</th>
+									<th>Distance</th>
+									<th>Price</th>
+									<th>View Bus</th>
+								</thead>
+								<tbody>
+									<c:if test="${not empty listBuses}">
 										<c:forEach items="${listBuses}" var="a">
 											<tr>
 												<td>${a.id_buses}</td>
@@ -195,85 +197,106 @@
 												</td>
 											</tr>
 										</c:forEach>
-									</tbody>
-								</table>
-							</div>
+									</c:if>
+									<c:if test="${not empty Buses}">
+										<tr>
+											<td>${Buses.id_buses}</td>
+											<td>${Buses.start_place}</td>
+											<td>${Buses.end_place}</td>
+											<td>${Buses.distance}</td>
+											<td>${Buses.price}</td>
+											<td>
+												<p data-placement="top" data-toggle="tooltip" title="View">
+												<form method="POST"
+													action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${Buses.id_buses}">
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal">
+														<span class="fas fa-bus-alt"></span>
+													</button>
+												</form>
+												</p>
+											</td>
+										</tr>
+									</c:if>
+								</tbody>
+							</table>
 						</div>
 					</div>
-					<!-- Modal edit user-end -->
-					<!-- Modal delete Seller-Start -->
-					<div class="modal fade" id="deleteSeller" tabindex="-1"
-						role="dialog" aria-labelledby="delete" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title custom_align" id="Heading"
-										style="margin-left: auto;">
-										<strong>Delete Seller </strong>
-									</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-								<div class="modal-body">
-									<div class="alert alert-danger">
-										<span class="glyphicon glyphicon-warning-sign"></span> Do you
-										want to delete this seller?
-									</div>
-								</div>
-								<div class="modal-footer ">
-									<button id="yesdeleteSeller" type="button"
-										class="btn btn-success">
-										<span class="	fas fa-check-circle"></span>Yes
-									</button>
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">
-										<span class="fas fa-remove"></span>No
-									</button>
-								</div>
-							</div>
-							<!-- /.modal-content -->
-						</div>
-						<!-- /.modal-dialog -->
-					</div>
-					<!-- Modal delete Seller-End -->
-					<!-- ManageSeller-End -->
-
-
 				</div>
+				<!-- Modal edit user-end -->
+				<!-- Modal delete Seller-Start -->
+				<div class="modal fade" id="deleteSeller" tabindex="-1"
+					role="dialog" aria-labelledby="delete" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title custom_align" id="Heading"
+									style="margin-left: auto;">
+									<strong>Delete Seller </strong>
+								</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<div class="alert alert-danger">
+									<span class="glyphicon glyphicon-warning-sign"></span> Do you
+									want to delete this seller?
+								</div>
+							</div>
+							<div class="modal-footer ">
+								<button id="yesdeleteSeller" type="button"
+									class="btn btn-success">
+									<span class="	fas fa-check-circle"></span>Yes
+								</button>
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">
+									<span class="fas fa-remove"></span>No
+								</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- Modal delete Seller-End -->
+				<!-- ManageSeller-End -->
 
-				<!-- End of Main Content -->
-				<!-- Footer -->
-				<!-- <footer class="sticky-footer bg-white">
+
+			</div>
+
+			<!-- End of Main Content -->
+			<!-- Footer -->
+			<!-- <footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
 						<span>Copyright &copy; Duy TrÃ¢n Háº£o VÄn 2019</span>
 					</div>
 				</div>
 			</footer> -->
-				<!-- End of Footer -->
-			</div>
-			<!-- End of Content Wrapper -->
+			<!-- End of Footer -->
 		</div>
-		<!-- End of Page Wrapper -->
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top"> <i
-			class="fas fa-angle-up"></i>
-		</a>
-		<!-- Bootstrap core JavaScript-->
-		<script src="Admin/vendor/jquery/jquery.min.js"></script>
-		<script src="Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- Core plugin JavaScript-->
-		<script src="Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-		<!-- Custom scripts for all pages-->
-		<script src="Admin/js/sb-admin-2.min.js"></script>
-		<!-- Page level plugins -->
-		<script src="Admin/vendor/datatables/jquery.dataTables.min.js"></script>
-		<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-		<!-- Page level custom scripts -->
-		<script src="Admin/js/user-table.js"></script>
-		<script src="Admin/js/seller-table.js"></script>
-		<script src="Admin/js/buses.js"></script>
-		<script
-			src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+		<!-- End of Content Wrapper -->
+	</div>
+	<!-- End of Page Wrapper -->
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+	<!-- Bootstrap core JavaScript-->
+	<script src="Admin/vendor/jquery/jquery.min.js"></script>
+	<script src="Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="Admin/js/sb-admin-2.min.js"></script>
+	<!-- Page level plugins -->
+	<script src="Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<!-- Page level custom scripts -->
+	<script src="Admin/js/user-table.js"></script>
+	<script src="Admin/js/seller-table.js"></script>
+	<script src="Admin/js/buses.js"></script>
+	<script
+		src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
 
 </html>

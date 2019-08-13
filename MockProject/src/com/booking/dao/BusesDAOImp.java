@@ -37,6 +37,7 @@ public class BusesDAOImp implements IBusesDAO{
 				buses.setStart_place(rs.getString("start_place"));
 				buses.setEnd_place(rs.getString("end_place"));
 				buses.setDistance(rs.getInt("distance"));
+				buses.setPrice(rs.getDouble("price"));
 				return buses;
 			}
 		}
