@@ -1,6 +1,7 @@
 package com.booking.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,8 +39,13 @@ public class FilterTicketServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.getWriter().append("Served at: ").append(request.getContextPath());	
+		
+		HttpSession session = request.getSession();
+		
 		String id_bus = request.getParameter("id_bus");
+		session.setAttribute("id_bus", id_bus);
 		request.setAttribute("id_bus", id_bus);
+		request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
 		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
 		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 		rd.forward(request, response);
@@ -51,8 +57,31 @@ public class FilterTicketServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
 		response.setContentType("text/html;charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");	
+		String action = request.getParameter("action");
+		if(action != null)
+		{
+			if(action.equals("show"))
+			{
+				doGet(request, response);
+			}
+			if(action.equals("filter"));
+			{
+				String id_bus = request.getParameter("id_bus");
+				String date_go = request.getParameter("date_go");
+				ArrayList<Ticket> arr = new ArrayList<Ticket>();
+				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go);
+				request.setAttribute("filterList", arr);
+				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
+				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
+				rd.forward(request, response);
+				return;
+			}
+		}
+		else
+		{
+			doGet(request, response);
+		}
 	}
 
 }

@@ -121,68 +121,130 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
 
 					<div>
-
-						<!-- EmployeeStart -->
 						<div class="col-md-12">
-							<div class="table-responsive">
-								<table id="mytableticket"
-									class="table table-bordred table-striped">
-									<thead>
-										<th>ID</th>
-										<th>Date Go</th>
-										<th>Date Book</th>
-										<th>Seat Number</th>
-										<th>Status</th>
-										<th>Price</th>
-										<th>Phone</th>
-										<th>Name</th>
-										<th>ID KH</th>
-										<th>Update</th>
-										<th>Cancel</th>
-									</thead>
-									<tbody>
-										<c:forEach items="${listFilterTicket}" var="a">
-											<tr>
-												<td>${a.id_ticket}</td>
-												<td>${a.date_go}</td>
-												<td>${a.date_book}</td>
-												<td>${a.seat_number}</td>
-												<td>${a.status}</td>
-												<td>${a.price}</td>
-												<td>${a.phone}</td>
-												<td>${a.name}</td>
-												<td>${a.id_cus}</td>
-												<td>
-													<p data-placement="top" data-toggle="tooltip" title="Edit">
-													<form>
-													
-													</form>
-														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal" onclick="editTicket()">
-															<span class="fas fa-edit"></span>
+							<form method="post"
+								action="http://localhost:8080/MockProject/emp-filterTicket?id_bus=${id_bus}&action=filter">
+								<div class="row">
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<label>Select list:</label> <select class="custom-select"
+												name="date_go">
+												<c:forEach items="${date_go}" var="a">
+													<option value="${a}">${a}</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>		
+									<div class=" col-md-2" style="align: center">
+										<div class="form-group">
+											<button type="submit" class="btn btn-warning"
+												style="margin-top: 35px;">Search</button>
+											<a style="margin-top: 35px;"
+												href="http://localhost:8080/MockProject/emp-filterTicket?action=show"
+												class="btn btn-warning">Show All</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- EmployeeStart -->
+						<div class="table-responsive">
+							<table id="mytableticket"
+								class="table table-bordred table-striped">
+								<thead>
+									<th>ID</th>
+									<th>Date Go</th>
+									<th>Date Book</th>
+									<th>Seat Number</th>
+									<th>Status</th>
+									<th>Price</th>
+									<th>Phone</th>
+									<th>Name</th>
+									<th>ID KH</th>
+									<th>Update</th>
+									<th>Cancel</th>
+								</thead>
+								<tbody>
+								<c:if test="${not empty listFilterTicket}">
+									<c:forEach items="${listFilterTicket}" var="a">
+										<tr>
+											<td>${a.id_ticket}</td>
+											<td>${a.date_go}</td>
+											<td>${a.date_book}</td>
+											<td>${a.seat_number}</td>
+											<td>${a.status}</td>
+											<td>${a.price}</td>
+											<td>${a.phone}</td>
+											<td>${a.name}</td>
+											<td>${a.id_cus}</td>
+											<td>
+												<p data-placement="top" data-toggle="tooltip" title="Edit">
+												<form></form>
+												<button class="btn btn-primary" data-title="Edit"
+													data-toggle="modal" onclick="editTicket()">
+													<span class="fas fa-edit"></span>
+												</button>
+												</p>
+											</td>
+
+											<td>
+												<form method="POST"
+													action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+													<p data-placement="top" data-toggle="tooltip"
+														title="Delete">
+
+														<button class="btn btn-danger" data-title="Delete"
+															data-toggle="modal">
+															<span class="fa fa-trash"></span>
 														</button>
-													</p>
-												</td>
+												</form>
 
-												<td>
-													<form method="POST"
-														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-														<p data-placement="top" data-toggle="tooltip"
-															title="Delete">
+												</p>
+											</td>
+										</tr>
+									</c:forEach>
+								</c:if>
+								<c:if test="${not empty filterList}">
+									<c:forEach items="${filterList}" var="a">
+										<tr>
+											<td>${a.id_ticket}</td>
+											<td>${a.date_go}</td>
+											<td>${a.date_book}</td>
+											<td>${a.seat_number}</td>
+											<td>${a.status}</td>
+											<td>${a.price}</td>
+											<td>${a.phone}</td>
+											<td>${a.name}</td>
+											<td>${a.id_cus}</td>
+											<td>
+												<p data-placement="top" data-toggle="tooltip" title="Edit">
+												<form></form>
+												<button class="btn btn-primary" data-title="Edit"
+													data-toggle="modal" onclick="editTicket()">
+													<span class="fas fa-edit"></span>
+												</button>
+												</p>
+											</td>
 
-															<button class="btn btn-danger" data-title="Delete"
-																data-toggle="modal">
-																<span class="fa fa-trash"></span>
-															</button>
-													</form>
+											<td>
+												<form method="POST"
+													action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+													<p data-placement="top" data-toggle="tooltip"
+														title="Delete">
 
-													</p>
-												</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
+														<button class="btn btn-danger" data-title="Delete"
+															data-toggle="modal">
+															<span class="fa fa-trash"></span>
+														</button>
+												</form>
+
+												</p>
+											</td>
+										</tr>
+									</c:forEach>
+								</c:if>
+								</tbody>
+							</table>
 						</div>
 					</div>
 					<div class="modal fade" id="editTicket" tabindex="-1" role="dialog"
