@@ -260,7 +260,7 @@
 								<div class="row">
 									<div class="col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> <input type="text" name="search"
+											<label>Name:</label> <input type="text" name="search"
 												placeholder="Searching...."
 												style="height: 40px; width: 100%;"> </input>
 										</div>
@@ -431,6 +431,29 @@
 					<!-- </div> -->
 					<div class="col-md-12">
 						<div class="table-responsive">
+							<form method="POST"
+								action="http://localhost:8080/MockProject/admin-dashboard?action=filter">
+								<div class="row">
+									<div class="col-md-2" style="align: center">
+										<div class="form-group">
+											<label>Name:</label> <input type="text" name="search"
+												placeholder="Searching...."
+												style="height: 40px; width: 100%;"> </input>
+										</div>
+									</div>
+									<div class="col-md-2" style="align: center">
+										<div class="form-group">
+											<button class="btn btn-warning" style="margin-top: 35px;">
+												<span class="glyphicon glyphicon-search">&nbsp;
+													Search</span>
+											</button>
+											<a style="margin-top: 35px;"
+												href="http://localhost:8080/MockProject/admin-dashboard"
+												class="btn btn-warning">Show All</a>
+										</div>
+									</div>
+								</div>
+							</form>
 							<table id="mytableseller"
 								class="table table-bordred table-striped">
 								<thead>
