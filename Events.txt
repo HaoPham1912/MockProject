@@ -1,0 +1,70 @@
+use bus;
+SELECT *,TIMESTAMPDIFF(SECOND, NOW(), concat(date_book," ",time_book)) from ticket;
+SELECT * from ticket where status = 0 and TIMESTAMPDIFF(SECOND, NOW(), STR_TO_DATE(concat(date_book," ",time_book),'%Y-%m-%d %r')) < 86400;
+
+
+SELECT * FROM bus.ticket where status = 0 and TIMESTAMPDIFF(SECOND, STR_TO_DATE(concat(date_book," ",time_book),'%Y-%m-%d %r'),NOW()) < 86400;
+
+select *, TIMESTAMPDIFF(SECOND,concat(date_book," ",time_book),NOW()) > 84600 from ticket  ;
+
+DROP EVENT CheckAvailableTicket;
+select * from ticket;
+
+DROP EVENT CheckAvailableTicket;
+SET GLOBAL event_scheduler = on;
+create event CheckAvailableTicket
+on schedule every 1 second
+starts CURRENT_TIMESTAMP
+DO 
+	DELETE FROM bus.ticket where status = 0 and TIMESTAMPDIFF(SECOND,concat(date_book," ",time_book),NOW()) > 84600;
+
+
+show processlist;
+show events from bus;
+
+
+
+
+
+
+
+use bus;
+delimiter // 
+use bus// 
+drop trigger Trigger_Ticket// 
+CREATE TRIGGER Trigger_Ticket BEFORE UPDATE ON Ticket 
+FOR EACH ROW 
+begin 
+DECLARE ticket cursor for select ticket.status, ticket.id_ticket, ticket.date_book, ticket.time_book into ticket from ticket;
+DECLARE stt tinyint(4);
+DECLARE id_ticket INT;
+DECLARE date_book NVARCHAR(40);
+DECLARE time_book NVARCHAR(40);
+OPEN ticket;
+ read_loop: LOOP
+    FETCH ticket INTO stt, id_ticket, date_book, time_book;
+	IF stt = 0 THEN
+		IF TIMESTAMPDIFF(SECOND, STR_TO_DATE(concat(date_book," ",time_book),'%Y-%m-%d %r'),NOW()) < 86400
+			delete 
+  END LOOP;
+  
+
+
+
+
+
+	if ticket.status = 0 then
+		if ((TIMESTAMPDIFF(SECOND, STR_TO_DATE(concat(ticket.date_book," ",ticket.time_book),'%Y-%m-%d %r'),NOW()) > 86400)) then
+			delete from bus.ticket where  id_ticket = ticket.id_ticket
+
+
+select STR_TO_DATE('2019-08-13 10:02:28', '%Y-%m-%d %r');
+        
+        
+        
+select concat(date_book," ",time_book) from bus.ticket;
+select * from ticket where id_bus=1 and date_go='2019-08-15';
+select * from bus where id_buses=1;
+
+select seat_number from ticket where ticket.id_bus =1 and date_go =STR_TO_DATE('09-12-2019','%d-%m-%Y')
+select seat_number from ticket where ticket.id_bus =1 and date_go='2019-12-09'
