@@ -307,7 +307,6 @@
 											<th>Time Estimate</th>
 											<th>Time End</th>
 											<th>Car Position</th>
-											<th>Delete</th>
 										</thead>
 										<tbody>
 											<c:forEach items="${listTicketBooked}" var="a">
@@ -325,7 +324,7 @@
 														<td>${a.time_estimate}</td>
 														<td>${a.time_end}</td>
 														<td>${a.car_position}</td>
-														<td>
+														<!-- <td>
 															<p data-placement="top" data-toggle="tooltip"
 																title="Delete">
 																<button class="btn btn-danger" data-title="Delete"
@@ -333,7 +332,7 @@
 																	<span class="fa fa-trash"></span>
 																</button>
 															</p>
-														</td>
+														</td> -->
 													</tr>
 												</c:if>
 											</c:forEach>

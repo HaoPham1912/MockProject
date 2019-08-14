@@ -127,7 +127,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 								<div class="row">
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> <select class="custom-select"
+											<label>Date Go:</label> <select class="custom-select"
 												name="date_go">
 												<c:forEach items="${date_go}" var="a">
 													<option value="${a}">${a}</option>
