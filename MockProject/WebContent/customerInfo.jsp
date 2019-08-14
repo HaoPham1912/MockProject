@@ -284,6 +284,16 @@
 											class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' /> </br>
 									</form>
+									<c:if test="${UpdateInfoCusMes!=null}">
+										<script type="text/javascript">
+											alert("Your Update Successful!");
+										</script>
+									</c:if>
+									<c:if test="${UpdateInfoCusFailed!=null}">
+										<script type="text/javascript">
+											alert("Your Update Failed!!!");
+										</script>
+									</c:if>
 								</div>
 
 							</div>
@@ -378,7 +388,7 @@
 														<td>
 															<p data-placement="top" data-toggle="tooltip"
 																title="Delete">
-																<form method="POST"
+															<form method="POST"
 																action="${pageContext.request.contextPath}/cus-viewInfo?id=${a.id_ticket}&action=delete">
 																<button class="btn btn-danger" data-title="Delete"
 																	data-toggle="modal">
@@ -390,15 +400,27 @@
 													</tr>
 												</c:if>
 											</c:forEach>
+
 										</tbody>
 									</table>
 								</div>
 							</div>
+							<c:if test="${DeleteTicketCus!=null}">
+								<script type="text/javascript">
+									alert("The ticket have been deleted!!!");
+								</script>
+							</c:if>
+							<c:if test="${DeleteTicketCusFailed!=null}">
+								<script type="text/javascript">
+									alert("Can't delete this ticket!!!");
+								</script>
+							</c:if>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!--   Creative Tim Branding   -->
+			s
 			<!--   Big container   -->
 			<div class="col-sm-8 col-sm-offset-2" style="padding-top: 120px">
 				<!--      Wizard container        -->
