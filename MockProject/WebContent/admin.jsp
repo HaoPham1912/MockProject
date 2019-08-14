@@ -470,7 +470,6 @@
 									<th>Email</th>
 									<th>Address</th>
 									<th>Edit</th>
-									<th>Delete</th>
 								</thead>
 								<tbody>
 									<c:forEach items="${adminList}" var="a">
@@ -489,14 +488,14 @@
 													</button>
 												</p>
 											</td>
-											<td>
+											<!-- <td>
 												<p data-placement="top" data-toggle="tooltip" title="Delete">
 													<button class="btn btn-danger" data-title="Delete"
 														data-toggle="modal" onclick="deleteAdmin()">
 														<span class="fa fa-trash"></span>
 													</button>
 												</p>
-											</td>
+											</td> -->
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -574,12 +573,18 @@
 												</p>
 											</td>
 											<td>
-												<p data-placement="top" data-toggle="tooltip" title="Delete">
-													<button class="btn btn-danger" data-title="Delete"
-														data-toggle="modal" onclick="deleteSeller()">
-														<span class="fa fa-trash"></span>
-													</button>
-												</p>
+												<form
+													action="${pageContext.request.contextPath}/admin-dashboard?action=deleteSeller&id="${a.id_acc_emp}"
+													method="POST">
+													<p data-placement="top" data-toggle="tooltip"
+														title="Delete">
+														<button class="btn btn-danger" data-title="Delete"
+															data-toggle="modal">
+															<span class="fa fa-trash"></span>
+														</button>
+													</p>
+												</form>
+
 											</td>
 										</tr>
 									</c:forEach>

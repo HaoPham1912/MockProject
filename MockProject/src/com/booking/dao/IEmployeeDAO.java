@@ -16,4 +16,5 @@ public interface IEmployeeDAO {
 	void updateTicket();
 	boolean checkAvailableTicket(String date_book);
 	ArrayList<Employee> findEmployee(String name);
+	boolean deleteEmployee(int id_acc_emp);
 }

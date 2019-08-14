@@ -119,7 +119,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-//					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
+					//					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
 					if(customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1)) 
 					{
 						System.out.println("Dang ki thanh cong");
@@ -129,7 +129,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-//					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
+					//					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
 					if(employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1)) {
 						System.out.println("Dang ki thanh cong");
 						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
@@ -138,7 +138,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-//					adminDAO.insertAdmin(id, name1, phone1, email1, address1);
+					//					adminDAO.insertAdmin(id, name1, phone1, email1, address1);
 					if(adminDAO.insertAdmin(id, name1, phone1, email1, address1)) {
 						System.out.println("Dang ki thanh cong");
 						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
@@ -148,6 +148,16 @@ public class AdminDashBoardServlet extends HttpServlet {
 			else {
 				System.out.println("username avail!!! Retry!!");
 			}
+		}
+		else if(action.equals("deleteSeller"))
+		{
+			String id = request.getParameter("id");
+			if(employeeDAO.deleteEmployee(Integer.valueOf(id))) {
+				System.out.println("Deleted Seller");
+				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+			}
+			/*employeeDAO.deleteEmployee(Integer.valueOf(id));
+			response.sendRedirect(request.getContextPath()+"/admin-dashboard");*/
 		}
 		else if(action.equals("filterCus")) 
 		{

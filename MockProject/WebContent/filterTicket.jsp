@@ -154,13 +154,11 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												<td>${a.id_cus}</td>
 												<td>
 													<p data-placement="top" data-toggle="tooltip" title="Edit">
-													<form>
-													
-													</form>
-														<button class="btn btn-primary" data-title="Edit"
-															data-toggle="modal" onclick="editTicket()">
-															<span class="fas fa-edit"></span>
-														</button>
+													<form></form>
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal" onclick="editTicket()">
+														<span class="fas fa-edit"></span>
+													</button>
 													</p>
 												</td>
 
@@ -174,9 +172,10 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 																data-toggle="modal">
 																<span class="fa fa-trash"></span>
 															</button>
+														</p>
 													</form>
 
-													</p>
+
 												</td>
 											</tr>
 										</c:forEach>

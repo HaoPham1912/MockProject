@@ -243,4 +243,20 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 		}
 		return arr;
 	}
+
+	@Override
+	public boolean deleteEmployee(int id_acc_emp) {
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql="Delete from account where id_acc =?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_acc_emp);
+			pstm.executeUpdate();
+			return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
