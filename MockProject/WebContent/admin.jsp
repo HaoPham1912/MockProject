@@ -55,13 +55,12 @@
 					class="fa fa-id-card" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Customer</span></a></li>
 			<!-- Nav Item-Manage Seller -->
-			<li class="nav-item active"><a class="nav-link" href="#"
-				onclick="callContent('manageSeller'); return false;"> <i
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/admin-manageSeller"
+		> <i
 					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Seller</span></a></li>
 			<!-- Nav Item-Manage System -->
-			<li class="nav-item active"><a class="nav-link" href="#"
-				onclick="callContent('manageAdmin'); return false;"> <i
+			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/admin-manageAdmin"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage System</span></a></li>
 			<li class="nav-item active"><a class="nav-link"
@@ -422,8 +421,7 @@
 				</div>
 				<!-- Modal ManageUser End -->
 
-
-
+				<!-- Modal ManageSeller Start -->
 				<div class="container-fluid generalClass " id="manageAdmin"
 					style="display: none">
 					<!-- Page Heading -->
@@ -437,29 +435,6 @@
 					<!-- </div> -->
 					<div class="col-md-12">
 						<div class="table-responsive">
-							<!-- <form method="POST"
-								action="http://localhost:8080/MockProject/admin-dashboard?action=filterAdmin">
-								<div class="row">
-									<div class="col-md-2" style="align: center">
-										<div class="form-group">
-											<label>Name:</label> <input type="text" name="search"
-												placeholder="Searching...."
-												style="height: 40px; width: 100%;"> </input>
-										</div>
-									</div>
-									<div class="col-md-2" style="align: center">
-										<div class="form-group">
-											<button class="btn btn-warning" style="margin-top: 35px;">
-												<span class="glyphicon glyphicon-search">&nbsp;
-													Search</span>
-											</button>
-											<a style="margin-top: 35px;"
-												href="http://localhost:8080/MockProject/admin-dashboard"
-												class="btn btn-warning">Show All</a>
-										</div>
-									</div>
-								</div>
-							</form> -->
 							<table id="mytableAdmin"
 								class="table table-bordred table-striped">
 								<thead>
@@ -507,93 +482,10 @@
 
 
 				<!-- ManageSeller-Start -->
-				<div class="container-fluid generalClass " id="manageSeller"
-					style="display: none">
-					<!-- Page Heading -->
-					<div
-						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">
-							<strong>Manage TicketSeller</strong>
-						</h1>
-					</div>
-					<!-- EmployeeStart -->
-					<!-- </div> -->
-					<div class="col-md-12">
-						<div class="table-responsive">
-							<!-- <form method="POST"
-								action="http://localhost:8080/MockProject/admin-dashboard?action=filterEmp">
-								<div class="row">
-									<div class="col-md-2" style="align: center">
-										<div class="form-group">
-											<label>Name:</label> <input type="text" name="search"
-												placeholder="Searching...."
-												style="height: 40px; width: 100%;"> </input>
-										</div>
-									</div>
-									<div class="col-md-2" style="align: center">
-										<div class="form-group">
-											<button class="btn btn-warning" style="margin-top: 35px;">
-												<span class="glyphicon glyphicon-search">&nbsp;
-													Search</span>
-											</button>
-											<a style="margin-top: 35px;"
-												href="http://localhost:8080/MockProject/admin-dashboard"
-												class="btn btn-warning">Show All</a>
-										</div>
-									</div>
-								</div>
-							</form> -->
-							<table id="mytableseller"
-								class="table table-bordred table-striped">
-								<thead>
-									<th>ID</th>
-									<th>Username</th>
-									<th>Name</th>
-									<th>Phone</th>
-									<th>Email</th>
-									<th>Address</th>
-									<th>Edit</th>
-									<th>Delete</th>
-								</thead>
-								<tbody>
-									<c:forEach items="${employeeList}" var="a">
-										<tr>
-											<td>${a.id_acc_emp}</td>
-											<td>${a.username}</td>
-											<td>${a.emp_name}</td>
-											<td>${a.emp_phone}</td>
-											<td>${a.emp_email}</td>
-											<td>${a.emp_address}</td>
-											<td>
-												<p data-placement="top" data-toggle="tooltip" title="Edit">
-													<button class="btn btn-primary" data-title="Edit"
-														data-toggle="modal" onclick="editSeller()">
-														<span class="	fa fa-edit"></span>
-													</button>
-												</p>
-											</td>
-											<td>
-												<form
-													action="${pageContext.request.contextPath}/admin-dashboard?action=deleteSeller&id="${a.id_acc_emp}"
-													method="POST">
-													<p data-placement="top" data-toggle="tooltip"
-														title="Delete">
-														<button class="btn btn-danger" data-title="Delete"
-															data-toggle="modal">
-															<span class="fa fa-trash"></span>
-														</button>
-													</p>
-												</form>
+	
 
-											</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="modal fade" id="editSeller" tabindex="-1" role="dialog"
+
+				<%-- <div class="modal fade" id="editSeller" tabindex="-1" role="dialog"
 					aria-labelledby="edit" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -661,10 +553,10 @@
 							</form>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 				<!-- Modal edit user-end -->
 				<!-- Modal delete Seller-Start -->
-				<div class="modal fade" id="deleteSeller" tabindex="-1"
+				<!-- <div class="modal fade" id="deleteSeller" tabindex="-1"
 					role="dialog" aria-labelledby="delete" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -692,10 +584,10 @@
 								</button>
 							</div>
 						</div>
-						<!-- /.modal-content -->
+						/.modal-content
 					</div>
-					<!-- /.modal-dialog -->
-				</div>
+					/.modal-dialog
+				</div> -->
 				<!-- Modal delete Seller-End -->
 				<!-- ManageSeller-End -->
 			</div>

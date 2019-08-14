@@ -1,6 +1,4 @@
 
-
-
 //$("#mytable").DataTable();
 $(document).ready(function() {
 	$('#mytable').DataTable( {
@@ -67,7 +65,7 @@ function deleteUser() {
 		alert("Please choose user to delete!!!");
 	}
 }
-//thêm
+//seller
 //$("#mytableseller").DataTable();
 $(document).ready(function() {
 	$('#mytableseller').DataTable( {
@@ -135,3 +133,35 @@ $(document).ready(function() {
 			"lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
 		} );
 	  } );
+  var selectedAdmin = [];
+  $("#mytableAdmin tbody").on("click", "tr", function() {
+		if ($(this).hasClass("selected")) {
+		  $(this).removeClass("selected");
+		  selectedAdmin = [];
+		} else {
+		  $("#mytableAdmin tr.selected").removeClass("selected");
+		  $(this).addClass("selected");
+		  selectedAdmin = [];
+		  $(this)
+			.find("td")
+			.each((index, element) => {
+				selectedAdmin.push($(element).text());
+			});
+		}
+		console.log(selectedAdmin);
+	  });
+  
+  function editAdmin() {
+		if (selectedAdmin.length > 0) {
+		   var nameAdmin = selectedAdmin[0];
+	  //    alert(nameSeller);
+		
+		  $("#idAdminEdit").attr('value',selectedAdmin[0]);
+		  $("#usernameAdminEdit").attr('value',selectedAdmin[1]);
+		  $("#nameAdminEdit").attr('value',selectedAdmin[2]);
+		  $("#phoneAdminEdit").attr('value',selectedAdmin[3]);
+		  $("#emailAdminEdit").attr('value',selectedAdmin[4]);
+		  $("#addressAdminEdit").attr('value',selectedAdmin[5]);
+		  $("#editAdmin").modal("show");
+		} 
+	  }

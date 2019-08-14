@@ -131,7 +131,7 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 	}
 
 	@Override
-	public boolean updateEmployee(String name, String phone, String email, String address, int id_acc_cus) {
+	public boolean updateEmployee(String name, String phone, String email, String address, int id_acc_emp) {
 		// TODO Auto-generated method stub
 		try {
 			Connection conn = db.getMySQLConnection();
@@ -141,7 +141,7 @@ public class EmployeeDAOImp implements IEmployeeDAO{
 			pstm.setString(2, phone);
 			pstm.setString(3, email);
 			pstm.setString(4, address);
-			pstm.setInt(5, id_acc_cus);
+			pstm.setInt(5, id_acc_emp);
 			pstm.executeUpdate();
 			return true;
 		} catch (ClassNotFoundException | SQLException e) {
