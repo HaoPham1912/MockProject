@@ -65,6 +65,7 @@ public class ViewInfoCusServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
+		System.out.println("action is       "+action);
 		if(action.equals("update")) {
 			String id_acc = request.getParameter("id_acc_cus");
 			String name = request.getParameter("name");
@@ -79,6 +80,16 @@ public class ViewInfoCusServlet extends HttpServlet {
 				else {
 					System.out.println("Can't Update!!!");
 				}
+		}
+		else if(action.equals("delete"))
+		{
+			String id_ticket = request.getParameter("id");
+			System.out.println(id_ticket);
+			/*ticketDAO.deleteTicket(Integer.valueOf(id_ticket));*/
+			if(ticketDAO.deleteTicket(Integer.valueOf(id_ticket))) {
+				System.out.println("Deleted!!!!!");
+				response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
+			}
 		}
 	}
 

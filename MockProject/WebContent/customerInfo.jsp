@@ -110,8 +110,8 @@
 				<div class="row">
 					<!--== Logo Start ==-->
 					<div class="col-lg-4">
-						<a href="http://localhost:8080/MockProject/guest-dashboard" class="logo"> <img
-							src="assets/img/logo.png" alt="JSOFT">
+						<a href="http://localhost:8080/MockProject/guest-dashboard"
+							class="logo"> <img src="assets/img/logo.png" alt="JSOFT">
 						</a>
 					</div>
 					<!--== Logo End ==-->
@@ -120,8 +120,8 @@
 					<div class="col-lg-8 d-none d-xl-block">
 						<nav class="mainmenu alignright">
 							<ul>
-								<li class="active">
-								<a style="font-size: 20px" href="http://localhost:8080/MockProject/cus-dashboard">Home</a>
+								<li class="active"><a style="font-size: 20px"
+									href="http://localhost:8080/MockProject/cus-dashboard">Home</a>
 								</li>
 							</ul>
 						</nav>
@@ -378,10 +378,13 @@
 														<td>
 															<p data-placement="top" data-toggle="tooltip"
 																title="Delete">
+																<form method="POST"
+																action="${pageContext.request.contextPath}/cus-viewInfo?id=${a.id_ticket}&action=delete">
 																<button class="btn btn-danger" data-title="Delete"
-																	data-toggle="modal" onclick="deleteTicket()">
+																	data-toggle="modal">
 																	<span class="fa fa-trash"></span>
 																</button>
+															</form>
 															</p>
 														</td>
 													</tr>
