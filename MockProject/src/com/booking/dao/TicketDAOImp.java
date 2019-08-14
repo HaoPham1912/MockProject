@@ -49,7 +49,7 @@ public class TicketDAOImp implements ITicketDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			
+
 			String sql="select seat_number from ticket where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y')";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -72,7 +72,7 @@ public class TicketDAOImp implements ITicketDAO{
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
 			String sql="INSERT INTO ticket (date_go, date_book,seat_number,status,price,phone,name,id_bus,id_cus,time_book,note)"+
-							"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?,CURRENT_TIME(),?)";
+					"VALUES(STR_TO_DATE(?,'%d-%m-%Y'),CURDATE(),?,?,?,?,?,?,?,CURRENT_TIME(),?)";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, date_go);
 			pstm.setInt(2, seat_number);
@@ -164,7 +164,7 @@ public class TicketDAOImp implements ITicketDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			
+
 			String sql="select count(*) from ticket where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y') and id_cus=?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -181,5 +181,71 @@ public class TicketDAOImp implements ITicketDAO{
 			e.printStackTrace();
 		}
 		return 0;
+	}
+	@Override
+	public ArrayList<String> getDateGoByIdBus(int id_bus) {
+		// TODO Auto-generated method stub
+		ArrayList<String> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			String sql="select id_ticket, date_go, date_book, seat_number, status, price, phone, name, id_cus from ticket where ticket.id_bus =?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, id_bus);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				if(!arr.contains(String.valueOf(rs.getDate("date_go"))))
+				{
+					arr.add(String.valueOf(rs.getDate("date_go")));
+				}
+			}
+			return arr;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	@Override
+	public ArrayList<Ticket> getTicketByIdBusAndDateBook(int id_bus, String date_go) {
+		// TODO Auto-generated method stub
+		ArrayList<Ticket> arr = new ArrayList<>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			String sql = "select id_ticket, date_go, date_book, seat_number, status, time_go, time_estimate, phone, name,id_cus,"
+					+ "car_position, time_end, ticket.price, start_place, end_place\r\n" + 
+					"from ticket\r\n" + 
+					"inner join bus on ticket.id_bus = bus.id_bus\r\n" + 
+					"inner join buses on bus.id_buses = buses.id_buses\r\n" + 
+					"where ticket.id_bus=? and ticket.date_go=?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, id_bus);
+			pstm.setString(2, date_go);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				Ticket ticket = new Ticket();
+				ticket.setId_ticket(rs.getInt("id_ticket"));
+				ticket.setId_cus(rs.getInt("id_cus"));
+				ticket.setName(rs.getString("name"));
+				ticket.setPhone(rs.getString("phone"));
+				ticket.setDate_go(rs.getString("date_go"));
+				ticket.setDate_book(rs.getString("date_book"));
+				ticket.setSeat_number(rs.getInt("seat_number"));
+				ticket.setStatus(rs.getInt("status"));
+				ticket.setPrice(rs.getDouble("price"));
+				ticket.setStart_place(rs.getString("start_place"));
+				ticket.setEnd_place(rs.getString("end_place"));
+				ticket.setTime_go(rs.getString("time_go"));
+				ticket.setTime_estimate(rs.getString("time_estimate"));
+				ticket.setCar_position(rs.getString("car_position"));
+				ticket.setTime_end(rs.getString("time_end"));
+				arr.add(ticket);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
 	}
 }
