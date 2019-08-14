@@ -127,8 +127,8 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 								<div class="row">
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> <select class="custom-select"
-												name="date_go">
+											<label>Select list:</label> 
+											<select class="custom-select" name="date_go" onchange="location = this.value;">
 												<c:forEach items="${date_go}" var="a">
 													<option value="${a}">${a}</option>
 												</c:forEach>
@@ -140,7 +140,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 											<button type="submit" class="btn btn-warning"
 												style="margin-top: 35px;">Search</button>
 											<a style="margin-top: 35px;"
-												href="http://localhost:8080/MockProject/emp-filterTicket?action=show"
+												href="http://localhost:8080/MockProject/emp-filterTicket?action=show&id_bus=${id_bus}"
 												class="btn btn-warning">Show All</a>
 										</div>
 									</div>
@@ -178,7 +178,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 											<td>${a.name}</td>
 											<td>${a.id_cus}</td>
 											<td>
-												<p data-placement="top" data-toggle="tooltip" title="Edit">
+								<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
 												<form></form>
 												<button class="btn btn-primary" data-title="Edit"
 													data-toggle="modal" onclick="editTicket()">
@@ -186,13 +186,11 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 												</button>
 												</p>
 											</td>
-
 											<td>
 												<form method="POST"
 													action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 													<p data-placement="top" data-toggle="tooltip"
 														title="Delete">
-
 														<button class="btn btn-danger" data-title="Delete"
 															data-toggle="modal">
 															<span class="fa fa-trash"></span>
@@ -217,8 +215,6 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 											<td>${a.name}</td>
 											<td>${a.id_cus}</td>
 											<td>
-												<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<form></form>
 												<button class="btn btn-primary" data-title="Edit"
 													data-toggle="modal" onclick="editTicket()">
 													<span class="fas fa-edit"></span>
@@ -231,7 +227,6 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 													action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 													<p data-placement="top" data-toggle="tooltip"
 														title="Delete">
-
 														<button class="btn btn-danger" data-title="Delete"
 															data-toggle="modal">
 															<span class="fa fa-trash"></span>
