@@ -14,7 +14,12 @@
 	<!--== What We Do Area Start ==-->
 	<section id="what-do-area" class="section-padding">
 		<div class="container">
-			<jsp:include page="content.jsp" />			
+			<jsp:include page="content.jsp" />
+			<c:if test="${BookingMessage!=null}">
+				<script type="text/javascript">
+					alert("Booking Successful!");
+				</script>
+			</c:if>
 		</div>
 	</section>
 	<jsp:include page="footer.jsp" />
