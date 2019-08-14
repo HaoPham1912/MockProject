@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.TicketDAOImp;
 
@@ -36,6 +37,13 @@ public class CustomTicketServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String action = request.getParameter("action");
 		System.out.println("action is   "+action);
+		String uri = request.getScheme() + "://" +   // "http" + "://
+	             request.getServerName() +       // "myhost"
+	             ":" +                           // ":"
+	             request.getServerPort() +       // "8080"
+	             request.getRequestURI() +       // "/people"
+	             "?" +                           // "?"
+	             request.getQueryString();       // "lastname=Fox&age=30"
 		if(action.equals("update")) {
 			String id_ticket = request.getParameter("idTicketEdit");
 			String status = request.getParameter("statusEdit");
@@ -50,7 +58,9 @@ public class CustomTicketServlet extends HttpServlet {
 		{
 			String id = request.getParameter("id");
 			ticketDAO.deleteTicket(Integer.valueOf(id));
-			response.sendRedirect(request.getContextPath()+"/emp-dashboard");
+			HttpSession session = request.getSession();
+			String id_bus = (String) session.getAttribute("id_bus");
+			response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
 		}
 	}
 
