@@ -132,7 +132,7 @@
 								<div class="row">
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> <select class="custom-select"
+											<label>Start Place:</label> <select class="custom-select"
 												name="start_place">
 												<option selected>Ho Chi Minh</option>
 												<option value="Ho Chi Minh">Ho Chi Minh</option>
@@ -144,7 +144,7 @@
 									</div>
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> <select class="custom-select"
+											<label>End Place:</label> <select class="custom-select"
 												name="end_place">
 												<option selected>Ha Noi</option>
 												<option value="Ho Chi Minh">Ho Chi Minh</option>

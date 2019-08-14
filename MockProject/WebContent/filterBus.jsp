@@ -127,7 +127,7 @@
 								<div class="row">
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> <select class="custom-select"
+											<label>Time Go:</label> <select class="custom-select"
 												name="time_go">
 												<c:forEach items="${time_go}" var="a">
 													<option value="${a}">${a}</option>
