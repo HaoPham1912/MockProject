@@ -11,29 +11,14 @@
 <body class="loader-active">
 	<jsp:include page="headerforUser.jsp" />
 	<!--== What We Do Area Start ==-->
-	<section id="what-do-area" class="section-padding">
-		<div class="container">
-			<h5 style="text-align: center">${message}</h5>
+	<section id="what-do-area" class="">
+		<div class="container" style="margin-top:50px;margin-bottom:50px;">
+			<c:if test="${message != null}">
+				<h5 style="text-align: center">${message}</h5>
+				<img style="transform: translate(170px, 10px);" 
+				src="https://storage.googleapis.com/fe-production/images/route-no-schedule.png">
+			</c:if>
 			<c:if test="${not empty busList}">
-				<%-- <table id="mytable" class="table table-bordred table-striped">
-					<thead>
-						<th>Time go</th>
-						<th>Car Position</th>
-						<th>Time Estimating</th>
-					</thead>
-					<tbody>
-						<c:forEach items="${busList}" var="a">
-							<div>
-								
-							</div>
-							<tr>
-								<td>${a.time_go}</td>
-								<td>${a.car_position}</td>
-								<td>${a.time_estimate}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table> --%>
 				<c:forEach items="${busList}" var="a">
 					<c:if test="${a.status == 1}">
 						<form
@@ -89,7 +74,7 @@
 											src="https://icon-library.net/images/position-icon/position-icon-8.jpg"
 											alt=""> <b><p name="car_position">Port:
 												${a.car_position}</p> </b>
-												<b><p>Available Seat: ${a.seatAvailable}</p></b>
+												<b><p>Available Seats: ${a.seatAvailable}</p></b>
 									</div>
 									<div class=" col-md-3"
 										style="text-align: center; padding-top: 40px">

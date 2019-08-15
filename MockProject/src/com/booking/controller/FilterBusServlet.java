@@ -48,7 +48,7 @@ public class FilterBusServlet extends HttpServlet {
 
 		String s = null;
 		
-		request.setAttribute("listFilterBus", busDAO.findAllBus(Integer.valueOf(id_buses),s));
+		request.setAttribute("listFilterBus", busDAO.findAllBusForSeller(Integer.valueOf(id_buses)));
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/filterBus.jsp");
 		rd.forward(request, response);

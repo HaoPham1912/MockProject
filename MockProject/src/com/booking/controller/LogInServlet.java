@@ -111,7 +111,12 @@ public class LogInServlet extends HttpServlet {
 				myultil.storeLoginedUser(session, account);
 				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 			}
-			else
+			else if(account.getRole()==2)
+			{
+				myultil.storeLoginedUser(session, account);
+				response.sendRedirect(request.getContextPath()+"/emp-dashboard");	
+			}
+			else if(account.getRole()==1)
 			{
 				myultil.storeLoginedUser(session, account);
 				response.sendRedirect(request.getContextPath()+"/cus-dashboard");	

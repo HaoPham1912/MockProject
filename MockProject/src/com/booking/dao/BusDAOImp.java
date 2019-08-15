@@ -20,8 +20,6 @@ public class BusDAOImp implements IBusDAO{
 		try
 		{
 			Connection connection = db.getMySQLConnection();
-
-			System.out.println("Connected");
 			
 			Statement statement = connection.createStatement();
 
@@ -56,6 +54,44 @@ public class BusDAOImp implements IBusDAO{
 				System.out.println(" asdasdasdasd    "+rs.getInt(8));
 				int seatNum = 28 - ticketDAO.FindAvailableSeat(rs.getInt("id_bus"), date_go).size();
 				bus.setSeatAvailable(seatNum);
+				arr.add(bus);
+			}
+			return arr;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	@Override
+	public ArrayList<Bus> findAllBusForSeller(int id_buses) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Connection connection = db.getMySQLConnection();
+			
+			Statement statement = connection.createStatement();
+
+			String sql = "SELECT  bus.id_bus, bus.id_buses, time_go, car_position, time_estimate, Price,time_end from bus,buses where bus.id_buses=? and bus.id_buses = buses.id_buses;";
+
+			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
+
+			pstm.setInt(1, id_buses);
+			ResultSet rs = pstm.executeQuery();
+			
+			ArrayList<Bus> arr = new ArrayList<Bus>();
+			
+			while(rs.next())
+			{
+				Bus bus = new Bus();
+				bus.setId_bus(rs.getInt("id_bus"));
+				bus.setId_buses(rs.getInt("id_buses"));
+				bus.setTime_go(rs.getString("time_go"));
+				bus.setCar_position(rs.getString("car_position"));
+				bus.setTime_estimate(rs.getString("time_estimate"));
+				bus.setPrice(rs.getDouble("Price"));
+				bus.setTime_end(rs.getString("time_end"));
 				arr.add(bus);
 			}
 			return arr;
@@ -182,4 +218,5 @@ public class BusDAOImp implements IBusDAO{
 		}
 		return null;
 	}
+	
 }

@@ -79,7 +79,6 @@ public class FilterTicketServlet extends HttpServlet {
 				ArrayList<Ticket> arr = new ArrayList<Ticket>();
 				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go);
 				request.setAttribute("filterList", arr);
-				System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);

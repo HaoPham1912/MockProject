@@ -82,10 +82,14 @@
 	width: 1112px;
 	height: 166px;
 	margin-bottom: 10px;
-	border: 1px solid;
-	border-radius: 1px;
+	border: 0px solid #CACACA;
+	border-radius: 10px;
 	position: relative;
 	margin-top: 10px;
+}
+#bus:hover
+{
+	background-color: #F0F0F0;
 }
 #info
 {

@@ -70,6 +70,19 @@ public class ViewBusServlet extends HttpServlet {
 			int id_buses = buses.getId_buses();
 			ArrayList<Bus> arr = new ArrayList<Bus>();
 			arr = busDAO.findAllBus(id_buses,bookingInfo.getStart_date());
+			int count = 0;
+			for(int i=0;i<arr.size();i++)
+			{
+				if(arr.get(i).getStatus()==0)
+				{
+					count++;
+				}
+			}
+			if(count==arr.size())
+			{
+				String message = "There are no bus from "+start_place+" to "+end_place+" in "+start_Date;
+				request.setAttribute("message", message);
+			}
 			request.setAttribute("busList", arr);
 			RequestDispatcher rd =  request.getRequestDispatcher("/viewAllBus.jsp");
 			rd.forward(request, response);

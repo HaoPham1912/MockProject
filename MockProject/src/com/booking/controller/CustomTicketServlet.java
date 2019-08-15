@@ -36,22 +36,14 @@ public class CustomTicketServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String action = request.getParameter("action");
-		System.out.println("action is   "+action);
-		String uri = request.getScheme() + "://" +   // "http" + "://
-	             request.getServerName() +       // "myhost"
-	             ":" +                           // ":"
-	             request.getServerPort() +       // "8080"
-	             request.getRequestURI() +       // "/people"
-	             "?" +                           // "?"
-	             request.getQueryString();       // "lastname=Fox&age=30"
 		if(action.equals("update")) {
 			String id_ticket = request.getParameter("idTicketEdit");
 			String status = request.getParameter("statusEdit");
-//			System.out.println(id_ticket +"      "+ status);
 			ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status));
 			if(ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status))) {
-				System.out.println("Success!!!");
-				response.sendRedirect(request.getContextPath()+"/emp-dashboard");
+				HttpSession session = request.getSession();
+				String id_bus = (String) session.getAttribute("id_bus");
+				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
 			}		
 		}
 		else if(action.equals("delete"))
