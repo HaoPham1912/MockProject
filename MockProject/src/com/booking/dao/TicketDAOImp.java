@@ -208,7 +208,7 @@ public class TicketDAOImp implements ITicketDAO{
 		return null;
 	}
 	@Override
-	public ArrayList<Ticket> getTicketByIdBusAndDateBook(int id_bus, String date_go) {
+	public ArrayList<Ticket> getTicketByIdBusAndDateBook(int id_bus, String date_go,int id_cus) {
 		// TODO Auto-generated method stub
 		ArrayList<Ticket> arr = new ArrayList<>();
 		try {
@@ -218,10 +218,11 @@ public class TicketDAOImp implements ITicketDAO{
 					"from ticket\r\n" + 
 					"inner join bus on ticket.id_bus = bus.id_bus\r\n" + 
 					"inner join buses on bus.id_buses = buses.id_buses\r\n" + 
-					"where ticket.id_bus=? and ticket.date_go=?";
+					"where ticket.id_bus=? and ticket.date_go=? and id_cus=?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id_bus);
 			pstm.setString(2, date_go);
+			pstm.setInt(3, id_cus);
 			ResultSet rs = pstm.executeQuery();
 			while(rs.next()) {
 				Ticket ticket = new Ticket();

@@ -117,7 +117,7 @@
 							<strong>Manage Ticket</strong>
 						</h1>
 						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+						class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 					</div>
 
 					<div>
@@ -125,6 +125,18 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 							<form method="post"
 								action="http://localhost:8080/MockProject/emp-filterTicket?id_bus=${id_bus}&action=filter">
 								<div class="row">
+									<div class=" col-md-5" style="align: center">
+										<div class="form-group">
+											<label>Select list:</label> 
+											<select class="custom-select" name="cusInfo">
+												<c:forEach items="${cusList}" var="a">
+													<option value="${a.id_cus}">
+														Name: ${a.name}		&emsp;&emsp;&emsp;&emsp;	Phone: ${a.phone} 
+													</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>		
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
 											<label>Select list:</label> 

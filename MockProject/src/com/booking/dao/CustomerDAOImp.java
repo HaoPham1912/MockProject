@@ -90,7 +90,7 @@ public class CustomerDAOImp implements ICustomerDAO{
 			{
 				Customer customer = new Customer();
 				customer.setId_acc_cus(rs.getInt("id_acc_cus"));
-				System.out.println("sss "+rs.getInt("id_cus"));
+				customer.setId_cus(rs.getInt("id_cus"));
 				customer.setUsername(rs.getString("username"));
 				customer.setPassword(rs.getString("password"));
 				customer.setName(rs.getString("name"));

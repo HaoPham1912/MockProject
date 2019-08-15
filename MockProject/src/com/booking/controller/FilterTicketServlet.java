@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.booking.dao.CustomerDAOImp;
 import com.booking.dao.TicketDAOImp;
 import com.booking.model.Bus;
+import com.booking.model.Customer;
 import com.booking.model.Ticket;
 import com.booking.ultils.MyUltil;
 
@@ -23,6 +25,7 @@ import com.booking.ultils.MyUltil;
 public class FilterTicketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     TicketDAOImp ticketDAO = new TicketDAOImp();   
+    CustomerDAOImp customerDAO = new CustomerDAOImp();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,6 +50,10 @@ public class FilterTicketServlet extends HttpServlet {
 		request.setAttribute("id_bus", id_bus);
 		request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
 		request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
+		
+		ArrayList<Customer> arr = new ArrayList<Customer>();
+		arr = customerDAO.findAllCustomer();
+		request.setAttribute("cusList", arr);
 		RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 		rd.forward(request, response);
 	}
@@ -69,6 +76,11 @@ public class FilterTicketServlet extends HttpServlet {
 				request.setAttribute("id_bus", id_bus);
 				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
 				request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf(id_bus)));
+				
+				ArrayList<Customer> arr = new ArrayList<Customer>();
+				arr = customerDAO.findAllCustomer();
+				request.setAttribute("cusList", arr);
+				
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);
 			}
@@ -76,10 +88,15 @@ public class FilterTicketServlet extends HttpServlet {
 			{
 				String id_bus = request.getParameter("id_bus");
 				String date_go = request.getParameter("date_go");
+				String cusInfo = request.getParameter("cusInfo");
 				ArrayList<Ticket> arr = new ArrayList<Ticket>();
-				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go);
+				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go,Integer.valueOf(cusInfo));
 				request.setAttribute("filterList", arr);
 				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
+				ArrayList<Customer> arr1 = new ArrayList<Customer>();
+				arr1 = customerDAO.findAllCustomer();
+				request.setAttribute("cusList", arr1);
+				System.out.println(Integer.valueOf(cusInfo)+" sadddddddddddd");
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);
 				return;
