@@ -69,12 +69,31 @@ public class ManageSellerServlet extends HttpServlet {
 				if(employeeDAO.updateEmployee(name_emp, phone_emp, email_emp, address_emp, Integer.valueOf(id_acc_emp)))
 				{
 					System.out.println("Success");
-					response.sendRedirect(request.getContextPath()+"/admin-manageSeller");
+					/*response.sendRedirect(request.getContextPath()+"/admin-manageSeller");*/
+					request.setAttribute("UpdateEmpSuccess", "Update infor employee successful!!!");
+					doGet(request, response);
 				}
 				else
 				{
 					System.out.println("Failed");
+					request.setAttribute("UpdateEmpFailed", "Can't update infor employee!!!");
+					doGet(request, response);
 				}
+			}
+		}
+		else if(action.equals("deleteSeller"))
+		{
+			String id = request.getParameter("id");
+			if(employeeDAO.deleteEmployee(Integer.valueOf(id))) {
+				System.out.println("Deleted Seller");
+				/*response.sendRedirect(request.getContextPath()+"/admin-dashboard");*/
+				request.setAttribute("DeleteSellerSuccess", "Delete Success!!!!");
+				doGet(request, response);
+			}
+			else
+			{
+				request.setAttribute("DeleteSellerFailed", "Delete Failed!!!!");
+				doGet(request, response);
 			}
 		}
 	}

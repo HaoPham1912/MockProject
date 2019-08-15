@@ -269,13 +269,13 @@
 							<div class="form-group float-label-control">
 								<label for=""><b>Full Name</b></label> <input type="text"
 									class="form-control" placeholder="Full Name" name="name"
-									value="${customer.name}">
+									value="${customer.name}" title="Please enter your name" required>
 							</div>
 							<div class="form-group float-label-control">
 								<label for=""><b>Phone Number</b></label> <input type="text" pattern="[0-9]{10}"
 								title="Phone must be a number that contains 10 characters long"
 									class="form-control" name="phone" placeholder="Phone Number"
-									value="${customer.phone}">
+									value="${customer.phone}" required>
 							</div>
 							<div class="form-group float-label-control">
 								<label for=""><b>Note</b></label>

@@ -522,7 +522,7 @@ h1 .subtitle {
 	position: absolute;
 	text-align: center;
 	padding: 10px;
-	font-size: 12px;
+	font-size: 16px;
 	text-transform: uppercase;
 	-webkit-font-smoothing: subpixel-antialiased;
 	background-color: #FF9500;
@@ -1010,7 +1010,7 @@ h1 .subtitle {
 	background-color: #999999;
 	text-align: center;
 	color: #FFFFFF !important;
-	font-size: 12px;
+	font-size: 16px;
 	cursor: pointer;
 }
 
@@ -1257,4 +1257,31 @@ footer a {
 footer a:hover {
 	color: #fff;
 	text-decoration: underline;
+}
+.form-control{
+    font-size: 16px;
+}
+.form-group{
+    font-size:16px;
+}
+label{
+	font-size: 18px;
+	color: #080808;
+	font-weight: bold;
+}
+label.error{
+    font-size: 13px;
+    width:100%;
+}
+.form-control.error{
+	width: 100%;
+}
+.wizard-card[data-color="orange"].moving-tab{
+font-size:20px;
+}
+th{
+	font-size: 16px;
+}
+td{
+	font-size:13px;
 }

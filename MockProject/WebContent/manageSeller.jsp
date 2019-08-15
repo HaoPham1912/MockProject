@@ -60,7 +60,8 @@
 					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Seller</span></a></li>
 			<!-- Nav Item-Manage System -->
-			<li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/admin-manageAdmin"> <i
+			<li class="nav-item active"><a class="nav-link"
+				href="${pageContext.request.contextPath}/admin-manageAdmin"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage System</span></a></li>
 			<li class="nav-item active"><a class="nav-link"
@@ -76,7 +77,8 @@
 		</ul>
 		<!-- End of Sidebar -->
 		<!-- Content Wrapper -->
-		<div id="content-wrapper" class="d-flex flex-column" style="display:block">
+		<div id="content-wrapper" class="d-flex flex-column"
+			style="display: block">
 			<!-- Main Content -->
 			<div id="content">
 				<!-- Topbar -->
@@ -146,7 +148,8 @@
 												<span class="glyphicon glyphicon-search">&nbsp;
 													Search</span>
 											</button>
-											<a style="margin-top: 35px;" href="http://localhost:8080/MockProject/admin-manageSeller"
+											<a style="margin-top: 35px;"
+												href="http://localhost:8080/MockProject/admin-manageSeller"
 												class="btn btn-warning">Show All</a>
 										</div>
 									</div>
@@ -162,7 +165,6 @@
 									<th>Email</th>
 									<th>Address</th>
 									<th>Edit</th>
-									<th>Delete</th>
 								</thead>
 								<tbody>
 									<c:forEach items="${employeeList}" var="a">
@@ -177,14 +179,13 @@
 												<p data-placement="top" data-toggle="tooltip" title="Edit">
 													<button class="btn btn-primary" data-title="Edit"
 														data-toggle="modal" onclick="editSeller()">
-														<span class="	fa fa-edit"></span>
+														<span class="fa fa-edit"></span>
 													</button>
 												</p>
 											</td>
-											<td>
+											<%-- <td>
 												<form
-													action="${pageContext.request.contextPath}/admin-dashboard?action=deleteSeller&id="
-													${a.id_acc_emp}"
+													action="${pageContext.request.contextPath}/admin-manageSeller?action=deleteSeller&id=${a.id_acc_emp}"
 													method="POST">
 													<p data-placement="top" data-toggle="tooltip"
 														title="Delete">
@@ -195,7 +196,7 @@
 													</p>
 												</form>
 
-											</td>
+											</td> --%>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -272,6 +273,26 @@
 						</div>
 					</div>
 				</div>
+				<c:if test="${UpdateEmpSuccess!=null}">
+					<script type="text/javascript">
+						alert("Update Successful!!!");
+					</script>
+				</c:if>
+				<c:if test="${UpdateEmpFailed!=null}">
+					<script type="text/javascript">
+						alert("Update Failed!!!");
+					</script>
+				</c:if>
+				<c:if test="${DeleteSellerSuccess!=null}">
+					<script type="text/javascript">
+						alert("Seller have been deleted!!!");
+					</script>
+				</c:if>
+				<c:if test="${DeleteSellerFailed!=null}">
+					<script type="text/javascript">
+						alert("Can't delete!!!");
+					</script>
+				</c:if>
 				<!-- Modal edit user-end -->
 				<!-- Modal delete Seller-Start -->
 				<div class="modal fade" id="deleteSeller" tabindex="-1"
