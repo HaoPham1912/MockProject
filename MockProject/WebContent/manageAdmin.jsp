@@ -56,9 +56,10 @@
 					class="text-nav">Manage Customer</span></a></li>
 			<!-- Nav Item-Manage Seller -->
 			<li class="nav-item active" id="test"><a class="nav-link"
-				href="${pageContext.request.contextPath}/admin-manageSeller"" > <i
-					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Manage Seller</span></a></li>
+				href="${pageContext.request.contextPath}/admin-manageSeller"" >
+					<i class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
+					class="text-nav">Manage Seller</span>
+			</a></li>
 			<!-- Nav Item-Manage System -->
 			<li class="nav-item active"><a class="nav-link" href="#"
 				onclick="callContent('manageAdmin'); return false;"> <i
@@ -263,6 +264,17 @@
 						</div>
 					</div>
 				</div>
+				<c:if test="${UpdateAdminSucess!=null}">
+					<script type="text/javascript">
+						alert("Update sucessful!!!");
+					</script>
+				</c:if>
+
+				<c:if test="${UpdateAdminFailed!=null}">
+					<script type="text/javascript">
+						alert("Update Failed!!!");
+					</script>
+				</c:if>
 				<!-- ManageSeller-Start -->
 
 				<!-- Modal edit user-end -->

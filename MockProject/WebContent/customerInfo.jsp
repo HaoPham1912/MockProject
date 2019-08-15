@@ -260,7 +260,8 @@
 										</div>
 										<div class="form-group">
 											<label>Name</label> <input value="${customerInfo.name}"
-												placeholder="Name" name="name" required class="form-control">
+												placeholder="Name" name="name" required class="form-control"
+												title="Please type your name">
 										</div>
 										<div class="form-group">
 											<label>Phone </label> <input name="phone" type="text"
@@ -272,17 +273,18 @@
 										<div class="form-group">
 											<label>Email </label> <input name="email" type="email"
 												value="${customerInfo.email}" placeholder="Email"
-												name="email" class="form-control">
+												name="email" class="form-control"
+												title="Please type your email" required>
 										</div>
 										<div class="form-group">
-											<label>Address </label> <input name="address" ttype="text"
+											<label>Address </label> <input name="address" type="text"
 												value="${customerInfo.address}" placeholder="Address"
-												name="address" class="form-control">
+												name="address" class="form-control"
+												title="Please type your address" required>
 										</div>
-
-										<input style="float: right; margin-right: 10px" type='submit'
-											class='btn btn-fill btn-warning btn-wd btn-sm'
-											name='updatebtn' id='finish' value='Save' /> </br>
+										<br> <input style="float: right; margin-right: 10px"
+											type='submit' class='btn btn-fill btn-warning btn-wd btn-sm'
+											name='updatebtn' id='finish' value='Save' />
 									</form>
 									<c:if test="${UpdateInfoCusMes!=null}">
 										<script type="text/javascript">
@@ -295,7 +297,6 @@
 										</script>
 									</c:if>
 								</div>
-
 							</div>
 						</div>
 
@@ -420,7 +421,6 @@
 				</div>
 			</div>
 			<!--   Creative Tim Branding   -->
-			s
 			<!--   Big container   -->
 			<div class="col-sm-8 col-sm-offset-2" style="padding-top: 120px">
 				<!--      Wizard container        -->

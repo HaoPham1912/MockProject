@@ -57,11 +57,15 @@ public class ManageAdminServlet extends HttpServlet {
 			String id_acc_ad = request.getParameter("idAdminEdit");
 			if(adminDAO.updateAdmin(name_ad, phone_ad, email_ad, address_ad, Integer.valueOf(id_acc_ad))) {
 				System.out.println("Update admin info success!!!");
-				response.sendRedirect(request.getContextPath()+"/admin-manageAdmin");
+//				response.sendRedirect(request.getContextPath()+"/admin-manageAdmin");
+				request.setAttribute("UpdateAdminSucess", "Update success!!!");
+				doGet(request, response);
 			}
 			else
 			{
 				System.out.println("Failed!!!");
+				request.setAttribute("UpdateAdminFailed", "Update Failed!!!");
+				doGet(request, response);
 			}
 		}
 		else if(action.equals("filterAdmin")) {

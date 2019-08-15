@@ -72,32 +72,14 @@ public class AdminDashBoardServlet extends HttpServlet {
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
 				{
 					System.out.println("Success");
-					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+					request.setAttribute("UpdateCusSuccess", "Update Infor Suceess!!!");
+					doGet(request, response);
 				}
 				else
 				{
 					System.out.println("Failed");
-				}
-			}
-		}
-		else if(action.equals("updateSeller"))
-		{
-			String name_emp = request.getParameter("nameSellerEdit");
-			String phone_emp = request.getParameter("phoneSellerEdit");
-			String email_emp = request.getParameter("emailSellerEdit");
-			String address_emp = request.getParameter("addressSellerEdit");
-			String id_acc_emp = request.getParameter("idSellerEdit");
-			System.out.println(id_acc_emp);
-			if(employeeDAO.findEmployeeById_acc(Integer.valueOf(id_acc_emp)))
-			{
-				if(employeeDAO.updateEmployee(name_emp, phone_emp, email_emp, address_emp, Integer.valueOf(id_acc_emp)))
-				{
-					System.out.println("Success");
-					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-				}
-				else
-				{
-					System.out.println("Failed");
+					request.setAttribute("UpdateCusFailed", "Can't update info");
+					doGet(request, response);
 				}
 			}
 		}
@@ -119,45 +101,52 @@ public class AdminDashBoardServlet extends HttpServlet {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-					//					customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1);
 					if(customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1)) 
 					{
 						System.out.println("Dang ki thanh cong");
-						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-					}	
+						request.setAttribute("AddNewCus", "New user have been added!!!");
+						doGet(request, response);
+					}
+					else
+					{
+						request.setAttribute("AddUserFailed", "Can't add new user");
+						doGet(request, response);
+					}
 				}else if(idnew==2) {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-					//					employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1);
 					if(employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1)) {
 						System.out.println("Dang ki thanh cong");
-						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+						request.setAttribute("AddNewEmp", "New emp have been added");
+						doGet(request, response);
+					}
+					else
+					{
+						request.setAttribute("AddUserFailed", "Can't add new user");
+						doGet(request, response);
 					}
 				}else if(idnew==3) {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
 					System.out.println("Them thanh cong account");
 					System.out.println("id accout is: "+id);
-					//					adminDAO.insertAdmin(id, name1, phone1, email1, address1);
 					if(adminDAO.insertAdmin(id, name1, phone1, email1, address1)) {
 						System.out.println("Dang ki thanh cong");
-						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
+						request.setAttribute("AddNewAdmin", "New ad have been added!!!");
+						doGet(request, response);
+					}
+					else
+					{
+						request.setAttribute("AddUserFailed", "Can't add new user");
+						doGet(request, response);
 					}
 				}
 			}
 			else {
 				System.out.println("username avail!!! Retry!!");
+				request.setAttribute("AddUserFailed", "Can't add new user");
+				doGet(request, response);
 			}
-		}
-		else if(action.equals("deleteSeller"))
-		{
-			String id = request.getParameter("id");
-			if(employeeDAO.deleteEmployee(Integer.valueOf(id))) {
-				System.out.println("Deleted Seller");
-				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
-			}
-			/*employeeDAO.deleteEmployee(Integer.valueOf(id));
-			response.sendRedirect(request.getContextPath()+"/admin-dashboard");*/
 		}
 		else if(action.equals("filterCus")) 
 		{
@@ -165,15 +154,6 @@ public class AdminDashBoardServlet extends HttpServlet {
 			request.setAttribute("customerList",  customerDAO.findCustomer(name));
 			RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
 			rd.forward(request, response);	
-			return;
-		}
-		else if(action.equals("filterEmp")) 
-		{
-			System.out.println("Co vo day k");
-			String name = request.getParameter("search");
-			request.setAttribute("employeeList",  employeeDAO.findEmployee(name));
-			RequestDispatcher rd = request.getRequestDispatcher("/admin.jsp");
-			rd.forward(request, response);
 			return;
 		}
 	}
