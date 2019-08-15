@@ -50,7 +50,6 @@ public class ViewInfoCusServlet extends HttpServlet {
 		int id_cus= customerDAO.findId_cus(id_acc);
 		System.out.println("ID CUS IS"+id_cus);
 		//System.out.println(id_acc);
-		Customer customer = new Customer();
 		request.setAttribute("customerInfo", customerDAO.customer(id_acc));
 		request.setAttribute("listTicketBooked",ticketDAO.listTicketBooked(id_cus));
 		RequestDispatcher rd = request.getRequestDispatcher("/customerInfo.jsp");
@@ -75,20 +74,29 @@ public class ViewInfoCusServlet extends HttpServlet {
 			System.out.println(name);
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.parseInt(id_acc))) {
 					System.out.println("Update Success!!!");
-					response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
+					request.setAttribute("UpdateInfoCusMes", "Update success!!!!");
+					doGet(request, response);
 				}
 				else {
 					System.out.println("Can't Update!!!");
+					request.setAttribute("UpdateInfoCusFailed", "Update Failed!!!!");
+					doGet(request, response);
 				}
 		}
 		else if(action.equals("delete"))
 		{
 			String id_ticket = request.getParameter("id");
 			System.out.println(id_ticket);
-			/*ticketDAO.deleteTicket(Integer.valueOf(id_ticket));*/
 			if(ticketDAO.deleteTicket(Integer.valueOf(id_ticket))) {
 				System.out.println("Deleted!!!!!");
-				response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
+				request.setAttribute("DeleteTicketCus", "Delete success!!!!");
+				doGet(request, response);
+			}
+			else
+			{
+				System.out.println("Can't cancel ticket");
+				request.setAttribute("DeleteTicketCusFailed", "Delete Fail!!!!");
+				doGet(request, response);
 			}
 		}
 	}

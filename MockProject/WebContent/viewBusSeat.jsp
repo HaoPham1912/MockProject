@@ -272,7 +272,8 @@
 									value="${customer.name}">
 							</div>
 							<div class="form-group float-label-control">
-								<label for=""><b>Phone Number</b></label> <input type="text"
+								<label for=""><b>Phone Number</b></label> <input type="text" pattern="[0-9]{10}"
+								title="Phone must be a number that contains 10 characters long"
 									class="form-control" name="phone" placeholder="Phone Number"
 									value="${customer.phone}">
 							</div>
