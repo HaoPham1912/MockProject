@@ -55,19 +55,19 @@
 				<div class="row">
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-left">
-						<i class="fa fa-map-marker"></i> SCS Building
+						<i class="fa fa-map-marker"></i> 01, Vo Van Ngan
 					</div>
 					<!--== Single HeaderTop End ==-->
 
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-center">
-						<i class="fa fa-mobile"></i> +84 123456789
+						<i class="fa fa-mobile"></i> +84 934021059
 					</div>
 					<!--== Single HeaderTop End ==-->
 
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-center">
-						<i class="fa fa-clock-o"></i> Mon-Sun 08.00 - 17.00
+						<i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
 					</div>
 					<!--== Single HeaderTop End ==-->
 
