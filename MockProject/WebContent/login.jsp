@@ -8,7 +8,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Cardoor - Car Rental HTML Template</title>
+    <title>Booking Bus</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -56,13 +56,13 @@
                 <div class="row">
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+                        <i class="fa fa-map-marker"></i> SCS Building
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
+                        <i class="fa fa-mobile"></i> +84 123456789
                     </div>
                     <!--== Single HeaderTop End ==-->
 
@@ -162,7 +162,7 @@
                     <div class="section-title  text-center">
                         <h2>Login</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Wish you have a good trip.</p>
                     </div>
                 </div>
                 <!-- Page Title End -->
@@ -202,10 +202,10 @@
     <!--== Footer Area Start ==-->
     <section id="footer-area">
         <!-- Footer Widget Start -->
-        <div class="footer-widget-area">
+        <!-- <div class="footer-widget-area">
             <div class="container">
                 <div class="row">
-                    <!-- Single Footer Widget Start -->
+                    Single Footer Widget Start
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
                             <h2>About Us</h2>
@@ -223,9 +223,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Footer Widget End -->
+                    Single Footer Widget End
 
-                    <!-- Single Footer Widget Start -->
+                    Single Footer Widget Start
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
                             <h2>Recent Posts</h2>
@@ -259,9 +259,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Footer Widget End -->
+                    Single Footer Widget End
 
-                    <!-- Single Footer Widget Start -->
+                    Single Footer Widget Start
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
                             <h2>get touch</h2>
@@ -277,24 +277,25 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Footer Widget End -->
+                    Single Footer Widget End
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Footer Widget End -->
 
         <!-- Footer Bottom Start -->
-        <div class="footer-bottom-area">
+        <!-- <div class="footer-bottom-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <jsp:include page="footer.jsp" /> 
         <!-- Footer Bottom End -->
     </section>
     <!--== Footer Area End ==-->
