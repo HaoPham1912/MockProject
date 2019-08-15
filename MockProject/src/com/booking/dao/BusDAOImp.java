@@ -208,6 +208,7 @@ public class BusDAOImp implements IBusDAO{
 				bus.setId_bus(rs.getInt("id_bus"));
 				bus.setTime_go(rs.getString("time_go"));
 				bus.setTime_end(rs.getString("time_end"));
+				bus.setCar_position(rs.getString("car_position"));
 				bus.setTime_estimate(rs.getString("time_estimate"));
 				return bus;
 			}

@@ -46,7 +46,6 @@ public class FilterBusServlet extends HttpServlet {
 		
 		request.setAttribute("time_go", busDAO.findTime_GoByID(Integer.valueOf(id_buses)));
 
-		String s = null;
 		
 		request.setAttribute("listFilterBus", busDAO.findAllBusForSeller(Integer.valueOf(id_buses)));
 		
