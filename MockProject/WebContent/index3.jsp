@@ -20,7 +20,7 @@
 					alert("Booking Successful!");
 				</script>
 			</c:if>
-		</div>
+		</div>	
 	</section>
 	<jsp:include page="footer.jsp" />
 </body>

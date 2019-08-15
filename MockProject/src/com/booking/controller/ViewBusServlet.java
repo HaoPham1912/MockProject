@@ -69,7 +69,7 @@ public class ViewBusServlet extends HttpServlet {
 		{
 			int id_buses = buses.getId_buses();
 			ArrayList<Bus> arr = new ArrayList<Bus>();
-			arr = busDAO.findAllBus(id_buses);
+			arr = busDAO.findAllBus(id_buses,bookingInfo.getStart_date());
 			request.setAttribute("busList", arr);
 			RequestDispatcher rd =  request.getRequestDispatcher("/viewAllBus.jsp");
 			rd.forward(request, response);

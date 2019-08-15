@@ -3,16 +3,19 @@ package com.booking.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import com.booking.conn.JDBCConnection;
 import com.booking.model.Bus;
 import com.booking.model.Buses;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 public class BusDAOImp implements IBusDAO{
 	JDBCConnection db = new JDBCConnection();
+	TicketDAOImp ticketDAO = new TicketDAOImp();
 	@Override
-	public ArrayList<Bus> findAllBus(int id_buses) {
+	public ArrayList<Bus> findAllBus(int id_buses, String date_go) {
 		// TODO Auto-generated method stub
 		try
 		{
@@ -22,11 +25,19 @@ public class BusDAOImp implements IBusDAO{
 			
 			Statement statement = connection.createStatement();
 
-			String sql = "select bus.id_bus, bus.id_buses, time_go, car_position, time_estimate, Price,time_end from bus,buses where bus.id_buses=? and bus.id_buses = buses.id_buses";
+			String sql = "SELECT  bus.id_bus, bus.id_buses, time_go, car_position, time_estimate, Price,time_end," + 
+					"TIMESTAMPDIFF(SECOND, NOW(),concat(?,' ',time_go)) > 86400 "
+					+ "from bus,buses where bus.id_buses=? and bus.id_buses = buses.id_buses;";
 
 			java.sql.PreparedStatement pstm = connection.prepareStatement(sql);
 
-			pstm.setInt(1, id_buses);
+			SimpleDateFormat fromUser = new SimpleDateFormat("dd-MM-yyyy");
+			SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+			String reformattedStr = myFormat.format(fromUser.parse(date_go));
+			System.out.println("hahaha: "+reformattedStr);
+			
+			pstm.setString(1, reformattedStr);
+			pstm.setInt(2, id_buses);
 			ResultSet rs = pstm.executeQuery();
 			
 			ArrayList<Bus> arr = new ArrayList<Bus>();
@@ -41,6 +52,10 @@ public class BusDAOImp implements IBusDAO{
 				bus.setTime_estimate(rs.getString("time_estimate"));
 				bus.setPrice(rs.getDouble("Price"));
 				bus.setTime_end(rs.getString("time_end"));
+				bus.setStatus(rs.getInt(8));
+				System.out.println(" asdasdasdasd    "+rs.getInt(8));
+				int seatNum = 28 - ticketDAO.FindAvailableSeat(rs.getInt("id_bus"), date_go).size();
+				bus.setSeatAvailable(seatNum);
 				arr.add(bus);
 			}
 			return arr;

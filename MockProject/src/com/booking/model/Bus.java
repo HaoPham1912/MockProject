@@ -8,6 +8,20 @@ public class Bus {
 	private String time_estimate;
 	private double price;
 	private String time_end;
+	private int status;
+	private int seatAvailable;
+	public int getSeatAvailable() {
+		return seatAvailable;
+	}
+	public void setSeatAvailable(int seatAvailable) {
+		this.seatAvailable = seatAvailable;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	public String getTime_end() {
 		return time_end;
 	}
