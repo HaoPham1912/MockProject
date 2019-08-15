@@ -122,7 +122,7 @@
                 <!-- Section Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>TOP DESTINATIONS</h2>
+                        <h2>DEPARTURE FROM BIG CITY</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         <p>Need any inspiration to travel? We have selected the following destinations for you.</p>
                     </div>
@@ -165,130 +165,19 @@
                                                    </a>
                                                 </div>
 
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#" style="text-align: center">Ha Noi</a>
-                                                    
-                                                    </h3>
-
-                                                    <p>It is located in the center of the Red River Delta.</p> 
-                                                    <p>It is one of the major economic, cultural and political centers of Vietnam.</p>
-
-                                                   
+                                                <div class="p-car-content"> 
+                                                    <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> HA NOI</span></p> 
+                                                    <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <div class="about-btn">
+                                                            <a href="#">Book a Bus</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
 
-                                        <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 hat">
-                                            <div class="single-popular-car">
-                                                <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/SAP_portrait.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/SAP_portrait.jpg" alt="JSOFT">
-                                                   </a>
-                                                </div>
-
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">SA PA</a>
-                                                        
-                                                    </h3>
-                                                    <p>Sa Pa is one of the places where snow falls in Vietnam.</p>
-                                                    <p>This is the residence of the population of 6 ethnic groups Kinh, H'Mong, Dao Red, Tay, Giay, Xa Pho.
-                                                        </p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Popular Car End -->
-
-                                        <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 hat">
-                                            <div class="single-popular-car">
-                                                <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/NBI.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/NBI.jpg" alt="JSOFT">
-                                                   </a>
-                                                </div>
-
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">NINH BINH</a>
-                                                        
-                                                    </h3>
-                                                    <P>Ninh Binh,is a province located at the southernmost gate on the North of Vietnam </P>
-                                                    <p>It used to be the capital of Vietnam in the 1000s with three dynasties, the Tien Le, Tien Ly and also important military areas through the historical periods.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Popular Car End -->
-
-                                        <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 mpv">
-                                            <div class="single-popular-car">
-                                                <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/PNA_portrait.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/PNA_portrait.jpg" alt="JSOFT">
-                                                   </a>
-                                                </div>
-
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">PHONG NHA- KE BANG</a>
-                                                        
-                                                    </h3>
-                                                    <P>Phong nha Ke Bang is national park in the center of Quang Binh province in north-central Vietnam.</p>
-                                                    <p> It protects one of the world's two largest karst regions with several hundred caves and grottoes</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Popular Car End -->
-
-                                        <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 mpv">
-                                            <div class="single-popular-car">
-                                                <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/HUI.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/HUI.jpg" alt="JSOFT">
-                                                   </a>
-                                                </div>
-
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">HUE</a>
-                                                        
-                                                    </h3>
-
-                                                    <p>The ancient city of Hue was the capital of Vietnam during the Nguyen Dynasty at the beginning of the 19th century.</p>
-
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Popular Car End -->
-
-                                        <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 hat">
-                                            <div class="single-popular-car">
-                                                <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/CXR.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/CXR.jpg" alt="JSOFT">
-                                                   </a>
-                                                </div>
-
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">NHA TRANG</a>
-                                                        
-                                                    </h3>
-                                                    <p>This Place is a famous beach of the center part of Vietnam.</p>
-                                                        <p>With the long white sandband and romantic coconut ranges, Nha Trang surely can make people dream about it. </p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Popular Car End -->
+                                       
                                         <!-- Single Popular Car Start -->
                                         <div class="col-lg-4 col-md-6 con">
                                             <div class="single-popular-car">
@@ -298,12 +187,14 @@
                                                    </a>
                                                 </div>
 
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">DA LAT</a>
-                                                    </h3>
-                                                    <p>Da Lat city is located in the center of the southern highlands, 300 km far from the north of Ho Chi Minh City.</p>  
-                                                </div>
+                                                <div class="p-car-content"> 
+                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> DA LAT</span></p> 
+                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination: Ho Chi Minh</p>
+                                                        <div class="about-btn">
+                                                                <a href="#">Book a Bus</a>
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
@@ -316,30 +207,34 @@
                                                    </a>
                                                 </div>
 
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">HO CHI MINH</a>
-                                                    </h3>
-                                                    <p>Saigon is the largest city in Vietnam with an extremely huge amount of residents, so almost every street and corner in the center of the city is always bustling.</p>  
-                                                </div>
+                                                <div class="p-car-content"> 
+                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> HO CHI MINH</span></p> 
+                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ha Noi, Da Nang, Da Lat </p>
+                                                        <div class="about-btn">
+                                                                <a href="#">Book a Bus</a>
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
                                         <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 con">
+                                        <div class="col-lg-4 col-md-6 hat">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/PQC_portrait.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/PQC_portrait.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/c-r-e1505464506291.jpg">
+                                                      <img src="https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/c-r-e1505464506291.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">PHU QUOC</a>
-                                                    </h3>
-                                                    <p>Phu Quoc, Vietnam's largest island in the Gulf of Thailand, is indeed a tropical paradise that you can only find in Vietnam</p>  
-                                                </div>
+                                                <div class="p-car-content"> 
+                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> Da Nang</span></p> 
+                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                        <div class="about-btn">
+                                                                <a href="#">Book a Bus</a>
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
