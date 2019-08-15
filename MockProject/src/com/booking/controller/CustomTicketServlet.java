@@ -43,8 +43,16 @@ public class CustomTicketServlet extends HttpServlet {
 			if(ticketDAO.updateStatusTicket(Integer.valueOf(id_ticket), Integer.valueOf(status))) {
 				HttpSession session = request.getSession();
 				String id_bus = (String) session.getAttribute("id_bus");
+				session.setAttribute("UpdateTicketSuccess", "Updated");
 				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
-			}		
+			}
+			else
+			{
+				HttpSession session = request.getSession();
+				String id_bus = (String) session.getAttribute("id_bus");
+				session.setAttribute("UpdateTicketFail", "Failed");
+				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
+			}
 		}
 		else if(action.equals("delete"))
 		{
@@ -52,6 +60,13 @@ public class CustomTicketServlet extends HttpServlet {
 			ticketDAO.deleteTicket(Integer.valueOf(id));
 			HttpSession session = request.getSession();
 			String id_bus = (String) session.getAttribute("id_bus");
+			session.setAttribute("DeleteTicketSuccess", "Deleted");
+			response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
+		}
+		else {
+			HttpSession session = request.getSession();
+			String id_bus = (String) session.getAttribute("id_bus");
+			session.setAttribute("DeleteTicketFail", "Failed");
 			response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
 		}
 	}

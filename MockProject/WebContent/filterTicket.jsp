@@ -127,14 +127,14 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 								<div class="row">
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Select list:</label> 
-											<select class="custom-select" name="date_go">
+											<label>Select list:</label> <select class="custom-select"
+												name="date_go">
 												<c:forEach items="${date_go}" var="a">
 													<option value="${a}">${a}</option>
 												</c:forEach>
 											</select>
 										</div>
-									</div>		
+									</div>
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
 											<button type="submit" class="btn btn-warning"
@@ -165,79 +165,79 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 									<th>Cancel</th>
 								</thead>
 								<tbody>
-								<c:if test="${not empty listFilterTicket}">
-									<c:forEach items="${listFilterTicket}" var="a">
-										<tr>
-											<td>${a.id_ticket}</td>
-											<td>${a.date_go}</td>
-											<td>${a.date_book}</td>
-											<td>${a.seat_number}</td>
-											<td>${a.status}</td>
-											<td>${a.price}</td>
-											<td>${a.phone}</td>
-											<td>${a.name}</td>
-											<td>${a.id_cus}</td>
-											<td>
-								<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
-												<form></form>
-												<button class="btn btn-primary" data-title="Edit"
-													data-toggle="modal" onclick="editTicket()">
-													<span class="fas fa-edit"></span>
-												</button>
-												</p>
-											</td>
-											<td>
-												<form method="POST"
-													action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-													<p data-placement="top" data-toggle="tooltip"
-														title="Delete">
-														<button class="btn btn-danger" data-title="Delete"
-															data-toggle="modal">
-															<span class="fa fa-trash"></span>
-														</button>
-												</form>
+									<c:if test="${not empty listFilterTicket}">
+										<c:forEach items="${listFilterTicket}" var="a">
+											<tr>
+												<td>${a.id_ticket}</td>
+												<td>${a.date_go}</td>
+												<td>${a.date_book}</td>
+												<td>${a.seat_number}</td>
+												<td>${a.status}</td>
+												<td>${a.price}</td>
+												<td>${a.phone}</td>
+												<td>${a.name}</td>
+												<td>${a.id_cus}</td>
+												<td>
+													<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
+													<form></form>
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal" onclick="editTicket()">
+														<span class="fas fa-edit"></span>
+													</button>
+													</p>
+												</td>
+												<td>
+													<form method="POST"
+														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+														<p data-placement="top" data-toggle="tooltip"
+															title="Delete">
+															<button class="btn btn-danger" data-title="Delete"
+																data-toggle="modal">
+																<span class="fa fa-trash"></span>
+															</button>
+													</form>
 
-												</p>
-											</td>
-										</tr>
-									</c:forEach>
-								</c:if>
-								<c:if test="${not empty filterList}">
-									<c:forEach items="${filterList}" var="a">
-										<tr>
-											<td>${a.id_ticket}</td>
-											<td>${a.date_go}</td>
-											<td>${a.date_book}</td>
-											<td>${a.seat_number}</td>
-											<td>${a.status}</td>
-											<td>${a.price}</td>
-											<td>${a.phone}</td>
-											<td>${a.name}</td>
-											<td>${a.id_cus}</td>
-											<td>
-												<button class="btn btn-primary" data-title="Edit"
-													data-toggle="modal" onclick="editTicket()">
-													<span class="fas fa-edit"></span>
-												</button>
-												</p>
-											</td>
+													</p>
+												</td>
+											</tr>
+										</c:forEach>
+									</c:if>
+									<c:if test="${not empty filterList}">
+										<c:forEach items="${filterList}" var="a">
+											<tr>
+												<td>${a.id_ticket}</td>
+												<td>${a.date_go}</td>
+												<td>${a.date_book}</td>
+												<td>${a.seat_number}</td>
+												<td>${a.status}</td>
+												<td>${a.price}</td>
+												<td>${a.phone}</td>
+												<td>${a.name}</td>
+												<td>${a.id_cus}</td>
+												<td>
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal" onclick="editTicket()">
+														<span class="fas fa-edit"></span>
+													</button>
+													</p>
+												</td>
 
-											<td>
-												<form method="POST"
-													action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-													<p data-placement="top" data-toggle="tooltip"
-														title="Delete">
-														<button class="btn btn-danger" data-title="Delete"
-															data-toggle="modal">
-															<span class="fa fa-trash"></span>
-														</button>
-												</form>
+												<td>
+													<form method="POST"
+														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+														<p data-placement="top" data-toggle="tooltip"
+															title="Delete">
+															<button class="btn btn-danger" data-title="Delete"
+																data-toggle="modal">
+																<span class="fa fa-trash"></span>
+															</button>
+													</form>
 
-												</p>
-											</td>
-										</tr>
-									</c:forEach>
-								</c:if>
+													</p>
+												</td>
+											</tr>
+										</c:forEach>
+									</c:if>
 								</tbody>
 							</table>
 						</div>
@@ -298,7 +298,7 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 											<h4 class="text-black-50">Status:</h4>
 											<input class="form-control" id="statusEdit" type="text"
 												name="statusEdit" pattern="[0,1]" maxlength="1" required
-												title="Value is only 0 and 1 (0 is unpaid and 1 is paid)"> 
+												title="Value is only 0 and 1 (0 is unpaid and 1 is paid)">
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-warning btn-lg"
@@ -311,6 +311,27 @@ class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 							</div>
 						</div>
 					</div>
+
+					<c:if test="${UpdateTicketSuccess!=null}">
+						<script type="text/javascript">
+							alert("Update Successful!!!");
+						</script>
+					</c:if>
+					<c:if test="${UpdateTicketFail!=null}">
+						<script type="text/javascript">
+							alert("Can't update status ticket!!!");
+						</script>
+					</c:if>
+					<c:if test="${DeleteTicketSuccess!=null}">
+						<script type="text/javascript">
+							alert("Ticket have been deleted!!!");
+						</script>
+					</c:if>
+					<c:if test="${DeleteTicketFail!=null}">
+						<script type="text/javascript">
+							alert("Can't delete ticket!!!");
+						</script>
+					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
 					<div class="modal fade" id="deleteTicket" tabindex="-1"
