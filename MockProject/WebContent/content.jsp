@@ -261,7 +261,7 @@
                                         
                                         <!-- Single Popular Car End -->
                                         <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 hat">
+                                        <div class="col-lg-4 col-md-6 mpv">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
                                                     <a class="car-hover" href="https://www.tuannguyentravel.com/data/tour/500/tour-da-nang-ninh-binh-3-ngay-2-dem-12-1480567208.jpg">
