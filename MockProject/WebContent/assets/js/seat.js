@@ -76,7 +76,16 @@ function changeSeatColor(seat,numOfSeat)
 			}
 			else{
 				seat.style.backgroundColor = gray;
-			}  
+			} 
+			var checkAgain = count();
+			if(checkAgain==1)
+			{
+				var bookbtn = document.getElementById("book").disabled = true;
+			}
+			else
+			{
+				var bookbtn = document.getElementById("book").disabled = false;
+			}
 		}
 	}
 	else
@@ -165,4 +174,13 @@ function check(arr,a)
 	}
 	return false;
 }
+
+function getConfirmation(){
+   return confirm("Check your information before booking");
+}
+
+function getDeleteConfirmation(){
+	   return confirm("Do you want to delete!");
+	}
+
 

@@ -285,7 +285,7 @@
 							<input type="hidden" name="price" value="${price}"> <input
 								type="hidden" name="id_bus" value="${id_bus}"> <input
 								type="hidden" name="inputSeatDetail" id="inputSeatDetail">
-							<button type="submit" class="btn btn-warning" id="book">
+							<button type="submit" class="btn btn-warning" id="book" onclick="return getConfirmation();">
 								<i class="fa fa-sign-in"></i><b>Book Ticket</b>
 							</button>
 

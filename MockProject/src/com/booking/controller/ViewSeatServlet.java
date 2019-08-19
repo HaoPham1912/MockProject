@@ -1,10 +1,6 @@
 package com.booking.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -24,7 +20,6 @@ import com.booking.model.Account;
 import com.booking.model.BookingInfo;
 import com.booking.model.Bus;
 import com.booking.model.Customer;
-import com.booking.model.Ticket;
 import com.booking.ultils.MyUltil;
 
 /**

@@ -1,4 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="javax.servlet.http.HttpServletRequest" %>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -19,8 +21,15 @@
 				<script type="text/javascript">
 					alert("Booking Successful!");
 				</script>
+				<% 
+				if(request.getAttribute("BookingMessage")!=null)
+				{
+					request.removeAttribute("BookingMessage");
+					System.out.println("name: CuCec");
+				}
+				%>
 			</c:if>
-		</div>	
+		</div>
 	</section>
 	<jsp:include page="footer.jsp" />
 </body>

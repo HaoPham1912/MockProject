@@ -51,6 +51,8 @@
 <!-- CSS Just for demo purpose, don't include it in your project -->
 
 <link href="Customer/update.css" rel="stylesheet" />
+<link href="seat.css" rel="stylesheet">
+<script src="assets/js/seat.js"></script>
 </head>
 
 <body class="loader-active">
@@ -391,7 +393,7 @@
 																title="Delete"> -->
 															<form method="POST"
 																action="${pageContext.request.contextPath}/cus-viewInfo?id=${a.id_ticket}&action=delete">
-																<button class="btn btn-danger" data-title="Delete"
+																<button class="btn btn-danger" data-title="Delete"  onclick="return getDeleteConfirmation();"
 																	data-toggle="modal">
 																	<span class="fa fa-trash"></span>
 																</button>
