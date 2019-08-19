@@ -913,12 +913,18 @@ a.slicknav_btn {
 .p-car-content {
 	padding: 25px 20px;
 }
+#space{
+	margin-top:15px;
+}
 .p-car-content span{
 	color:orange;
 	font-size: 16px;
 	font-family: 'Times New Roman', Times, serif;
 	font-weight: bold;
 	
+}
+.p-car-content p{
+	margin-bottom: 10px;
 }
 .single-popular-car h3 {
 	font-size: 17px;
