@@ -74,12 +74,14 @@ public class AdminDashBoardServlet extends HttpServlet {
 					System.out.println("Success");
 					request.setAttribute("UpdateCusSuccess", "Update Infor Suceess!!!");
 					doGet(request, response);
+					request.removeAttribute("UpdateCusSuccess");
 				}
 				else
 				{
 					System.out.println("Failed");
 					request.setAttribute("UpdateCusFailed", "Can't update info");
 					doGet(request, response);
+					request.removeAttribute("UpdateCusFailed");
 				}
 			}
 		}

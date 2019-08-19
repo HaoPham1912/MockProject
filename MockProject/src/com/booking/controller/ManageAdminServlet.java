@@ -60,12 +60,14 @@ public class ManageAdminServlet extends HttpServlet {
 //				response.sendRedirect(request.getContextPath()+"/admin-manageAdmin");
 				request.setAttribute("UpdateAdminSucess", "Update success!!!");
 				doGet(request, response);
+				request.removeAttribute("UpdateAdminSucess");
 			}
 			else
 			{
 				System.out.println("Failed!!!");
 				request.setAttribute("UpdateAdminFailed", "Update Failed!!!");
 				doGet(request, response);
+				request.removeAttribute("UpdateAdminFailed");
 			}
 		}
 		else if(action.equals("filterAdmin")) {
