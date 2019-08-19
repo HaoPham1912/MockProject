@@ -1,7 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,15 +31,19 @@
 <script src="assets/js/seat.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
 	type="text/javascript"></script>
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
 	rel="stylesheet" type="text/css" />
 <script src="assets/js/seat.js"></script>
+
+<!-- datepicker -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+	type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+	rel="stylesheet" type="text/css" />
+
 </head>
 <c:if test="${listSeat != null}">
 	<body id="page-top" onload="setAvailableSeatList(${listSeat})">
@@ -144,8 +148,8 @@
 											<div class="row">
 												<div class=" col-md-5" style="align: center">
 													<div class="form-group">
-														<label>Select list:</label> <select class="custom-select"
-															name="cusInfo">
+														<label>Customer:</label> 
+														<select class="custom-select" name="cusInfo">
 															<c:forEach items="${cusList}" var="a">
 																<option value="${a.id_cus}">Name: ${a.name}
 																	&emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
@@ -155,10 +159,29 @@
 												</div>
 												<div class=" col-md-2" style="align: center">
 													<div class="form-group">
-														<label>Select list:</label> <select class="custom-select"
-															name="date_go">
+														<label>Date:</label> 
+														<select class="custom-select" name="date_go">
+															<fmt:parseDate value = "${date_goSearch}" var = "date_goSearch" 
+																pattern = "yyyy-MM-dd" />
+																
+															<fmt:formatDate pattern = "dd-MM-yyyy" 
+																var= "date_goSearch_format" type="both" dateStyle="short" timeStyle="short" 
+																value = "${date_goSearch}"/>
+															<fmt:formatDate pattern = "yyyy-MM-dd" 
+																var= "date_goSearch_format2" type="both" dateStyle="short" timeStyle="short" 
+																value = "${date_goSearch}"/>
+															<option selected value="${date_goSearch_format2}">
+																<c:out value = "${date_goSearch_format}" />
+															</option>
+															
 															<c:forEach items="${date_go}" var="a">
-																<option value="${a}">${a}</option>
+																<fmt:parseDate value = "${a}" var = "parsedEmpDate" 
+																pattern = "yyyy-MM-dd" />
+																
+																<fmt:formatDate pattern = "dd-MM-yyyy" 
+																var= "parse" type="both" dateStyle="short" timeStyle="short" 
+																value = "${parsedEmpDate}"/>
+																<option value="${a}"><c:out value = "${parse}" /></option>
 															</c:forEach>
 														</select>
 													</div>
@@ -246,9 +269,7 @@
 																data-toggle="modal" onclick="editTicket()">
 																<span class="fas fa-edit"></span>
 															</button>
-															</p>
 														</td>
-
 														<td>
 															<form method="POST"
 																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
@@ -273,44 +294,46 @@
 											<strong>Manage Seat</strong>
 										</h1>
 									</div>
-								<div class="row" style="height: 50px;">
 									<form method="POST" action="${pageContext.request.contextPath}/emp-filterTicket?action=filterSeat">
-										<!-- <div class="col">
-											<input id="datepicker" width="300px;" readonly />
-										</div> -->
-										<div class="col">
-											<input type="text" name="date_go_forSeat"/>
-											<button class="btn btn-warning">
-												<span class="fa fa-search"></span>
-											</button>
+										<div class="row">
+											<div class="col">
+												<label>Date:</label>
+												<input id="datepicker" width="250px" name="date_go_forSeat"
+													value="${dateViewSeat}" readonly />
+											</div>
+											<div class="col">
+												<!-- <input type="text" name="date_go_forSeat"/> -->												
+												<button class="btn btn-warning" style="margin-top:32px;">
+													<span class="fa fa-search"></span>
+												</button>
+											</div>
 										</div>
 									</form>
-								</div>
-								<script>
-								   		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-								        $('#datepicker').datepicker({
-								        	dateFormat: 'dd-mm-yyyy',
-								            uiLibrary: 'bootstrap4',
-								            iconsLibrary: 'fontawesome',
-								            minDate: today
-								        });
+									<script>
+									    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+									        $('#datepicker').datepicker({
+									            uiLibrary: 'bootstrap4',
+									          	format: 'dd-mm-yyyy',
+									           	iconsLibrary: 'fontawesome',
+									            minDate: today
+									        });
 								    </script>
 									<table id="table">
 										<tbody>
-											<div class=" col-md-4">
+											<div class="col-md-4" style="padding-top:20px;">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td COLSPAN=4><label id="wheel"></td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td COLSPAN=2><label>Floor1</td>
 													<td COLSPAN=2><label>Floor2</td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td><button type="button" class="seat" id="seat1col1"
@@ -341,7 +364,7 @@
 															title="8"></button></td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td><button type="button" class="seat" id="seat1col1"															
@@ -356,7 +379,7 @@
 															title="12"></button></td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td><button type="button" class="seat" id="seat1col1"															
@@ -371,7 +394,7 @@
 															title="16"></button></td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td><button type="button" class="seat" id="seat1col1"															
@@ -386,7 +409,7 @@
 															title="20"></button></td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td><button type="button" class="seat" id="seat1col1"															
@@ -401,7 +424,7 @@
 															title="24"></button></td>
 												</tr>
 											</div>
-											<div class=" col-md-4">
+											<div class="col-md-4">
 												<tr style="text-align: center">
 													<th scope="row"></th>
 													<td><button type="button" class="seat" id="seat1col1"															
@@ -555,8 +578,6 @@
 		<script src="Admin/js/user-table.js"></script>
 		<script src="Admin/js/buses.js"></script>
 		<script src="Admin/js/ticket.js"></script>
-		<script
-			src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
-
 </html>
