@@ -343,6 +343,7 @@
 						<script type="text/javascript">
 							alert("Can't delete ticket!!!");
 						</script>
+						<% request.removeAttribute("abc"); %>
 					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
