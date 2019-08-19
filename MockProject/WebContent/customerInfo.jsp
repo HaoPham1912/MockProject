@@ -73,19 +73,19 @@
 				<div class="row">
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-left">
-						<i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+						<i class="fa fa-map-marker"></i>  01, Vo Van Ngan
 					</div>
 					<!--== Single HeaderTop End ==-->
 
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-center">
-						<i class="fa fa-mobile"></i> +1 800 345 678
+						<i class="fa fa-mobile"></i> +84 934021059
 					</div>
 					<!--== Single HeaderTop End ==-->
 
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-center">
-						<i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+						<i class="fa fa-clock-o"></i>Mon-Fri 09.00 - 17.00
 					</div>
 					<!--== Single HeaderTop End ==-->
 
