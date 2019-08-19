@@ -84,7 +84,7 @@ public class FilterTicketServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);
 			}
-			if(action.equals("filter"));
+			if(action.equals("filter"))
 			{
 				String id_bus = request.getParameter("id_bus");
 				String date_go = request.getParameter("date_go");
@@ -100,6 +100,30 @@ public class FilterTicketServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);
 				return;
+			}
+			if(action.equals("filterSeat"))
+			{
+				HttpSession session = request.getSession();
+				
+				request.setAttribute("id_bus", session.getAttribute("id_bus"));
+				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf((String) session.getAttribute("id_bus"))));
+				request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf((String) session.getAttribute("id_bus"))));
+				
+				ArrayList<String> arr = new ArrayList<String>();
+				String date_go = request.getParameter("date_go_forSeat");
+				arr = ticketDAO.FindAvailableSeat(Integer.valueOf((String) session.getAttribute("id_bus")), date_go);
+				request.setAttribute("listSeat", arr);
+				
+//				System.out.println("id bus:  "+Integer.valueOf((String) session.getAttribute("id_bus")));
+//				System.out.println("date go:  "+ date_go);
+//				System.out.println("size:  "+ arr.size());
+				
+				ArrayList<Customer> arr1 = new ArrayList<Customer>();
+				arr1 = customerDAO.findAllCustomer();
+				request.setAttribute("cusList", arr1);
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
+				rd.forward(request, response);
 			}
 		}
 		else

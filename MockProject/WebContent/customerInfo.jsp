@@ -398,12 +398,10 @@
 																	<span class="fa fa-trash"></span>
 																</button>
 															</form>
-															</p>
 														</td>
 													</tr>
 												</c:if>
 											</c:forEach>
-
 										</tbody>
 									</table>
 								</div>

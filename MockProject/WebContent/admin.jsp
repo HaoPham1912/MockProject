@@ -252,21 +252,45 @@
 						<script type="text/javascript">
 							alert("New customer have been added!!!");
 						</script>
+						<%
+							if (request.getAttribute("AddNewCus") != null) {
+									request.removeAttribute("AddNewCus");
+									System.out.println("name: AAAAAAAAAAAA");
+								}
+						%>
 					</c:if>
 					<c:if test="${AddNewEmp!=null}">
 						<script type="text/javascript">
 							alert("New employee have been added!!!");
 						</script>
+						<%
+							if (request.getAttribute("AddNewEmp") != null) {
+									request.removeAttribute("AddNewEmp");
+									System.out.println("name: AAAAAAAAAAAA");
+								}
+						%>
 					</c:if>
 					<c:if test="${AddNewAdmin!=null}">
 						<script type="text/javascript">
 							alert("New admin have been added!!!");
 						</script>
+						<%
+							if (request.getAttribute("AddNewAdmin") != null) {
+									request.removeAttribute("AddNewAdmin");
+									System.out.println("name: AAAAAAAAAAAA");
+								}
+						%>
 					</c:if>
 					<c:if test="${AddUserFailed!=null}">
 						<script type="text/javascript">
 							alert("Can't add new users!!!");
 						</script>
+						<%
+							if (request.getAttribute("AddUserFailed") != null) {
+									request.removeAttribute("AddUserFailed");
+									System.out.println("name: AAAAAAAAAAAA");
+								}
+						%>
 					</c:if>
 					<div class="col-md-12">
 						<div class="table-responsive">

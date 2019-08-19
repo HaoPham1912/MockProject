@@ -163,6 +163,19 @@ function setAvailableSeat(a)
 		}
 	}
 }
+function setAvailableSeatList(a)
+{
+	var gray = "rgb(206,206,206)";
+	var x = document.getElementById('table').getElementsByClassName('seat');
+	for(var i = 0;i<=27;i++)
+	{
+		if(check(a,x[i].title))	
+		{
+			x[i].style.backgroundColor = gray;
+			x[i].disabled  = true;
+		}
+	}
+}
 function check(arr,a)
 {
 	for(var i=0;i<=arr.length;i++)
@@ -181,6 +194,6 @@ function getConfirmation(){
 
 function getDeleteConfirmation(){
 	   return confirm("Do you want to delete!");
-	}
+}
 
 

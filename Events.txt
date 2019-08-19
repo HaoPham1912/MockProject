@@ -17,11 +17,8 @@ on schedule every 1 second
 starts CURRENT_TIMESTAMP
 DO 
 	DELETE FROM bus.ticket where status = 0 and TIMESTAMPDIFF(SECOND,concat(date_book," ",time_book),NOW()) > 84600;
-
-
 show processlist;
 show events from bus;
-
 
 
 

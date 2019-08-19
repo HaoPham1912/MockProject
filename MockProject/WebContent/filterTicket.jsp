@@ -27,11 +27,28 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
+<link href="seat.css" rel="stylesheet">
+<script src="assets/js/seat.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+	type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+	rel="stylesheet" type="text/css" />
+	
 
 </head>
+<c:if test="${listSeat != null}">
+	<body id="page-top" onload="setAvailableSeatList(${listSeat})">
+</c:if>
+<c:if test="${listSeat == null}">
+	<body id="page-top">
+</c:if>
 
-<body id="page-top">
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 		<!-- Sidebar -->
@@ -111,147 +128,299 @@
 				<!-- ManageSeller-Start -->
 				<div class="container-fluid generalClass" id="manageTicket">
 					<!-- Page Heading -->
-					<div
-						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">
-							<strong>Manage Ticket</strong>
-						</h1>
-						<!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-						class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
-					</div>
-
 					<div>
-						<div class="col-md-12">
-							<form method="post"
-								action="http://localhost:8080/MockProject/emp-filterTicket?id_bus=${id_bus}&action=filter">
-								<div class="row">
-									<div class=" col-md-5" style="align: center">
-										<div class="form-group">
-											<label>Select list:</label> 
-											<select class="custom-select" name="cusInfo">
-												<c:forEach items="${cusList}" var="a">
-													<option value="${a.id_cus}">
-														Name: ${a.name}		&emsp;&emsp;&emsp;&emsp;	Phone: ${a.phone} 
-													</option>
-												</c:forEach>
-											</select>
-										</div>
-									</div>		
-									<div class=" col-md-2" style="align: center">
-										<div class="form-group">
-											<label>Select list:</label> <select class="custom-select"
-												name="date_go">
-												<c:forEach items="${date_go}" var="a">
-													<option value="${a}">${a}</option>
-												</c:forEach>
-											</select>
-										</div>
-									</div>
-									<div class=" col-md-2" style="align: center">
-										<div class="form-group">
-											<button type="submit" class="btn btn-warning"
-												style="margin-top: 35px;">Search</button>
-											<a style="margin-top: 35px;"
-												href="http://localhost:8080/MockProject/emp-filterTicket?action=show&id_bus=${id_bus}"
-												class="btn btn-warning">Show All</a>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
 						<!-- EmployeeStart -->
-						<div class="table-responsive">
-							<table id="mytableticket"
-								class="table table-bordred table-striped">
-								<thead>
-									<th>ID</th>
-									<th>Date Go</th>
-									<th>Date Book</th>
-									<th>Seat Number</th>
-									<th>Status</th>
-									<th>Price</th>
-									<th>Phone</th>
-									<th>Name</th>
-									<th>ID KH</th>
-									<th>Update</th>
-									<th>Cancel</th>
-								</thead>
-								<tbody>
-									<c:if test="${not empty listFilterTicket}">
-										<c:forEach items="${listFilterTicket}" var="a">
-											<tr>
-												<td>${a.id_ticket}</td>
-												<td>${a.date_go}</td>
-												<td>${a.date_book}</td>
-												<td>${a.seat_number}</td>
-												<td>${a.status}</td>
-												<td>${a.price}</td>
-												<td>${a.phone}</td>
-												<td>${a.name}</td>
-												<td>${a.id_cus}</td>
-												<td>
-													<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
-													<form></form>
-													<button class="btn btn-primary" data-title="Edit"
-														data-toggle="modal" onclick="editTicket()">
-														<span class="fas fa-edit"></span>
-													</button>
-													</p>
-												</td>
-												<td>
-													<form method="POST"
-														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-														<p data-placement="top" data-toggle="tooltip"
-															title="Delete">
-															<button class="btn btn-danger" data-title="Delete"
-																data-toggle="modal">
-																<span class="fa fa-trash"></span>
+						<div class="table-responsive" style="overflow-x: hidden;">
+							<div class="row">
+								<div class="col-sm-9">
+									<div
+										class="d-sm-flex align-items-center justify-content-between mb-4">
+										<h1 class="h3 mb-0 text-gray-800">
+											<strong>Manage Ticket</strong>
+										</h1>
+									</div>
+									<div class="col-md-12">
+										<form method="post"
+											action="http://localhost:8080/MockProject/emp-filterTicket?id_bus=${id_bus}&action=filter">
+											<div class="row">
+												<div class=" col-md-5" style="align: center">
+													<div class="form-group">
+														<label>Select list:</label> <select class="custom-select"
+															name="cusInfo">
+															<c:forEach items="${cusList}" var="a">
+																<option value="${a.id_cus}">Name: ${a.name}
+																	&emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
+															</c:forEach>
+														</select>
+													</div>
+												</div>
+												<div class=" col-md-2" style="align: center">
+													<div class="form-group">
+														<label>Select list:</label> <select class="custom-select"
+															name="date_go">
+															<c:forEach items="${date_go}" var="a">
+																<option value="${a}">${a}</option>
+															</c:forEach>
+														</select>
+													</div>
+												</div>
+												<div class=" col-md-2" style="align: center">
+													<div class="form-group">
+														<button type="submit" class="btn btn-warning"
+															style="margin-top: 35px;">Search</button>
+														<a style="margin-top: 35px;"
+															href="http://localhost:8080/MockProject/emp-filterTicket?action=show&id_bus=${id_bus}"
+															class="btn btn-warning">Show All</a>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+
+									<table id="mytableticket"
+										class="table table-bordred table-striped">
+										<thead>
+											<th>ID</th>
+											<th>Date Go</th>
+											<th>Date Book</th>
+											<th>Seat Number</th>
+											<th>Status</th>
+											<th>Price</th>
+											<th>Phone</th>
+											<th>Name</th>
+											<th>ID KH</th>
+											<th>Update</th>
+											<th>Cancel</th>
+										</thead>
+										<tbody>
+											<c:if test="${not empty listFilterTicket}">
+												<c:forEach items="${listFilterTicket}" var="a">
+													<tr>
+														<td>${a.id_ticket}</td>
+														<td>${a.date_go}</td>
+														<td>${a.date_book}</td>
+														<td>${a.seat_number}</td>
+														<td>${a.status}</td>
+														<td>${a.price}</td>
+														<td>${a.phone}</td>
+														<td>${a.name}</td>
+														<td>${a.id_cus}</td>
+														<td>
+															<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
+															<form></form>
+															<button class="btn btn-primary" data-title="Edit"
+																data-toggle="modal" onclick="editTicket()">
+																<span class="fas fa-edit"></span>
 															</button>
-													</form>
+															</p>
+														</td>
+														<td>
+															<form method="POST"
+																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+																<p data-placement="top" data-toggle="tooltip"
+																	title="Delete">
+																	<button class="btn btn-danger" data-title="Delete"
+																		data-toggle="modal">
+																		<span class="fa fa-trash"></span>
+																	</button>
+															</form>
 
-													</p>
-												</td>
-											</tr>
-										</c:forEach>
-									</c:if>
-									<c:if test="${not empty filterList}">
-										<c:forEach items="${filterList}" var="a">
-											<tr>
-												<td>${a.id_ticket}</td>
-												<td>${a.date_go}</td>
-												<td>${a.date_book}</td>
-												<td>${a.seat_number}</td>
-												<td>${a.status}</td>
-												<td>${a.price}</td>
-												<td>${a.phone}</td>
-												<td>${a.name}</td>
-												<td>${a.id_cus}</td>
-												<td>
-													<button class="btn btn-primary" data-title="Edit"
-														data-toggle="modal" onclick="editTicket()">
-														<span class="fas fa-edit"></span>
-													</button>
-													</p>
-												</td>
-
-												<td>
-													<form method="POST"
-														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-														<p data-placement="top" data-toggle="tooltip"
-															title="Delete">
-															<button class="btn btn-danger" data-title="Delete"
-																data-toggle="modal">
-																<span class="fa fa-trash"></span>
+															</p>
+														</td>
+													</tr>
+												</c:forEach>
+											</c:if>
+											<c:if test="${not empty filterList}">
+												<c:forEach items="${filterList}" var="a">
+													<tr>
+														<td>${a.id_ticket}</td>
+														<td>${a.date_go}</td>
+														<td>${a.date_book}</td>
+														<td>${a.seat_number}</td>
+														<td>${a.status}</td>
+														<td>${a.price}</td>
+														<td>${a.phone}</td>
+														<td>${a.name}</td>
+														<td>${a.id_cus}</td>
+														<td>
+															<button class="btn btn-primary" data-title="Edit"
+																data-toggle="modal" onclick="editTicket()">
+																<span class="fas fa-edit"></span>
 															</button>
-													</form>
+															</p>
+														</td>
 
-													</p>
-												</td>
-											</tr>
-										</c:forEach>
-									</c:if>
-								</tbody>
-							</table>
+														<td>
+															<form method="POST"
+																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+																<p data-placement="top" data-toggle="tooltip"
+																	title="Delete">
+																	<button class="btn btn-danger" data-title="Delete"
+																		data-toggle="modal">
+																		<span class="fa fa-trash"></span>
+																	</button>
+															</form>
+														</td>
+													</tr>
+												</c:forEach>
+											</c:if>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-sm-3">
+									<div
+										class="d-sm-flex align-items-center justify-content-between mb-4">
+										<h1 class="h3 mb-0 text-gray-800">
+											<strong>Manage Seat</strong>
+										</h1>
+									</div>
+								<div class="row" style="height: 50px;">
+									<form method="POST" action="${pageContext.request.contextPath}/emp-filterTicket?action=filterSeat">
+										<!-- <div class="col">
+											<input id="datepicker" width="300px;" readonly />
+										</div> -->
+										<div class="col">
+											<input type="text" name="date_go_forSeat"/>
+											<button class="btn btn-warning">
+												<span class="fa fa-search"></span>
+											</button>
+										</div>
+									</form>
+								</div>
+								<script>
+								   		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+								        $('#datepicker').datepicker({
+								        	dateFormat: 'dd-mm-yyyy',
+								            uiLibrary: 'bootstrap4',
+								            iconsLibrary: 'fontawesome',
+								            minDate: today
+								        });
+								    </script>
+									<table id="table">
+										<tbody>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td COLSPAN=4><label id="wheel"></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td COLSPAN=2><label>Floor1</td>
+													<td COLSPAN=2><label>Floor2</td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"
+															title="1"></button></td>
+													<td style="text-align: left;"><button type="button"
+															class="seat" id="seat1col2"														
+															title="2"></button></td>
+													<td style="text-align: right; padding-left: 60px"><button
+															type="button" class="seat" id="seat1col3"															
+															title="3"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"
+															onclick="changeSeatColor(this,${numOfSeat});getCost(${price});getSeat()"
+															title="4"></button></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"															
+															title="5"></button></td>
+													<td style="text-align: left"><button type="button"
+															class="seat" id="seat1col2"															
+															title="6"></button></td>
+													<td style="text-align: right"><button type="button"
+															class="seat" id="seat1col3"															
+															title="7"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"															
+															title="8"></button></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"															
+															title="9"></button></td>
+													<td style="text-align: left"><button type="button"
+															class="seat" id="seat1col2"															
+															title="10"></button></td>
+													<td style="text-align: right"><button type="button"
+															class="seat" id="seat1col3"															
+															title="11"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"															
+															title="12"></button></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"															
+															title="13"></button></td>
+													<td style="text-align: left"><button type="button"
+															class="seat" id="seat1col2"														
+															title="14"></button></td>
+													<td style="text-align: right"><button type="button"
+															class="seat" id="seat1col3"														
+															title="15"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"															
+															title="16"></button></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"															
+															title="17"></button></td>
+													<td style="text-align: left"><button type="button"
+															class="seat" id="seat1col2"															
+															title="18"></button></td>
+													<td style="text-align: right;"><button type="button"
+															class="seat" id="seat1col3"															
+															title="19"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"															
+															title="20"></button></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"															
+															title="21"></button></td>
+													<td style="text-align: left"><button type="button"
+															class="seat" id="seat1col2"														
+															title="22"></button></td>
+													<td style="text-align: right"><button type="button"
+															class="seat" id="seat1col3"															
+															title="23"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"
+															title="24"></button></td>
+												</tr>
+											</div>
+											<div class=" col-md-4">
+												<tr style="text-align: center">
+													<th scope="row"></th>
+													<td><button type="button" class="seat" id="seat1col1"															
+															title="25"></button></td>
+													<td style="text-align: left"><button type="button"
+															class="seat" id="seat1col2"														
+															title="26"></button></td>
+													<td style="text-align: right"><button type="button"
+															class="seat" id="seat1col3"															
+															title="27"></button></td>
+													<td><button type="button" class="seat" id="seat1col4"															
+															title="28"></button></td>
+												</tr>
+											</div>
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="modal fade" id="editTicket" tabindex="-1" role="dialog"
@@ -323,7 +492,6 @@
 							</div>
 						</div>
 					</div>
-
 					<c:if test="${UpdateTicketSuccess!=null}">
 						<script type="text/javascript">
 							alert("Update Successful!!!");
@@ -343,7 +511,9 @@
 						<script type="text/javascript">
 							alert("Cannot delete this ticket!!!");
 						</script>
-						<% request.removeAttribute("abc"); %>
+						<%
+							request.removeAttribute("abc");
+						%>
 					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
@@ -413,7 +583,6 @@
 		<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 		<!-- Page level custom scripts -->
 		<script src="Admin/js/user-table.js"></script>
-		<script src="Admin/js/seller-table.js"></script>
 		<script src="Admin/js/buses.js"></script>
 		<script src="Admin/js/ticket.js"></script>
 		<script

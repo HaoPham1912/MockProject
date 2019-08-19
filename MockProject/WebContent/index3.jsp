@@ -22,11 +22,11 @@
 					alert("Booking Successful!");
 				</script>
 				<% 
-				if(request.getAttribute("BookingMessage")!=null)
-				{
-					request.removeAttribute("BookingMessage");
-					System.out.println("name: CuCec");
-				}
+					if(request.getAttribute("BookingMessage")!=null)
+					{
+						request.removeAttribute("BookingMessage");
+						System.out.println("name: AAAAAAAAAAAA");
+					}
 				%>
 			</c:if>
 		</div>
