@@ -27,6 +27,7 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
+<<<<<<< HEAD
 <link href="seat.css" rel="stylesheet">
 <script src="assets/js/seat.js"></script>
 
@@ -41,6 +42,9 @@
 	rel="stylesheet" type="text/css" />
 	
 
+=======
+<script src="assets/js/seat.js"></script>
+>>>>>>> 553b52f4ec30d68bd0c5fd7aecfd48a63bc49500
 </head>
 <c:if test="${listSeat != null}">
 	<body id="page-top" onload="setAvailableSeatList(${listSeat})">
@@ -176,6 +180,7 @@
 											</div>
 										</form>
 									</div>
+<<<<<<< HEAD
 
 									<table id="mytableticket"
 										class="table table-bordred table-striped">
@@ -421,6 +426,99 @@
 									</table>
 								</div>
 							</div>
+=======
+								</div>
+							</form>
+						</div>
+						<!-- EmployeeStart -->
+						<div class="table-responsive">
+							<table id="mytableticket"
+								class="table table-bordred table-striped">
+								<thead>
+									<th>ID</th>
+									<th>Date Go</th>
+									<th>Date Book</th>
+									<th>Seat Number</th>
+									<th>Status</th>
+									<th>Price</th>
+									<th>Phone</th>
+									<th>Name</th>
+									<th>ID KH</th>
+									<th>Update</th>
+									<th>Cancel</th>
+								</thead>
+								<tbody>
+									<c:if test="${not empty listFilterTicket}">
+										<c:forEach items="${listFilterTicket}" var="a">
+											<tr>
+												<td>${a.id_ticket}</td>
+												<td>${a.date_go}</td>
+												<td>${a.date_book}</td>
+												<td>${a.seat_number}</td>
+												<td>${a.status}</td>
+												<td>${a.price}</td>
+												<td>${a.phone}</td>
+												<td>${a.name}</td>
+												<td>${a.id_cus}</td>
+												<td>
+													<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
+													<form></form>
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal" onclick="editTicket()">
+														<span class="fas fa-edit"></span>
+													</button>
+													</p>
+												</td>
+												<td>
+													<form method="POST"
+														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+														<p data-placement="top" data-toggle="tooltip"
+															title="Delete">
+															<button class="btn btn-danger" data-title="Delete"  onclick="return getDeleteConfirmation();"
+																data-toggle="modal">
+																<span class="fa fa-trash"></span>
+															</button>
+													</form>
+
+													</p>
+												</td>
+											</tr>
+										</c:forEach>
+									</c:if>
+									<c:if test="${not empty filterList}">
+										<c:forEach items="${filterList}" var="a">
+											<tr>
+												<td>${a.id_ticket}</td>
+												<td>${a.date_go}</td>
+												<td>${a.date_book}</td>
+												<td>${a.seat_number}</td>
+												<td>${a.status}</td>
+												<td>${a.price}</td>
+												<td>${a.phone}</td>
+												<td>${a.name}</td>
+												<td>${a.id_cus}</td>
+												<td>
+													<button class="btn btn-primary" data-title="Edit"
+														data-toggle="modal" onclick="editTicket()">
+														<span class="fas fa-edit"></span>
+													</button>
+													</p>
+												</td>
+												<td>
+													<form method="POST"
+														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+															<button class="btn btn-danger"  onclick="return getDeleteConfirmation();">
+																<span class="fa fa-trash"></span>
+															</button>
+													</form>
+													</p>
+												</td>
+											</tr>
+										</c:forEach>
+									</c:if>
+								</tbody>
+							</table>
+>>>>>>> 553b52f4ec30d68bd0c5fd7aecfd48a63bc49500
 						</div>
 					</div>
 					<div class="modal fade" id="editTicket" tabindex="-1" role="dialog"
@@ -483,7 +581,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-warning btn-lg"
-												style="width: 100%;">
+												style="width: 100%;" onclick="getUpdateConfirmation();">
 												<span class="fas fa-check-circle"></span>Update Status
 											</button>
 										</div>
@@ -517,36 +615,7 @@
 					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
-					<div class="modal fade" id="deleteTicket" tabindex="-1"
-						role="dialog" aria-labelledby="delete" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title custom_align" id="Heading"
-										style="margin-left: auto;">
-										<strong>Delete Ticket </strong>
-									</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-								<div class="modal-body">
-									<div class="alert alert-danger">
-										<span class="glyphicon glyphicon-warning-sign"></span> Do you
-										want to delete this ticket?
-									</div>
-								</div>
-								<div class="modal-footer ">
-									<button id="yesdeleteSeller" type="button"
-										class="btn btn-success">
-										<span class="	fas fa-check-circle"></span>Yes
-									</button>
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">
-										<span class="fas fa-remove"></span>No
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+			
 					<!-- Modal delete Seller-End -->
 					<!-- ManageSeller-End -->
 

@@ -359,7 +359,7 @@
 					</div>
 
 					<!-- Pháº§n ná»i dung trong báº£ng user-End -->
-					<!-- Modal delete User-Start -->
+					<!-- <!-- Modal delete User-Start -->
 					<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
 						aria-labelledby="delete" aria-hidden="true">
 						<div class="modal-dialog">
@@ -388,10 +388,10 @@
 									</button>
 								</div>
 							</div>
-							<!-- /.modal-content -->
+							/.modal-content
 						</div>
-						<!-- /.modal-dialog -->
-					</div>
+						/.modal-dialog
+					</div> -->
 					<!-- Modal delete User-End -->
 					<!-- Modal edit User-Start -->
 					<div class="modal fade" id="editUser" tabindex="-1" role="dialog"
@@ -450,7 +450,7 @@
 												title="" required>
 										</div>
 										<div class="modal-footer">
-											<button type="submit" id="submitEditUser"
+											<button type="submit" id="submitEditUser" onclick="getUpdateConfirmation();"
 												class="btn btn-warning btn-lg" style="width: 100%;">
 												<span class="fas fa-check-circle"></span>Update
 											</button>
@@ -487,6 +487,7 @@
 		class="fas fa-angle-up"></i>
 	</a>
 	<!-- Bootstrap core JavaScript-->
+	<script src="Admin/js/ticket.js"></script>
 	<script src="Admin/vendor/jquery/jquery.min.js"></script>
 	<script src="Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- Core plugin JavaScript-->

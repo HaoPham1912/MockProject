@@ -1,7 +1,7 @@
 //$("#mytableseller").DataTable();
 $(document).ready(function() {
   $('#mytablebuses').DataTable( {
-      "lengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]]
+      "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
   } );
 } );
 

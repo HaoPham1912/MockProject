@@ -28,7 +28,7 @@
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
 
-
+<script src="Admin/js/ticket.js"></script>
 </head>
 
 <body id="page-top">
@@ -262,7 +262,7 @@
 									</div>
 									<!-- Set role-End -->
 									<div class="modal-footer">
-										<button type="submit" id="submitEditSeller"
+										<button type="submit" id="submitEditSeller" onclick="getUpdateConfirmation();"
 											class="btn btn-warning btn-lg" style="width: 100%;">
 											<span class="fas fa-check-circle"></span>Update
 										</button>

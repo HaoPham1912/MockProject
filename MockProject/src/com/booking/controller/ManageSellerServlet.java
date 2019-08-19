@@ -72,12 +72,15 @@ public class ManageSellerServlet extends HttpServlet {
 					/*response.sendRedirect(request.getContextPath()+"/admin-manageSeller");*/
 					request.setAttribute("UpdateEmpSuccess", "Update infor employee successful!!!");
 					doGet(request, response);
+					request.removeAttribute("UpdateEmpSuccess");
+					System.out.println("Xóa r");
 				}
 				else
 				{
 					System.out.println("Failed");
 					request.setAttribute("UpdateEmpFailed", "Can't update infor employee!!!");
 					doGet(request, response);
+					request.removeAttribute("UpdateEmpFailed");
 				}
 			}
 		}
@@ -89,11 +92,13 @@ public class ManageSellerServlet extends HttpServlet {
 				/*response.sendRedirect(request.getContextPath()+"/admin-dashboard");*/
 				request.setAttribute("DeleteSellerSuccess", "Delete Success!!!!");
 				doGet(request, response);
+				request.removeAttribute("DeleteSellerSuccess");
 			}
 			else
 			{
 				request.setAttribute("DeleteSellerFailed", "Delete Failed!!!!");
 				doGet(request, response);
+				request.removeAttribute("DeleteSellerFailed");
 			}
 		}
 	}
