@@ -68,7 +68,7 @@ public class CustomTicketServlet extends HttpServlet {
 			{
 				HttpSession session = request.getSession();
 				String id_bus = (String) session.getAttribute("id_bus");
-				session.setAttribute("DeleteTicketFailed", "Cannot delete this ticket");
+				session.setAttribute("DeleteTicketFail", "Cannot delete this ticket");
 				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
 			}
 		}
