@@ -27,8 +27,7 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
-
-
+<script src="assets/js/seat.js"></script>
 </head>
 
 <body id="page-top">
@@ -203,7 +202,7 @@
 														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 														<p data-placement="top" data-toggle="tooltip"
 															title="Delete">
-															<button class="btn btn-danger" data-title="Delete"
+															<button class="btn btn-danger" data-title="Delete"  onclick="return getDeleteConfirmation();"
 																data-toggle="modal">
 																<span class="fa fa-trash"></span>
 															</button>
@@ -233,18 +232,13 @@
 													</button>
 													</p>
 												</td>
-
 												<td>
 													<form method="POST"
 														action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-														<p data-placement="top" data-toggle="tooltip"
-															title="Delete">
-															<button class="btn btn-danger" data-title="Delete"
-																data-toggle="modal">
+															<button class="btn btn-danger"  onclick="return getDeleteConfirmation();">
 																<span class="fa fa-trash"></span>
 															</button>
 													</form>
-
 													</p>
 												</td>
 											</tr>
@@ -314,7 +308,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-warning btn-lg"
-												style="width: 100%;">
+												style="width: 100%;" onclick="getUpdateConfirmation();">
 												<span class="fas fa-check-circle"></span>Update Status
 											</button>
 										</div>
@@ -347,36 +341,7 @@
 					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
-					<div class="modal fade" id="deleteTicket" tabindex="-1"
-						role="dialog" aria-labelledby="delete" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title custom_align" id="Heading"
-										style="margin-left: auto;">
-										<strong>Delete Ticket </strong>
-									</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-								<div class="modal-body">
-									<div class="alert alert-danger">
-										<span class="glyphicon glyphicon-warning-sign"></span> Do you
-										want to delete this ticket?
-									</div>
-								</div>
-								<div class="modal-footer ">
-									<button id="yesdeleteSeller" type="button"
-										class="btn btn-success">
-										<span class="	fas fa-check-circle"></span>Yes
-									</button>
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">
-										<span class="fas fa-remove"></span>No
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+			
 					<!-- Modal delete Seller-End -->
 					<!-- ManageSeller-End -->
 
@@ -413,7 +378,6 @@
 		<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 		<!-- Page level custom scripts -->
 		<script src="Admin/js/user-table.js"></script>
-		<script src="Admin/js/seller-table.js"></script>
 		<script src="Admin/js/buses.js"></script>
 		<script src="Admin/js/ticket.js"></script>
 		<script

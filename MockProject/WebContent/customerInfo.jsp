@@ -285,7 +285,7 @@
 												title="Please type your address" required>
 										</div>
 										<br> <input style="float: right; margin-right: 10px"
-											type='submit' class='btn btn-fill btn-warning btn-wd btn-sm'
+											type='submit' onclick="getUpdateConfirmation();" class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' />
 									</form>
 									<c:if test="${UpdateInfoCusMes!=null}">
@@ -486,6 +486,8 @@
 
 	<!--=== Mian Js ===-->
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/seat.js"></script>
+	<script src="Admin/js/ticket.js"></script>
 	<script src="Admin/assets/js/jquery-2.2.4.min.js"
 		type="text/javascript"></script>
 	<script src="Admin/assets/js/bootstrap.min.js" type="text/javascript"></script>

@@ -58,4 +58,10 @@ function deleteTicket() {
 	    alert("Please choose seller to delete!!!");
 	  }
 }
+function getDeleteTicketConfirmation(){
+	   return confirm("Do you want to delete!");
+}
+function getUpdateConfirmation(){
+	   return confirm("Check your information before update");
+}
 

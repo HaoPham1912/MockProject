@@ -181,6 +181,6 @@ function getConfirmation(){
 
 function getDeleteConfirmation(){
 	   return confirm("Do you want to delete!");
-	}
+}
 
 
