@@ -387,8 +387,8 @@
 														<td>${a.time_end}</td>
 														<td>${a.car_position}</td>
 														<td>
-															<p data-placement="top" data-toggle="tooltip"
-																title="Delete">
+															<!-- <p data-placement="top" data-toggle="tooltip"
+																title="Delete"> -->
 															<form method="POST"
 																action="${pageContext.request.contextPath}/cus-viewInfo?id=${a.id_ticket}&action=delete">
 																<button class="btn btn-danger" data-title="Delete"

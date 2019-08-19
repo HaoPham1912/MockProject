@@ -185,7 +185,7 @@
 												<td>${a.distance}</td>
 												<td>${a.price}</td>
 												<td>
-													<p data-placement="top" data-toggle="tooltip" title="View">
+													<!-- <p data-placement="top" data-toggle="tooltip" title="View"> -->
 													<form method="POST"
 														action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}&action=show">
 														<button class="btn btn-primary" data-title="Edit"
