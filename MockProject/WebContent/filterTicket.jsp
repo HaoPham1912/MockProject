@@ -341,8 +341,9 @@
 					</c:if>
 					<c:if test="${DeleteTicketFail!=null}">
 						<script type="text/javascript">
-							alert("Can't delete ticket!!!");
+							alert("Cannot delete this ticket!!!");
 						</script>
+						<% request.removeAttribute("abc"); %>
 					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->

@@ -14,4 +14,5 @@ public interface ITicketDAO {
 	int getNumberOfSeatInEachBus(int id_cus, String date_go, int id_bus);
 	ArrayList<String> getDateGoByIdBus(int id_bus);
 	ArrayList<Ticket> getTicketByIdBusAndDateBook(int id_bus,String date_book,int id_cus);
+	boolean CheckDeleteTicket(int id_ticket);
 }

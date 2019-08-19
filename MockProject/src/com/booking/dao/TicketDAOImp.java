@@ -150,8 +150,15 @@ public class TicketDAOImp implements ITicketDAO{
 			String sql="DELETE FROM Ticket WHERE id_ticket=?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id_ticket);
-			pstm.executeUpdate();
-			return true;
+			if(CheckDeleteTicket(id_ticket))
+			{
+				if(pstm.executeUpdate()==1)
+				{
+					return true;
+				}
+				
+			}
+			return false;
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -248,5 +255,34 @@ public class TicketDAOImp implements ITicketDAO{
 			e.printStackTrace();
 		}
 		return arr;
+	}
+	@Override
+	public boolean CheckDeleteTicket(int id_ticket) {
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+			String sql="SELECT TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go)) > 86400, status from ticket,bus where ticket.id_bus = bus.id_bus and id_ticket = ?";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, id_ticket);
+			ResultSet rs = pstm.executeQuery();
+			if(rs.next())
+			{
+				if(rs.getInt(2)==0) return true;
+				else
+				{
+					if(rs.getInt(1)==1)
+					{
+						return true;
+					}
+				}
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

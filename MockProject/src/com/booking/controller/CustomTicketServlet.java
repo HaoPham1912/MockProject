@@ -57,17 +57,20 @@ public class CustomTicketServlet extends HttpServlet {
 		else if(action.equals("delete"))
 		{
 			String id = request.getParameter("id");
-			ticketDAO.deleteTicket(Integer.valueOf(id));
-			HttpSession session = request.getSession();
-			String id_bus = (String) session.getAttribute("id_bus");
-			session.setAttribute("DeleteTicketSuccess", "Deleted");
-			response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
-		}
-		else {
-			HttpSession session = request.getSession();
-			String id_bus = (String) session.getAttribute("id_bus");
-			session.setAttribute("DeleteTicketFail", "Failed");
-			response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
+			if(ticketDAO.deleteTicket(Integer.valueOf(id)))
+			{
+				HttpSession session = request.getSession();
+				String id_bus = (String) session.getAttribute("id_bus");
+				session.setAttribute("DeleteTicketSuccess", "Deleted");
+				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
+			}
+			else
+			{
+				HttpSession session = request.getSession();
+				String id_bus = (String) session.getAttribute("id_bus");
+				session.setAttribute("DeleteTicketFail", "Cannot delete this ticket");
+				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
+			}
 		}
 	}
 

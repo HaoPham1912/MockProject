@@ -161,7 +161,7 @@
 											<td>${a.car_position}</td>
 											<td>${a.time_estimate}</td>
 											<td>
-												<p data-placement="top" data-toggle="tooltip" title="View">
+												<!-- <p data-placement="top" data-toggle="tooltip" title="View"> -->
 												<form method="POST"
 													action="${pageContext.request.contextPath}/emp-filterTicket?id_bus=${a.id_bus}">
 													<button class="btn btn-primary" data-title="Edit"
