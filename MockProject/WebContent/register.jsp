@@ -155,12 +155,14 @@
 							<form action="${pageContext.request.contextPath}/register"
 								method="POST">
 								<div class="name">
-									<input type="text" placeholder="Name" name="name"
+									<input type="text" placeholder="Name" name="name" pattern="[[a-zA-Z'-ŠšŽžÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿþƒ\s]+"
+									title="Name cannot contain number"
 										value="${customerHo.name}" required>
 								</div>
 								<div class="email">
-									<input type="email" placeholder="Email" name="email"
-										value="${customerHo.email}">
+									<input type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+									title="Invalid Email"
+										value="${customerHo.email}" required>
 								</div>
 								<div class="phone">
 									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
