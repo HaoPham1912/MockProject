@@ -139,9 +139,9 @@ public class ViewSeatServlet extends HttpServlet {
 									Double.valueOf(price),phone,name,
 									Integer.valueOf(id_bus),customer.getId_cus(),note);
 		}
-		request.setAttribute("BookingMessage", "Booking Successful!");
-		RequestDispatcher rd =  request.getRequestDispatcher("/index3.jsp");
-		rd.forward(request, response);
+		session.setAttribute("BookingMessage", "Booking Successful!");
+		response.sendRedirect(request.getContextPath()+"/cus-dashboard");
+		session.removeAttribute("BookingMessage");
 		return;
 	}
 
