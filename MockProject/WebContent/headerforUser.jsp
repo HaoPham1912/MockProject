@@ -250,7 +250,7 @@
                                 </c:if>    
                                 <div class="pick-date bookinput-item">
 	                                    <input id="startDate2" placeholder="Pick Date" 
-	                                    name="startDate" value="${bookingInfo.start_date}" required readonly/>
+	                                    name="startDate" value="${bookingInfo.start_date}" required onkeydown="event.preventDefault()"/>
 	                                </div>                                                        
                                 <div class="bookcar-btn bookinput-item">
                                     <button type="submit">Search</button>
