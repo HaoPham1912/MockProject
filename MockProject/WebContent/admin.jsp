@@ -190,7 +190,7 @@
 													placeholder="Le Van Duy" name="name1" required>
 												<script>
 												  	function vietnameseNoNumbers(input) {
-												      var regex = /[^-a-z /-\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												  		var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
 												       input.value = input.value.replace(regex, "");
 												    }
 												</script>
@@ -355,7 +355,7 @@
 												name="nameUserEdit" placeholder="Le Van Duy" required>
 											<script>
 												  function vietnameseNoNumbers(input) {
-												      var regex = /[^-a-z /-\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+													  var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
 												       input.value = input.value.replace(regex, "");
 												    }
 											</script>
