@@ -130,7 +130,7 @@
 					<!-- EmployeeStart -->
 					<!-- </div> -->
 					<div class="col-md-12">
-						<div class="table-responsive" style="overflow-x:hidden;">
+						<div class="table-responsive" style="overflow-x: hidden;">
 							<form method="POST"
 								action="http://localhost:8080/MockProject/admin-manageAdmin?action=filterAdmin">
 								<div class="row">
@@ -225,21 +225,31 @@
 									<div class="form-group">
 										<h4 class="text-black-50">Name:</h4>
 										<input class="form-control " id="nameAdminEdit" type="text"
-											name="nameAdminEdit" placeholder="Le Van Duy" title="Please enter your name"
-											 required>
+											onkeyup="vietnameseNoNumbers(this)" size="50"
+											title="Please fill data correctly" name="nameAdminEdit"
+											placeholder="Le Van Duy" title="Please enter your name"
+											required>
+										<script>
+											function vietnameseNoNumbers(input) {
+												var regex = /[^-a-z !@&*():;"',./\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												input.value = input.value
+														.replace(regex, "");
+											}
+										</script>
 									</div>
 									<!-- Phone user -->
 									<div class="form-group">
 										<h4 class="text-black-50">Phone:</h4>
-										<input class="form-control " id="phoneAdminEdit" type="number"
-											name="phoneAdminEdit" placeholder="01293948384"
-											pattern="[0-9]{1,}" title="Please enter your phone number" required>
+										<input class="form-control " id="phoneAdminEdit" type="text"
+											pattern="[0-9]{10}" title="Invalid phone number"
+											name="phoneAdminEdit" placeholder="01293948384" required>
 									</div>
 									<!-- Phone user -->
 									<!-- Email User -->
 									<div class="form-group">
 										<h4 class="text-black-50">Email:</h4>
 										<input class="form-control " id="emailAdminEdit" type="email"
+											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 											name="emailAdminEdit" name="Email" accept=""
 											placeholder="example@gmail.com" title="Email is unvalid!"
 											required>
@@ -250,8 +260,8 @@
 										<h4 class="text-black-50">Address:</h4>
 										<input class="form-control " id="addressAdminEdit" type="text"
 											name="addressAdminEdit"
-											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title="Please enter your address"
-											required>
+											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
+											title="Please enter your address" required>
 									</div>
 									<div class="modal-footer">
 										<button type="submit" id="submitEditUser"
