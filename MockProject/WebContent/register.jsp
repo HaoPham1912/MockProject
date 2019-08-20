@@ -155,9 +155,15 @@
 							<form action="${pageContext.request.contextPath}/register"
 								method="POST">
 								<div class="name">
-									<input type="text" placeholder="Name" name="name" pattern="[[a-zA-Z'-ŠšŽžÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿþƒ\s]+"
-									title="Name cannot contain number"
+									<input type="text" placeholder="Name" name="name" onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
+									title="Please fill data correctly"
 										value="${customerHo.name}" required>
+									<script>
+									    function vietnameseNoNumbers(input) {
+									        var regex = /[^-a-z !@&*():;"',./\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+									        input.value = input.value.replace(regex, "");
+									    }
+									</script>
 								</div>
 								<div class="email">
 									<input type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"

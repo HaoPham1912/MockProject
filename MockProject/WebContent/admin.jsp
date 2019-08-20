@@ -188,14 +188,24 @@
 											<!-- TÃªn tháº±ng user -->
 											<div class="form-group">
 												<h4 class="text-black-50">Name:</h4>
-												<input class="form-control " id="nameUser" type="text"
+												<input class="form-control " id="nameUser" type="text" onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
+													title="Please fill data correctly"
 													placeholder="Le Van Duy" name="name1" required>
+												<script>
+												    function vietnameseNoNumbers(input) {
+												        var regex = /[^-a-z !@&*():;"',./\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												        input.value = input.value.replace(regex, "");
+												    }
+												</script>
 											</div>
 											<!-- TÃªn tháº±ng user -->
 											<!-- Phone user -->
 											<div class="form-group">
 												<h4 class="text-black-50">Phone:</h4>
-												<input class="form-control " id="phoneUser" type="number"
+												<input class="form-control " id="phoneUser"
+													type="number" 
+													min="111111111" max="1000000000"
+													title="Invalid phone number"
 													placeholder="01293948384" name="phone1" pattern="[0-9]{1,}"
 													title="" required>
 											</div>
@@ -223,9 +233,9 @@
 														placeholder="Role Customer" name="role1" value="1"
 														title="Role of Seller" required readonly>  -->
 												<select class="form-control" name="role1">
-													<option value="1">1:Customer</option>
-													<option value="2">2:Seller</option>
-													<option value="3">3:Admin</option>
+													<option value="1">1: Customer</option>
+													<option value="2">2: Seller</option>
+													<option value="3">3: Admin</option>
 												</select>
 												<!-- <input id="toggle-event" type="checkbox" data-size="large"
 													data-toggle="toggle" data-on="Customer" data-off="Ticket Seller"
@@ -261,9 +271,9 @@
 								<div class="row">
 									<div class="col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Name:</label> <input type="text" name="search"
+											<label>Name:</label> <input type="text" name="search" 
 												placeholder="Searching...."
-												style="height: 40px; width: 100%;"> </input>
+												style="height: 40px; width: 100%;">
 										</div>
 									</div>
 									<div class="col-md-2" style="align: center">
@@ -342,12 +352,22 @@
 										<div class="form-group">
 											<h4 class="text-black-50">Name:</h4>
 											<input class="form-control " id="nameUserEdit" type="text"
+											 	onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
+												title="Please fill data correctly"
 												name="nameUserEdit" placeholder="Le Van Duy" required>
+											<script>
+												  function vietnameseNoNumbers(input) {
+												       var regex = /[^-a-z !@&*():;"',./\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												       input.value = input.value.replace(regex, "");
+												    }
+											</script>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneUserEdit" type="number"
+											<input class="form-control " id="phoneUserEdit" type="number" 
+												min="111111111" max="1000000000"
+												title="Invalid phone number"
 												name="phoneUserEdit" placeholder="01293948384"
 												pattern="[0-9]{1,}" title="" required>
 										</div>

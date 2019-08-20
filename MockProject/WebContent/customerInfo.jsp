@@ -265,7 +265,7 @@
 											<label>Name</label> <input value="${customerInfo.name}"
 												placeholder="Name" name="name" required class="form-control"
 												title="Please type your name">
-										</div>
+											</div>
 										<div class="form-group">
 											<label>Phone </label> <input name="phone" type="number" 
 											min="111111111" max="1000000000"
