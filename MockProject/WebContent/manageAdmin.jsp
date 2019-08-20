@@ -130,7 +130,7 @@
 					<!-- EmployeeStart -->
 					<!-- </div> -->
 					<div class="col-md-12">
-						<div class="table-responsive">
+						<div class="table-responsive" style="overflow-x:hidden;">
 							<form method="POST"
 								action="http://localhost:8080/MockProject/admin-manageAdmin?action=filterAdmin">
 								<div class="row">
