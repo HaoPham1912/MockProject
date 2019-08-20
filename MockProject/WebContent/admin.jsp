@@ -203,10 +203,10 @@
 											<div class="form-group">
 												<h4 class="text-black-50">Phone:</h4>
 												<input class="form-control " id="phoneUser"
-													type="number" 
-													min="111111111" max="1000000000"
+													type="text" 
+													pattern="[0-9]{10}"
 													title="Invalid phone number"
-													placeholder="01293948384" name="phone1" pattern="[0-9]{1,}"
+													placeholder="01293948384" name="phone1"
 													title="" required>
 											</div>
 											<!-- Phone user -->
@@ -214,6 +214,7 @@
 											<div class="form-group">
 												<h4 class="text-black-50">Email:</h4>
 												<input class="form-control " id="emailUser" type="email"
+													pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 													accept="" placeholder="example@gmail.com" name="email1"
 													title="Email is unvalid!" required>
 											</div>
@@ -365,17 +366,18 @@
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneUserEdit" type="number" 
-												min="111111111" max="1000000000"
+											<input class="form-control " id="phoneUserEdit" type="text" 
+												pattern="[0-9]{10}"
 												title="Invalid phone number"
 												name="phoneUserEdit" placeholder="01293948384"
-												pattern="[0-9]{1,}" title="" required>
+												title="" required>
 										</div>
 										<!-- Phone user -->
 										<!-- Email User -->
 										<div class="form-group">
 											<h4 class="text-black-50">Email:</h4>
 											<input class="form-control " id="emailUserEdit" type="email"
+												pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 												name="emailUserEdit" name="Email" accept=""
 												placeholder="example@gmail.com" title="Email is unvalid!"
 												required>
