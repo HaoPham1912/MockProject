@@ -262,7 +262,7 @@
 									</div>
 									<!-- Set role-End -->
 									<div class="modal-footer">
-										<button type="submit" id="submitEditSeller" onclick="getUpdateConfirmation();"
+										<button type="submit" id="submitEditSeller"
 											class="btn btn-warning btn-lg" style="width: 100%;">
 											<span class="fas fa-check-circle"></span>Update
 										</button>
@@ -273,7 +273,7 @@
 						</div>
 					</div>
 				</div>
-				<c:if test="${UpdateEmpSuccess!=null}">
+				<%-- <c:if test="${UpdateEmpSuccess!=null}">
 					<script type="text/javascript">
 						alert("Update Successful!!!");
 					</script>
@@ -292,7 +292,7 @@
 					<script type="text/javascript">
 						alert("Can't delete!!!");
 					</script>
-				</c:if>
+				</c:if> --%>
 				<!-- Modal edit user-end -->
 				<!-- Modal delete Seller-Start -->
 				<div class="modal fade" id="deleteSeller" tabindex="-1"

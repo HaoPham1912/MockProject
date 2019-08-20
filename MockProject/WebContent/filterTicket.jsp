@@ -505,7 +505,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-warning btn-lg"
-												style="width: 100%;" onclick="getUpdateConfirmation();">
+												style="width: 100%;">
 												<span class="fas fa-check-circle"></span>Update Status
 											</button>
 										</div>
@@ -514,7 +514,7 @@
 							</div>
 						</div>
 					</div>
-					<c:if test="${UpdateTicketSuccess!=null}">
+					<%-- <c:if test="${UpdateTicketSuccess!=null}">
 						<script type="text/javascript">
 							alert("Update Successful!!!");
 						</script>
@@ -536,7 +536,7 @@
 						<%
 							request.removeAttribute("abc");
 						%>
-					</c:if>
+					</c:if> --%>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
 			

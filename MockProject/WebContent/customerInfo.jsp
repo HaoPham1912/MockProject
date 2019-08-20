@@ -288,7 +288,7 @@
 											type='submit' onclick="getUpdateConfirmation();" class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' />
 									</form>
-									<c:if test="${UpdateInfoCusMes!=null}">
+									<%-- <c:if test="${UpdateInfoCusMes!=null}">
 										<script type="text/javascript">
 											alert("Your Update Successful!");
 										</script>
@@ -297,7 +297,7 @@
 										<script type="text/javascript">
 											alert("Your Update Failed!!!");
 										</script>
-									</c:if>
+									</c:if> --%>
 								</div>
 							</div>
 						</div>
@@ -393,7 +393,7 @@
 																title="Delete"> -->
 															<form method="POST"
 																action="${pageContext.request.contextPath}/cus-viewInfo?id=${a.id_ticket}&action=delete">
-																<button class="btn btn-danger" data-title="Delete"  onclick="return getDeleteConfirmation();"
+																<button class="btn btn-danger" data-title="Delete"
 																	data-toggle="modal">
 																	<span class="fa fa-trash"></span>
 																</button>
@@ -406,7 +406,7 @@
 									</table>
 								</div>
 							</div>
-							<c:if test="${DeleteTicketCus!=null}">
+							<%-- <c:if test="${DeleteTicketCus!=null}">
 								<script type="text/javascript">
 									alert("The ticket have been deleted!!!");
 								</script>
@@ -415,7 +415,7 @@
 								<script type="text/javascript">
 									alert("Can't delete this ticket!!!");
 								</script>
-							</c:if>
+							</c:if> --%>
 						</div>
 					</div>
 				</div>

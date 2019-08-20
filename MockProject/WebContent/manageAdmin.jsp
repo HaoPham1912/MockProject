@@ -253,7 +253,7 @@
 											required>
 									</div>
 									<div class="modal-footer">
-										<button type="submit" id="submitEditUser" onclick="getUpdateConfirmation();"
+										<button type="submit" id="submitEditUser"
 											class="btn btn-warning btn-lg" style="width: 100%;">
 											<span class="fas fa-check-circle"></span>Update
 										</button>
@@ -264,7 +264,7 @@
 						</div>
 					</div>
 				</div>
-				<c:if test="${UpdateAdminSucess!=null}">
+				<%-- <c:if test="${UpdateAdminSucess!=null}">
 					<script type="text/javascript">
 						alert("Update sucessful!!!");
 					</script>
@@ -274,7 +274,7 @@
 					<script type="text/javascript">
 						alert("Update Failed!!!");
 					</script>
-				</c:if>
+				</c:if> --%>
 				<!-- ManageSeller-Start -->
 
 				<!-- Modal edit user-end -->
