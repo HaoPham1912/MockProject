@@ -228,15 +228,14 @@
 														<td>${a.name}</td>
 														<td>${a.id_cus}</td>
 														<td>
-															<!-- 				<p data-placement="top" data-toggle="tooltip" title="Edit"> -->
 															<form></form>
 															<button class="btn btn-primary" data-title="Edit"
 																data-toggle="modal" onclick="editTicket()">
 																<span class="fas fa-edit"></span>
 															</button>
-															</p>
 														</td>
 														<td>
+														<c:if test="${a.checkTicket > 86400 && a.checkTicket > 0}">
 															<form method="POST"
 																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 																<p data-placement="top" data-toggle="tooltip"
@@ -246,8 +245,7 @@
 																		<span class="fa fa-trash"></span>
 																	</button>
 															</form>
-
-															</p>
+														</c:if>
 														</td>
 													</tr>
 												</c:forEach>
@@ -271,6 +269,7 @@
 															</button>
 														</td>
 														<td>
+														<c:if test="${a.checkTicket > 86400 && a.checkTicket > 0}">
 															<form method="POST"
 																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 																<p data-placement="top" data-toggle="tooltip"
@@ -280,6 +279,7 @@
 																		<span class="fa fa-trash"></span>
 																	</button>
 															</form>
+														</c:if>
 														</td>
 													</tr>
 												</c:forEach>

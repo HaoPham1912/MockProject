@@ -18,7 +18,9 @@ public class TicketDAOImp implements ITicketDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			String sql="select id_ticket, date_go, date_book, seat_number, status, price, phone, name, id_cus from ticket where ticket.id_bus =?";
+			String sql="select id_ticket, date_go, date_book, seat_number, status, price, phone, name, id_cus, "
+					+ "TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go))"
+					+ "from ticket,bus where ticket.id_bus =? and bus.id_bus = ticket.id_bus";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 
 			pstm.setInt(1, id_bus);
@@ -34,6 +36,7 @@ public class TicketDAOImp implements ITicketDAO{
 				tk.setPhone(rs.getString("phone"));
 				tk.setName(rs.getString("name"));
 				tk.setId_cus(rs.getInt("id_cus"));
+				tk.setCheckTicket(rs.getDouble(10));
 				arr.add(tk);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
@@ -221,7 +224,8 @@ public class TicketDAOImp implements ITicketDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			String sql = "select id_ticket, date_go, date_book, seat_number, status, time_go, time_estimate, phone, name,id_cus,"
-					+ "car_position, time_end, ticket.price, start_place, end_place\r\n" + 
+					+ "car_position, time_end, ticket.price, start_place, end_place,"
+					+ "TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go))\r\n" + 
 					"from ticket\r\n" + 
 					"inner join bus on ticket.id_bus = bus.id_bus\r\n" + 
 					"inner join buses on bus.id_buses = buses.id_buses\r\n" + 
@@ -248,6 +252,7 @@ public class TicketDAOImp implements ITicketDAO{
 				ticket.setTime_estimate(rs.getString("time_estimate"));
 				ticket.setCar_position(rs.getString("car_position"));
 				ticket.setTime_end(rs.getString("time_end"));
+				ticket.setCheckTicket(rs.getDouble(16));
 				arr.add(ticket);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
@@ -262,14 +267,16 @@ public class TicketDAOImp implements ITicketDAO{
 		try {
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
-			String sql="SELECT TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go)) > 86400, status from ticket,bus where ticket.id_bus = bus.id_bus and id_ticket = ?";
+			String sql="SELECT TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go)) > 86400,TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go)),"
+					+ " status from ticket,bus where ticket.id_bus = bus.id_bus and id_ticket = ?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 
 			pstm.setInt(1, id_ticket);
 			ResultSet rs = pstm.executeQuery();
 			if(rs.next())
 			{
-				if(rs.getInt(2)==0) return true;
+				if(rs.getInt(3)==0) return true;
+				if(rs.getInt(2)<0 || rs.getInt(1)==0) return false;
 				else
 				{
 					if(rs.getInt(1)==1)
@@ -293,7 +300,8 @@ public class TicketDAOImp implements ITicketDAO{
 			Connection conn = db.getMySQLConnection();
 			Statement stm = conn.createStatement();
 
-			String sql="select id_ticket, date_go, date_book, seat_number, status, price, phone, name, id_cus from ticket where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y')";
+			String sql="select id_ticket, date_go, date_book, seat_number, status, price, phone, name, id_cus,TIMESTAMPDIFF(SECOND,NOW(),concat(ticket.date_go,\" \",bus.time_go)) "
+					+ "from ticket, bus where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y') and ticket.id_bus = bus.id_bus";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 
 			pstm.setInt(1, id_bus);
@@ -310,6 +318,7 @@ public class TicketDAOImp implements ITicketDAO{
 				tk.setPhone(rs.getString("phone"));
 				tk.setName(rs.getString("name"));
 				tk.setId_cus(rs.getInt("id_cus"));
+				tk.setCheckTicket(rs.getDouble(10));
 				arr.add(tk);
 			}
 		} catch (ClassNotFoundException | SQLException e) {

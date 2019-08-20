@@ -258,7 +258,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div>	
         </div>
     </div>
     <!--== Book A Car Area End ==-->

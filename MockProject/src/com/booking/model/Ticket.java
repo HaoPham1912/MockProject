@@ -17,7 +17,14 @@ public class Ticket {
 	private String time_estimate;
 	private String car_position;
 	private String time_end;
+	private double checkTicket;
 	
+	public double getCheckTicket() {
+		return checkTicket;
+	}
+	public void setCheckTicket(double checkTicket) {
+		this.checkTicket = checkTicket;
+	}
 	public String getTime_go() {
 		return time_go;
 	}

@@ -93,6 +93,7 @@ public class FilterTicketServlet extends HttpServlet {
 				ArrayList<Ticket> arr = new ArrayList<Ticket>();
 				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go,Integer.valueOf(cusInfo));
 				request.setAttribute("filterList", arr);
+				
 				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf(id_bus)));
 				
 				ArrayList<Customer> arr1 = new ArrayList<Customer>();
