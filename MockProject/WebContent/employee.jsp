@@ -206,7 +206,6 @@
 											<td>${Buses.distance}</td>
 											<td>${Buses.price}</td>
 											<td>
-												<p data-placement="top" data-toggle="tooltip" title="View">
 												<form method="POST"
 													action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${Buses.id_buses}&action=show">
 													<button class="btn btn-primary" data-title="Edit"
@@ -214,7 +213,6 @@
 														<span class="fas fa-bus-alt"></span>
 													</button>
 												</form>
-												</p>
 											</td>
 										</tr>
 									</c:if>
@@ -225,38 +223,6 @@
 				</div>
 				<!-- Modal edit user-end -->
 				<!-- Modal delete Seller-Start -->
-				<div class="modal fade" id="deleteSeller" tabindex="-1"
-					role="dialog" aria-labelledby="delete" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h4 class="modal-title custom_align" id="Heading"
-									style="margin-left: auto;">
-									<strong>Delete Seller </strong>
-								</h4>
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-							</div>
-							<div class="modal-body">
-								<div class="alert alert-danger">
-									<span class="glyphicon glyphicon-warning-sign"></span> Do you
-									want to delete this seller?
-								</div>
-							</div>
-							<div class="modal-footer ">
-								<button id="yesdeleteSeller" type="button"
-									class="btn btn-success">
-									<span class="	fas fa-check-circle"></span>Yes
-								</button>
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">
-									<span class="fas fa-remove"></span>No
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
 				<!-- Modal delete Seller-End -->
 				<!-- ManageSeller-End -->
 

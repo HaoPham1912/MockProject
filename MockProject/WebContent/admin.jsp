@@ -247,51 +247,6 @@
 						</div>
 						<!-- /.modal-dialog -->
 					</div>
-					<!-- ThÃªm user-End -->
-					<c:if test="${AddNewCus!=null}">
-						<script type="text/javascript">
-							alert("New customer have been added!!!");
-						</script>
-						<%
-							if (request.getAttribute("AddNewCus") != null) {
-									request.removeAttribute("AddNewCus");
-									System.out.println("name: AAAAAAAAAAAA");
-								}
-						%>
-					</c:if>
-					<c:if test="${AddNewEmp!=null}">
-						<script type="text/javascript">
-							alert("New employee have been added!!!");
-						</script>
-						<%
-							if (request.getAttribute("AddNewEmp") != null) {
-									request.removeAttribute("AddNewEmp");
-									System.out.println("name: AAAAAAAAAAAA");
-								}
-						%>
-					</c:if>
-					<c:if test="${AddNewAdmin!=null}">
-						<script type="text/javascript">
-							alert("New admin have been added!!!");
-						</script>
-						<%
-							if (request.getAttribute("AddNewAdmin") != null) {
-									request.removeAttribute("AddNewAdmin");
-									System.out.println("name: AAAAAAAAAAAA");
-								}
-						%>
-					</c:if>
-					<c:if test="${AddUserFailed!=null}">
-						<script type="text/javascript">
-							alert("Can't add new users!!!");
-						</script>
-						<%
-							if (request.getAttribute("AddUserFailed") != null) {
-									request.removeAttribute("AddUserFailed");
-									System.out.println("name: AAAAAAAAAAAA");
-								}
-						%>
-					</c:if>
 					<div class="col-md-12">
 						<div class="table-responsive" style="overflow-x:hidden;">
 							<p data-placement="top" data-toggle="tooltip"
@@ -357,41 +312,6 @@
 							</table>
 						</div>
 					</div>
-
-					<!-- Pháº§n ná»i dung trong báº£ng user-End -->
-					<!-- <!-- Modal delete User-Start -->
-					<div class="modal fade" id="deleteUser" tabindex="-1" role="dialog"
-						aria-labelledby="delete" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title custom_align" id="Heading"
-										style="margin-left: auto;">
-										<strong>Delete User </strong>
-									</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-								<div class="modal-body">
-									<div class="alert alert-danger">
-										<span class="glyphicon glyphicon-warning-sign"></span> Do you
-										want to delete this user?
-									</div>
-								</div>
-								<div class="modal-footer ">
-									<button id="yesdeleteUser" type="button"
-										class="btn btn-success">
-										<span class="fas fa-check-circle"></span>Â Yes
-									</button>
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">
-										<span class="fas fa-remove"></span>Â No
-									</button>
-								</div>
-							</div>
-							/.modal-content
-						</div>
-						/.modal-dialog
-					</div>
 					<!-- Modal delete User-End -->
 					<!-- Modal edit User-Start -->
 					<div class="modal fade" id="editUser" tabindex="-1" role="dialog"
@@ -450,7 +370,7 @@
 												title="" required>
 										</div>
 										<div class="modal-footer">
-											<button type="submit" id="submitEditUser" onclick="getUpdateConfirmation();"
+											<button type="submit" id="submitEditUser"
 												class="btn btn-warning btn-lg" style="width: 100%;">
 												<span class="fas fa-check-circle"></span>Update
 											</button>
@@ -461,7 +381,7 @@
 							</div>
 						</div>
 					</div>
-					<c:if test="${UpdateCusSuccess!=null}">
+					<%-- <c:if test="${UpdateCusSuccess!=null}">
 						<script type="text/javascript">
 							alert("Update Infor customer successful!!!");
 						</script>
@@ -470,7 +390,7 @@
 						<script type="text/javascript">
 							alert("Update Failed!!!");
 						</script>
-					</c:if>
+					</c:if> --%>
 					<!-- Modal edit user-end -->
 				</div>
 				<!-- Modal ManageUser End -->
