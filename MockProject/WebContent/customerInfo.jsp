@@ -270,8 +270,7 @@
 											<label>Phone </label> <input name="phone" type="number" 
 											min="111111111" max="1000000000"
 											value="${customerInfo.phone}"
-												placeholder="Phone Number"
-												
+												placeholder="Phone Number"		
 												title="Phone must be a number that contains 10 numbers long"
 												required class="form-control">
 										</div>

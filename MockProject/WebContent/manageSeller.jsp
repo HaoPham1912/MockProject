@@ -239,8 +239,9 @@
 									<div class="form-group">
 										<h4 class="text-black-50">Phone:</h4>
 										<input class="form-control " id="phoneSellerEdit"
-											type="number" name="phoneSellerEdit"
-											placeholder="01293948384" pattern="[0-9]{1,}" title="Please enter your phone number"
+											type="text" name="phoneSellerEdit"
+											pattern="[0-9]{10}"
+											placeholder="01293948384" title="Please enter your phone number"
 											required>
 									</div>
 									<!-- Phone user -->
