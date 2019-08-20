@@ -248,7 +248,7 @@
 						<!-- /.modal-dialog -->
 					</div>
 					<div class="col-md-12">
-						<div class="table-responsive">
+						<div class="table-responsive" style="overflow-x:hidden;">
 							<p data-placement="top" data-toggle="tooltip"
 								title="Create new user">
 								<button class="btn btn-primary" data-title="Create new user"
@@ -419,7 +419,6 @@
 	<script src="Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 	<!-- Page level custom scripts -->
 	<script src="Admin/js/user-table.js"></script>
-	<script src="Admin/js/seller-table.js"></script>
 	<script
 		src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
