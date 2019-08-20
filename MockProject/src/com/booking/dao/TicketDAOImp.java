@@ -285,4 +285,37 @@ public class TicketDAOImp implements ITicketDAO{
 		}
 		return false;
 	}
+	@Override
+	public ArrayList<Ticket> FindTicketByDate(int id_bus, String date_go) {
+		// TODO Auto-generated method stub
+		ArrayList<Ticket> arr = new ArrayList<Ticket>();
+		try {
+			Connection conn = db.getMySQLConnection();
+			Statement stm = conn.createStatement();
+
+			String sql="select id_ticket, date_go, date_book, seat_number, status, price, phone, name, id_cus from ticket where ticket.id_bus =? and date_go=STR_TO_DATE(?,'%d-%m-%Y')";
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, id_bus);
+			pstm.setString(2, date_go);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				Ticket tk = new Ticket();
+				tk.setId_ticket(rs.getInt("id_ticket"));
+				tk.setDate_go(rs.getString("date_go"));
+				tk.setDate_book(rs.getString("date_book"));
+				tk.setSeat_number(rs.getInt("seat_number"));
+				tk.setStatus(rs.getInt("status"));
+				tk.setPrice(rs.getDouble("price"));
+				tk.setPhone(rs.getString("phone"));
+				tk.setName(rs.getString("name"));
+				tk.setId_cus(rs.getInt("id_cus"));
+				arr.add(tk);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return arr;
+	}
 }

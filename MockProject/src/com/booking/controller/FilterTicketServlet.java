@@ -112,12 +112,14 @@ public class FilterTicketServlet extends HttpServlet {
 				
 				request.setAttribute("id_bus", session.getAttribute("id_bus"));
 				request.setAttribute("date_go", ticketDAO.getDateGoByIdBus(Integer.valueOf((String) session.getAttribute("id_bus"))));
-				request.setAttribute("listFilterTicket", ticketDAO.filterAllTicket(Integer.valueOf((String) session.getAttribute("id_bus"))));
 				
 				ArrayList<String> arr = new ArrayList<String>();
 				String date_go = request.getParameter("date_go_forSeat");
 				arr = ticketDAO.FindAvailableSeat(Integer.valueOf((String) session.getAttribute("id_bus")), date_go);
 				request.setAttribute("listSeat", arr);
+				
+				request.setAttribute("listFilterTicket", ticketDAO.FindTicketByDate(Integer.valueOf((String) session.getAttribute("id_bus")),date_go));
+				
 				
 //				System.out.println("id bus:  "+Integer.valueOf((String) session.getAttribute("id_bus")));
 //				System.out.println("date go:  "+ date_go);
