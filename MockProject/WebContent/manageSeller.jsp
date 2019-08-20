@@ -232,14 +232,15 @@
 									<div class="form-group">
 										<h4 class="text-black-50">Name:</h4>
 										<input class="form-control " id="nameSellerEdit" type="text"
-											name="nameSellerEdit" placeholder="Le Van Duy" required>
+											name="nameSellerEdit" placeholder="Le Van Duy" title="Please enter your name"
+											 required>
 									</div>
 									<!-- Phone user -->
 									<div class="form-group">
 										<h4 class="text-black-50">Phone:</h4>
 										<input class="form-control " id="phoneSellerEdit"
 											type="number" name="phoneSellerEdit"
-											placeholder="01293948384" pattern="[0-9]{1,}" title=""
+											placeholder="01293948384" pattern="[0-9]{1,}" title="Please enter your phone number"
 											required>
 									</div>
 									<!-- Phone user -->
@@ -247,7 +248,8 @@
 									<div class="form-group">
 										<h4 class="text-black-50">Email:</h4>
 										<input class="form-control " id="emailSellerEdit" type="email"
-											name="emailSellerEdit" name="Email" accept=""
+											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+											name="emailSellerEdit" accept=""
 											placeholder="example@gmail.com" title="Email is unvalid!"
 											required>
 									</div>
@@ -257,7 +259,7 @@
 										<h4 class="text-black-50">Address:</h4>
 										<input class="form-control " id="addressSellerEdit"
 											type="text" name="addressSellerEdit"
-											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title=""
+											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title="Please enter your address"
 											required>
 									</div>
 									<!-- Set role-End -->
@@ -295,7 +297,7 @@
 				</c:if> --%>
 				<!-- Modal edit user-end -->
 				<!-- Modal delete Seller-Start -->
-				<div class="modal fade" id="deleteSeller" tabindex="-1"
+				<!-- <div class="modal fade" id="deleteSeller" tabindex="-1"
 					role="dialog" aria-labelledby="delete" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -323,10 +325,10 @@
 								</button>
 							</div>
 						</div>
-						<!-- /.modal-content -->
+						/.modal-content
 					</div>
-					<!-- /.modal-dialog -->
-				</div>
+					/.modal-dialog
+				</div> -->
 				<!-- Modal delete Seller-End -->
 				<!-- ManageSeller-End -->
 			</div>

@@ -210,7 +210,8 @@
 									</div>
 									<div class="form-group">
 										<label>Your Phone </label> <input name="phoneupdate"
-											type="text" pattern="[0-9]{10}" value="${customerInfo.phone}"
+											type="text" pattern="^(\d{7}|\d{10})$" 
+											value="${customerInfo.phone}"
 											placeholder="Phone Number" name="phone"
 											title="Phone must be a number that contains 10 characters long"
 											readonly required class="form-control">
@@ -266,17 +267,20 @@
 												title="Please type your name">
 										</div>
 										<div class="form-group">
-											<label>Phone </label> <input name="phone" type="text"
-												pattern="[0-9]{10}" value="${customerInfo.phone}"
-												placeholder="Phone Number" name="phone"
-												title="Phone must be a number that contains 10 characters long"
+											<label>Phone </label> <input name="phone" type="number" 
+											min="111111111" max="1000000000"
+											value="${customerInfo.phone}"
+												placeholder="Phone Number"
+												
+												title="Phone must be a number that contains 10 numbers long"
 												required class="form-control">
 										</div>
 										<div class="form-group">
-											<label>Email </label> <input name="email" type="email"
+											<label>Email </label> <input type="email"
+											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 												value="${customerInfo.email}" placeholder="Email"
 												name="email" class="form-control"
-												title="Please type your email" required>
+												title="Please type your email correct to form" required>
 										</div>
 										<div class="form-group">
 											<label>Address </label> <input name="address" type="text"
