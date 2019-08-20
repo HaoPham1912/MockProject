@@ -234,12 +234,12 @@
 										<input class="form-control " id="nameSellerEdit" type="text"
 												onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
 												title="Please fill data correctly"
-											name="nameSellerEdit" placeholder="Le Van Duy" title="Please enter your name"
-											 required>
+												name="nameSellerEdit" placeholder="Le Van Duy" title="Please enter your name"
+											 	required>
 										<script>
 											function vietnameseNoNumbers(input) {
-												 var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
-												nput.value = input.value
+												var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												input.value = input.value
 														.replace(regex, "");
 											}
 										</script>
