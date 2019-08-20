@@ -27,10 +27,7 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
-
-
 </head>
-
 <body id="page-top">
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -192,9 +189,9 @@
 													title="Please fill data correctly"
 													placeholder="Le Van Duy" name="name1" required>
 												<script>
-												    function vietnameseNoNumbers(input) {
-												        var regex = /[^-a-z !@&*():;"',./\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
-												        input.value = input.value.replace(regex, "");
+												  	function vietnameseNoNumbers(input) {
+												      var regex = /[^-a-z /-\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												       input.value = input.value.replace(regex, "");
 												    }
 												</script>
 											</div>
@@ -358,7 +355,7 @@
 												name="nameUserEdit" placeholder="Le Van Duy" required>
 											<script>
 												  function vietnameseNoNumbers(input) {
-												       var regex = /[^-a-z !@&*():;"',./\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+												      var regex = /[^-a-z /-\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
 												       input.value = input.value.replace(regex, "");
 												    }
 											</script>
