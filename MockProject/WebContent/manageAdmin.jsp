@@ -225,14 +225,15 @@
 									<div class="form-group">
 										<h4 class="text-black-50">Name:</h4>
 										<input class="form-control " id="nameAdminEdit" type="text"
-											name="nameAdminEdit" placeholder="Le Van Duy" required>
+											name="nameAdminEdit" placeholder="Le Van Duy" title="Please enter your name"
+											 required>
 									</div>
 									<!-- Phone user -->
 									<div class="form-group">
 										<h4 class="text-black-50">Phone:</h4>
 										<input class="form-control " id="phoneAdminEdit" type="number"
 											name="phoneAdminEdit" placeholder="01293948384"
-											pattern="[0-9]{1,}" title="" required>
+											pattern="[0-9]{1,}" title="Please enter your phone number" required>
 									</div>
 									<!-- Phone user -->
 									<!-- Email User -->
@@ -249,7 +250,7 @@
 										<h4 class="text-black-50">Address:</h4>
 										<input class="form-control " id="addressAdminEdit" type="text"
 											name="addressAdminEdit"
-											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title=""
+											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title="Please enter your address"
 											required>
 									</div>
 									<div class="modal-footer">
