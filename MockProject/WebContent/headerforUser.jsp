@@ -212,9 +212,8 @@
                                 <p>BusBooking.com- The Biggest Booking System</p><br/></div>
                                 <c:if test="${bookingInfo!=null}">
                                 	<div class="pick-location bookinput-item">
-										<input class="form-control" type="text" list="start_place" name="start_place" />
+										<input class="form-control" type="text" list="start_place" name="start_place" value="${bookingInfo.start_place}" placeholder="Depart place" required/>
 										<datalist id="start_place">
-											<option selected>${bookingInfo.start_place}</option>
 											<option value="Ho Chi Minh">Ho Chi Minh</option>
 											<option value="Da Nang">Da Nang</option>
 											<option value="Da Lat">Da Lat</option>
@@ -229,20 +228,26 @@
                                        </select> --%>
                                     </div>
                                     <div class="pick-location bookinput-item">
-                                        <select class="custom-select" name="end_place">
+                                    	<input class="form-control" type="text" list="end_place" name="end_place" value="${bookingInfo.end_place}" placeholder="Destination" required/>
+										<datalist id="end_place">
+											<option value="Ha Noi">Ha Noi</option>
+											<option value="Da Nang">Da Nang</option>
+											<option value="Da Lat">Da Lat</option>
+											<option value="Ho Chi Minh">Ho Chi Minh</option>
+										</datalist>
+                                       <%--  <select class="custom-select" name="end_place">
                                           <option selected>${bookingInfo.end_place}</option>
                                           <option value="Ha Noi">Ha Noi</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ho Chi Minh">Ho Chi Minh</option>
-                                   		</select>
+                                   		</select> --%>
                                      </div>              
                                 </c:if>
                                 <c:if test="${bookingInfo==null}">
                                 	<div class="pick-location bookinput-item">   
-                                		<input class="form-control" type="text" list="start_place" name="start_place" />
+                                		<input class="form-control" type="text" list="start_place" name="start_place" value="${bookingInfo.start_place}" placeholder="Depart place" required/>
 										<datalist  id="start_place">
-											<option selected>${bookingInfo.start_place}</option>
 											<option value="Ho Chi Minh">Ho Chi Minh</option>
 											<option value="Da Nang">Da Nang</option>
 											<option value="Da Lat">Da Lat</option>
@@ -256,12 +261,19 @@
                                        </select>           -->                     
                                     </div>
                                     <div class="pick-location bookinput-item">
-                                        <select class="custom-select" name="end_place">
+                                    	<input class="form-control" type="text" list="end_place" name="end_place" value="${bookingInfo.end_place}" placeholder="Destination" required/>
+										<datalist id="end_place">											
+											<option value="Ha Noi">Ha Noi</option>
+											<option value="Da Nang">Da Nang</option>
+											<option value="Da Lat">Da Lat</option>
+											<option value="Ho Chi Minh">Ho Chi Minh</option>
+										</datalist>
+                                        <!-- <select class="custom-select" name="end_place">
                                           <option selected>Ha Noi</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ho Chi Minh">Ho Chi Minh</option>
-                                   		</select>
+                                   		</select> -->
                                      </div>	                                                
                                 </c:if>    
                                 <div class="pick-date bookinput-item">
