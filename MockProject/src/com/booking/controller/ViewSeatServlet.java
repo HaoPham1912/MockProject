@@ -141,7 +141,6 @@ public class ViewSeatServlet extends HttpServlet {
 		}
 		session.setAttribute("BookingMessage", "Booking Successful!");
 		response.sendRedirect(request.getContextPath()+"/cus-dashboard");
-		session.removeAttribute("BookingMessage");
 		return;
 	}
 
