@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.AccountDAOImp;
 import com.booking.dao.AdminDAOImp;
@@ -57,6 +58,7 @@ public class AdminDashBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 		String action=request.getParameter("action");
 		System.out.println("action: " +action);
 		if(action.equals("updateCustomer"))
@@ -72,16 +74,17 @@ public class AdminDashBoardServlet extends HttpServlet {
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.valueOf(id_acc_cus)))
 				{
 					System.out.println("Success");
-					request.setAttribute("UpdateCusSuccess", "Update Infor Suceess!!!");
-					doGet(request, response);
-					request.removeAttribute("UpdateCusSuccess");
+					
+					session.setAttribute("UpdateCusSuccess", "Update Infor Suceess!!!");
+//					doGet(request, response);
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 				}
 				else
 				{
 					System.out.println("Failed");
-					request.setAttribute("UpdateCusFailed", "Can't update info");
-					doGet(request, response);
-					request.removeAttribute("UpdateCusFailed");
+					session.setAttribute("UpdateCusFailed", "Can't update info");
+//					doGet(request, response);
+					response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 				}
 			}
 		}
@@ -106,13 +109,15 @@ public class AdminDashBoardServlet extends HttpServlet {
 					if(customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1)) 
 					{
 						System.out.println("Dang ki thanh cong");
-						request.setAttribute("AddNewCus", "New user have been added!!!");
-						doGet(request, response);
+						session.setAttribute("AddNewCus", "New user have been added!!!");
+//						doGet(request, response);
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 					}
 					else
 					{
-						request.setAttribute("AddUserFailed", "Can't add new user");
-						doGet(request, response);
+						session.setAttribute("AddUserFailed", "Can't add new user");
+//						doGet(request, response);
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 					}
 				}else if(idnew==2) {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
@@ -120,13 +125,15 @@ public class AdminDashBoardServlet extends HttpServlet {
 					System.out.println("id accout is: "+id);
 					if(employeeDAO.insertInfoEmployee(id, name1, phone1, email1, address1)) {
 						System.out.println("Dang ki thanh cong");
-						request.setAttribute("AddNewEmp", "New emp have been added");
-						doGet(request, response);
+						session.setAttribute("AddNewEmp", "New emp have been added");
+//						doGet(request, response);
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 					}
 					else
 					{
-						request.setAttribute("AddUserFailed", "Can't add new user");
-						doGet(request, response);
+						session.setAttribute("AddUserFailed", "Can't add new user");
+//						doGet(request, response);
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 					}
 				}else if(idnew==3) {
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
@@ -134,20 +141,23 @@ public class AdminDashBoardServlet extends HttpServlet {
 					System.out.println("id accout is: "+id);
 					if(adminDAO.insertAdmin(id, name1, phone1, email1, address1)) {
 						System.out.println("Dang ki thanh cong");
-						request.setAttribute("AddNewAdmin", "New ad have been added!!!");
-						doGet(request, response);
+						session.setAttribute("AddNewAdmin", "New ad have been added!!!");
+//						doGet(request, response);
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 					}
 					else
 					{
-						request.setAttribute("AddUserFailed", "Can't add new user");
-						doGet(request, response);
+						session.setAttribute("AddUserFailed", "Can't add new user");
+//						doGet(request, response);
+						response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 					}
 				}
 			}
 			else {
 				System.out.println("username avail!!! Retry!!");
-				request.setAttribute("AddUserFailed", "Can't add new user");
-				doGet(request, response);
+				session.setAttribute("AddUserFailed", "Can't add new user");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 			}
 		}
 		else if(action.equals("filterCus")) 

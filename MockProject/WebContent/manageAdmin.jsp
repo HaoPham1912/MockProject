@@ -275,17 +275,23 @@
 						</div>
 					</div>
 				</div>
-				<%-- <c:if test="${UpdateAdminSucess!=null}">
+				<c:if test="${UpdateAdminSucess!=null}">
 					<script type="text/javascript">
 						alert("Update sucessful!!!");
 					</script>
+					<%
+						request.getSession().removeAttribute("UpdateAdminSucess");
+					%>
 				</c:if>
 
 				<c:if test="${UpdateAdminFailed!=null}">
 					<script type="text/javascript">
 						alert("Update Failed!!!");
 					</script>
-				</c:if> --%>
+					<%
+						request.getSession().removeAttribute("UpdateAdminFailed");
+					%>
+				</c:if>
 				<!-- ManageSeller-Start -->
 
 				<!-- Modal edit user-end -->

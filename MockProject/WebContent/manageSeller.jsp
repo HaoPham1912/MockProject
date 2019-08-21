@@ -131,7 +131,7 @@
 								<strong>Manage TicketSeller</strong>
 							</h1>
 						</div>
-						<div class="table-responsive" style="overflow-x:hidden">
+						<div class="table-responsive" style="overflow-x: hidden">
 							<form method="POST"
 								action="http://localhost:8080/MockProject/admin-manageSeller?action=filterEmp">
 								<div class="row">
@@ -232,10 +232,10 @@
 									<div class="form-group">
 										<h4 class="text-black-50">Name:</h4>
 										<input class="form-control " id="nameSellerEdit" type="text"
-												onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
-												title="Please fill data correctly"
-												name="nameSellerEdit" placeholder="Le Van Duy" title="Please enter your name"
-											 	required>
+											onkeyup="vietnameseNoNumbers(this)" size="50"
+											title="Please fill data correctly" name="nameSellerEdit"
+											placeholder="Le Van Duy" title="Please enter your name"
+											required>
 										<script>
 											function vietnameseNoNumbers(input) {
 												var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
@@ -247,11 +247,10 @@
 									<!-- Phone user -->
 									<div class="form-group">
 										<h4 class="text-black-50">Phone:</h4>
-										<input class="form-control " id="phoneSellerEdit"
-											type="text" name="phoneSellerEdit"
-											pattern="[0-9]{10}"
-											placeholder="01293948384" title="Please enter your phone number"
-											required>
+										<input class="form-control " id="phoneSellerEdit" type="text"
+											name="phoneSellerEdit" pattern="[0-9]{10}"
+											placeholder="01293948384"
+											title="Please enter your phone number" required>
 									</div>
 									<!-- Phone user -->
 									<!-- Email User -->
@@ -269,8 +268,8 @@
 										<h4 class="text-black-50">Address:</h4>
 										<input class="form-control " id="addressSellerEdit"
 											type="text" name="addressSellerEdit"
-											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City" title="Please enter your address"
-											required>
+											placeholder="1 Vo Van Ngan Thu Duc Ho Chi Minh City"
+											title="Please enter your address" required>
 									</div>
 									<!-- Set role-End -->
 									<div class="modal-footer">
@@ -285,60 +284,40 @@
 						</div>
 					</div>
 				</div>
-				<%-- <c:if test="${UpdateEmpSuccess!=null}">
+				<c:if test="${UpdateEmpSuccess!=null}">
 					<script type="text/javascript">
 						alert("Update Successful!!!");
 					</script>
+					<%
+						request.getSession().removeAttribute("UpdateEmpSuccess");
+					%>
 				</c:if>
 				<c:if test="${UpdateEmpFailed!=null}">
 					<script type="text/javascript">
 						alert("Update Failed!!!");
 					</script>
+					<%
+						request.getSession().removeAttribute("UpdateEmpFailed");
+					%>
 				</c:if>
 				<c:if test="${DeleteSellerSuccess!=null}">
 					<script type="text/javascript">
 						alert("Seller have been deleted!!!");
 					</script>
+					<%
+						request.getSession().removeAttribute("DeleteSellerSuccess");
+					%>
 				</c:if>
 				<c:if test="${DeleteSellerFailed!=null}">
 					<script type="text/javascript">
 						alert("Can't delete!!!");
 					</script>
-				</c:if> --%>
+					<%
+						request.getSession().removeAttribute("DeleteSellerFailed");
+					%>
+				</c:if>
 				<!-- Modal edit user-end -->
 				<!-- Modal delete Seller-Start -->
-				<!-- <div class="modal fade" id="deleteSeller" tabindex="-1"
-					role="dialog" aria-labelledby="delete" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h4 class="modal-title custom_align" id="Heading"
-									style="margin-left: auto;">
-									<strong>Delete Seller </strong>
-								</h4>
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-							</div>
-							<div class="modal-body">
-								<div class="alert alert-danger">
-									<span class="glyphicon glyphicon-warning-sign"></span> Do you
-									want to delete this seller?
-								</div>
-							</div>
-							<div class="modal-footer ">
-								<button id="yesdeleteSeller" type="button"
-									class="btn btn-success">
-									<span class="	fas fa-check-circle"></span>Yes
-								</button>
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">
-									<span class="fas fa-remove"></span>No
-								</button>
-							</div>
-						</div>
-						/.modal-content
-					</div>
-					/.modal-dialog
-				</div> -->
 				<!-- Modal delete Seller-End -->
 				<!-- ManageSeller-End -->
 			</div>

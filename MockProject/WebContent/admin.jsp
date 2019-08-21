@@ -53,8 +53,8 @@
 					class="text-nav">Manage Customer</span></a></li>
 			<!-- Nav Item-Manage Seller -->
 			<li class="nav-item active"><a class="nav-link"
-				href="${pageContext.request.contextPath}/admin-manageSeller">
-					<i class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
+				href="${pageContext.request.contextPath}/admin-manageSeller"> <i
+					class="fas fa-portrait" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Seller</span>
 			</a></li>
 			<!-- Nav Item-Manage System -->
@@ -185,34 +185,35 @@
 											<!-- TÃªn tháº±ng user -->
 											<div class="form-group">
 												<h4 class="text-black-50">Name:</h4>
-												<input class="form-control " id="nameUser" type="text" onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
-													title="Please fill data correctly"
-													placeholder="Le Van Duy" name="name1" required>
+												<input class="form-control " id="nameUser" type="text"
+													onkeyup="vietnameseNoNumbers(this)" size="50"
+													title="Please fill data correctly" placeholder="Le Van Duy"
+													name="name1" required>
 												<script>
-												  	function vietnameseNoNumbers(input) {
-												  		var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
-												       input.value = input.value.replace(regex, "");
-												    }
+													function vietnameseNoNumbers(
+															input) {
+														var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+														input.value = input.value
+																.replace(regex,
+																		"");
+													}
 												</script>
 											</div>
 											<!-- TÃªn tháº±ng user -->
 											<!-- Phone user -->
 											<div class="form-group">
 												<h4 class="text-black-50">Phone:</h4>
-												<input class="form-control " id="phoneUser"
-													type="text" 
-													pattern="[0-9]{10}"
-													title="Invalid phone number"
-													placeholder="01293948384" name="phone1"
-													title="" required>
+												<input class="form-control " id="phoneUser" type="text"
+													pattern="[0-9]{10}" title="Invalid phone number"
+													placeholder="01293948384" name="phone1" title="" required>
 											</div>
 											<!-- Phone user -->
 											<!-- Email User -->
 											<div class="form-group">
 												<h4 class="text-black-50">Email:</h4>
 												<input class="form-control " id="emailUser" type="email"
-													pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-													accept="" placeholder="example@gmail.com" name="email1"
+													pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" accept=""
+													placeholder="example@gmail.com" name="email1"
 													title="Email is unvalid!" required>
 											</div>
 											<!-- Email User -->
@@ -256,7 +257,7 @@
 						<!-- /.modal-dialog -->
 					</div>
 					<div class="col-md-12">
-						<div class="table-responsive" style="overflow-x:hidden;">
+						<div class="table-responsive" style="overflow-x: hidden;">
 							<p data-placement="top" data-toggle="tooltip"
 								title="Create new user">
 								<button class="btn btn-primary" data-title="Create new user"
@@ -269,7 +270,7 @@
 								<div class="row">
 									<div class="col-md-2" style="align: center">
 										<div class="form-group">
-											<label>Name:</label> <input type="text" name="search" 
+											<label>Name:</label> <input type="text" name="search"
 												placeholder="Searching...."
 												style="height: 40px; width: 100%;">
 										</div>
@@ -350,24 +351,25 @@
 										<div class="form-group">
 											<h4 class="text-black-50">Name:</h4>
 											<input class="form-control " id="nameUserEdit" type="text"
-											 	onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
-												title="Please fill data correctly"
-												name="nameUserEdit" placeholder="Le Van Duy" required>
+												onkeyup="vietnameseNoNumbers(this)" size="50"
+												title="Please fill data correctly" name="nameUserEdit"
+												placeholder="Le Van Duy" required>
 											<script>
-												  function vietnameseNoNumbers(input) {
-													  var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
-												       input.value = input.value.replace(regex, "");
-												    }
+												function vietnameseNoNumbers(
+														input) {
+													var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+													input.value = input.value
+															.replace(regex, "");
+												}
 											</script>
 										</div>
 										<!-- Phone user -->
 										<div class="form-group">
 											<h4 class="text-black-50">Phone:</h4>
-											<input class="form-control " id="phoneUserEdit" type="text" 
-												pattern="[0-9]{10}"
-												title="Invalid phone number"
-												name="phoneUserEdit" placeholder="01293948384"
-												title="" required>
+											<input class="form-control " id="phoneUserEdit" type="text"
+												pattern="[0-9]{10}" title="Invalid phone number"
+												name="phoneUserEdit" placeholder="01293948384" title=""
+												required>
 										</div>
 										<!-- Phone user -->
 										<!-- Email User -->
@@ -400,16 +402,22 @@
 							</div>
 						</div>
 					</div>
-					<%-- <c:if test="${UpdateCusSuccess!=null}">
+					<c:if test="${UpdateCusSuccess!=null}">
 						<script type="text/javascript">
 							alert("Update Infor customer successful!!!");
 						</script>
+						<%
+							request.getSession().removeAttribute("UpdateCusSuccess");
+						%>
 					</c:if>
 					<c:if test="${UpdateCusFailed!=null}">
 						<script type="text/javascript">
 							alert("Update Failed!!!");
 						</script>
-					</c:if> --%>
+						<%
+							request.getSession().removeAttribute("UpdateCusFailed");
+						%>
+					</c:if>
 					<!-- Modal edit user-end -->
 				</div>
 				<!-- Modal ManageUser End -->
