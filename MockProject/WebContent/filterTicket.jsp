@@ -248,7 +248,7 @@
 																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 																<p data-placement="top" data-toggle="tooltip"
 																	title="Delete">
-																	<button class="btn btn-danger" data-title="Delete"
+																	<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
 																		data-toggle="modal">
 																		<span class="fa fa-trash"></span>
 																	</button>
