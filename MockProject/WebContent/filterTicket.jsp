@@ -150,12 +150,19 @@
 												<div class=" col-md-5" style="align: center">
 													<div class="form-group">
 														<label>Customer:</label> 
-														<select class="custom-select" name="cusInfo">
+														<input class="form-control" type="text" list="customer" name="cusInfo"/>
+														<datalist  id="customer" >
 															<c:forEach items="${cusList}" var="a">
+																<option value="${a.id_cus}">Name: ${a.name} &emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
+															</c:forEach>
+														</datalist>
+														<%-- <label>Customer:</label> 
+														<select class="custom-select" name="cusInfo">
+																<c:forEach items="${cusList}" var="a">
 																<option value="${a.id_cus}">Name: ${a.name}
 																	&emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
 															</c:forEach>
-														</select>
+														</select>			 --%>									
 													</div>
 												</div>
 												<div class=" col-md-2" style="align: center">

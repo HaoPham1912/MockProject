@@ -91,6 +91,7 @@ public class FilterTicketServlet extends HttpServlet {
 				String cusInfo = request.getParameter("cusInfo");
 				
 				ArrayList<Ticket> arr = new ArrayList<Ticket>();
+				System.out.println("cus info: "+Integer.valueOf(cusInfo));
 				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go,Integer.valueOf(cusInfo));
 				request.setAttribute("filterList", arr);
 				

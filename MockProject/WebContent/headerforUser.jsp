@@ -211,14 +211,22 @@
                             <div class="header-text">
                                 <p>BusBooking.com- The Biggest Booking System</p><br/></div>
                                 <c:if test="${bookingInfo!=null}">
-                                	<div class="pick-location bookinput-item">          
-                                       <select class="custom-select" name="start_place">
+                                	<div class="pick-location bookinput-item">
+										<input class="form-control" type="text" list="start_place" name="start_place" />
+										<datalist id="start_place">
+											<option selected>${bookingInfo.start_place}</option>
+											<option value="Ho Chi Minh">Ho Chi Minh</option>
+											<option value="Da Nang">Da Nang</option>
+											<option value="Da Lat">Da Lat</option>
+											<option value="Ha Noi">Ha Noi</option>
+										</datalist>
+										<%-- <select class="custom-select" name="start_place">
                                           <option selected>${bookingInfo.start_place}</option>
-                                           <option value="Ho Chi Minh">Ho Chi Minh</option>
+                                          <option value="Ho Chi Minh">Ho Chi Minh</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ha Noi">Ha Noi</option>
-                                       </select>
+                                       </select> --%>
                                     </div>
                                     <div class="pick-location bookinput-item">
                                         <select class="custom-select" name="end_place">
@@ -231,13 +239,21 @@
                                      </div>              
                                 </c:if>
                                 <c:if test="${bookingInfo==null}">
-                                	<div class="pick-location bookinput-item">          
-                                      <select class="custom-select" name="start_place">
+                                	<div class="pick-location bookinput-item">   
+                                		<input class="form-control" type="text" list="start_place" name="start_place" />
+										<datalist  id="start_place">
+											<option selected>${bookingInfo.start_place}</option>
+											<option value="Ho Chi Minh">Ho Chi Minh</option>
+											<option value="Da Nang">Da Nang</option>
+											<option value="Da Lat">Da Lat</option>
+											<option value="Ha Noi">Ha Noi</option>
+										</datalist>       
+                                     <!--  <select class="custom-select" name="start_place">
                                           <option selected>Ho Chi Minh</option>
                                           <option value="Da Nang">Da Nang</option>
                                           <option value="Da Lat">Da Lat</option>
                                           <option value="Ha Noi">Ha Noi</option>
-                                       </select>                               
+                                       </select>           -->                     
                                     </div>
                                     <div class="pick-location bookinput-item">
                                         <select class="custom-select" name="end_place">
