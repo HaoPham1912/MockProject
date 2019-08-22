@@ -1,6 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="javax.servlet.http.HttpServletRequest" %>
-
+<%@ page import="javax.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -17,10 +17,13 @@
 	<section id="what-do-area" class="section-padding">
 		<div class="container">
 			<jsp:include page="content.jsp" />
-			<c:if test="${BookingMessage!=null}">
+			<c:if test="${BookingMessage != null}">
 				<script type="text/javascript">
 					alert("Booking Successful!");
 				</script>
+				<%
+					request.getSession().removeAttribute("BookingMessage");
+				%>
 			</c:if>
 		</div>
 	</section>

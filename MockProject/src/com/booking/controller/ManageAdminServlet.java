@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.AdminDAOImp;
 
@@ -47,6 +48,7 @@ public class ManageAdminServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		//doGet(request, response);
+		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
 		System.out.println(action);
 		if(action.equals("updateAdmin")) {
@@ -58,16 +60,16 @@ public class ManageAdminServlet extends HttpServlet {
 			if(adminDAO.updateAdmin(name_ad, phone_ad, email_ad, address_ad, Integer.valueOf(id_acc_ad))) {
 				System.out.println("Update admin info success!!!");
 //				response.sendRedirect(request.getContextPath()+"/admin-manageAdmin");
-				request.setAttribute("UpdateAdminSucess", "Update success!!!");
-				doGet(request, response);
-				request.removeAttribute("UpdateAdminSucess");
+				session.setAttribute("UpdateAdminSucess", "Update success!!!");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/admin-manageAdmin");
 			}
 			else
 			{
 				System.out.println("Failed!!!");
-				request.setAttribute("UpdateAdminFailed", "Update Failed!!!");
-				doGet(request, response);
-				request.removeAttribute("UpdateAdminFailed");
+				session.setAttribute("UpdateAdminFailed", "Update Failed!!!");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/admin-manageAdmin");
 			}
 		}
 		else if(action.equals("filterAdmin")) {

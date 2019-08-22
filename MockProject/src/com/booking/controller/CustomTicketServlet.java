@@ -50,7 +50,7 @@ public class CustomTicketServlet extends HttpServlet {
 			{
 				HttpSession session = request.getSession();
 				String id_bus = (String) session.getAttribute("id_bus");
-				session.setAttribute("UpdateTicketFail", "Failed");
+				session.setAttribute("UpdateTicketFailed", "Failed");
 				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
 			}
 		}
@@ -68,7 +68,7 @@ public class CustomTicketServlet extends HttpServlet {
 			{
 				HttpSession session = request.getSession();
 				String id_bus = (String) session.getAttribute("id_bus");
-				session.setAttribute("DeleteTicketFail", "Cannot delete this ticket");
+				session.setAttribute("DeleteTicketFailed", "Cannot delete this ticket");
 				response.sendRedirect(request.getContextPath()+"/emp-filterTicket?id_bus="+id_bus);
 			}
 		}

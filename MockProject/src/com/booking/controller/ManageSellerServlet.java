@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.booking.dao.EmployeeDAOImp;
 
@@ -47,6 +48,7 @@ public class ManageSellerServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 //		doGet(request, response);
+		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
 		System.out.println(action);
 		if(action.equals("filterEmp")) {
@@ -68,19 +70,17 @@ public class ManageSellerServlet extends HttpServlet {
 			{
 				if(employeeDAO.updateEmployee(name_emp, phone_emp, email_emp, address_emp, Integer.valueOf(id_acc_emp)))
 				{
-					System.out.println("Success");
-					/*response.sendRedirect(request.getContextPath()+"/admin-manageSeller");*/
-					request.setAttribute("UpdateEmpSuccess", "Update infor employee successful!!!");
-					doGet(request, response);
-					request.removeAttribute("UpdateEmpSuccess");
-					System.out.println("Xóa r");
+					System.out.println("Success");				
+					session.setAttribute("UpdateEmpSuccess", "Update infor employee successful!!!");
+//					doGet(request, response);
+					response.sendRedirect(request.getContextPath()+"/admin-manageSeller");
 				}
 				else
 				{
 					System.out.println("Failed");
-					request.setAttribute("UpdateEmpFailed", "Can't update infor employee!!!");
-					doGet(request, response);
-					request.removeAttribute("UpdateEmpFailed");
+					session.setAttribute("UpdateEmpFailed", "Can't update infor employee!!!");
+//					doGet(request, response);
+					response.sendRedirect(request.getContextPath()+"/admin-manageSeller");
 				}
 			}
 		}
@@ -90,15 +90,15 @@ public class ManageSellerServlet extends HttpServlet {
 			if(employeeDAO.deleteEmployee(Integer.valueOf(id))) {
 				System.out.println("Deleted Seller");
 				/*response.sendRedirect(request.getContextPath()+"/admin-dashboard");*/
-				request.setAttribute("DeleteSellerSuccess", "Delete Success!!!!");
-				doGet(request, response);
-				request.removeAttribute("DeleteSellerSuccess");
+				session.setAttribute("DeleteSellerSuccess", "Delete Success!!!!");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/admin-manageSeller");
 			}
 			else
 			{
-				request.setAttribute("DeleteSellerFailed", "Delete Failed!!!!");
-				doGet(request, response);
-				request.removeAttribute("DeleteSellerFailed");
+				session.setAttribute("DeleteSellerFailed", "Delete Failed!!!!");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/admin-manageSeller");
 			}
 		}
 	}

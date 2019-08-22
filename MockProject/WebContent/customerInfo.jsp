@@ -75,7 +75,7 @@
 				<div class="row">
 					<!--== Single HeaderTop Start ==-->
 					<div class="col-lg-3 text-left">
-						<i class="fa fa-map-marker"></i>  01, Vo Van Ngan
+						<i class="fa fa-map-marker"></i> 01, Vo Van Ngan
 					</div>
 					<!--== Single HeaderTop End ==-->
 
@@ -210,9 +210,9 @@
 									</div>
 									<div class="form-group">
 										<label>Your Phone </label> <input name="phoneupdate"
-											type="text" pattern="^(\d{7}|\d{10})$" 
-											value="${customerInfo.phone}"
-											placeholder="Phone Number" name="phone"
+											type="text" pattern="^(\d{7}|\d{10})$"
+											value="${customerInfo.phone}" placeholder="Phone Number"
+											name="phone"
 											title="Phone must be a number that contains 10 characters long"
 											readonly required class="form-control">
 									</div>
@@ -265,18 +265,17 @@
 											<label>Name</label> <input value="${customerInfo.name}"
 												placeholder="Name" name="name" required class="form-control"
 												title="Please type your name">
-											</div>
+										</div>
 										<div class="form-group">
-											<label>Phone </label> <input name="phone" type="number" 
-											min="111111111" max="1000000000"
-											value="${customerInfo.phone}"
-												placeholder="Phone Number"		
+											<label>Phone </label> <input name="phone" type="number"
+												min="111111111" max="1000000000"
+												value="${customerInfo.phone}" placeholder="Phone Number"
 												title="Phone must be a number that contains 10 numbers long"
 												required class="form-control">
 										</div>
 										<div class="form-group">
 											<label>Email </label> <input type="email"
-											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+												pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 												value="${customerInfo.email}" placeholder="Email"
 												name="email" class="form-control"
 												title="Please type your email correct to form" required>
@@ -288,19 +287,26 @@
 												title="Please type your address" required>
 										</div>
 										<br> <input style="float: right; margin-right: 10px"
-											type='submit' onclick="getUpdateConfirmation();" class='btn btn-fill btn-warning btn-wd btn-sm'
+											type='submit' onclick="getUpdateConfirmation();"
+											class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' />
 									</form>
-									<%-- <c:if test="${UpdateInfoCusMes!=null}">
+									<c:if test="${UpdateInfoCusMes!=null}">
 										<script type="text/javascript">
 											alert("Your Update Successful!");
 										</script>
+										<%
+											request.getSession().removeAttribute("UpdateInfoCusMes");
+										%>
 									</c:if>
 									<c:if test="${UpdateInfoCusFailed!=null}">
 										<script type="text/javascript">
 											alert("Your Update Failed!!!");
 										</script>
-									</c:if> --%>
+										<%
+											request.getSession().removeAttribute("UpdateInfoCusFailed");
+										%>
+									</c:if>
 								</div>
 							</div>
 						</div>
@@ -397,6 +403,7 @@
 															<form method="POST"
 																action="${pageContext.request.contextPath}/cus-viewInfo?id=${a.id_ticket}&action=delete">
 																<button class="btn btn-danger" data-title="Delete"
+																	onclick="return getDeleteConfirmation();"
 																	data-toggle="modal">
 																	<span class="fa fa-trash"></span>
 																</button>
@@ -409,16 +416,22 @@
 									</table>
 								</div>
 							</div>
-							<%-- <c:if test="${DeleteTicketCus!=null}">
+							<c:if test="${DeleteTicketCus!=null}">
 								<script type="text/javascript">
 									alert("The ticket have been deleted!!!");
 								</script>
+								<%
+									request.getSession().removeAttribute("DeleteTicketCus");
+								%>
 							</c:if>
 							<c:if test="${DeleteTicketCusFailed!=null}">
 								<script type="text/javascript">
 									alert("Can't delete this ticket!!!");
 								</script>
-							</c:if> --%>
+								<%
+									request.getSession().removeAttribute("DeleteTicketCusFailed");
+								%>
+							</c:if>
 						</div>
 					</div>
 				</div>

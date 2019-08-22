@@ -1,5 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,12 +150,19 @@
 												<div class=" col-md-5" style="align: center">
 													<div class="form-group">
 														<label>Customer:</label> 
-														<select class="custom-select" name="cusInfo">
+														<input class="form-control" type="text" list="customer" name="cusInfo"/>
+														<datalist  id="customer" >
 															<c:forEach items="${cusList}" var="a">
+																<option value="${a.id_cus}">Name: ${a.name} &emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
+															</c:forEach>
+														</datalist>
+														<%-- <label>Customer:</label> 
+														<select class="custom-select" name="cusInfo">
+																<c:forEach items="${cusList}" var="a">
 																<option value="${a.id_cus}">Name: ${a.name}
 																	&emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
 															</c:forEach>
-														</select>
+														</select>			 --%>									
 													</div>
 												</div>
 												<div class=" col-md-2" style="align: center">
@@ -240,7 +248,7 @@
 																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 																<p data-placement="top" data-toggle="tooltip"
 																	title="Delete">
-																	<button class="btn btn-danger" data-title="Delete"
+																	<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
 																		data-toggle="modal">
 																		<span class="fa fa-trash"></span>
 																	</button>
@@ -274,7 +282,7 @@
 																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
 																<p data-placement="top" data-toggle="tooltip"
 																	title="Delete">
-																	<button class="btn btn-danger" data-title="Delete"
+																	<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
 																		data-toggle="modal">
 																		<span class="fa fa-trash"></span>
 																	</button>
@@ -514,29 +522,38 @@
 							</div>
 						</div>
 					</div>
-					<%-- <c:if test="${UpdateTicketSuccess!=null}">
+					<c:if test="${UpdateTicketSuccess!=null}">
 						<script type="text/javascript">
 							alert("Update Successful!!!");
 						</script>
+						<%
+							request.getSession().removeAttribute("UpdateTicketSuccess");
+						%>
 					</c:if>
-					<c:if test="${UpdateTicketFail!=null}">
+					<c:if test="${UpdateTicketFailed!=null}">
 						<script type="text/javascript">
 							alert("Can't update status ticket!!!");
 						</script>
+						<%
+							request.getSession().removeAttribute("UpdateTicketFailed");
+						%>
 					</c:if>
 					<c:if test="${DeleteTicketSuccess!=null}">
 						<script type="text/javascript">
 							alert("Ticket have been deleted!!!");
 						</script>
+						<%
+							request.getSession().removeAttribute("DeleteTicketSuccess");
+						%>
 					</c:if>
-					<c:if test="${DeleteTicketFail!=null}">
+					<c:if test="${DeleteTicketFailed!=null}">
 						<script type="text/javascript">
 							alert("Cannot delete this ticket!!!");
 						</script>
 						<%
-							request.removeAttribute("abc");
+							request.getSession().removeAttribute("DeleteTicketFailed");
 						%>
-					</c:if> --%>
+					</c:if>
 					<!-- Modal edit user-end -->
 					<!-- Modal delete Seller-Start -->
 			

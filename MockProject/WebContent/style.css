@@ -76,7 +76,6 @@
 ==========================================*/
 
 /*== Theme Defualt CSS ==*/
-
 #bus
 {
 	width: 1112px;
@@ -2000,10 +1999,6 @@ body,
 
 .booka-car-content .input-group-append {
 	border-left: 0 none;
-}
-
-.booka-car-content input {
-	border-right: 0 none;
 }
 
 .booka-car-content .bookcar-btn button {

@@ -63,6 +63,7 @@ public class ViewInfoCusServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
 		System.out.println("action is       "+action);
 		if(action.equals("update")) {
@@ -74,13 +75,15 @@ public class ViewInfoCusServlet extends HttpServlet {
 			System.out.println(name);
 				if(customerDAO.updateCustomer(name, phone, email, address, Integer.parseInt(id_acc))) {
 					System.out.println("Update Success!!!");
-					request.setAttribute("UpdateInfoCusMes", "Update success!!!!");
-					doGet(request, response);
+					session.setAttribute("UpdateInfoCusMes", "Update success!!!!");
+//					doGet(request, response);
+					response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
 				}
 				else {
 					System.out.println("Can't Update!!!");
-					request.setAttribute("UpdateInfoCusFailed", "Update Failed!!!!");
-					doGet(request, response);
+					session.setAttribute("UpdateInfoCusFailed", "Update Failed!!!!");
+//					doGet(request, response);
+					response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
 				}
 		}
 		else if(action.equals("delete"))
@@ -89,14 +92,16 @@ public class ViewInfoCusServlet extends HttpServlet {
 			System.out.println(id_ticket);
 			if(ticketDAO.deleteTicket(Integer.valueOf(id_ticket))) {
 				System.out.println("Deleted!!!!!");
-				request.setAttribute("DeleteTicketCus", "Delete success!!!!");
-				doGet(request, response);
+				session.setAttribute("DeleteTicketCus", "Delete success!!!!");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
 			}
 			else
 			{
 				System.out.println("Can't cancel ticket");
-				request.setAttribute("DeleteTicketCusFailed", "Delete Fail!!!!");
-				doGet(request, response);
+				session.setAttribute("DeleteTicketCusFailed", "Delete Fail!!!!");
+//				doGet(request, response);
+				response.sendRedirect(request.getContextPath()+"/cus-viewInfo");
 			}
 		}
 	}
