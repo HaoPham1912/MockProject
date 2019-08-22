@@ -150,7 +150,7 @@
 												<div class=" col-md-5" style="align: center">
 													<div class="form-group">
 														<label>Customer:</label> 
-														<input class="form-control" type="text" list="customer" name="cusInfo"/>
+														<input class="form-control" type="text" list="customer" name="cusInfo" value="${cusInfo}" required/>
 														<datalist  id="customer" >
 															<c:forEach items="${cusList}" var="a">
 																<option value="${a.id_cus}">Name: ${a.name} &emsp;&emsp;&emsp;&emsp; Phone: ${a.phone}</option>
@@ -167,7 +167,10 @@
 												</div>
 												<div class=" col-md-2" style="align: center">
 													<div class="form-group">
-														<label>Date:</label> 
+													<label>Date:</label>
+														<input id="datepicker1" width="200px" name="date_go"
+														value="${dateViewSeat}" required readonly />
+														<%-- <label>Date:</label> 
 														<select class="custom-select" name="date_go">
 															<fmt:parseDate value = "${date_goSearch}" var = "date_goSearch" 
 																pattern = "yyyy-MM-dd" />
@@ -181,7 +184,6 @@
 															<option selected value="${date_goSearch_format2}">
 																<c:out value = "${date_goSearch_format}" />
 															</option>
-															
 															<c:forEach items="${date_go}" var="a">
 																<fmt:parseDate value = "${a}" var = "parsedEmpDate" 
 																pattern = "yyyy-MM-dd" />
@@ -191,7 +193,16 @@
 																value = "${parsedEmpDate}"/>
 																<option value="${a}"><c:out value = "${parse}" /></option>
 															</c:forEach>
-														</select>
+														</select> --%>
+														<script>
+														    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+														        $('#datepicker1').datepicker({
+														            uiLibrary: 'bootstrap4',
+														          	format: 'dd-mm-yyyy',
+														           	iconsLibrary: 'fontawesome',
+														            minDate: today
+														        });
+								    					</script>
 													</div>
 												</div>
 												<div class=" col-md-2" style="align: center">
@@ -306,7 +317,7 @@
 										<div class="row">
 											<div class="col">
 												<label>Date:</label>
-												<input id="datepicker" width="250px" name="date_go_forSeat"
+												<input id="datepicker2" width="250px" name="date_go_forSeat" required
 													value="${dateViewSeat}" readonly />
 											</div>
 											<div class="col">
@@ -319,7 +330,7 @@
 									</form>
 									<script>
 									    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-									        $('#datepicker').datepicker({
+									        $('#datepicker2').datepicker({
 									            uiLibrary: 'bootstrap4',
 									          	format: 'dd-mm-yyyy',
 									           	iconsLibrary: 'fontawesome',

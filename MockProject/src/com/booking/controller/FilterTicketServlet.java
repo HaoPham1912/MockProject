@@ -91,7 +91,7 @@ public class FilterTicketServlet extends HttpServlet {
 				String cusInfo = request.getParameter("cusInfo");
 				
 				ArrayList<Ticket> arr = new ArrayList<Ticket>();
-				System.out.println("cus info: "+Integer.valueOf(cusInfo));
+
 				arr = ticketDAO.getTicketByIdBusAndDateBook(Integer.valueOf(id_bus), date_go,Integer.valueOf(cusInfo));
 				request.setAttribute("filterList", arr);
 				
@@ -103,6 +103,8 @@ public class FilterTicketServlet extends HttpServlet {
 				
 				HttpSession session = request.getSession();
 				session.setAttribute("date_goSearch", date_go);
+				session.setAttribute("dateViewSeat", date_go);
+				session.setAttribute("cusInfo", cusInfo);
 				
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);
@@ -120,18 +122,16 @@ public class FilterTicketServlet extends HttpServlet {
 				arr = ticketDAO.FindAvailableSeat(Integer.valueOf((String) session.getAttribute("id_bus")), date_go);
 				request.setAttribute("listSeat", arr);
 				
+				System.out.println("date_go_forSeat:  "+date_go);
+				
 				request.setAttribute("listFilterTicket", ticketDAO.FindTicketByDate(Integer.valueOf((String) session.getAttribute("id_bus")),date_go));
-				
-				
-//				System.out.println("id bus:  "+Integer.valueOf((String) session.getAttribute("id_bus")));
-//				System.out.println("date go:  "+ date_go);
-//				System.out.println("size:  "+ arr.size());
 				
 				ArrayList<Customer> arr1 = new ArrayList<Customer>();
 				arr1 = customerDAO.findAllCustomer();
 				request.setAttribute("cusList", arr1);
 				
 				session.setAttribute("dateViewSeat", date_go);
+				session.removeAttribute("cusInfo");
 				
 				RequestDispatcher rd = request.getRequestDispatcher("/filterTicket.jsp");
 				rd.forward(request, response);

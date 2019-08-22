@@ -229,7 +229,7 @@ public class TicketDAOImp implements ITicketDAO{
 					"from ticket\r\n" + 
 					"inner join bus on ticket.id_bus = bus.id_bus\r\n" + 
 					"inner join buses on bus.id_buses = buses.id_buses\r\n" + 
-					"where ticket.id_bus=? and ticket.date_go=? and id_cus=?";
+					"where ticket.id_bus=? and ticket.date_go=STR_TO_DATE(?,'%d-%m-%Y') and id_cus=?";
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setInt(1, id_bus);
 			pstm.setString(2, date_go);
