@@ -1945,15 +1945,15 @@ body,
 /*== Slider Area CSS ==*/
 
 .slider-bg-1 {
-	background-image: url("https://m.tuniucdn.com/fb2/t1/G1/M00/37/C4/Cii-U1kvxB-IebOZAFdoI5S_EJsAALPJgMBNicAV2g7632.jpg");
+	background-image: url("assets/img/HCM.jpg");
 }
 
 .slider-bg-2 {
-	background-image: url("https://znews-photo.zadn.vn/w820/Uploaded/pgi_cuhpguvau/2019_01_23/CauVang2.jpg");
+	background-image: url("assets/img/Cau-Vang.jpg");
 }
 
 .slider-bg-3 {
-	background-image: url("http://trienlamvhnt.vn/UserFiles/File/281117143415.jpg");
+	background-image: url("assets/img/halong.jpg");
 }
 
 .home-slider-item {
