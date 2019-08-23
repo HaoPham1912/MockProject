@@ -17,7 +17,7 @@ public class JDBCConnection {
 		
 		 String dbName = "bus";
 		 String userName = "root";
-		 String password = "123456789";
+		 String password = "password";
 		
 		 return getMySQLConnection(hostName, dbName, userName, password);
 	 }
@@ -26,10 +26,10 @@ public class JDBCConnection {
 	         String userName, String password) throws SQLException,
 	         ClassNotFoundException {
 	     
-	     Class.forName("com.mysql.cj.jdbc.Driver");
+	     Class.forName("com.mysql.jdbc.Driver");
 	 
-	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName ;
-//	    		 +"?characterEncoding=latin1&autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC";
+	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName 
+	    		 +"?characterEncoding=latin1&autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC";
 	 
 	     Connection conn = DriverManager.getConnection(connectionURL, userName,
 	             password);

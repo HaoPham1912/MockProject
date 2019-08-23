@@ -40,6 +40,20 @@
     <!--== What We Do Area Start ==-->
     <section id="what-do-area" class="section-padding">
         <div class="container">
+                <label>Enter Country name:</label>
+                <input type="text" list="countries" />
+                
+                <datalist id="countries">
+                    <option value="Afghanistan">1</option>
+                    <option value="Albania">
+                    <option value="United Kingdom">
+                    <option value="United States">
+                    <option value="Vanuatu">
+                    <option value="Vatican City">
+                    <option value="Yemen">
+                    <option value="Zambia">
+                    <option value="Zimbabwe">
+                </datalist>
             <div class="row">
                 <div class="col-xs-4 col-md-4">
                     <div class="card card-product mb-0">
@@ -78,13 +92,12 @@
                             </tbody>
                         </table>
 
-                        <table id="table" >
+                        <table id="table">
                             <tbody>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
                                         <td COLSPAN=4><label id="wheel"></td>
-
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
@@ -97,113 +110,121 @@
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" title="1" class="seat" id="seat1col1"  
-                                            onclick="changeSeatColor(this);getCost(this);getSeat();"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2" title="2" 
-                                            onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3" title="3" 
-                                            onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
-                                        <td><button type="button" class="seat" id="seat1col4" title="4" 
-                                            onclick="getSeat();changeSeatColor(this);getCost(this);getSeat();"></td>
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);" title="1"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="2"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="3"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="4"></button></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat2col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat2col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat2col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat2col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="5"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="6"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="7"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="8"></button></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat3col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat3col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat3col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat3col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="9"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="10"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="11"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="12"></button></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat4col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat4col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat4col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat4col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="13"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="14"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="15"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="16"></button></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat5col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat5col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat5col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat5col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="17"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="18"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="19"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="20"></button></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat6col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat6col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat6col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat6col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="21"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="22"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="23"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="24"></button></td>
                                     </tr>
                                 </div>
                                 <div class=" col-md-4">
                                     <tr style="text-align: center">
                                         <th scope="row"></th>
-                                        <td><button type="button" class="seat" id="seat7col1" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-                                        <td style="text-align: left"><button type="button" class="seat" id="seat7col2"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td style="text-align: right"><button type="button" class="seat" id="seat7col3"
-                                                data-toggle="tooltip" data-placement="bottom" title="Sốghế">
-                                        </td>
-                                        <td><button type="button" class="seat" id="seat7col4" data-toggle="tooltip"
-                                                data-placement="bottom" title="Sốghế"></td>
-
+                                        <td><button type="button" class="seat" id="seat1col1"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="25"></button></td>
+                                        <td style="text-align: left"><button type="button" class="seat" id="seat1col2"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="26"></button></td>
+                                        <td style="text-align: right"><button type="button" class="seat" id="seat1col3"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="27"></button></td>
+                                        <td><button type="button" class="seat" id="seat1col4"
+                                                onclick="changeSeatColor(this);getCost(this);getSeat()"
+                                                title="28"></button></td>
                                     </tr>
                                 </div>
-
-
                             </tbody>
                         </table>
 
@@ -242,6 +263,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <!--== Footer Area Start ==-->
     <!--== Scroll Top Area Start ==-->
