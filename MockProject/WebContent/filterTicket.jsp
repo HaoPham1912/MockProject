@@ -199,8 +199,7 @@
 														        $('#datepicker1').datepicker({
 														            uiLibrary: 'bootstrap4',
 														          	format: 'dd-mm-yyyy',
-														           	iconsLibrary: 'fontawesome',
-														            minDate: today
+														           	iconsLibrary: 'fontawesome'
 														        });
 								    					</script>
 													</div>
@@ -254,17 +253,30 @@
 															</button>
 														</td>
 														<td>
-														<c:if test="${a.checkTicket > 86400 && a.checkTicket > 0}">
+														<c:if test ="${a.status == 0}">
 															<form method="POST"
-																action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
-																<p data-placement="top" data-toggle="tooltip"
-																	title="Delete">
-																	<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
-																		data-toggle="modal">
-																		<span class="fa fa-trash"></span>
-																	</button>
+																	action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+																	<p data-placement="top" data-toggle="tooltip"
+																		title="Delete">
+																		<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
+																			data-toggle="modal">
+																			<span class="fa fa-trash"></span>
+																		</button>
 															</form>
 														</c:if>
+														<c:if test ="${a.status == 1}">
+															<c:if test="${a.checkTicket > 86400 && a.checkTicket > 0}">
+																<form method="POST"
+																	action="${pageContext.request.contextPath}/emp-customTicket?action=delete&id=${a.id_ticket}">
+																	<p data-placement="top" data-toggle="tooltip"
+																		title="Delete">
+																		<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
+																			data-toggle="modal">
+																			<span class="fa fa-trash"></span>
+																		</button>
+																</form>
+															</c:if>
+														</c:if>	
 														</td>
 													</tr>
 												</c:forEach>
@@ -333,8 +345,7 @@
 									        $('#datepicker2').datepicker({
 									            uiLibrary: 'bootstrap4',
 									          	format: 'dd-mm-yyyy',
-									           	iconsLibrary: 'fontawesome',
-									            minDate: today
+									           	iconsLibrary: 'fontawesome' 
 									        });
 								    </script>
 									<table id="table">
