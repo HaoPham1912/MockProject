@@ -254,7 +254,7 @@
 								<div class="col-sm-6">
 									<form
 										action="${pageContext.request.contextPath}/cus-viewInfo?action=update"
-										method="POST">
+										method="POST" name="productform" id="productform">
 										<div class="form-group">
 											<label>Your ID</label> <input type="text"
 												value="${customerInfo.id_acc_cus}" placeholder="ID"
@@ -264,21 +264,61 @@
 										<div class="form-group">
 											<label>Name</label> <input value="${customerInfo.name}"
 												placeholder="Name" name="name" required class="form-control"
-												title="Please type your name">
+												title="Please type your name"
+												onkeyup="vietnameseNoNumbers1(this)">
+											<script>
+												function vietnameseNoNumbers1(
+														input) {
+													var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+													input.value = input.value
+															.replace(regex, "");
+												}
+											</script>
 										</div>
 										<div class="form-group">
-											<label>Phone </label> <input name="phone" type="number"
-												min="111111111" max="1000000000"
-												value="${customerInfo.phone}" placeholder="Phone Number"
+											<label>Phone </label> <input name="phone" type="text" id="phoneup"
+												minlength="10" maxlength="10" value="${customerInfo.phone}"
+												onkeypress='validate(event)'
+													 
+												placeholder="Phone Number"
 												title="Phone must be a number that contains 10 numbers long"
 												required class="form-control">
+											<script>
+											$("#phoneup").maxlength();
+												function validate(evt) {
+													var theEvent = evt
+															|| window.event;
+
+													// Handle paste
+													if (theEvent.type === 'paste') {
+														key = event.clipboardData
+																.getData('text/plain');
+													} else {
+														// Handle key press
+														var key = theEvent.keyCode
+																|| theEvent.which;
+														key = String
+																.fromCharCode(key);
+													}
+													var regex = /[0-9]/;
+													if (!regex.test(key)) {
+														theEvent.returnValue = false;
+														if (theEvent.preventDefault)
+															theEvent
+																	.preventDefault();
+													}
+												}
+											</script>
 										</div>
 										<div class="form-group">
-											<label>Email </label> <input type="email"
-												pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-												value="${customerInfo.email}" placeholder="Email"
+											<label>Email: (minlength 10) </label> <input type="email"
+												
+												value="${customerInfo.email}" placeholder="Email:"
 												name="email" class="form-control"
-												title="Please type your email correct to form" required>
+												title="Please type your email in correct form. Ex: xxx@yyy.com"
+												required
+												>
+
 										</div>
 										<div class="form-group">
 											<label>Address </label> <input name="address" type="text"
@@ -287,7 +327,7 @@
 												title="Please type your address" required>
 										</div>
 										<br> <input style="float: right; margin-right: 10px"
-											type='submit' onclick="getUpdateConfirmation();"
+											type='submit' 
 											class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' />
 									</form>

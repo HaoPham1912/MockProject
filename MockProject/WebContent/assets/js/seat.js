@@ -32,6 +32,35 @@ document.getElementById("seat5col4").onclick = function() {changeSeatColor(seat5
 document.getElementById("seat6col4").onclick = function() {changeSeatColor(seat6col4),getCost(seat6col4)};
 document.getElementById("seat7col4").onclick = function() {changeSeatColor(seat7col4),getCost(seat7col4)};
  */
+$(function()
+{
+    $("#productform").validate(
+      {
+        rules: 
+        {
+          prodid: 
+          {
+            required: true,
+            maxlength: 10
+          },
+          email: 
+          {
+            required: true,
+            email: true,
+            minlength:10
+          },
+          address:
+          {
+            required: true,
+            rangelength:[10,250]
+          },
+          message: 
+          {
+            rangelength:[50,1050]
+          }
+        }
+      });	
+});
 function Notify(mess)
 {
 	alert(mess);

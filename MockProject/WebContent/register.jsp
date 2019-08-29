@@ -153,7 +153,7 @@
 						<div class="login-form">
 							<h3>Sign Up</h3>
 							<form action="${pageContext.request.contextPath}/register"
-								method="POST">
+								method="POST" name="productform" id="productform">
 								<div class="name">
 									<input type="text" placeholder="Name" name="name" onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
 									title="Please fill data correctly"
@@ -166,18 +166,46 @@
 									</script>
 								</div>
 								<div class="email">
-									<input type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
-									title="Invalid Email"
+									<input type="text" placeholder="Email" name="email" 
+										title="Please type your email in correct form. Ex: xxx@yyy.com"
 										value="${customerHo.email}" required>
 								</div>
 								<div class="phone">
-									<!-- 	<input type="number" placeholder="Phone Number" name="phone" -->
-									<input type="text" pattern="[0-9]{10}"
-										value="${customerHo.phone}" placeholder="Phone Number"
-										name="phone"
-										title="Phone must be a number that contains 10 characters long"
-										required />
-								</div>
+											<input name="phone" type="text" 
+												minlength="10" maxlength="10" value="${customerHo.phone}"
+												onkeypress='validate(event)'
+													 
+												placeholder="Phone Number"
+												title="Phone must be a number that contains 10 numbers long"
+												required >
+											<script>
+											$("#phoneup").maxlength();
+												function validate(evt) {
+													var theEvent = evt
+															|| window.event;
+
+													// Handle paste
+													if (theEvent.type === 'paste') {
+														key = event.clipboardData
+																.getData('text/plain');
+													} else {
+														// Handle key press
+														var key = theEvent.keyCode
+																|| theEvent.which;
+														key = String
+																.fromCharCode(key);
+													}
+													var regex = /[0-9]/;
+													if (!regex.test(key)) {
+														theEvent.returnValue = false;
+														if (theEvent.preventDefault)
+															theEvent
+																	.preventDefault();
+													}
+												}
+											</script>
+										</div>
+								
 								<div class="address">
 									<input type="text" placeholder="Address"
 										value="${customerHo.address}" name="address">
@@ -185,7 +213,7 @@
 								<div class="username">
 									<input type="text" placeholder="Username" name="username"
 										pattern="[A-Za-z0-9]{1,}" minlength="5" maxlength="15"
-										title="Username less than 15 character and more than 5 character!!!"
+										title="Username don't allow unicode ft less than 15 character and more than 5 character!!!"
 										required>
 								</div>
 								<div class="password">
@@ -217,7 +245,7 @@
 								</script>
 								<p style="color: red">${message}</p>
 								<div class="log-btn">
-									<button type="submit">
+									<button type="submit" name="submit">
 										<i class="fa fa-check-square"></i> Sign Up
 									</button>
 								</div>
@@ -289,8 +317,11 @@
 	<script src="assets/js/plugins/slicknav.min.js"></script>
 
 	<!--=== Mian Js ===-->
+		
 	<script src="assets/js/main.js"></script>
-
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+<script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js'></script>
+	<script src="assets/js/seat.js"></script>
 </body>
 
 </html>

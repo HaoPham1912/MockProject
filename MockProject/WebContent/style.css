@@ -76,6 +76,12 @@
 ==========================================*/
 
 /*== Theme Defualt CSS ==*/
+label.error{
+	
+color:red;
+font-family:verdana, Helvetica;
+
+}
 #bus
 {
 	width: 1112px;
