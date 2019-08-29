@@ -273,7 +273,7 @@
 									</div>
 									<!-- Set role-End -->
 									<div class="modal-footer">
-										<button type="submit" id="submitEditSeller"
+										<button type="submit" id="submitEditSeller" onclick='return getUpdateConfirmation();'
 											class="btn btn-warning btn-lg" style="width: 100%;">
 											<span class="fas fa-check-circle"></span>Update
 										</button>

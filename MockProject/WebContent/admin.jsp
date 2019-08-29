@@ -27,6 +27,7 @@
 <link
 	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
 	rel="stylesheet">
+<script src="assets/js/seat.js"></script>
 </head>
 <body id="page-top">
 	<!-- Page Wrapper -->
@@ -391,7 +392,7 @@
 												title="" required>
 										</div>
 										<div class="modal-footer">
-											<button type="submit" id="submitEditUser"
+											<button type="submit" id="submitEditUser" onclick='return getUpdateConfirmation();'
 												class="btn btn-warning btn-lg" style="width: 100%;">
 												<span class="fas fa-check-circle"></span>Update
 											</button>
