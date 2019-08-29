@@ -188,7 +188,6 @@
 										placeholder="Phone Number" name="phone"
 										title="Phone must be a number that contains 10 characters long"
 										readonly="readonly" required />
-
 								</div>
 								<div class="email">
 									<input type="email" value="${customerInfo.email}" placeholder="Email" name="email" readonly="readonly">

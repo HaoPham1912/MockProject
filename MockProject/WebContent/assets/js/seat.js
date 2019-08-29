@@ -61,6 +61,8 @@ $(function()
         }
       });	
 });
+
+
 function Notify(mess)
 {
 	alert(mess);
@@ -218,11 +220,11 @@ function check(arr,a)
 }
 
 function getConfirmation(){
-   return confirm("Check your information before booking");
+	return confirm("Check your information before booking");
 }
 
 function getDeleteConfirmation(){
-	   return confirm("Do you want to delete!");
+	return confirm("Do you want to delete!");
 }
 
 
