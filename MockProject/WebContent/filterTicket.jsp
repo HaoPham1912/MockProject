@@ -531,7 +531,7 @@
 											<h4 class="text-black-50">Status:</h4>
 											<input class="form-control" id="statusEdit" type="text"
 												name="statusEdit" pattern="[0,1]" maxlength="1" required
-												title="Value is only 0 and 1 (0 is unpaid and 1 is paid)">
+												title="Value is only 0 and 1 ( 0 is Unpaid and 1 is Paid )">
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-warning btn-lg"
