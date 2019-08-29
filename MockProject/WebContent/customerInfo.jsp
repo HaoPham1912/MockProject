@@ -9,7 +9,7 @@
 <!--=== Favicon ===-->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-<title>Cardoor - Car Rental HTML Template</title>
+<title>Booking Bus - Customer Page</title>
 
 <!--=== Bootstrap CSS ===-->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -329,7 +329,7 @@
 										<br> <input style="float: right; margin-right: 10px"
 											type='submit' 
 											class='btn btn-fill btn-warning btn-wd btn-sm'
-											name='updatebtn' id='finish' value='Save' />
+											name='updatebtn' id='finish' onclick='return getUpdateConfirmation();' value='Save' />
 									</form>
 									<c:if test="${UpdateInfoCusMes!=null}">
 										<script type="text/javascript">
