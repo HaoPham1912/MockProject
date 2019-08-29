@@ -328,8 +328,8 @@
 										</div>
 										<br> <input style="float: right; margin-right: 10px"
 											type='submit' 
-											class='btn btn-fill btn-warning btn-wd btn-sm'
 											onclick="return getUpdateConfirmation();"
+											class='btn btn-fill btn-warning btn-wd btn-sm'
 											name='updatebtn' id='finish' value='Save' />
 									</form>
 									<c:if test="${UpdateInfoCusMes!=null}">
