@@ -5,27 +5,6 @@ $(document).ready(function() {
 		"lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
 	} );
 } );
-
-
-var selectedUser = [];
-
-//chọn user
-$("#mytable tbody").on("click", "tr", function() {
-	if ($(this).hasClass("selected")) {
-		$(this).removeClass("selected");
-		selectedUser = [];
-	} else {
-		$("#mytable tr.selected").removeClass("selected");
-		$(this).addClass("selected");
-		selectedUser = [];
-		$(this)
-		.find("td")
-		.each((index, element) => {
-			selectedUser.push($(element).text());
-		});
-	}
-	console.log(selectedUser);
-});
 //hàm gọi content các trang nhét ajax vào từng case
 function callContent(element) {
 	$(".generalClass").css("display", "none");
@@ -33,38 +12,25 @@ function callContent(element) {
 	$("#" + element).css("display", "block");
 }
 
-function editUser() {
-	if (selectedUser.length > 0) {
-		var nameUser = selectedUser[0];
-//		alert(nameUser);
+$("#mytable").on('click','.btn-primary',function(){
+    // get the current row
+    var currentRow=$(this).closest("tr"); 
+  
+    var col0=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+    $("#idUserEdit").attr('value',col0);
+    var col1=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+    $("#usernameUserEdit").attr('value',col1);
+    var col2=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+    $("#nameUserEdit").attr('value',col2);
+    var col3=currentRow.find("td:eq(3)").text(); // get current row 3rd TD
+    $("#phoneUserEdit").attr('value',col3);
+    var col4=currentRow.find("td:eq(4)").text(); // get current row 3rd TD
+    $("#emailUserEdit").attr('value',col4);
+    var col5=currentRow.find("td:eq(5)").text(); // get current row 3rd TD
+    $("#addressUserEdit").attr('value',col5);
+    $("#editUser").modal("show");
+});
 
-		$("#idUserEdit").attr('value',selectedUser[0]);
-		$("#usernameUserEdit").attr('value',selectedUser[1]);
-		$("#nameUserEdit").attr('value',selectedUser[2]);
-		$("#phoneUserEdit").attr('value',selectedUser[3]);
-		$("#emailUserEdit").attr('value',selectedUser[4]);
-		$("#addressUserEdit").attr('value',selectedUser[5]);
-		$("#editUser").modal("show");
-	} else {
-		alert("Please choose user to edit!!!");
-	}
-}
-
-
-function deleteUser() {
-	if (selectedUser.length > 0) {
-		var nameUser = selectedUser[0];
-		alert(nameUser);
-
-		$("#deleteUser").modal("show");
-		$("#yesdeleteUser").click(function() {
-			alert("OK");
-			//gọi ajax để xóa
-		});
-	} else {
-		alert("Please choose user to delete!!!");
-	}
-}
 //seller
 //$("#mytableseller").DataTable();
 $(document).ready(function() {
@@ -75,93 +41,51 @@ $(document).ready(function() {
   function myFunction() {
 	  document.getElementById("addAdmin").style.color = "red";
   }
-  
-  var selectedSeller = [];
-  //ManageSeller Table-Start
-  //chọn seller
-  $("#mytableseller tbody").on("click", "tr", function() {
-	if ($(this).hasClass("selected")) {
-	  $(this).removeClass("selected");
-	  selectedSeller = [];
-	} else {
-	  $("#mytableseller tr.selected").removeClass("selected");
-	  $(this).addClass("selected");
-	  selectedSeller = [];
-	  $(this)
-		.find("td")
-		.each((index, element) => {
-		  selectedSeller.push($(element).text());
-		});
-	}
-	console.log(selectedSeller);
-  });
   //ManageUser Table-End
   
-  function editSeller() {
-	if (selectedSeller.length > 0) {
-	   var nameSeller = selectedSeller[0];
-  //    alert(nameSeller);
-	
-	  $("#idSellerEdit").attr('value',selectedSeller[0]);
-	  $("#usernameSellerEdit").attr('value',selectedSeller[1]);
-	  $("#nameSellerEdit").attr('value',selectedSeller[2]);
-	  $("#phoneSellerEdit").attr('value',selectedSeller[3]);
-	  $("#emailSellerEdit").attr('value',selectedSeller[4]);
-	  $("#addressSellerEdit").attr('value',selectedSeller[5]);
-	  $("#editSeller").modal("show");
-	} else {
-	  alert("Please choose seller to edit!!!");
-	}
-  }
-  function deleteSeller() {
-	if (selectedSeller.length > 0) {
-	  var nameSeller = selectedSeller[0];
-	  alert(nameSeller);
   
-	  $("#deleteSeller").modal("show");
-	  $("#yesdeleteSeller").click(function() {
-		alert("OK");
-		//gọi ajax để xóa
-	  });
-	} else {
-	  alert("Please choose seller to delete!!!");
-	}
-  }
+  $("#mytableseller").on('click','.btn-primary',function(){
+	    // get the current row
+	    var currentRow=$(this).closest("tr"); 
+	  
+	    var col0=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+	    $("#idSellerEdit").attr('value',col0);
+	    var col1=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+	    $("#usernameSellerEdit").attr('value',col1);
+	    var col2=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+	    $("#nameSellerEdit").attr('value',col2);
+	    var col3=currentRow.find("td:eq(3)").text(); // get current row 3rd TD
+	    $("#phoneSellerEdit").attr('value',col3);
+	    var col4=currentRow.find("td:eq(4)").text(); // get current row 3rd TD
+	    $("#emailSellerEdit").attr('value',col4);
+	    var col5=currentRow.find("td:eq(5)").text(); // get current row 3rd TD
+	    $("#addressSellerEdit").attr('value',col5);
+	    $("#editSeller").modal("show");
+	});
+ 
   //admin
   $(document).ready(function() {
 		$('#mytableAdmin').DataTable( {
 			"lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
 		} );
 	  } );
-  var selectedAdmin = [];
-  $("#mytableAdmin tbody").on("click", "tr", function() {
-		if ($(this).hasClass("selected")) {
-		  $(this).removeClass("selected");
-		  selectedAdmin = [];
-		} else {
-		  $("#mytableAdmin tr.selected").removeClass("selected");
-		  $(this).addClass("selected");
-		  selectedAdmin = [];
-		  $(this)
-			.find("td")
-			.each((index, element) => {
-				selectedAdmin.push($(element).text());
-			});
-		}
-		console.log(selectedAdmin);
-	  });
   
-  function editAdmin() {
-		if (selectedAdmin.length > 0) {
-		   var nameAdmin = selectedAdmin[0];
-	  //    alert(nameSeller);
-		
-		  $("#idAdminEdit").attr('value',selectedAdmin[0]);
-		  $("#usernameAdminEdit").attr('value',selectedAdmin[1]);
-		  $("#nameAdminEdit").attr('value',selectedAdmin[2]);
-		  $("#phoneAdminEdit").attr('value',selectedAdmin[3]);
-		  $("#emailAdminEdit").attr('value',selectedAdmin[4]);
-		  $("#addressAdminEdit").attr('value',selectedAdmin[5]);
-		  $("#editAdmin").modal("show");
-		} 
-	  }
+
+  $("#mytableAdmin").on('click','.btn-primary',function(){
+	    // get the current row
+	    var currentRow=$(this).closest("tr"); 
+	  
+	    var col0=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+	    $("#idAdminEdit").attr('value',col0);
+	    var col1=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+	    $("#usernameAdminEdit").attr('value',col1);
+	    var col2=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+	    $("#nameAdminEdit").attr('value',col2);
+	    var col3=currentRow.find("td:eq(3)").text(); // get current row 3rd TD
+	    $("#phoneAdminEdit").attr('value',col3);
+	    var col4=currentRow.find("td:eq(4)").text(); // get current row 3rd TD
+	    $("#emailAdminEdit").attr('value',col4);
+	    var col5=currentRow.find("td:eq(5)").text(); // get current row 3rd TD
+	    $("#addressAdminEdit").attr('value',col5);
+	    $("#editAdmin").modal("show");
+	});

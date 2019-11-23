@@ -79,7 +79,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#"
 				onclick="callContent('manageTicket'); return false;"> <i
 					class="far fa-calendar-alt" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Manage Ticket</span></a></li>
+					class="text-nav">Manage Ticket Test</span></a></li>
 
 			<li class="nav-item active"><a class="nav-link"
 				href="${pageContext.request.contextPath}/emp-dashboard"> <i
