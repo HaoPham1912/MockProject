@@ -1,2 +1,2 @@
 # MockProject
-MockProject from the team from FPT Intern
+MockProject from the team from FPT Intern skill Java
