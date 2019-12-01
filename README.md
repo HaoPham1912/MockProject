@@ -1,2 +1,2 @@
 # MockProject
-MockProject from the team of Duy Gangster
+MockProject from the team from FPT Intern
