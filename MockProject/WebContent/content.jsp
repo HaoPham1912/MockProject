@@ -30,8 +30,6 @@
 
                                 <p>We employ just over 5000 people worldwide.We are the first company certified with ISO 9001 in this country.To be serve you is Our Pleasure...</p>
                                 <div class="about-btn">
-                                    <a href="#">Book a Bus</a>
-                                    <a href="#">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +168,7 @@
                                                     <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
                                                     <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
                                                     <div class="about-btn" id="space">
-                                                            <a href="#">Book a Bus</a>
+                                                            <a href="http://localhost:8080/MockProject/login">Book a Bus</a>
                                                     </div>
                                                 </div>
                                             </div>

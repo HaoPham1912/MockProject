@@ -65,7 +65,7 @@
 					class="text-nav">Update ticket</span>
 			</a></li>
 			<li class="nav-item active"><a class="nav-link"
-				href="${pageContext.request.contextPath}/logout"> <i
+				href="http://localhost:8080/MockProject/logout"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Log Out</span></a></li>
 			<!-- Divider -->

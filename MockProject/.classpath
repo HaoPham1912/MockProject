@@ -13,9 +13,12 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/eclipse-workspace/IntermProject/Project/MockProject/MockProject/libs/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/eclipse-workspace/IntermProject/Project/MockProject/MockProject/libs/mysql-connector-java-8.0.15.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/eclipse-workspace/IntermProject/Project/MockProject/MockProject/libs/taglibs-standard-impl-1.2.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/eclipse-workspace/IntermProject/Project/MockProject/MockProject/libs/taglibs-standard-spec-1.2.5.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/jsp-api-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/protobuf-java-2.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/jarfile/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -104,17 +104,8 @@
 							<ul>
 								<li class="active"><a
 									href="http://localhost:8080/MockProject/guest-dashboard">
-										Home</a> <!-- <ul>
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index2.html">Home 2</a></li>
-                                        <li><a href="index3.html">Home 3</a></li>
-                                    </ul> --></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">services</a></li>
-								<li><a href="#">Coach</a></li>
-								<li><a href="#">Contact</a></li>
+										Home</a></li>
 								<li><a href="http://localhost:8080/MockProject/login">Log In</a></li>
-								<li><a href="http://localhost:8080/MockProject/register">Register</a></li>
 							</ul>
 						</nav>
 					</div>

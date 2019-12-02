@@ -17,7 +17,7 @@ public class JDBCConnection {
 		
 		 String dbName = "bus";
 		 String userName = "root";
-		 String password = "password";
+		 String password = "nhuhao1912";
 		
 		 return getMySQLConnection(hostName, dbName, userName, password);
 	 }
