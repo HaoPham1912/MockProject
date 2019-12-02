@@ -240,7 +240,7 @@
 						</div>
 						<div class="row" style="margin-top:50px;margin-bottom:50px;">
 							<div class=" col-md-6" style="text-align:center">
-								<img src="https://image.flaticon.com/icons/png/128/25/25238.png" style="width:50px;height:50px;">
+								<img src="assets/img/25238.png" style="width:50px;height:50px;">
 							</div> 
 							<div class=" col-md-6" >
 								<p>${time_estimate}</p>

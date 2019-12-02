@@ -16,7 +16,7 @@
 			<c:if test="${message != null}">
 				<h5 style="text-align: center">${message}</h5>
 				<img style="transform: translate(170px, 10px);" 
-				src="https://storage.googleapis.com/fe-production/images/route-no-schedule.png">
+				src="assets/img/route-no-schedule.png">
 			</c:if>
 			<c:if test="${not empty busList}">
 				<c:forEach items="${busList}" var="a">
@@ -31,7 +31,7 @@
 											<b><p>${a.id_bus}</p></b>
 											<%-- <p>${a.status}</p> --%>
 											<img class="bus-img"
-												src="https://image.flaticon.com/icons/svg/174/174237.svg"
+												src="assets/img/174237.svg"
 												alt="">
 											<p>Service</p>
 										</div>
@@ -40,9 +40,9 @@
 											<%-- <b><p name="id_bus" style="width:120px">${a.id_bus}</p>	</b> --%>
 											<input type="hidden" name="id_bus" value="${a.id_bus}">
 											<img class="wifi-img"
-												src="https://image.flaticon.com/icons/svg/179/179428.svg"
+												src="assets/img/179428.svg"
 												alt=""> <img class="wifi-img"
-												src="https://image.flaticon.com/icons/svg/824/824239.svg"
+												src="assets/img/824239.svg"
 												alt="">
 										</div>
 									</div>
@@ -58,7 +58,7 @@
 													<i>${a.time_estimate}</i>
 												</p>
 												<img class="arrow"
-													src="https://image.flaticon.com/icons/svg/25/25426.svg"
+													src="assets/img/25426.svg"
 													style="margin-top: 10px; margin-bottom: 10px; transform: translate(300%, -10%); width: 10px; height: 10px"
 													alt="">
 											</div>
@@ -71,7 +71,7 @@
 									<div class=" col-md-3"
 										style="text-align: center; padding-top: 40px">
 										<img class="wifi-img"
-											src="https://icon-library.net/images/position-icon/position-icon-8.jpg"
+											src="assets/img/position-icon-8.jpg"
 											alt=""> <b><p name="car_position">Port:
 												${a.car_position}</p> </b>
 												<b><p>Available Seats: ${a.seatAvailable}</p></b>

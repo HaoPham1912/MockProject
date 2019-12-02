@@ -42,7 +42,7 @@
                 <!-- About Video Start -->
                 <div class="col-lg-6">
                     <div class="about-video">
-                        <img src="http://www.hongthinh.com/upload/project/212035046266.jpg">
+                        <img src="assets/img/content1.jpg">
                     </div>
                 </div>
                 <!-- About Video End -->
@@ -160,15 +160,15 @@
                                         <div class="col-lg-4 col-md-6 mpv">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/HAN.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/HAN.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="assets/img/halong2.jpg">
+                                                      <img src="assets/img/halong2.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
                                                 <div class="p-car-content"> 
-                                                    <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> HA NOI</span></p> 
-                                                    <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
-                                                    <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <p><img src="assets/img/icbus-15.png"> Departure From: <span> HA NOI</span></p> 
+                                                    <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
                                                     <div class="about-btn" id="space">
                                                             <a href="#">Book a Bus</a>
                                                     </div>
@@ -182,19 +182,19 @@
                                         <div class="col-lg-4 col-md-6 con">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/DLI.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/DLI.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="assets/img/CAB.jpg">
+                                                      <img src="assets/img/CAB.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
                                                 <div class="p-car-content"> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> DA LAT</span></p> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination: Ho Chi Minh</p>
-                                                        <div class="about-btn" id="space">
-                                                                <a href="#">Book a Bus</a>
-                                                        </div>
+                                                    <p><img src="assets/img/icbus-15.png"> Departure From: <span> DA LAT</span></p> 
+                                                    <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <div class="about-btn" id="space">
+                                                            <a href="#">Book a Bus</a>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
@@ -202,19 +202,19 @@
                                         <div class="col-lg-4 col-md-6 con">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.baolau.com/images/destinations/low_res/SGN.jpg">
-                                                      <img src="https://www.baolau.com/images/destinations/low_res/SGN.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="assets/img/LGK.jpg">
+                                                      <img src="assets/img/LGK.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
                                                 <div class="p-car-content"> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> HO CHI MINH</span></p> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ha Noi, Da Nang, Da Lat </p>
-                                                        <div class="about-btn" id="space">
-                                                                <a href="#">Book a Bus</a>
-                                                        </div>
+                                                    <p><img src="assets/img/icbus-15.png"> Departure From: <span> HO CHI MINH</span></p> 
+                                                    <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <div class="about-btn" id="space">
+                                                            <a href="#">Book a Bus</a>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
@@ -223,19 +223,19 @@
                                         <div class="col-lg-4 col-md-6 hat">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/c-r-e1505464506291.jpg">
-                                                      <img src="https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/c-r-e1505464506291.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="assets/img/hihi.jpg">
+                                                      <img src="assets/img/hihi.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
-                                                <div class="p-car-content"> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> DA NANG</span></p> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ho Chi Minh </p>
-                                                        <div class="about-btn" id="space">
-                                                                <a href="#">Book a Bus</a>
-                                                        </div>
+                                               <div class="p-car-content"> 
+                                                    <p><img src="assets/img/icbus-15.png"> Departure From: <span> DA NANG</span></p> 
+                                                    <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <div class="about-btn" id="space">
+                                                            <a href="#">Book a Bus</a>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
@@ -243,19 +243,19 @@
                                         <div class="col-lg-4 col-md-6 hat">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="http://www.nhatlongtravel.com/wp-content/uploads/2018/04/eo-gio-quy-nhon.jpg">
-                                                      <img src="http://www.nhatlongtravel.com/wp-content/uploads/2018/04/eo-gio-quy-nhon.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="assets/img/eogio.jpg">
+                                                      <img src="assets/img/eogio.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
-                                                <div class="p-car-content"> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> QUY NHON</span></p> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ho Chi Minh </p>
-                                                        <div class="about-btn" id="space">
-                                                                <a href="#">Book a Bus</a>
-                                                        </div>
-                                                 </div>
+                                                 <div class="p-car-content"> 
+                                                    <p><img src="assets/img/icbus-15.png"> Departure From: <span> QUY NHON</span></p> 
+                                                    <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <div class="about-btn" id="space">
+                                                            <a href="#">Book a Bus</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         
@@ -264,19 +264,19 @@
                                         <div class="col-lg-4 col-md-6 mpv">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="https://www.tuannguyentravel.com/data/tour/500/tour-da-nang-ninh-binh-3-ngay-2-dem-12-1480567208.jpg">
-                                                      <img src="https://www.tuannguyentravel.com/data/tour/500/tour-da-nang-ninh-binh-3-ngay-2-dem-12-1480567208.jpg" alt="JSOFT">
+                                                    <a class="car-hover" href="assets/img/ninhbinh.jpg">
+                                                      <img src="assets/img/ninhbinh.jpg" alt="JSOFT">
                                                    </a>
                                                 </div>
 
                                                 <div class="p-car-content"> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icbus-15.png"> Departure From: <span> NINH BINH</span></p> 
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-phone.png"> HotLine: <span> 19001018</span></p>
-                                                        <p><img src="https://futabus.vn/Content/img/private/icon-loacation.png"> Destination:  Ho Chi Minh </p>
-                                                        <div class="about-btn" id="space">
-                                                                <a href="#">Book a Bus</a>
-                                                        </div>
+                                                    <p><img src="assets/img/icbus-15.png"> Departure From: <span> NINH BINH</span></p> 
+                                                    <p><img src="assets/img/icon-phone.png"> HotLine: <span> 19001018</span></p>
+                                                    <p><img src="assets/img/icon-loacation.png"> Destination:  Ho Chi Minh </p>
+                                                    <div class="about-btn" id="space">
+                                                            <a href="#">Book a Bus</a>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- Single Popular Car End -->
