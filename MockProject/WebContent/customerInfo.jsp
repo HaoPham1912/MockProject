@@ -243,11 +243,8 @@
 									<div class="picture-container">
 										<div class="picture">
 											<img src="assets/img/default-avatar.png" class="picture-src"
-												id="wizardPicturePreview" title="" /> <input type="file"
-												id="wizard-picture">
+												id="wizardPicturePreview" title="" />
 										</div>
-										<h6>Chọn ảnh</h6>
-
 									</div>
 
 								</div>
