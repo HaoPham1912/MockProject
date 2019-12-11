@@ -208,12 +208,12 @@
 								<div class="password">
 									<input type="password" placeholder="Password" id="password"
 										name="password" maxlength="15" minlength="8"
-										pattern="[A-Za-z0-9]{1,}" required>
+										pattern="[A-Za-z0-9]{1,}" data-rule-password="true" required>
 								</div>
 								<div class="password">
 									<input type="password" id="confirm_password"
 										placeholder="Retype Password" name="password" maxlength="15"
-										minlength="8" pattern="[A-Za-z0-9]{1,}" required>
+										minlength="8" pattern="[A-Za-z0-9]{1,}" data-rule-password="true" data-rule-equalTo="#password" required>
 								</div>
 								<script>
 									var password = document
