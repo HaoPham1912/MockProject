@@ -92,8 +92,8 @@
 				<div class="row">
 					<!--== Logo Start ==-->
 					<div class="col-lg-4">
-						<a href="http://localhost:8080/MockProject/guest-dashboard" class="logo"> <img
-							src="assets/img/logo.png" alt="JSOFT">
+						<a href="http://localhost:8080/MockProject/guest-dashboard"
+							class="logo"> <img src="assets/img/logo.png" alt="JSOFT">
 						</a>
 					</div>
 					<!--== Logo End ==-->
@@ -105,7 +105,8 @@
 								<li class="active"><a
 									href="http://localhost:8080/MockProject/guest-dashboard">
 										Home</a></li>
-								<li><a href="http://localhost:8080/MockProject/login">Log In</a></li>
+								<li><a href="http://localhost:8080/MockProject/login">Log
+										In</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -146,57 +147,54 @@
 							<form action="${pageContext.request.contextPath}/register"
 								method="POST" name="productform" id="productform">
 								<div class="name">
-									<input type="text" placeholder="Name" name="name" onkeyup="vietnameseNoNumbers(this)" size="50" 	 	
-									title="Please fill data correctly"
-										value="${customerHo.name}" required>
+									<input type="text" placeholder="Name" name="name"
+										onkeyup="vietnameseNoNumbers(this)" size="50"
+										title="Please fill data correctly" value="${customerHo.name}"
+										required>
 									<script>
-									    function vietnameseNoNumbers(input) {
-									    	var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
-									        input.value = input.value.replace(regex, "");
-									    }
+										function vietnameseNoNumbers(input) {
+											var regex = /[^-a-z /\u0080-\u024F\u0300-\u036F\u1E00-\u1Eff\u1DC4]/ig;
+											input.value = input.value.replace(
+													regex, "");
+										}
 									</script>
 								</div>
 								<div class="email">
-									<input type="text" placeholder="Email" name="email" 
+									<input type="text" placeholder="Email" name="email"
 										title="Please type your email in correct form. Ex: xxx@yyy.com"
 										value="${customerHo.email}" required>
 								</div>
 								<div class="phone">
-											<input name="phone" type="text" 
-												minlength="10" maxlength="10" value="${customerHo.phone}"
-												onkeypress='validate(event)'
-													 
-												placeholder="Phone Number"
-												title="Phone must be a number that contains 10 numbers long"
-												required >
-											<script>
-											$("#phoneup").maxlength();
-												function validate(evt) {
-													var theEvent = evt
-															|| window.event;
+									<input name="phone" type="text" minlength="10" maxlength="10"
+										value="${customerHo.phone}" onkeypress='validate(event)'
+										placeholder="Phone Number"
+										title="Phone must be a number that contains 10 numbers long"
+										required>
+									<script>
+										$("#phoneup").maxlength();
+										function validate(evt) {
+											var theEvent = evt || window.event;
 
-													// Handle paste
-													if (theEvent.type === 'paste') {
-														key = event.clipboardData
-																.getData('text/plain');
-													} else {
-														// Handle key press
-														var key = theEvent.keyCode
-																|| theEvent.which;
-														key = String
-																.fromCharCode(key);
-													}
-													var regex = /[0-9]/;
-													if (!regex.test(key)) {
-														theEvent.returnValue = false;
-														if (theEvent.preventDefault)
-															theEvent
-																	.preventDefault();
-													}
-												}
-											</script>
-										</div>
-								
+											// Handle paste
+											if (theEvent.type === 'paste') {
+												key = event.clipboardData
+														.getData('text/plain');
+											} else {
+												// Handle key press
+												var key = theEvent.keyCode
+														|| theEvent.which;
+												key = String.fromCharCode(key);
+											}
+											var regex = /[0-9]/;
+											if (!regex.test(key)) {
+												theEvent.returnValue = false;
+												if (theEvent.preventDefault)
+													theEvent.preventDefault();
+											}
+										}
+									</script>
+								</div>
+
 								<div class="address">
 									<input type="text" placeholder="Address"
 										value="${customerHo.address}" name="address">
@@ -268,7 +266,7 @@
 		<!-- Footer Widget End -->
 
 		<!-- Footer Bottom Start -->
-	<jsp:include page="footer.jsp" /> 
+		<jsp:include page="footer.jsp" />
 		<!-- Footer Bottom End -->
 	</section>
 	<!--== Footer Area End ==-->
@@ -308,10 +306,12 @@
 	<script src="assets/js/plugins/slicknav.min.js"></script>
 
 	<!--=== Mian Js ===-->
-		
+
 	<script src="assets/js/main.js"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
-<script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js'></script>
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+	<script
+		src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js'></script>
 	<script src="assets/js/seat.js"></script>
 </body>
 

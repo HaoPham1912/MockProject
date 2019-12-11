@@ -79,7 +79,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#"
 				onclick="callContent('manageTicket'); return false;"> <i
 					class="far fa-calendar-alt" style="color: rgb(245, 164, 13)"></i> <span
-					class="text-nav">Manage Ticket Test</span></a></li>
+					class="text-nav">Manage Ticket</span></a></li>
 
 			<li class="nav-item active"><a class="nav-link"
 				href="${pageContext.request.contextPath}/emp-dashboard"> <i
@@ -206,7 +206,7 @@
 												</div>
 												<div class=" col-md-2" style="align: center">
 													<div class="form-group">
-														<button type="submit" class="btn btn-warning"
+														<button type="submit" class="btn btn-warning" id="btnSearching"
 															style="margin-top: 35px;">Search</button>
 														<a style="margin-top: 35px;"
 															href="http://localhost:8080/MockProject/emp-filterTicket?action=show&id_bus=${id_bus}"
@@ -259,7 +259,7 @@
 																	<p data-placement="top" data-toggle="tooltip"
 																		title="Delete">
 																		<button class="btn btn-danger" data-title="Delete" onclick="return getDeleteConfirmation();"
-																			data-toggle="modal">
+																			id = "btnDeleteTicket" data-toggle="modal">
 																			<span class="fa fa-trash"></span>
 																		</button>
 															</form>

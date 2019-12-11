@@ -143,7 +143,7 @@
 									</div>
 									<div class="col-md-2" style="align: center">
 										<div class="form-group">
-											<button class="btn btn-warning" style="margin-top: 35px;">
+											<button class="btn btn-warning" style="margin-top: 35px;" name = "searchAdmin">
 												<span class="glyphicon glyphicon-search">&nbsp;
 													Search</span>
 											</button>
@@ -176,7 +176,7 @@
 											<td>${a.admin_address}</td>
 											<td>
 												<p data-placement="top" data-toggle="tooltip" title="Edit">
-													<button class="btn btn-primary" data-title="Edit"
+													<button class="btn btn-primary" data-title="Edit" name = "btnEditAdmin"
 														data-toggle="modal" onclick="editAdmin()">
 														<span class="fa fa-edit"></span>
 													</button>

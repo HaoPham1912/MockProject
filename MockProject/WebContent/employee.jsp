@@ -59,11 +59,11 @@
 				onclick="callContent('manageBuses'); return false;"> <i
 					class="fas fa-route" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Manage Buses</span></a></li>
-			<li class="nav-item active"><a class="nav-link"
+			<!-- <li class="nav-item active"><a class="nav-link"
 				href="http://localhost:8080/MockProject/emp-dashboard?action=updateTicket">
 					<i class="fas fa-route" style="color: rgb(245, 164, 13)"></i> <span
 					class="text-nav">Update ticket</span>
-			</a></li>
+			</a></li> -->
 			<li class="nav-item active"><a class="nav-link"
 				href="http://localhost:8080/MockProject/logout"> <i
 					class="fa fa-cogs" style="color: rgb(245, 164, 13)"></i> <span
@@ -156,7 +156,7 @@
 									</div>
 									<div class=" col-md-2" style="align: center">
 										<div class="form-group">
-											<button type="submit" class="btn btn-warning"
+											<button type="submit" class="btn btn-warning" name = "search"
 												style="margin-top: 35px;">Search</button>
 												<a style="margin-top: 35px;" href="http://localhost:8080/MockProject/emp-dashboard" class="btn btn-warning">Show All</a>
 										</div>
@@ -188,7 +188,7 @@
 													<!-- <p data-placement="top" data-toggle="tooltip" title="View"> -->
 													<form method="POST"
 														action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${a.id_buses}&action=show">
-														<button class="btn btn-primary" data-title="Edit"
+														<button class="btn btn-primary" data-title="Edit" name="btnFilterBus1"
 															data-toggle="modal">
 															<span class="fas fa-bus-alt"></span>
 														</button>
@@ -208,7 +208,7 @@
 											<td>
 												<form method="POST"
 													action="${pageContext.request.contextPath}/emp-filterbus?id_buses=${Buses.id_buses}&action=show">
-													<button class="btn btn-primary" data-title="Edit"
+													<button class="btn btn-primary" data-title="Edit" name="btnFilterBus2"
 														data-toggle="modal">
 														<span class="fas fa-bus-alt"></span>
 													</button>

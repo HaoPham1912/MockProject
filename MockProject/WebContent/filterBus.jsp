@@ -164,7 +164,7 @@
 												<!-- <p data-placement="top" data-toggle="tooltip" title="View"> -->
 												<form method="POST"
 													action="${pageContext.request.contextPath}/emp-filterTicket?id_bus=${a.id_bus}">
-													<button class="btn btn-primary" data-title="Edit"
+													<button class="btn btn-primary" name="btnFilterTicket1"
 														data-toggle="modal">
 														<span class="far fa-id-card"></span>
 													</button>
@@ -183,7 +183,7 @@
 											<p data-placement="top" data-toggle="tooltip" title="View">
 											<form method="POST"
 												action="${pageContext.request.contextPath}/emp-filterTicket?id_bus=${filterBus.id_bus}">
-												<button class="btn btn-primary" data-title="Edit"
+												<button class="btn btn-primary" name="btnFilterTicket2"
 													data-toggle="modal">
 													<span class="far fa-id-card"></span>
 												</button>
@@ -235,7 +235,7 @@
 										</div>
 										<!-- Set role-End -->
 										<div class="modal-footer">
-											<button type="submit" class="btn btn-warning btn-lg"
+											<button type="submit" class="btn btn-warning btn-lg" id = "btnViewTicket"
 												style="width: 100%;">
 												<span class="fas fa-check-circle"></span>View Tickket
 											</button>

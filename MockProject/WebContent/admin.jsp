@@ -278,7 +278,7 @@
 									</div>
 									<div class="col-md-2" style="align: center">
 										<div class="form-group">
-											<button class="btn btn-warning" style="margin-top: 35px;">
+											<button class="btn btn-warning" name= "searchingCus" style="margin-top: 35px;">
 												<span class="glyphicon glyphicon-search">&nbsp;
 													Search</span>
 											</button>
@@ -310,7 +310,7 @@
 											<td>${a.address}</td>
 											<td>
 												<p data-placement="top" data-toggle="tooltip" title="Edit">
-													<button class="btn btn-primary" data-title="Edit"
+													<button class="btn btn-primary" data-title="Edit" name="btnEditCus"
 														data-toggle="modal" onclick="editUser()">
 														<span class="	fa fa-edit"></span>
 													</button>
@@ -417,6 +417,14 @@
 						</script>
 						<%
 							request.getSession().removeAttribute("UpdateCusFailed");
+						%>
+					</c:if>
+					<c:if test="${AddUserFailed!=null}">
+						<script type="text/javascript">
+							alert("Username is avail! Retry!");
+						</script>
+						<%
+							request.getSession().removeAttribute("AddUserFailed");
 						%>
 					</c:if>
 					<!-- Modal edit user-end -->

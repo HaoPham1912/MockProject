@@ -100,12 +100,9 @@ public class AdminDashBoardServlet extends HttpServlet {
 			boolean check = accountDAOImp.checkAvailableAccount(user);
 			if(!check) {
 				int idnew= Integer.parseInt(role);
-				System.out.println(idnew);
 				if(idnew==1)
 				{
 					int id= accountDAOImp.insertAccount(user, pass, idnew);
-					System.out.println("Them thanh cong account");
-					System.out.println("id accout is: "+id);
 					if(customerDAO.insertInfoCustomer(id, name1, phone1, email1, address1)) 
 					{
 						System.out.println("Dang ki thanh cong");

@@ -153,7 +153,7 @@
 								</div>
 								<p style="color: red">${message}</p>
 								<div class="log-btn">
-									<button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
+									<button type="submit" name="btnLogin"><i class="fa fa-sign-in"></i> Log In</button>
 								</div>
 							</form>
                 		</div>
