@@ -77,12 +77,16 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("id accout is: "+id);
 			customerDAOImp.insertInfoCustomer(id, name, phone, email, address);
 			System.out.println("Dang ki thanh cong");
+			//session.setAttribute("CreateAccountSuccess", "Register Successful!!!");
 			session.removeAttribute("customerHo");
 			response.sendRedirect(request.getContextPath()+"/login");
+		
+//			doGet(request, response);
+			//response.sendRedirect(request.getContextPath()+"/admin-dashboard");
 		}
 		else {
 			System.out.println("username avail!!! Retry!!");
-			String message = "Username is not available";
+			String message = "Username is used! Retry with other username";
 			response.sendRedirect(request.getContextPath()+"/register?message="+message);
 		}
 	}

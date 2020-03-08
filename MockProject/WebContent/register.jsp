@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -213,7 +214,9 @@
 								<div class="password">
 									<input type="password" id="confirm_password"
 										placeholder="Retype Password" name="password" maxlength="15"
-										minlength="8" pattern="[A-Za-z0-9]{1,}" data-rule-password="true" data-rule-equalTo="#password" required>
+										minlength="8" pattern="[A-Za-z0-9]{1,}"
+										data-rule-password="true" data-rule-equalTo="#password"
+										required>
 								</div>
 								<script>
 									var password = document
@@ -256,6 +259,14 @@
 				</div>
 			</div>
 		</div>
+		<c:if test="${CreateAccountSuccess!=null}">
+			<script type="text/javascript">
+				alert("Register successful!!!");
+			</script>
+			<%
+				request.getSession().removeAttribute("CreateAccountSuccess");
+			%>
+		</c:if>
 	</section>
 	<!--== Login Page Content End ==-->
 

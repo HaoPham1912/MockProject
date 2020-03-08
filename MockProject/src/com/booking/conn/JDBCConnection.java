@@ -9,7 +9,6 @@ public class JDBCConnection {
 	 {
 		 JDBCConnection db = new JDBCConnection();
 		 Connection connection = db.getMySQLConnection();
-		 System.out.println("Connected");
 	 }
 	
 	 public static Connection getMySQLConnection() throws ClassNotFoundException, SQLException{
